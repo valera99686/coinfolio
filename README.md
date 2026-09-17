@@ -1,7 +1,8 @@
 # Coinfolio — Crypto Portfolio Tracker
 
 Course project for *Web technologies & web design* (KPI, topic 1).
-Figma design (Lab 1): <https://www.figma.com/design/DU6OArWkxs6AS14xCbzykC>
+- Preview (GitHub Pages): <https://valera99686.github.io/coinfolio/>
+- Figma design (Lab 1): <https://www.figma.com/design/DU6OArWkxs6AS14xCbzykC>
 
 **Lab 2 — HTML markup & semantics.** Four pages without styles: semantic landmarks,
 tables and forms, relative navigation, responsive images, EJS partials,
@@ -48,6 +49,7 @@ npm run preview    # serve dist/ on http://localhost:4173
 | `npm run validate` | `html-validate` on the built pages |
 | `npm run check` | broken relative links + missing i18n keys |
 | `npm test` | all of the above |
+| `npm run deploy` | tests, then publishes `dist/` to the `gh-pages` branch |
 
 ## Structure
 
