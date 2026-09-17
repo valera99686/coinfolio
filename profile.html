@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="title.profile">Profile &amp; settings — Coinfolio</title>
+  <meta name="description" content="Manage your Coinfolio profile, preferences, notifications and security." data-i18n-attr="content:desc.profile">
+  <meta name="theme-color" content="#0B0F1A">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <script type="module" crossorigin src="./assets/main-B3buD-M1.js"></script>
+</head>
+
+<body class="page page--profile">
+
+<a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+<header class="site-header">
+  <a class="site-header__logo logo" href="./index.html" aria-label="Coinfolio — go to dashboard" data-i18n-attr="aria-label:brand.home">
+    <img class="logo__mark" src="./img/logo-mark.svg" alt="" width="32" height="32">
+    <span class="logo__text">Coinfolio</span>
+  </a>
+  <nav class="site-nav" aria-label="Main navigation" data-i18n-attr="aria-label:nav.label">
+    <ul class="site-nav__list">
+
+      <li class="site-nav__item site-nav__item--index">
+        <a class="site-nav__link" href="./index.html">
+          <svg class="icon icon--dashboard" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#dashboard"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.dashboard">Dashboard</span>
+        </a>
+      </li>
+
+      <li class="site-nav__item site-nav__item--assets">
+        <a class="site-nav__link" href="./assets.html">
+          <svg class="icon icon--assets" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#assets"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.assets">Assets</span>
+        </a>
+      </li>
+
+      <li class="site-nav__item site-nav__item--watchlist">
+        <a class="site-nav__link" href="./assets.html?filter=watchlist">
+          <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.watchlist">Watchlist</span>
+        </a>
+      </li>
+
+      <li class="site-nav__item site-nav__item--profile">
+        <a class="site-nav__link site-nav__link--active" href="./profile.html" aria-current="page">
+          <svg class="icon icon--user" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#user"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.profile">Profile</span>
+        </a>
+      </li>
+
+      <li class="site-nav__item site-nav__item--add">
+        <a class="site-nav__link site-nav__link--add" href="./asset.html#add-transaction">
+          <svg class="icon icon--plus" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#plus"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.add">Add transaction</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <form class="site-search" role="search" action="./assets.html" method="get">
+    <label class="site-search__label" for="site-search" data-i18n="search.label">Search coins</label>
+    <input class="site-search__input" id="site-search" name="q" type="search" autocomplete="off"
+      placeholder="Search coins…" data-i18n-attr="placeholder:search.placeholder">
+    <kbd class="site-search__hint">Ctrl K</kbd>
+    <button class="site-search__submit icon-button" type="submit">
+      <svg class="icon icon--search" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#search"></use></svg>
+
+      <span class="visually-hidden" data-i18n="search.submit">Search</span>
+    </button>
+  </form>
+  <div class="site-header__actions">
+    <button class="icon-button site-header__notifications" type="button" aria-describedby="notifications-count">
+      <svg class="icon icon--bell" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#bell"></use></svg>
+
+      <span class="visually-hidden" data-i18n="header.notifications">Notifications</span>
+    </button>
+    <span class="visually-hidden" id="notifications-count" data-i18n="header.unread">2 unread</span>
+    <a class="avatar avatar--sm site-header__avatar" href="./profile.html">
+      <picture class="avatar__picture">
+        <source type="image/webp" srcset="./img/profile/avatar-80.webp 1x, ./img/profile/avatar-160.webp 2x, ./img/profile/avatar-240.webp 3x">
+        <img class="avatar__img" src="./img/profile/avatar-80.jpg" srcset="./img/profile/avatar-80.jpg 1x, ./img/profile/avatar-160.jpg 2x"
+          width="40" height="40" alt="Your profile" data-i18n-attr="alt:header.profile">
+      </picture>
+    </a>
+  </div>
+</header>
+
+
+<main class="page__main profile-page" id="main">
+  <header class="page-header">
+    <div class="page-header__titles">
+      <h1 class="page-header__title" data-i18n="profile.title">Profile &amp; settings</h1>
+      <p class="page-header__lead" data-i18n="profile.lead">Manage your personal information, preferences and security.</p>
+    </div>
+    <div class="page-header__actions">
+      <button class="button button--secondary" type="reset" form="settings" data-i18n="action.cancel">Cancel</button>
+      <button class="button button--primary" type="submit" form="settings">
+        <svg class="icon icon--check" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#check"></use></svg>
+
+        <span data-i18n="action.save">Save changes</span>
+      </button>
+    </div>
+  </header>
+
+  <aside class="profile-card card" aria-labelledby="profile-name">
+    <picture class="avatar avatar--lg profile-card__avatar">
+      <source type="image/webp" srcset="./img/profile/avatar-80.webp 1x, ./img/profile/avatar-160.webp 2x, ./img/profile/avatar-240.webp 3x">
+      <img class="avatar__img" src="./img/profile/avatar-80.jpg"
+        srcset="./img/profile/avatar-80.jpg 1x, ./img/profile/avatar-160.jpg 2x, ./img/profile/avatar-240.jpg 3x"
+        width="80" height="80" alt="Profile picture of Valerii Povzun" data-i18n-attr="alt:profile.avatarAlt">
+    </picture>
+    <h2 class="profile-card__name" id="profile-name">Valerii Povzun</h2>
+    <p class="profile-card__email">valera@coinfolio.app</p>
+    <p class="profile-card__since">
+      <span data-i18n="profile.memberSince">Member since</span>
+      <time datetime="2025-03">Mar 2025</time>
+    </p>
+    <dl class="profile-card__stats">
+      <div class="profile-card__stat"><dt data-i18n="nav.assets">Assets</dt><dd>7</dd></div>
+      <div class="profile-card__stat"><dt data-i18n="profile.transactions">Transactions</dt><dd>48</dd></div>
+      <div class="profile-card__stat"><dt data-i18n="nav.watchlist">Watchlist</dt><dd>4</dd></div>
+    </dl>
+    <label class="button button--secondary profile-card__upload" for="avatar-upload">
+      <svg class="icon icon--user" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#user"></use></svg>
+
+      <span data-i18n="profile.photo">Change photo</span>
+    </label>
+    <input class="visually-hidden" id="avatar-upload" name="avatar" type="file" form="settings" accept="image/png, image/jpeg, image/webp">
+  </aside>
+
+  <nav class="settings-nav card" aria-label="Settings sections" data-i18n-attr="aria-label:settings.nav">
+    <ul class="settings-nav__list">
+
+      <li class="settings-nav__item">
+        <a class="settings-nav__link settings-nav__link--active" href="#personal" aria-current="true">
+          <svg class="icon icon--user" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#user"></use></svg>
+
+          <span data-i18n="settings.personal">Personal information</span>
+        </a>
+      </li>
+
+      <li class="settings-nav__item">
+        <a class="settings-nav__link" href="#preferences">
+          <svg class="icon icon--settings" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#settings"></use></svg>
+
+          <span data-i18n="settings.preferences">Preferences</span>
+        </a>
+      </li>
+
+      <li class="settings-nav__item">
+        <a class="settings-nav__link" href="#notifications">
+          <svg class="icon icon--bell" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#bell"></use></svg>
+
+          <span data-i18n="settings.notifications">Notifications</span>
+        </a>
+      </li>
+
+      <li class="settings-nav__item">
+        <a class="settings-nav__link" href="#security">
+          <svg class="icon icon--shield" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#shield"></use></svg>
+
+          <span data-i18n="settings.security">Security</span>
+        </a>
+      </li>
+
+      <li class="settings-nav__item">
+        <a class="settings-nav__link" href="#wallets">
+          <svg class="icon icon--wallet" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#wallet"></use></svg>
+
+          <span data-i18n="settings.wallets">Connected wallets</span>
+        </a>
+      </li>
+
+    </ul>
+    <form class="settings-nav__logout" action="./index.html" method="get">
+      <button class="link-button link-button--danger" type="submit">
+        <svg class="icon icon--logout" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#logout"></use></svg>
+
+        <span data-i18n="settings.logout">Log out</span>
+      </button>
+    </form>
+  </nav>
+
+  <section class="wallets card" id="wallets" aria-labelledby="wallets-title">
+    <h2 class="wallets__title" id="wallets-title" data-i18n="settings.wallets">Connected wallets</h2>
+    <p class="wallets__hint" data-i18n="wallets.hint">Read-only sync, no private keys stored</p>
+    <ul class="wallets__list">
+
+      <li class="wallets__item">
+        <svg class="icon icon--wallet" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#wallet"></use></svg>
+
+        <span class="wallets__name">MetaMask</span>
+        <code class="wallets__address">0x3f…9a2c</code>
+        <span class="wallets__status" data-i18n="wallets.synced">Synced</span>
+      </li>
+
+      <li class="wallets__item">
+        <svg class="icon icon--wallet" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#wallet"></use></svg>
+
+        <span class="wallets__name">Ledger Nano X</span>
+        <code class="wallets__address">bc1q…7k4d</code>
+        <span class="wallets__status" data-i18n="wallets.synced">Synced</span>
+      </li>
+
+    </ul>
+    <button class="button button--secondary" type="button">
+      <svg class="icon icon--plus" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#plus"></use></svg>
+
+      <span data-i18n="wallets.connect">Connect wallet</span>
+    </button>
+  </section>
+
+  <form class="settings" id="settings" action="./profile.html" method="post">
+    <fieldset class="settings__group card" id="personal">
+      <legend class="settings__legend"><h2 class="settings__title" data-i18n="settings.personal">Personal information</h2></legend>
+      <p class="settings__hint" data-i18n="personal.hint">Visible only to you</p>
+      <div class="field">
+        <label class="field__label" for="first-name" data-i18n="field.firstName">First name</label>
+        <input class="field__input" id="first-name" name="firstName" type="text" autocomplete="given-name" value="Valerii" required>
+      </div>
+      <div class="field">
+        <label class="field__label" for="last-name" data-i18n="field.lastName">Last name</label>
+        <input class="field__input" id="last-name" name="lastName" type="text" autocomplete="family-name" value="Povzun" required>
+      </div>
+      <div class="field">
+        <label class="field__label" for="email" data-i18n="field.email">Email</label>
+        <input class="field__input" id="email" name="email" type="email" autocomplete="email" value="valera@coinfolio.app" required aria-describedby="email-hint">
+        <p class="field__hint" id="email-hint" data-i18n="field.emailHint">Used for sign-in and weekly reports</p>
+      </div>
+      <div class="field">
+        <label class="field__label" for="username" data-i18n="field.username">Username</label>
+        <input class="field__input" id="username" name="username" type="text" autocomplete="username" value="vpovzun"
+          required minlength="4" pattern="[A-Za-z0-9]{4,}" aria-describedby="username-hint">
+        <p class="field__hint" id="username-hint" data-i18n="field.usernameHint">At least 4 characters, letters and digits only</p>
+        <p class="field__error" id="username-error" role="alert" hidden data-i18n="field.usernameError">Username must be at least 4 characters long</p>
+      </div>
+    </fieldset>
+
+    <fieldset class="settings__group card" id="preferences">
+      <legend class="settings__legend"><h2 class="settings__title" data-i18n="settings.preferences">Preferences</h2></legend>
+      <p class="settings__hint" data-i18n="prefs.hint">Currency, language and appearance</p>
+      <div class="field">
+        <label class="field__label" for="currency" data-i18n="field.currency">Base currency</label>
+        <select class="field__select" id="currency" name="currency">
+          <option value="USD" selected>USD — US Dollar</option>
+          <option value="EUR">EUR — Euro</option>
+          <option value="UAH">UAH — Ukrainian Hryvnia</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="field__label" for="language" data-i18n="field.language">Language</label>
+        <select class="field__select" id="language" name="language">
+          <option value="en" selected lang="en">English</option>
+          <option value="uk" lang="uk">Українська</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="field__label" for="timezone" data-i18n="field.timezone">Time zone</label>
+        <select class="field__select" id="timezone" name="timezone">
+          <option value="Europe/Kyiv" selected>Europe/Kyiv (UTC+03:00)</option>
+          <option value="Europe/Warsaw">Europe/Warsaw (UTC+02:00)</option>
+          <option value="UTC">UTC</option>
+        </select>
+      </div>
+      <fieldset class="segmented settings__theme">
+        <legend class="segmented__legend" data-i18n="field.theme">Theme</legend>
+
+        <input class="segmented__input" type="radio" name="theme" id="theme-dark" value="dark" checked>
+        <label class="segmented__label" for="theme-dark" data-i18n="theme.dark">Dark</label>
+
+        <input class="segmented__input" type="radio" name="theme" id="theme-light" value="light">
+        <label class="segmented__label" for="theme-light" data-i18n="theme.light">Light</label>
+
+        <input class="segmented__input" type="radio" name="theme" id="theme-system" value="system">
+        <label class="segmented__label" for="theme-system" data-i18n="theme.system">System</label>
+
+      </fieldset>
+    </fieldset>
+
+    <fieldset class="settings__group card" id="notifications">
+      <legend class="settings__legend"><h2 class="settings__title" data-i18n="settings.notifications">Notifications</h2></legend>
+
+      <div class="switch">
+        <input class="switch__input" id="priceAlerts" name="priceAlerts" type="checkbox" role="switch" checked aria-describedby="priceAlerts-hint">
+        <label class="switch__label" for="priceAlerts" data-i18n="notif.price">Price alerts</label>
+        <p class="switch__hint" id="priceAlerts-hint" data-i18n="notif.priceHint">When a watchlist coin moves more than 5% in 24 hours</p>
+      </div>
+
+      <div class="switch">
+        <input class="switch__input" id="weeklyReport" name="weeklyReport" type="checkbox" role="switch" checked aria-describedby="weeklyReport-hint">
+        <label class="switch__label" for="weeklyReport" data-i18n="notif.weekly">Weekly report</label>
+        <p class="switch__hint" id="weeklyReport-hint" data-i18n="notif.weeklyHint">Portfolio performance summary every Monday</p>
+      </div>
+
+      <div class="switch">
+        <input class="switch__input" id="productNews" name="productNews" type="checkbox" role="switch" aria-describedby="productNews-hint">
+        <label class="switch__label" for="productNews" data-i18n="notif.news">Product news</label>
+        <p class="switch__hint" id="productNews-hint" data-i18n="notif.newsHint">New features and short educational articles</p>
+      </div>
+
+    </fieldset>
+
+    <fieldset class="settings__group card" id="security">
+      <legend class="settings__legend"><h2 class="settings__title" data-i18n="settings.security">Security</h2></legend>
+      <p class="settings__hint" data-i18n="security.hint">Last sign-in: today, 09:02 · Chrome on Windows</p>
+      <div class="switch">
+        <input class="switch__input" id="two-factor" name="twoFactor" type="checkbox" role="switch" checked aria-describedby="two-factor-hint">
+        <label class="switch__label" for="two-factor" data-i18n="security.2fa">Two-factor authentication</label>
+        <p class="switch__hint" id="two-factor-hint" data-i18n="security.2faHint">Extra protection with an authenticator app</p>
+      </div>
+      <div class="settings__row">
+        <p class="settings__label" data-i18n="security.password">Password</p>
+        <p class="settings__hint" data-i18n="security.passwordHint">Last changed 3 months ago</p>
+        <button class="button button--secondary button--small" type="button">
+          <svg class="icon icon--lock" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#lock"></use></svg>
+
+          <span data-i18n="security.change">Change password</span>
+        </button>
+      </div>
+    </fieldset>
+
+    <div class="settings__actions">
+      <button class="button button--secondary" type="reset" data-i18n="action.cancel">Cancel</button>
+      <button class="button button--primary" type="submit">
+        <svg class="icon icon--check" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#check"></use></svg>
+
+        <span data-i18n="action.save">Save changes</span>
+      </button>
+    </div>
+  </form>
+</main>
+
+<footer class="site-footer">
+  <p class="site-footer__copy"><small data-i18n="footer.copy">© 2026 Coinfolio · Educational project, KPI</small></p>
+  <p class="site-footer__note" data-i18n="footer.data">Prices are demo data from a local json-server</p>
+  <nav class="site-footer__nav" aria-label="Language" data-i18n-attr="aria-label:footer.lang">
+    <ul class="site-footer__langs">
+      <li class="site-footer__lang"><a class="site-footer__link" href="?lang=en" hreflang="en" lang="en">English</a></li>
+      <li class="site-footer__lang"><a class="site-footer__link" href="?lang=uk" hreflang="uk" lang="uk">Українська</a></li>
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

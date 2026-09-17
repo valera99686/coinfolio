@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="title.asset">Bitcoin (BTC) — Coinfolio</title>
+  <meta name="description" content="Bitcoin price, market stats, your position and transaction history." data-i18n-attr="content:desc.asset">
+  <meta name="theme-color" content="#0B0F1A">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <script type="module" crossorigin src="./assets/main-B3buD-M1.js"></script>
+</head>
+
+<body class="page page--asset">
+
+<a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+<header class="site-header">
+  <a class="site-header__logo logo" href="./index.html" aria-label="Coinfolio — go to dashboard" data-i18n-attr="aria-label:brand.home">
+    <img class="logo__mark" src="./img/logo-mark.svg" alt="" width="32" height="32">
+    <span class="logo__text">Coinfolio</span>
+  </a>
+  <nav class="site-nav" aria-label="Main navigation" data-i18n-attr="aria-label:nav.label">
+    <ul class="site-nav__list">
+
+      <li class="site-nav__item site-nav__item--index">
+        <a class="site-nav__link" href="./index.html">
+          <svg class="icon icon--dashboard" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#dashboard"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.dashboard">Dashboard</span>
+        </a>
+      </li>
+
+      <li class="site-nav__item site-nav__item--assets">
+        <a class="site-nav__link site-nav__link--active" href="./assets.html" aria-current="page">
+          <svg class="icon icon--assets" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#assets"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.assets">Assets</span>
+        </a>
+      </li>
+
+      <li class="site-nav__item site-nav__item--watchlist">
+        <a class="site-nav__link" href="./assets.html?filter=watchlist">
+          <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.watchlist">Watchlist</span>
+        </a>
+      </li>
+
+      <li class="site-nav__item site-nav__item--profile">
+        <a class="site-nav__link" href="./profile.html">
+          <svg class="icon icon--user" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#user"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.profile">Profile</span>
+        </a>
+      </li>
+
+      <li class="site-nav__item site-nav__item--add">
+        <a class="site-nav__link site-nav__link--add" href="./asset.html#add-transaction">
+          <svg class="icon icon--plus" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#plus"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.add">Add transaction</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <form class="site-search" role="search" action="./assets.html" method="get">
+    <label class="site-search__label" for="site-search" data-i18n="search.label">Search coins</label>
+    <input class="site-search__input" id="site-search" name="q" type="search" autocomplete="off"
+      placeholder="Search coins…" data-i18n-attr="placeholder:search.placeholder">
+    <kbd class="site-search__hint">Ctrl K</kbd>
+    <button class="site-search__submit icon-button" type="submit">
+      <svg class="icon icon--search" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#search"></use></svg>
+
+      <span class="visually-hidden" data-i18n="search.submit">Search</span>
+    </button>
+  </form>
+  <div class="site-header__actions">
+    <button class="icon-button site-header__notifications" type="button" aria-describedby="notifications-count">
+      <svg class="icon icon--bell" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#bell"></use></svg>
+
+      <span class="visually-hidden" data-i18n="header.notifications">Notifications</span>
+    </button>
+    <span class="visually-hidden" id="notifications-count" data-i18n="header.unread">2 unread</span>
+    <a class="avatar avatar--sm site-header__avatar" href="./profile.html">
+      <picture class="avatar__picture">
+        <source type="image/webp" srcset="./img/profile/avatar-80.webp 1x, ./img/profile/avatar-160.webp 2x, ./img/profile/avatar-240.webp 3x">
+        <img class="avatar__img" src="./img/profile/avatar-80.jpg" srcset="./img/profile/avatar-80.jpg 1x, ./img/profile/avatar-160.jpg 2x"
+          width="40" height="40" alt="Your profile" data-i18n-attr="alt:header.profile">
+      </picture>
+    </a>
+  </div>
+</header>
+
+
+<main class="page__main asset-page" id="main">
+  <nav class="breadcrumbs" aria-label="Breadcrumb" data-i18n-attr="aria-label:crumbs.label">
+    <ol class="breadcrumbs__list">
+      <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="./assets.html" data-i18n="nav.assets">Assets</a></li>
+      <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Bitcoin</span></li>
+    </ol>
+  </nav>
+
+  <article class="asset" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+    <header class="asset__header">
+      <img class="asset__logo" src="./img/coins/btc.svg" alt="" width="48" height="48">
+      <h1 class="asset__title" itemprop="name">Bitcoin</h1>
+      <ul class="tags asset__tags">
+        <li class="tags__item"><abbr itemprop="currency" title="Bitcoin">BTC</abbr></li>
+        <li class="tags__item"><span data-i18n="detail.rank">Rank #</span> 1</li>
+        <li class="tags__item tags__item--accent" data-i18n="detail.inPortfolio">In portfolio</li>
+      </ul>
+      <div class="asset__actions">
+        <button class="icon-button asset__watch" type="button" aria-pressed="false">
+          <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
+
+          <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Bitcoin</span>
+        </button>
+        <a class="button button--secondary" href="./profile.html#notifications">
+          <svg class="icon icon--bell" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#bell"></use></svg>
+
+          <span data-i18n="detail.alert">Set alert</span>
+        </a>
+        <a class="button button--secondary" href="#add-transaction" data-i18n="form.sell">Sell</a>
+        <a class="button button--primary" href="#add-transaction">
+          <svg class="icon icon--plus" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#plus"></use></svg>
+
+          <span data-i18n="detail.buy">Buy BTC</span>
+        </a>
+      </div>
+    </header>
+
+    <section class="price card asset__price" aria-labelledby="price-title">
+      <h2 class="price__title" id="price-title">BTC / USD</h2>
+      <p class="price__value" itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+        <data itemprop="price" value="64218.4">$64,218.40</data>
+        <meta itemprop="priceCurrency" content="USD">
+      </p>
+      <p class="price__change">
+        
+<span class="badge badge--up">
+  <svg class="icon icon--arrow-up-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-up-right"></use></svg>
+
+  <span class="visually-hidden" data-i18n="change.up">Up</span>
+  <data class="badge__value" value="2.35">2.35%</data>
+</span>
+
+        <data value="1474.48">+$1,474.48</data>
+        <span data-i18n="dash.today">today</span>
+      </p>
+      <fieldset class="segmented price__period">
+  <legend class="segmented__legend visually-hidden" data-i18n="chart.period">Chart period</legend>
+
+  <input class="segmented__input" type="radio" name="price-period" id="price-period-1h" value="1h">
+  <label class="segmented__label" for="price-period-1h" data-i18n="period.1h">1H</label>
+
+  <input class="segmented__input" type="radio" name="price-period" id="price-period-24h" value="24h">
+  <label class="segmented__label" for="price-period-24h" data-i18n="period.24h">24H</label>
+
+  <input class="segmented__input" type="radio" name="price-period" id="price-period-7d" value="7d" checked>
+  <label class="segmented__label" for="price-period-7d" data-i18n="period.7d">7D</label>
+
+  <input class="segmented__input" type="radio" name="price-period" id="price-period-1m" value="1m">
+  <label class="segmented__label" for="price-period-1m" data-i18n="period.1m">1M</label>
+
+  <input class="segmented__input" type="radio" name="price-period" id="price-period-1y" value="1y">
+  <label class="segmented__label" for="price-period-1y" data-i18n="period.1y">1Y</label>
+
+  <input class="segmented__input" type="radio" name="price-period" id="price-period-all" value="all">
+  <label class="segmented__label" for="price-period-all" data-i18n="period.all">ALL</label>
+
+</fieldset>
+
+      <figure class="chart price__chart">
+        
+<picture class="chart__picture">
+
+  <source media="(max-width: 767px)" type="image/webp" width="328" height="180" sizes="calc(100vw - 64px)"
+    srcset="./img/charts/btc-mobile-328.webp 328w, ./img/charts/btc-mobile-492.webp 492w, ./img/charts/btc-mobile-656.webp 656w">
+  <source media="(max-width: 767px)" type="image/png" width="328" height="180" sizes="calc(100vw - 64px)"
+    srcset="./img/charts/btc-mobile-328.png 328w, ./img/charts/btc-mobile-492.png 492w, ./img/charts/btc-mobile-656.png 656w">
+
+  <source type="image/webp" sizes="(min-width: 1280px) 744px, (min-width: 768px) calc(66vw - 48px), 100vw"
+    srcset="./img/charts/btc-desktop-744.webp 744w, ./img/charts/btc-desktop-1116.webp 1116w, ./img/charts/btc-desktop-1488.webp 1488w">
+  <img class="chart__picture__img" src="./img/charts/btc-desktop-744.png" width="744" height="300" sizes="(min-width: 1280px) 744px, (min-width: 768px) calc(66vw - 48px), 100vw"
+    srcset="./img/charts/btc-desktop-744.png 744w, ./img/charts/btc-desktop-1116.png 1116w, ./img/charts/btc-desktop-1488.png 1488w"
+    alt="Line chart: Bitcoin price rose from about $58.4k to $64.2k over the last 7 days" data-i18n-attr="alt:detail.chartAlt" loading="lazy" decoding="async">
+</picture>
+
+        <details class="chart__data">
+  <summary class="chart__summary" data-i18n="chart.data">Show chart data</summary>
+  <table class="data-table">
+    <caption class="data-table__caption" data-i18n="detail.chartCaption">BTC price in USD, last 7 days</caption>
+    <thead>
+      <tr>
+        <th scope="col" data-i18n="chart.date">Date</th>
+        <th scope="col" data-i18n="chart.value">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr><th scope="row">Sep 10</th><td><data value="58400">$58.4k</data></td></tr>
+
+      <tr><th scope="row">Sep 12</th><td><data value="60100">$60.1k</data></td></tr>
+
+      <tr><th scope="row">Sep 14</th><td><data value="61900">$61.9k</data></td></tr>
+
+      <tr><th scope="row">Sep 16</th><td><data value="64200">$64.2k</data></td></tr>
+
+    </tbody>
+  </table>
+</details>
+
+        <figcaption class="chart__caption" data-i18n="detail.chartCaption">BTC price in USD, last 7 days</figcaption>
+      </figure>
+    </section>
+
+    <section class="stats card asset__stats" aria-labelledby="stats-title">
+      <h2 class="stats__title" id="stats-title" data-i18n="stats.title">Market stats</h2>
+      <p class="stats__updated"><span data-i18n="stats.updated">Updated at</span> <time datetime="2026-09-16T09:12">09:12</time></p>
+      <dl class="stats__list">
+        <div class="stats__item"><dt data-i18n="stats.cap">Market cap</dt><dd><data value="1268000000000">$1.27T</data></dd></div>
+        <div class="stats__item"><dt data-i18n="stats.volume">24h volume</dt><dd>$31.8B</dd></div>
+        <div class="stats__item"><dt data-i18n="stats.supply">Circulating supply</dt><dd>19.75M BTC</dd></div>
+        <div class="stats__item"><dt data-i18n="stats.ath">All-time high</dt><dd>$73,750.07</dd></div>
+        <div class="stats__item"><dt data-i18n="stats.range">24h range</dt><dd>$62,480 – $64,232</dd></div>
+        <div class="stats__item"><dt data-i18n="stats.dominance">Dominance</dt><dd>54.9%</dd></div>
+      </dl>
+    </section>
+
+    <section class="about card asset__about" aria-labelledby="about-title">
+      <h2 class="about__title" id="about-title" data-i18n="about.title">About Bitcoin</h2>
+      <p class="about__text" itemprop="description" data-i18n="about.text">Bitcoin is the first decentralised digital currency, launched in 2009. It runs on a public proof-of-work blockchain with a hard cap of 21 million coins, which is why it is often called “digital gold”.</p>
+      <ul class="about__links">
+        <li class="about__link-item">
+          <a class="link-button" href="https://bitcoin.org/" rel="external noopener">
+            <svg class="icon icon--globe" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#globe"></use></svg>
+ bitcoin.org
+          </a>
+        </li>
+        <li class="about__link-item">
+          <a class="link-button" href="https://bitcoin.org/bitcoin.pdf" rel="external noopener" type="application/pdf">
+            <svg class="icon icon--download" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#download"></use></svg>
+
+            <span data-i18n="about.paper">Whitepaper</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <aside class="position card asset__position" aria-labelledby="position-title">
+      <h2 class="position__title" id="position-title" data-i18n="position.title">Your position</h2>
+      <p class="position__value"><data value="27292.82">$27,292.82</data></p>
+      <p class="position__amount">0.4250 BTC · <span data-i18n="position.share">55.7% of portfolio</span></p>
+      <meter class="position__meter" min="0" max="100" value="55.7">55.7%</meter>
+      <dl class="position__list">
+        <div class="position__row"><dt data-i18n="position.avg">Avg. buy price</dt><dd>$52,430.44</dd></div>
+        <div class="position__row"><dt data-i18n="position.cost">Cost basis</dt><dd>$22,282.94</dd></div>
+        <div class="position__row position__row--up"><dt data-i18n="position.pnl">Unrealised P/L</dt><dd>+$5,009.88</dd></div>
+        <div class="position__row position__row--up"><dt data-i18n="position.return">Return</dt><dd>+22.48%</dd></div>
+      </dl>
+    </aside>
+
+    <section class="trade card asset__trade" id="add-transaction" aria-labelledby="trade-title">
+      <h2 class="trade__title" id="trade-title" data-i18n="nav.add">Add transaction</h2>
+      <form class="trade__form" action="./asset.html" method="post">
+        <fieldset class="segmented trade__type">
+          <legend class="segmented__legend visually-hidden" data-i18n="form.type">Transaction type</legend>
+
+          <input class="segmented__input" type="radio" name="type" id="trade-buy" value="buy" checked>
+          <label class="segmented__label" for="trade-buy" data-i18n="form.buy">Buy</label>
+
+          <input class="segmented__input" type="radio" name="type" id="trade-sell" value="sell">
+          <label class="segmented__label" for="trade-sell" data-i18n="form.sell">Sell</label>
+
+          <input class="segmented__input" type="radio" name="type" id="trade-transfer" value="transfer">
+          <label class="segmented__label" for="trade-transfer" data-i18n="form.transfer">Transfer</label>
+
+        </fieldset>
+        <div class="field">
+          <label class="field__label" for="trade-qty" data-i18n="form.qty">Quantity</label>
+          <input class="field__input" id="trade-qty" name="quantity" type="number" inputmode="decimal"
+            min="0" step="0.0001" value="0.0250" required aria-describedby="trade-qty-hint">
+          <p class="field__hint" id="trade-qty-hint" data-i18n="form.qtyHint">Available balance: $3,120.00</p>
+        </div>
+        <div class="field">
+          <label class="field__label" for="trade-price" data-i18n="form.price">Price per coin</label>
+          <input class="field__input" id="trade-price" name="price" type="number" inputmode="decimal"
+            min="0" step="0.01" value="64218.40" required>
+        </div>
+        <div class="field">
+          <label class="field__label" for="trade-date" data-i18n="form.date">Date and time</label>
+          <input class="field__input" id="trade-date" name="date" type="datetime-local" value="2026-09-16T09:14" required>
+        </div>
+        <div class="field">
+          <label class="field__label" for="trade-note" data-i18n="form.note">Note (optional)</label>
+          <textarea class="field__textarea" id="trade-note" name="note" rows="2" maxlength="140"></textarea>
+        </div>
+        <dl class="trade__summary">
+          <div class="trade__row"><dt data-i18n="form.fee">Fee (0.1%)</dt><dd>$1.61</dd></div>
+          <div class="trade__row trade__row--total">
+            <dt data-i18n="form.total">Total</dt>
+            <dd><output class="trade__total" name="total" for="trade-qty trade-price">$1,607.07</output></dd>
+          </div>
+        </dl>
+        <button class="button button--primary button--block" type="submit">
+          <svg class="icon icon--plus" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#plus"></use></svg>
+
+          <span data-i18n="nav.add">Add transaction</span>
+        </button>
+      </form>
+    </section>
+
+    <section class="history card asset__history" id="transactions" aria-labelledby="history-title">
+      <header class="section-header">
+        <h2 class="section-header__title" id="history-title" data-i18n="history.title">Your BTC transactions</h2>
+        <p class="section-header__subtitle" data-i18n="history.summary">4 transactions · net 0.4250 BTC</p>
+        <nav class="tabs" aria-label="Filter transactions" data-i18n-attr="aria-label:history.filter">
+          <ul class="tabs__list">
+            <li class="tabs__item"><a class="tabs__link tabs__link--active" href="./asset.html?id=btc#transactions" aria-current="true" data-i18n="history.all">All</a></li>
+            <li class="tabs__item"><a class="tabs__link" href="./asset.html?id=btc&amp;type=buy#transactions" data-i18n="history.buys">Buys</a></li>
+            <li class="tabs__item"><a class="tabs__link" href="./asset.html?id=btc&amp;type=sell#transactions" data-i18n="history.sells">Sells</a></li>
+          </ul>
+        </nav>
+      </header>
+      <table class="history__table">
+        <caption class="history__caption visually-hidden" data-i18n="history.caption">Bitcoin transaction history</caption>
+        <thead>
+          <tr>
+            <th scope="col" data-i18n="history.date">Date</th>
+            <th scope="col" data-i18n="history.type">Type</th>
+            <th scope="col" data-i18n="history.amount">Amount</th>
+            <th scope="col" data-i18n="form.price">Price per coin</th>
+            <th scope="col" data-i18n="history.value">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr class="history__row history__row--buy">
+            <th scope="row"><time datetime="2026-09-16T09:14">Sep 16, 2026 · 09:14</time></th>
+            <td data-i18n="form.buy">Buy</td>
+            <td><data value="0.025">+0.0250 BTC</data></td>
+            <td><data value="64218.4">$64,218.40</data></td>
+            <td><data value="1605.46">$1,605.46</data></td>
+          </tr>
+
+          <tr class="history__row history__row--buy">
+            <th scope="row"><time datetime="2026-08-28T16:05">Aug 28, 2026 · 16:05</time></th>
+            <td data-i18n="form.buy">Buy</td>
+            <td><data value="0.1">+0.1000 BTC</data></td>
+            <td><data value="58410">$58,410.00</data></td>
+            <td><data value="5841">$5,841.00</data></td>
+          </tr>
+
+          <tr class="history__row history__row--sell">
+            <th scope="row"><time datetime="2026-07-03T11:20">Jul 3, 2026 · 11:20</time></th>
+            <td data-i18n="form.sell">Sell</td>
+            <td><data value="-0.05">−0.0500 BTC</data></td>
+            <td><data value="61020">$61,020.00</data></td>
+            <td><data value="3051">$3,051.00</data></td>
+          </tr>
+
+          <tr class="history__row history__row--buy">
+            <th scope="row"><time datetime="2026-03-14T10:02">Mar 14, 2026 · 10:02</time></th>
+            <td data-i18n="form.buy">Buy</td>
+            <td><data value="0.35">+0.3500 BTC</data></td>
+            <td><data value="49880">$49,880.00</data></td>
+            <td><data value="17458">$17,458.00</data></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </section>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <p class="site-footer__copy"><small data-i18n="footer.copy">© 2026 Coinfolio · Educational project, KPI</small></p>
+  <p class="site-footer__note" data-i18n="footer.data">Prices are demo data from a local json-server</p>
+  <nav class="site-footer__nav" aria-label="Language" data-i18n-attr="aria-label:footer.lang">
+    <ul class="site-footer__langs">
+      <li class="site-footer__lang"><a class="site-footer__link" href="?lang=en" hreflang="en" lang="en">English</a></li>
+      <li class="site-footer__lang"><a class="site-footer__link" href="?lang=uk" hreflang="uk" lang="uk">Українська</a></li>
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

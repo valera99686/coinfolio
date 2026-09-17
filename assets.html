@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="title.assets">Assets — Coinfolio</title>
+  <meta name="description" content="Prices, 24h changes and your position for the top crypto assets." data-i18n-attr="content:desc.assets">
+  <meta name="theme-color" content="#0B0F1A">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <script type="module" crossorigin src="./assets/main-B3buD-M1.js"></script>
+</head>
+
+<body class="page page--assets">
+
+<a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+<header class="site-header">
+  <a class="site-header__logo logo" href="./index.html" aria-label="Coinfolio — go to dashboard" data-i18n-attr="aria-label:brand.home">
+    <img class="logo__mark" src="./img/logo-mark.svg" alt="" width="32" height="32">
+    <span class="logo__text">Coinfolio</span>
+  </a>
+  <nav class="site-nav" aria-label="Main navigation" data-i18n-attr="aria-label:nav.label">
+    <ul class="site-nav__list">
+
+      <li class="site-nav__item site-nav__item--index">
+        <a class="site-nav__link" href="./index.html">
+          <svg class="icon icon--dashboard" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#dashboard"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.dashboard">Dashboard</span>
+        </a>
+      </li>
+
+      <li class="site-nav__item site-nav__item--assets">
+        <a class="site-nav__link site-nav__link--active" href="./assets.html" aria-current="page">
+          <svg class="icon icon--assets" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#assets"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.assets">Assets</span>
+        </a>
+      </li>
+
+      <li class="site-nav__item site-nav__item--watchlist">
+        <a class="site-nav__link" href="./assets.html?filter=watchlist">
+          <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.watchlist">Watchlist</span>
+        </a>
+      </li>
+
+      <li class="site-nav__item site-nav__item--profile">
+        <a class="site-nav__link" href="./profile.html">
+          <svg class="icon icon--user" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#user"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.profile">Profile</span>
+        </a>
+      </li>
+
+      <li class="site-nav__item site-nav__item--add">
+        <a class="site-nav__link site-nav__link--add" href="./asset.html#add-transaction">
+          <svg class="icon icon--plus" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#plus"></use></svg>
+
+          <span class="site-nav__label" data-i18n="nav.add">Add transaction</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <form class="site-search" role="search" action="./assets.html" method="get">
+    <label class="site-search__label" for="site-search" data-i18n="search.label">Search coins</label>
+    <input class="site-search__input" id="site-search" name="q" type="search" autocomplete="off"
+      placeholder="Search coins…" data-i18n-attr="placeholder:search.placeholder">
+    <kbd class="site-search__hint">Ctrl K</kbd>
+    <button class="site-search__submit icon-button" type="submit">
+      <svg class="icon icon--search" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#search"></use></svg>
+
+      <span class="visually-hidden" data-i18n="search.submit">Search</span>
+    </button>
+  </form>
+  <div class="site-header__actions">
+    <button class="icon-button site-header__notifications" type="button" aria-describedby="notifications-count">
+      <svg class="icon icon--bell" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#bell"></use></svg>
+
+      <span class="visually-hidden" data-i18n="header.notifications">Notifications</span>
+    </button>
+    <span class="visually-hidden" id="notifications-count" data-i18n="header.unread">2 unread</span>
+    <a class="avatar avatar--sm site-header__avatar" href="./profile.html">
+      <picture class="avatar__picture">
+        <source type="image/webp" srcset="./img/profile/avatar-80.webp 1x, ./img/profile/avatar-160.webp 2x, ./img/profile/avatar-240.webp 3x">
+        <img class="avatar__img" src="./img/profile/avatar-80.jpg" srcset="./img/profile/avatar-80.jpg 1x, ./img/profile/avatar-160.jpg 2x"
+          width="40" height="40" alt="Your profile" data-i18n-attr="alt:header.profile">
+      </picture>
+    </a>
+  </div>
+</header>
+
+
+<main class="page__main assets-page" id="main">
+  <header class="page-header">
+    <div class="page-header__titles">
+      <h1 class="page-header__title" data-i18n="assets.title">Assets</h1>
+      <p class="page-header__lead" data-i18n="assets.lead">Live prices for 48 coins and your position in each of them.</p>
+    </div>
+    <div class="page-header__actions">
+      <button class="button button--secondary" type="button">
+        <svg class="icon icon--download" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#download"></use></svg>
+
+        <span data-i18n="action.exportCsv">Export CSV</span>
+      </button>
+      <a class="button button--primary" href="./asset.html#add-transaction">
+        <svg class="icon icon--plus" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#plus"></use></svg>
+
+        <span data-i18n="nav.add">Add transaction</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="market" aria-labelledby="market-title">
+    <h2 class="market__title visually-hidden" id="market-title" data-i18n="market.title">Market summary</h2>
+    <dl class="market__list">
+      <div class="stat-card stat-card--up">
+  <dt class="stat-card__label">
+    <span data-i18n="market.cap">Market cap</span>
+    <svg class="icon icon--globe" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#globe"></use></svg>
+
+  </dt>
+  <dd class="stat-card__value">$2.31T</dd>
+  <dd class="stat-card__meta">
+    
+<span class="badge badge--up">
+  <svg class="icon icon--arrow-up-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-up-right"></use></svg>
+
+  <span class="visually-hidden" data-i18n="change.up">Up</span>
+  <data class="badge__value" value="1.42">1.42%</data>
+</span>
+
+
+    <span class="stat-card__note" data-i18n="market.capNote">global · 24h</span>
+
+  </dd>
+</div>
+
+      <div class="stat-card stat-card--down">
+  <dt class="stat-card__label">
+    <span data-i18n="market.volume">24h volume</span>
+    <svg class="icon icon--chart" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#chart"></use></svg>
+
+  </dt>
+  <dd class="stat-card__value">$86.2B</dd>
+  <dd class="stat-card__meta">
+    
+<span class="badge badge--down">
+  <svg class="icon icon--arrow-down-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-down-right"></use></svg>
+
+  <span class="visually-hidden" data-i18n="change.down">Down</span>
+  <data class="badge__value" value="3.05">3.05%</data>
+</span>
+
+
+    <span class="stat-card__note" data-i18n="kpi.vsYesterday">vs yesterday</span>
+
+  </dd>
+</div>
+
+      <div class="stat-card stat-card--up">
+  <dt class="stat-card__label">
+    <span data-i18n="market.dominance">BTC dominance</span>
+    <svg class="icon icon--assets" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#assets"></use></svg>
+
+  </dt>
+  <dd class="stat-card__value">54.9%</dd>
+  <dd class="stat-card__meta">
+    
+<span class="badge badge--up">
+  <svg class="icon icon--arrow-up-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-up-right"></use></svg>
+
+  <span class="visually-hidden" data-i18n="change.up">Up</span>
+  <data class="badge__value" value="0.3">0.30%</data>
+</span>
+
+
+    <span class="stat-card__note" data-i18n="market.dominanceNote">share of market cap</span>
+
+  </dd>
+</div>
+
+    </dl>
+  </section>
+
+  <section class="asset-list card" aria-labelledby="asset-list-title">
+    <h2 class="asset-list__title visually-hidden" id="asset-list-title" data-i18n="assets.listTitle">All assets</h2>
+
+    <form class="filters" role="search" action="./assets.html" method="get" aria-labelledby="filters-title">
+      <h3 class="filters__title visually-hidden" id="filters-title" data-i18n="filters.title">Filter assets</h3>
+      <div class="field filters__search">
+        <label class="field__label visually-hidden" for="asset-search" data-i18n="filters.search">Search by name or ticker</label>
+        <svg class="icon icon--search" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#search"></use></svg>
+
+        <input class="field__input" id="asset-search" name="q" type="search" autocomplete="off"
+          placeholder="Search by name or ticker" data-i18n-attr="placeholder:filters.search">
+      </div>
+      <fieldset class="chips filters__chips">
+        <legend class="chips__legend visually-hidden" data-i18n="filters.show">Show</legend>
+
+        <input class="chips__input" type="radio" name="filter" id="filter-all" value="all" checked>
+        <label class="chips__label" for="filter-all" data-i18n="filters.all">All</label>
+
+        <input class="chips__input" type="radio" name="filter" id="filter-holdings" value="holdings">
+        <label class="chips__label" for="filter-holdings" data-i18n="filters.holdings">Holdings</label>
+
+        <input class="chips__input" type="radio" name="filter" id="filter-gainers" value="gainers">
+        <label class="chips__label" for="filter-gainers" data-i18n="filters.gainers">Gainers</label>
+
+        <input class="chips__input" type="radio" name="filter" id="filter-losers" value="losers">
+        <label class="chips__label" for="filter-losers" data-i18n="filters.losers">Losers</label>
+
+        <input class="chips__input" type="radio" name="filter" id="filter-watchlist" value="watchlist">
+        <label class="chips__label" for="filter-watchlist" data-i18n="filters.watchlist">Watchlist</label>
+
+      </fieldset>
+      <div class="field filters__sort">
+        <label class="field__label" for="asset-sort" data-i18n="filters.sort">Sort by</label>
+        <select class="field__select" id="asset-sort" name="sort">
+          <option value="marketCap" selected data-i18n="sort.cap">Market cap</option>
+          <option value="price" data-i18n="sort.price">Price</option>
+          <option value="change24h" data-i18n="sort.change">24h change</option>
+          <option value="name" data-i18n="sort.name">Name</option>
+        </select>
+      </div>
+      <button class="icon-button filters__submit" type="submit">
+        <svg class="icon icon--filter" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#filter"></use></svg>
+
+        <span class="visually-hidden" data-i18n="filters.apply">Apply filters</span>
+      </button>
+    </form>
+
+    <table class="asset-table">
+      <caption class="asset-table__caption" data-i18n="assets.caption">Top 10 coins by market capitalisation, prices in USD</caption>
+      <thead class="asset-table__head">
+  <tr>
+    <th class="asset-table__th" scope="col" data-i18n="table.rank">#</th>
+    <th class="asset-table__th" scope="col" data-i18n="table.asset">Asset</th>
+    <th class="asset-table__th" scope="col" aria-sort="none">
+      <button class="asset-table__sort" type="button">
+        <svg class="icon icon--sort" width="14" height="14" aria-hidden="true" focusable="false"><use href="./img/icons.svg#sort"></use></svg>
+
+        <span data-i18n="table.price">Price</span>
+      </button>
+    </th>
+    <th class="asset-table__th" scope="col" data-i18n="table.change">24h</th>
+    <th class="asset-table__th" scope="col" data-i18n="table.holdings">Holdings</th>
+    <th class="asset-table__th" scope="col" data-i18n="table.allocation">Allocation</th>
+    <th class="asset-table__th" scope="col" data-i18n="table.chart">Last 7 days</th>
+    <th class="asset-table__th" scope="col"><span class="visually-hidden" data-i18n="table.actions">Actions</span></th>
+  </tr>
+</thead>
+
+      <tbody class="asset-table__body">
+
+        <tr class="asset-row" data-asset-id="1" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+  <td class="asset-row__rank">1</td>
+  <th class="asset-row__asset" scope="row">
+    <a class="asset-row__link" href="./asset.html?id=btc">
+      <img class="asset-row__logo" src="./img/coins/btc.svg" alt="" width="32" height="32">
+      <span class="asset-row__name" itemprop="name">Bitcoin</span>
+      <abbr class="asset-row__symbol" itemprop="currency" title="Bitcoin">BTC</abbr>
+    </a>
+  </th>
+  <td class="asset-row__price" itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+    <data itemprop="price" value="64218.4">$64,218.40</data>
+    <meta itemprop="priceCurrency" content="USD">
+  </td>
+  <td class="asset-row__change">
+<span class="badge badge--up">
+  <svg class="icon icon--arrow-up-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-up-right"></use></svg>
+
+  <span class="visually-hidden" data-i18n="change.up">Up</span>
+  <data class="badge__value" value="2.35">2.35%</data>
+</span>
+</td>
+  <td class="asset-row__holdings">
+
+    <data class="asset-row__value" value="27292.82">$27,292.82</data>
+    <span class="asset-row__amount">0.4250 BTC</span>
+
+  </td>
+  <td class="asset-row__allocation">
+
+    <meter class="asset-row__meter" min="0" max="100" value="55.7">55.7%</meter>
+    <span class="asset-row__share">55.7%</span>
+
+  </td>
+  <td class="asset-row__chart">
+    <img class="asset-row__sparkline" src="./img/sparkline-up.svg" width="96" height="32" loading="lazy"
+      alt="7-day trend: rising" data-i18n-attr="alt:trend.up">
+  </td>
+  <td class="asset-row__actions">
+    <button class="icon-button asset-row__watch" type="button" aria-pressed="false">
+      <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
+
+      <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Bitcoin</span>
+    </button>
+  </td>
+</tr>
+
+
+        <tr class="asset-row" data-asset-id="2" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+  <td class="asset-row__rank">2</td>
+  <th class="asset-row__asset" scope="row">
+    <a class="asset-row__link" href="./asset.html?id=eth">
+      <img class="asset-row__logo" src="./img/coins/eth.svg" alt="" width="32" height="32">
+      <span class="asset-row__name" itemprop="name">Ethereum</span>
+      <abbr class="asset-row__symbol" itemprop="currency" title="Ethereum">ETH</abbr>
+    </a>
+  </th>
+  <td class="asset-row__price" itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+    <data itemprop="price" value="3142.75">$3,142.75</data>
+    <meta itemprop="priceCurrency" content="USD">
+  </td>
+  <td class="asset-row__change">
+<span class="badge badge--down">
+  <svg class="icon icon--arrow-down-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-down-right"></use></svg>
+
+  <span class="visually-hidden" data-i18n="change.down">Down</span>
+  <data class="badge__value" value="-1.12">1.12%</data>
+</span>
+</td>
+  <td class="asset-row__holdings">
+
+    <data class="asset-row__value" value="10056.8">$10,056.80</data>
+    <span class="asset-row__amount">3.2000 ETH</span>
+
+  </td>
+  <td class="asset-row__allocation">
+
+    <meter class="asset-row__meter" min="0" max="100" value="20.5">20.5%</meter>
+    <span class="asset-row__share">20.5%</span>
+
+  </td>
+  <td class="asset-row__chart">
+    <img class="asset-row__sparkline" src="./img/sparkline-down.svg" width="96" height="32" loading="lazy"
+      alt="7-day trend: falling" data-i18n-attr="alt:trend.down">
+  </td>
+  <td class="asset-row__actions">
+    <button class="icon-button asset-row__watch" type="button" aria-pressed="false">
+      <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
+
+      <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Ethereum</span>
+    </button>
+  </td>
+</tr>
+
+
+        <tr class="asset-row" data-asset-id="3" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+  <td class="asset-row__rank">3</td>
+  <th class="asset-row__asset" scope="row">
+    <a class="asset-row__link" href="./asset.html?id=usdt">
+      <img class="asset-row__logo" src="./img/coins/usdt.svg" alt="" width="32" height="32">
+      <span class="asset-row__name" itemprop="name">Tether</span>
+      <abbr class="asset-row__symbol" itemprop="currency" title="Tether">USDT</abbr>
+    </a>
+  </th>
+  <td class="asset-row__price" itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+    <data itemprop="price" value="1.0001">$1.0001</data>
+    <meta itemprop="priceCurrency" content="USD">
+  </td>
+  <td class="asset-row__change">
+<span class="badge badge--up">
+  <svg class="icon icon--arrow-up-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-up-right"></use></svg>
+
+  <span class="visually-hidden" data-i18n="change.up">Up</span>
+  <data class="badge__value" value="0.01">0.01%</data>
+</span>
+</td>
+  <td class="asset-row__holdings">
+
+    <data class="asset-row__value" value="1250.13">$1,250.13</data>
+    <span class="asset-row__amount">1,250.00 USDT</span>
+
+  </td>
+  <td class="asset-row__allocation">
+
+    <meter class="asset-row__meter" min="0" max="100" value="2.6">2.6%</meter>
+    <span class="asset-row__share">2.6%</span>
+
+  </td>
+  <td class="asset-row__chart">
+    <img class="asset-row__sparkline" src="./img/sparkline-up.svg" width="96" height="32" loading="lazy"
+      alt="7-day trend: rising" data-i18n-attr="alt:trend.up">
+  </td>
+  <td class="asset-row__actions">
+    <button class="icon-button asset-row__watch" type="button" aria-pressed="false">
+      <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
+
+      <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Tether</span>
+    </button>
+  </td>
+</tr>
+
+
+        <tr class="asset-row" data-asset-id="4" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+  <td class="asset-row__rank">4</td>
+  <th class="asset-row__asset" scope="row">
+    <a class="asset-row__link" href="./asset.html?id=sol">
+      <img class="asset-row__logo" src="./img/coins/sol.svg" alt="" width="32" height="32">
+      <span class="asset-row__name" itemprop="name">Solana</span>
+      <abbr class="asset-row__symbol" itemprop="currency" title="Solana">SOL</abbr>
+    </a>
+  </th>
+  <td class="asset-row__price" itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+    <data itemprop="price" value="148.36">$148.36</data>
+    <meta itemprop="priceCurrency" content="USD">
+  </td>
+  <td class="asset-row__change">
+<span class="badge badge--up">
+  <svg class="icon icon--arrow-up-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-up-right"></use></svg>
+
+  <span class="visually-hidden" data-i18n="change.up">Up</span>
+  <data class="badge__value" value="5.87">5.87%</data>
+</span>
+</td>
+  <td class="asset-row__holdings">
+
+    <data class="asset-row__value" value="4228.26">$4,228.26</data>
+    <span class="asset-row__amount">28.50 SOL</span>
+
+  </td>
+  <td class="asset-row__allocation">
+
+    <meter class="asset-row__meter" min="0" max="100" value="8.6">8.6%</meter>
+    <span class="asset-row__share">8.6%</span>
+
+  </td>
+  <td class="asset-row__chart">
+    <img class="asset-row__sparkline" src="./img/sparkline-up.svg" width="96" height="32" loading="lazy"
+      alt="7-day trend: rising" data-i18n-attr="alt:trend.up">
+  </td>
+  <td class="asset-row__actions">
+    <button class="icon-button asset-row__watch icon-button--active" type="button" aria-pressed="true">
+      <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
+
+      <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Solana</span>
+    </button>
+  </td>
+</tr>
+
+
+        <tr class="asset-row" data-asset-id="5" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+  <td class="asset-row__rank">5</td>
+  <th class="asset-row__asset" scope="row">
+    <a class="asset-row__link" href="./asset.html?id=xrp">
+      <img class="asset-row__logo" src="./img/coins/xrp.svg" alt="" width="32" height="32">
+      <span class="asset-row__name" itemprop="name">XRP</span>
+      <abbr class="asset-row__symbol" itemprop="currency" title="XRP">XRP</abbr>
+    </a>
+  </th>
+  <td class="asset-row__price" itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+    <data itemprop="price" value="0.5873">$0.5873</data>
+    <meta itemprop="priceCurrency" content="USD">
+  </td>
+  <td class="asset-row__change">
+<span class="badge badge--up">
+  <svg class="icon icon--arrow-up-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-up-right"></use></svg>
+
+  <span class="visually-hidden" data-i18n="change.up">Up</span>
+  <data class="badge__value" value="0.92">0.92%</data>
+</span>
+</td>
+  <td class="asset-row__holdings">
+
+    <span class="asset-row__empty" data-i18n="asset.notHeld">Not in portfolio</span>
+
+  </td>
+  <td class="asset-row__allocation">
+
+    <span class="asset-row__empty">—</span>
+
+  </td>
+  <td class="asset-row__chart">
+    <img class="asset-row__sparkline" src="./img/sparkline-up.svg" width="96" height="32" loading="lazy"
+      alt="7-day trend: rising" data-i18n-attr="alt:trend.up">
+  </td>
+  <td class="asset-row__actions">
+    <button class="icon-button asset-row__watch icon-button--active" type="button" aria-pressed="true">
+      <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
+
+      <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> XRP</span>
+    </button>
+  </td>
+</tr>
+
+
+        <tr class="asset-row" data-asset-id="6" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+  <td class="asset-row__rank">6</td>
+  <th class="asset-row__asset" scope="row">
+    <a class="asset-row__link" href="./asset.html?id=ada">
+      <img class="asset-row__logo" src="./img/coins/ada.svg" alt="" width="32" height="32">
+      <span class="asset-row__name" itemprop="name">Cardano</span>
+      <abbr class="asset-row__symbol" itemprop="currency" title="Cardano">ADA</abbr>
+    </a>
+  </th>
+  <td class="asset-row__price" itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+    <data itemprop="price" value="0.4521">$0.4521</data>
+    <meta itemprop="priceCurrency" content="USD">
+  </td>
+  <td class="asset-row__change">
+<span class="badge badge--down">
+  <svg class="icon icon--arrow-down-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-down-right"></use></svg>
+
+  <span class="visually-hidden" data-i18n="change.down">Down</span>
+  <data class="badge__value" value="-0.64">0.64%</data>
+</span>
+</td>
+  <td class="asset-row__holdings">
+
+    <data class="asset-row__value" value="2350.92">$2,350.92</data>
+    <span class="asset-row__amount">5,200.00 ADA</span>
+
+  </td>
+  <td class="asset-row__allocation">
+
+    <meter class="asset-row__meter" min="0" max="100" value="4.8">4.8%</meter>
+    <span class="asset-row__share">4.8%</span>
+
+  </td>
+  <td class="asset-row__chart">
+    <img class="asset-row__sparkline" src="./img/sparkline-down.svg" width="96" height="32" loading="lazy"
+      alt="7-day trend: falling" data-i18n-attr="alt:trend.down">
+  </td>
+  <td class="asset-row__actions">
+    <button class="icon-button asset-row__watch" type="button" aria-pressed="false">
+      <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
+
+      <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Cardano</span>
+    </button>
+  </td>
+</tr>
+
+
+        <tr class="asset-row" data-asset-id="7" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+  <td class="asset-row__rank">7</td>
+  <th class="asset-row__asset" scope="row">
+    <a class="asset-row__link" href="./asset.html?id=doge">
+      <img class="asset-row__logo" src="./img/coins/doge.svg" alt="" width="32" height="32">
+      <span class="asset-row__name" itemprop="name">Dogecoin</span>
+      <abbr class="asset-row__symbol" itemprop="currency" title="Dogecoin">DOGE</abbr>
+    </a>
+  </th>
+  <td class="asset-row__price" itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+    <data itemprop="price" value="0.1242">$0.1242</data>
+    <meta itemprop="priceCurrency" content="USD">
+  </td>
+  <td class="asset-row__change">
+<span class="badge badge--up">
+  <svg class="icon icon--arrow-up-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-up-right"></use></svg>
+
+  <span class="visually-hidden" data-i18n="change.up">Up</span>
+  <data class="badge__value" value="0.87">0.87%</data>
+</span>
+</td>
+  <td class="asset-row__holdings">
+
+    <span class="asset-row__empty" data-i18n="asset.notHeld">Not in portfolio</span>
+
+  </td>
+  <td class="asset-row__allocation">
+
+    <span class="asset-row__empty">—</span>
+
+  </td>
+  <td class="asset-row__chart">
+    <img class="asset-row__sparkline" src="./img/sparkline-up.svg" width="96" height="32" loading="lazy"
+      alt="7-day trend: rising" data-i18n-attr="alt:trend.up">
+  </td>
+  <td class="asset-row__actions">
+    <button class="icon-button asset-row__watch icon-button--active" type="button" aria-pressed="true">
+      <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
+
+      <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Dogecoin</span>
+    </button>
+  </td>
+</tr>
+
+
+        <tr class="asset-row" data-asset-id="8" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+  <td class="asset-row__rank">8</td>
+  <th class="asset-row__asset" scope="row">
+    <a class="asset-row__link" href="./asset.html?id=avax">
+      <img class="asset-row__logo" src="./img/coins/avax.svg" alt="" width="32" height="32">
+      <span class="asset-row__name" itemprop="name">Avalanche</span>
+      <abbr class="asset-row__symbol" itemprop="currency" title="Avalanche">AVAX</abbr>
+    </a>
+  </th>
+  <td class="asset-row__price" itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+    <data itemprop="price" value="27.9">$27.90</data>
+    <meta itemprop="priceCurrency" content="USD">
+  </td>
+  <td class="asset-row__change">
+<span class="badge badge--down">
+  <svg class="icon icon--arrow-down-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-down-right"></use></svg>
+
+  <span class="visually-hidden" data-i18n="change.down">Down</span>
+  <data class="badge__value" value="-2.48">2.48%</data>
+</span>
+</td>
+  <td class="asset-row__holdings">
+
+    <span class="asset-row__empty" data-i18n="asset.notHeld">Not in portfolio</span>
+
+  </td>
+  <td class="asset-row__allocation">
+
+    <span class="asset-row__empty">—</span>
+
+  </td>
+  <td class="asset-row__chart">
+    <img class="asset-row__sparkline" src="./img/sparkline-down.svg" width="96" height="32" loading="lazy"
+      alt="7-day trend: falling" data-i18n-attr="alt:trend.down">
+  </td>
+  <td class="asset-row__actions">
+    <button class="icon-button asset-row__watch icon-button--active" type="button" aria-pressed="true">
+      <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
+
+      <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Avalanche</span>
+    </button>
+  </td>
+</tr>
+
+
+        <tr class="asset-row" data-asset-id="9" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+  <td class="asset-row__rank">9</td>
+  <th class="asset-row__asset" scope="row">
+    <a class="asset-row__link" href="./asset.html?id=dot">
+      <img class="asset-row__logo" src="./img/coins/dot.svg" alt="" width="32" height="32">
+      <span class="asset-row__name" itemprop="name">Polkadot</span>
+      <abbr class="asset-row__symbol" itemprop="currency" title="Polkadot">DOT</abbr>
+    </a>
+  </th>
+  <td class="asset-row__price" itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+    <data itemprop="price" value="6.84">$6.8400</data>
+    <meta itemprop="priceCurrency" content="USD">
+  </td>
+  <td class="asset-row__change">
+<span class="badge badge--up">
+  <svg class="icon icon--arrow-up-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-up-right"></use></svg>
+
+  <span class="visually-hidden" data-i18n="change.up">Up</span>
+  <data class="badge__value" value="1.93">1.93%</data>
+</span>
+</td>
+  <td class="asset-row__holdings">
+
+    <data class="asset-row__value" value="2120.4">$2,120.40</data>
+    <span class="asset-row__amount">310.00 DOT</span>
+
+  </td>
+  <td class="asset-row__allocation">
+
+    <meter class="asset-row__meter" min="0" max="100" value="4.3">4.3%</meter>
+    <span class="asset-row__share">4.3%</span>
+
+  </td>
+  <td class="asset-row__chart">
+    <img class="asset-row__sparkline" src="./img/sparkline-up.svg" width="96" height="32" loading="lazy"
+      alt="7-day trend: rising" data-i18n-attr="alt:trend.up">
+  </td>
+  <td class="asset-row__actions">
+    <button class="icon-button asset-row__watch" type="button" aria-pressed="false">
+      <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
+
+      <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Polkadot</span>
+    </button>
+  </td>
+</tr>
+
+
+        <tr class="asset-row" data-asset-id="10" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+  <td class="asset-row__rank">10</td>
+  <th class="asset-row__asset" scope="row">
+    <a class="asset-row__link" href="./asset.html?id=link">
+      <img class="asset-row__logo" src="./img/coins/link.svg" alt="" width="32" height="32">
+      <span class="asset-row__name" itemprop="name">Chainlink</span>
+      <abbr class="asset-row__symbol" itemprop="currency" title="Chainlink">LINK</abbr>
+    </a>
+  </th>
+  <td class="asset-row__price" itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+    <data itemprop="price" value="14.27">$14.27</data>
+    <meta itemprop="priceCurrency" content="USD">
+  </td>
+  <td class="asset-row__change">
+<span class="badge badge--up">
+  <svg class="icon icon--arrow-up-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-up-right"></use></svg>
+
+  <span class="visually-hidden" data-i18n="change.up">Up</span>
+  <data class="badge__value" value="3.41">3.41%</data>
+</span>
+</td>
+  <td class="asset-row__holdings">
+
+    <data class="asset-row__value" value="1712.4">$1,712.40</data>
+    <span class="asset-row__amount">120.00 LINK</span>
+
+  </td>
+  <td class="asset-row__allocation">
+
+    <meter class="asset-row__meter" min="0" max="100" value="3.5">3.5%</meter>
+    <span class="asset-row__share">3.5%</span>
+
+  </td>
+  <td class="asset-row__chart">
+    <img class="asset-row__sparkline" src="./img/sparkline-up.svg" width="96" height="32" loading="lazy"
+      alt="7-day trend: rising" data-i18n-attr="alt:trend.up">
+  </td>
+  <td class="asset-row__actions">
+    <button class="icon-button asset-row__watch" type="button" aria-pressed="false">
+      <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
+
+      <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Chainlink</span>
+    </button>
+  </td>
+</tr>
+
+
+      </tbody>
+    </table>
+
+    <nav class="pagination" aria-label="Pagination" data-i18n-attr="aria-label:pagination.label">
+      <p class="pagination__summary" data-i18n="pagination.summary">Showing 1–10 of 48 assets</p>
+      <ul class="pagination__list">
+        <li class="pagination__item">
+          <a class="pagination__link pagination__link--prev" aria-disabled="true">
+            <svg class="icon icon--chevron-left" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#chevron-left"></use></svg>
+
+            <span class="visually-hidden" data-i18n="pagination.prev">Previous page</span>
+          </a>
+        </li>
+
+        <li class="pagination__item">
+          <a class="pagination__link pagination__link--active" href="./assets.html?page=1" aria-current="page">1</a>
+        </li>
+
+        <li class="pagination__item">
+          <a class="pagination__link" href="./assets.html?page=2">2</a>
+        </li>
+
+        <li class="pagination__item">
+          <a class="pagination__link" href="./assets.html?page=3">3</a>
+        </li>
+
+        <li class="pagination__item pagination__item--gap" aria-hidden="true">…</li>
+        <li class="pagination__item"><a class="pagination__link" href="./assets.html?page=5">5</a></li>
+        <li class="pagination__item">
+          <a class="pagination__link pagination__link--next" href="./assets.html?page=2" rel="next">
+            <svg class="icon icon--chevron-right" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#chevron-right"></use></svg>
+
+            <span class="visually-hidden" data-i18n="pagination.next">Next page</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+
+  <p class="assets-page__hint">
+    <svg class="icon icon--eye" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#eye"></use></svg>
+
+    <span data-i18n="assets.tip">Tip: open a coin to see its details; star a coin to add it to your watchlist.</span>
+  </p>
+</main>
+
+<footer class="site-footer">
+  <p class="site-footer__copy"><small data-i18n="footer.copy">© 2026 Coinfolio · Educational project, KPI</small></p>
+  <p class="site-footer__note" data-i18n="footer.data">Prices are demo data from a local json-server</p>
+  <nav class="site-footer__nav" aria-label="Language" data-i18n-attr="aria-label:footer.lang">
+    <ul class="site-footer__langs">
+      <li class="site-footer__lang"><a class="site-footer__link" href="?lang=en" hreflang="en" lang="en">English</a></li>
+      <li class="site-footer__lang"><a class="site-footer__link" href="?lang=uk" hreflang="uk" lang="uk">Українська</a></li>
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>
