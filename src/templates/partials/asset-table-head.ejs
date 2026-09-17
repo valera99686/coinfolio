@@ -1,0 +1,17 @@
+<thead class="asset-table__head">
+  <tr>
+    <th class="asset-table__th" scope="col" data-i18n="table.rank"><%= t('table.rank') %></th>
+    <th class="asset-table__th" scope="col" data-i18n="table.asset"><%= t('table.asset') %></th>
+    <th class="asset-table__th" scope="col" aria-sort="<%= locals.sort === 'price' ? 'descending' : 'none' %>">
+      <button class="asset-table__sort" type="button">
+        <%- include('icon', { name: 'sort', size: 14 }) %>
+        <span data-i18n="table.price"><%= t('table.price') %></span>
+      </button>
+    </th>
+    <th class="asset-table__th" scope="col" data-i18n="table.change"><%= t('table.change') %></th>
+    <th class="asset-table__th" scope="col" data-i18n="table.holdings"><%= t('table.holdings') %></th>
+    <th class="asset-table__th" scope="col" data-i18n="table.allocation"><%= t('table.allocation') %></th>
+    <th class="asset-table__th" scope="col" data-i18n="table.chart"><%= t('table.chart') %></th>
+    <th class="asset-table__th" scope="col"><span class="visually-hidden" data-i18n="table.actions"><%= t('table.actions') %></span></th>
+  </tr>
+</thead>

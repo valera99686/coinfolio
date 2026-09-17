@@ -1,0 +1,6 @@
+<% const icon = { up: 'arrow-up-right', down: 'arrow-down-right', flat: 'minus' }[trend]; %>
+<span class="badge badge--<%= trend %>">
+  <%- include('icon', { name: icon, size: 16 }) %>
+  <span class="visually-hidden" data-i18n="change.<%= trend %>"><%= t('change.' + trend) %></span>
+  <data class="badge__value" value="<%= value %>"><%= text %></data>
+</span>

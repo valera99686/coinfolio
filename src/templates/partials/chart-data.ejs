@@ -1,0 +1,17 @@
+<details class="chart__data">
+  <summary class="chart__summary" data-i18n="chart.data"><%= t('chart.data') %></summary>
+  <table class="data-table">
+    <caption class="data-table__caption" data-i18n="<%= captionKey %>"><%= t(captionKey) %></caption>
+    <thead>
+      <tr>
+        <th scope="col" data-i18n="chart.date"><%= t('chart.date') %></th>
+        <th scope="col" data-i18n="chart.value"><%= t('chart.value') %></th>
+      </tr>
+    </thead>
+    <tbody>
+<% points.forEach(([label, value]) => { %>
+      <tr><th scope="row"><%= label %></th><td><data value="<%= Math.round(value * 1000) %>">$<%= value.toFixed(1) %>k</data></td></tr>
+<% }) %>
+    </tbody>
+  </table>
+</details>

@@ -1,0 +1,7 @@
+<fieldset class="segmented <%= cls %>">
+  <legend class="segmented__legend visually-hidden" data-i18n="chart.period"><%= t('chart.period') %></legend>
+<% periods.forEach((p) => { %>
+  <input class="segmented__input" type="radio" name="<%= name %>" id="<%= name %>-<%= p %>" value="<%= p %>"<%= p === checked ? ' checked' : '' %>>
+  <label class="segmented__label" for="<%= name %>-<%= p %>" data-i18n="period.<%= p %>"><%= t('period.' + p) %></label>
+<% }) %>
+</fieldset>

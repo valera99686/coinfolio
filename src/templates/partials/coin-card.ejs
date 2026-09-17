@@ -1,0 +1,20 @@
+<article class="coin-card coin-card--<%= a.trend %>" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+  <header class="coin-card__header">
+    <img class="coin-card__logo" src="./img/coins/<%= a.slug %>.svg" alt="" width="32" height="32">
+    <h3 class="coin-card__title">
+      <a class="coin-card__link" href="./asset.html?id=<%= a.slug %>" itemprop="name"><%= a.name %></a>
+    </h3>
+    <abbr class="coin-card__symbol" itemprop="currency" title="<%= a.name %>"><%= a.symbol %></abbr>
+    <button class="icon-button icon-button--active coin-card__watch" type="button" aria-pressed="true">
+      <%- include('icon', { name: 'star' }) %>
+      <span class="visually-hidden"><span data-i18n="asset.watch"><%= t('asset.watch') %></span> <%= a.name %></span>
+    </button>
+  </header>
+  <p class="coin-card__price" itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+    <data itemprop="price" value="<%= a.price %>"><%= a.priceText %></data>
+    <meta itemprop="priceCurrency" content="USD">
+  </p>
+  <%- include('change-badge', { trend: a.trend, value: a.change24h, text: a.changeText }) %>
+  <img class="coin-card__sparkline" src="./img/sparkline-<%= a.trend %>.svg" width="96" height="32" loading="lazy"
+    alt="<%= t('trend.' + a.trend) %>" data-i18n-attr="alt:trend.<%= a.trend %>">
+</article>

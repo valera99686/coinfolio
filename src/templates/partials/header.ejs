@@ -1,0 +1,50 @@
+<% const currentNav = page === 'asset' ? 'assets' : page; %>
+<a class="skip-link" href="#main" data-i18n="skip"><%= t('skip') %></a>
+<header class="site-header">
+  <a class="site-header__logo logo" href="./index.html" aria-label="<%= t('brand.home') %>" data-i18n-attr="aria-label:brand.home">
+    <img class="logo__mark" src="./img/logo-mark.svg" alt="" width="32" height="32">
+    <span class="logo__text"><%= brand.name %></span>
+  </a>
+  <nav class="site-nav" aria-label="<%= t('nav.label') %>" data-i18n-attr="aria-label:nav.label">
+    <ul class="site-nav__list">
+<% nav.forEach((item) => { const current = item.id === currentNav; %>
+      <li class="site-nav__item site-nav__item--<%= item.id %>">
+        <a class="site-nav__link<%= current ? ' site-nav__link--active' : '' %>" href="<%= item.href %>"<%- current ? ' aria-current="page"' : '' %>>
+          <%- include('icon', { name: item.icon }) %>
+          <span class="site-nav__label" data-i18n="<%= item.key %>"><%= t(item.key) %></span>
+        </a>
+      </li>
+<% }) %>
+      <li class="site-nav__item site-nav__item--add">
+        <a class="site-nav__link site-nav__link--add" href="./asset.html#add-transaction">
+          <%- include('icon', { name: 'plus' }) %>
+          <span class="site-nav__label" data-i18n="nav.add"><%= t('nav.add') %></span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <form class="site-search" role="search" action="./assets.html" method="get">
+    <label class="site-search__label" for="site-search" data-i18n="search.label"><%= t('search.label') %></label>
+    <input class="site-search__input" id="site-search" name="q" type="search" autocomplete="off"
+      placeholder="<%= t('search.placeholder') %>" data-i18n-attr="placeholder:search.placeholder">
+    <kbd class="site-search__hint">Ctrl K</kbd>
+    <button class="site-search__submit icon-button" type="submit">
+      <%- include('icon', { name: 'search' }) %>
+      <span class="visually-hidden" data-i18n="search.submit"><%= t('search.submit') %></span>
+    </button>
+  </form>
+  <div class="site-header__actions">
+    <button class="icon-button site-header__notifications" type="button" aria-describedby="notifications-count">
+      <%- include('icon', { name: 'bell' }) %>
+      <span class="visually-hidden" data-i18n="header.notifications"><%= t('header.notifications') %></span>
+    </button>
+    <span class="visually-hidden" id="notifications-count" data-i18n="header.unread"><%= t('header.unread') %></span>
+    <a class="avatar avatar--sm site-header__avatar" href="./profile.html">
+      <picture class="avatar__picture">
+        <source type="image/webp" srcset="./img/profile/avatar-80.webp 1x, ./img/profile/avatar-160.webp 2x, ./img/profile/avatar-240.webp 3x">
+        <img class="avatar__img" src="./img/profile/avatar-80.jpg" srcset="./img/profile/avatar-80.jpg 1x, ./img/profile/avatar-160.jpg 2x"
+          width="40" height="40" alt="<%= t('header.profile') %>" data-i18n-attr="alt:header.profile">
+      </picture>
+    </a>
+  </div>
+</header>

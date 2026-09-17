@@ -1,0 +1,17 @@
+<%#
+  Responsive chart image: art direction (mobile and desktop crops) + WebP with PNG fallback.
+  params: cls, base, widths, w, h, sizes, altKey, mobile { base, widths, w, h }
+%>
+<picture class="<%= cls %>">
+<% if (locals.mobile) { %>
+  <source media="(max-width: 767px)" type="image/webp" width="<%= mobile.w %>" height="<%= mobile.h %>" sizes="calc(100vw - 64px)"
+    srcset="<%= mobile.widths.map((x) => `./img/${mobile.base}-${x}.webp ${x}w`).join(', ') %>">
+  <source media="(max-width: 767px)" type="image/png" width="<%= mobile.w %>" height="<%= mobile.h %>" sizes="calc(100vw - 64px)"
+    srcset="<%= mobile.widths.map((x) => `./img/${mobile.base}-${x}.png ${x}w`).join(', ') %>">
+<% } %>
+  <source type="image/webp" sizes="<%= sizes %>"
+    srcset="<%= widths.map((x) => `./img/${base}-${x}.webp ${x}w`).join(', ') %>">
+  <img class="<%= cls %>__img" src="./img/<%= base %>-<%= widths[0] %>.png" width="<%= w %>" height="<%= h %>" sizes="<%= sizes %>"
+    srcset="<%= widths.map((x) => `./img/${base}-${x}.png ${x}w`).join(', ') %>"
+    alt="<%= t(altKey) %>" data-i18n-attr="alt:<%= altKey %>" loading="lazy" decoding="async">
+</picture>

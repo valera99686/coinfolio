@@ -1,0 +1,41 @@
+<tr class="asset-row" data-asset-id="<%= a.id %>" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+  <td class="asset-row__rank"><%= rank %></td>
+  <th class="asset-row__asset" scope="row">
+    <a class="asset-row__link" href="./asset.html?id=<%= a.slug %>">
+      <img class="asset-row__logo" src="./img/coins/<%= a.slug %>.svg" alt="" width="32" height="32">
+      <span class="asset-row__name" itemprop="name"><%= a.name %></span>
+      <abbr class="asset-row__symbol" itemprop="currency" title="<%= a.name %>"><%= a.symbol %></abbr>
+    </a>
+  </th>
+  <td class="asset-row__price" itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+    <data itemprop="price" value="<%= a.price %>"><%= a.priceText %></data>
+    <meta itemprop="priceCurrency" content="USD">
+  </td>
+  <td class="asset-row__change"><%- include('change-badge', { trend: a.trend, value: a.change24h, text: a.changeText }) %></td>
+  <td class="asset-row__holdings">
+<% if (a.value) { %>
+    <data class="asset-row__value" value="<%= a.value %>"><%= a.valueText %></data>
+    <span class="asset-row__amount"><%= a.amountText %></span>
+<% } else { %>
+    <span class="asset-row__empty" data-i18n="asset.notHeld"><%= t('asset.notHeld') %></span>
+<% } %>
+  </td>
+  <td class="asset-row__allocation">
+<% if (a.value) { %>
+    <meter class="asset-row__meter" min="0" max="100" value="<%= a.share.toFixed(1) %>"><%= a.shareText %></meter>
+    <span class="asset-row__share"><%= a.shareText %></span>
+<% } else { %>
+    <span class="asset-row__empty">—</span>
+<% } %>
+  </td>
+  <td class="asset-row__chart">
+    <img class="asset-row__sparkline" src="./img/sparkline-<%= a.trend %>.svg" width="96" height="32" loading="lazy"
+      alt="<%= t('trend.' + a.trend) %>" data-i18n-attr="alt:trend.<%= a.trend %>">
+  </td>
+  <td class="asset-row__actions">
+    <button class="icon-button asset-row__watch<%= a.watched ? ' icon-button--active' : '' %>" type="button" aria-pressed="<%= a.watched %>">
+      <%- include('icon', { name: 'star' }) %>
+      <span class="visually-hidden"><span data-i18n="asset.watch"><%= t('asset.watch') %></span> <%= a.name %></span>
+    </button>
+  </td>
+</tr>

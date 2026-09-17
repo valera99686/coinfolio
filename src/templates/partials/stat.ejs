@@ -1,0 +1,15 @@
+<div class="stat-card stat-card--<%= trend %>">
+  <dt class="stat-card__label">
+    <span data-i18n="<%= labelKey %>"><%= t(labelKey) %></span>
+    <%- include('icon', { name: icon }) %>
+  </dt>
+  <dd class="stat-card__value"><%= value %></dd>
+  <dd class="stat-card__meta">
+    <%- include('change-badge', { trend, value: change, text: fmt.pct(change) }) %>
+<% if (locals.noteKey) { %>
+    <span class="stat-card__note" data-i18n="<%= noteKey %>"><%= t(noteKey) %></span>
+<% } else { %>
+    <span class="stat-card__note"><%= note %></span>
+<% } %>
+  </dd>
+</div>

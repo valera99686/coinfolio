@@ -1,0 +1,8 @@
+<% const icon = { buy: 'plus', sell: 'minus', transfer: 'swap' }[tx.type]; %>
+<li class="tx tx--<%= tx.type %>">
+  <span class="tx__icon"><%- include('icon', { name: icon }) %></span>
+  <p class="tx__title"><span data-i18n="tx.<%= tx.type %>"><%= t('tx.' + tx.type) %></span> <%= tx.symbol %></p>
+  <time class="tx__date" datetime="<%= tx.date %>"><%= tx.dateText %></time>
+  <p class="tx__amount"><data value="<%= tx.type === 'sell' ? -tx.amount : tx.amount %>"><%= tx.amountText %></data></p>
+  <p class="tx__value"><data value="<%= tx.total %>"><%= tx.totalText %></data></p>
+</li>
