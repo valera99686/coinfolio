@@ -19,6 +19,8 @@
   moved to the flat config (`eslint.config.js`).
 - Problem: Vite tried to bundle `<link rel="alternate" href="?lang=…">` and crashed with EISDIR;
   language links stay in the footer instead.
+- Problem: Schema Markup Validator read the watchlist cards' `name` as a URL — `itemprop` on
+  `<a>` takes the `href`; moved `itemprop="name"` to the card heading.
 
 Snippet I like — one partial renders both the table row and its microdata:
 
