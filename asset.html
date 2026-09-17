@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<%- include('partials/head', { titleKey: 'title.asset', descKey: 'desc.asset' }) %>
+<body class="page page--asset">
+<%- include('partials/header') %>
+
+<main class="page__main asset-page" id="main">
+  <nav class="breadcrumbs" aria-label="<%= t('crumbs.label') %>" data-i18n-attr="aria-label:crumbs.label">
+    <ol class="breadcrumbs__list">
+      <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="./assets.html" data-i18n="nav.assets"><%= t('nav.assets') %></a></li>
+      <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page"><%= btc.name %></span></li>
+    </ol>
+  </nav>
+
+  <article class="asset" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+    <header class="asset__header">
+      <img class="asset__logo" src="./img/coins/<%= btc.slug %>.svg" alt="" width="48" height="48">
+      <h1 class="asset__title" itemprop="name"><%= btc.name %></h1>
+      <ul class="tags asset__tags">
+        <li class="tags__item"><abbr itemprop="currency" title="<%= btc.name %>"><%= btc.symbol %></abbr></li>
+        <li class="tags__item"><span data-i18n="detail.rank"><%= t('detail.rank') %></span> <%= btc.rank %></li>
+        <li class="tags__item tags__item--accent" data-i18n="detail.inPortfolio"><%= t('detail.inPortfolio') %></li>
+      </ul>
+      <div class="asset__actions">
+        <button class="icon-button asset__watch" type="button" aria-pressed="false">
+          <%- include('partials/icon', { name: 'star' }) %>
+          <span class="visually-hidden"><span data-i18n="asset.watch"><%= t('asset.watch') %></span> <%= btc.name %></span>
+        </button>
+        <a class="button button--secondary" href="./profile.html#notifications">
+          <%- include('partials/icon', { name: 'bell' }) %>
+          <span data-i18n="detail.alert"><%= t('detail.alert') %></span>
+        </a>
+        <a class="button button--secondary" href="#add-transaction" data-i18n="form.sell"><%= t('form.sell') %></a>
+        <a class="button button--primary" href="#add-transaction">
+          <%- include('partials/icon', { name: 'plus' }) %>
+          <span data-i18n="detail.buy"><%= t('detail.buy') %></span>
+        </a>
+      </div>
+    </header>
+
+    <section class="price card asset__price" aria-labelledby="price-title">
+      <h2 class="price__title" id="price-title">BTC / USD</h2>
+      <p class="price__value" itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+        <data itemprop="price" value="<%= btc.price %>"><%= btc.priceText %></data>
+        <meta itemprop="priceCurrency" content="USD">
+      </p>
+      <p class="price__change">
+        <%- include('partials/change-badge', { trend: btc.trend, value: btc.change24h, text: btc.changeText }) %>
+        <data value="1474.48"><%= btc.changeValueText %></data>
+        <span data-i18n="dash.today"><%= t('dash.today') %></span>
+      </p>
+      <%- include('partials/period', { cls: 'price__period', name: 'price-period', periods: ['1h', '24h', '7d', '1m', '1y', 'all'], checked: '7d' }) %>
+      <figure class="chart price__chart">
+        <%- include('partials/picture', {
+          cls: 'chart__picture',
+          base: 'charts/btc-desktop', widths: [744, 1116, 1488], w: 744, h: 300,
+          sizes: '(min-width: 1280px) 744px, (min-width: 768px) calc(66vw - 48px), 100vw',
+          mobile: { base: 'charts/btc-mobile', widths: [328, 492, 656], w: 328, h: 180 },
+          altKey: 'detail.chartAlt'
+        }) %>
+        <%- include('partials/chart-data', { captionKey: 'detail.chartCaption', points: btc.chartPoints }) %>
+        <figcaption class="chart__caption" data-i18n="detail.chartCaption"><%= t('detail.chartCaption') %></figcaption>
+      </figure>
+    </section>
+
+    <section class="stats card asset__stats" aria-labelledby="stats-title">
+      <h2 class="stats__title" id="stats-title" data-i18n="stats.title"><%= t('stats.title') %></h2>
+      <p class="stats__updated"><span data-i18n="stats.updated"><%= t('stats.updated') %></span> <time datetime="2026-09-16T09:12">09:12</time></p>
+      <dl class="stats__list">
+        <div class="stats__item"><dt data-i18n="stats.cap"><%= t('stats.cap') %></dt><dd><data value="<%= btc.marketCap %>"><%= btc.marketCapText %></data></dd></div>
+        <div class="stats__item"><dt data-i18n="stats.volume"><%= t('stats.volume') %></dt><dd><%= btc.volumeText %></dd></div>
+        <div class="stats__item"><dt data-i18n="stats.supply"><%= t('stats.supply') %></dt><dd><%= btc.supplyText %></dd></div>
+        <div class="stats__item"><dt data-i18n="stats.ath"><%= t('stats.ath') %></dt><dd><%= btc.athText %></dd></div>
+        <div class="stats__item"><dt data-i18n="stats.range"><%= t('stats.range') %></dt><dd><%= btc.rangeText %></dd></div>
+        <div class="stats__item"><dt data-i18n="stats.dominance"><%= t('stats.dominance') %></dt><dd><%= market.dominance %></dd></div>
+      </dl>
+    </section>
+
+    <section class="about card asset__about" aria-labelledby="about-title">
+      <h2 class="about__title" id="about-title" data-i18n="about.title"><%= t('about.title') %></h2>
+      <p class="about__text" itemprop="description" data-i18n="about.text"><%= t('about.text') %></p>
+      <ul class="about__links">
+        <li class="about__link-item">
+          <a class="link-button" href="https://bitcoin.org/" rel="external noopener">
+            <%- include('partials/icon', { name: 'globe' }) %> bitcoin.org
+          </a>
+        </li>
+        <li class="about__link-item">
+          <a class="link-button" href="https://bitcoin.org/bitcoin.pdf" rel="external noopener" type="application/pdf">
+            <%- include('partials/icon', { name: 'download' }) %>
+            <span data-i18n="about.paper"><%= t('about.paper') %></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <aside class="position card asset__position" aria-labelledby="position-title">
+      <h2 class="position__title" id="position-title" data-i18n="position.title"><%= t('position.title') %></h2>
+      <p class="position__value"><data value="<%= btc.value %>"><%= btc.valueText %></data></p>
+      <p class="position__amount"><%= btc.amountText %> · <span data-i18n="position.share"><%= t('position.share') %></span></p>
+      <meter class="position__meter" min="0" max="100" value="<%= btc.share.toFixed(1) %>"><%= btc.shareText %></meter>
+      <dl class="position__list">
+        <div class="position__row"><dt data-i18n="position.avg"><%= t('position.avg') %></dt><dd><%= btc.avgBuyText %></dd></div>
+        <div class="position__row"><dt data-i18n="position.cost"><%= t('position.cost') %></dt><dd><%= btc.costBasisText %></dd></div>
+        <div class="position__row position__row--up"><dt data-i18n="position.pnl"><%= t('position.pnl') %></dt><dd><%= btc.pnlText %></dd></div>
+        <div class="position__row position__row--up"><dt data-i18n="position.return"><%= t('position.return') %></dt><dd><%= btc.returnText %></dd></div>
+      </dl>
+    </aside>
+
+    <section class="trade card asset__trade" id="add-transaction" aria-labelledby="trade-title">
+      <h2 class="trade__title" id="trade-title" data-i18n="nav.add"><%= t('nav.add') %></h2>
+      <form class="trade__form" action="./asset.html" method="post">
+        <fieldset class="segmented trade__type">
+          <legend class="segmented__legend visually-hidden" data-i18n="form.type"><%= t('form.type') %></legend>
+<% ['buy', 'sell', 'transfer'].forEach((type) => { %>
+          <input class="segmented__input" type="radio" name="type" id="trade-<%= type %>" value="<%= type %>"<%= type === 'buy' ? ' checked' : '' %>>
+          <label class="segmented__label" for="trade-<%= type %>" data-i18n="form.<%= type %>"><%= t('form.' + type) %></label>
+<% }) %>
+        </fieldset>
+        <div class="field">
+          <label class="field__label" for="trade-qty" data-i18n="form.qty"><%= t('form.qty') %></label>
+          <input class="field__input" id="trade-qty" name="quantity" type="number" inputmode="decimal"
+            min="0" step="0.0001" value="0.0250" required aria-describedby="trade-qty-hint">
+          <p class="field__hint" id="trade-qty-hint" data-i18n="form.qtyHint"><%= t('form.qtyHint') %></p>
+        </div>
+        <div class="field">
+          <label class="field__label" for="trade-price" data-i18n="form.price"><%= t('form.price') %></label>
+          <input class="field__input" id="trade-price" name="price" type="number" inputmode="decimal"
+            min="0" step="0.01" value="64218.40" required>
+        </div>
+        <div class="field">
+          <label class="field__label" for="trade-date" data-i18n="form.date"><%= t('form.date') %></label>
+          <input class="field__input" id="trade-date" name="date" type="datetime-local" value="2026-09-16T09:14" required>
+        </div>
+        <div class="field">
+          <label class="field__label" for="trade-note" data-i18n="form.note"><%= t('form.note') %></label>
+          <textarea class="field__textarea" id="trade-note" name="note" rows="2" maxlength="140"></textarea>
+        </div>
+        <dl class="trade__summary">
+          <div class="trade__row"><dt data-i18n="form.fee"><%= t('form.fee') %></dt><dd>$1.61</dd></div>
+          <div class="trade__row trade__row--total">
+            <dt data-i18n="form.total"><%= t('form.total') %></dt>
+            <dd><output class="trade__total" name="total" for="trade-qty trade-price">$1,607.07</output></dd>
+          </div>
+        </dl>
+        <button class="button button--primary button--block" type="submit">
+          <%- include('partials/icon', { name: 'plus' }) %>
+          <span data-i18n="nav.add"><%= t('nav.add') %></span>
+        </button>
+      </form>
+    </section>
+
+    <section class="history card asset__history" id="transactions" aria-labelledby="history-title">
+      <header class="section-header">
+        <h2 class="section-header__title" id="history-title" data-i18n="history.title"><%= t('history.title') %></h2>
+        <p class="section-header__subtitle" data-i18n="history.summary"><%= t('history.summary') %></p>
+        <nav class="tabs" aria-label="<%= t('history.filter') %>" data-i18n-attr="aria-label:history.filter">
+          <ul class="tabs__list">
+            <li class="tabs__item"><a class="tabs__link tabs__link--active" href="./asset.html?id=btc#transactions" aria-current="true" data-i18n="history.all"><%= t('history.all') %></a></li>
+            <li class="tabs__item"><a class="tabs__link" href="./asset.html?id=btc&amp;type=buy#transactions" data-i18n="history.buys"><%= t('history.buys') %></a></li>
+            <li class="tabs__item"><a class="tabs__link" href="./asset.html?id=btc&amp;type=sell#transactions" data-i18n="history.sells"><%= t('history.sells') %></a></li>
+          </ul>
+        </nav>
+      </header>
+      <table class="history__table">
+        <caption class="history__caption visually-hidden" data-i18n="history.caption"><%= t('history.caption') %></caption>
+        <thead>
+          <tr>
+            <th scope="col" data-i18n="history.date"><%= t('history.date') %></th>
+            <th scope="col" data-i18n="history.type"><%= t('history.type') %></th>
+            <th scope="col" data-i18n="history.amount"><%= t('history.amount') %></th>
+            <th scope="col" data-i18n="form.price"><%= t('form.price') %></th>
+            <th scope="col" data-i18n="history.value"><%= t('history.value') %></th>
+          </tr>
+        </thead>
+        <tbody>
+<% btcTransactions.forEach((tx) => { %>
+          <tr class="history__row history__row--<%= tx.type %>">
+            <th scope="row"><time datetime="<%= tx.date %>"><%= tx.dateText %></time></th>
+            <td data-i18n="form.<%= tx.type %>"><%= t('form.' + tx.type) %></td>
+            <td><data value="<%= tx.type === 'sell' ? -tx.amount : tx.amount %>"><%= tx.amountText %></data></td>
+            <td><data value="<%= tx.price %>"><%= tx.priceText %></data></td>
+            <td><data value="<%= tx.total %>"><%= tx.totalText %></data></td>
+          </tr>
+<% }) %>
+        </tbody>
+      </table>
+    </section>
+  </article>
+</main>
+
+<%- include('partials/footer') %>
+</body>
+</html>
