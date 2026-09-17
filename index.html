@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<%- include('partials/head', { titleKey: 'title.dashboard', descKey: 'desc.dashboard' }) %>
+<body class="page page--dashboard">
+<%- include('partials/header') %>
+
+<main class="page__main dashboard" id="main">
+  <header class="page-header">
+    <div class="page-header__titles">
+      <p class="page-header__overline" data-i18n="dash.greeting"><%= t('dash.greeting') %></p>
+      <h1 class="page-header__title" data-i18n="dash.title"><%= t('dash.title') %></h1>
+    </div>
+    <div class="page-header__actions">
+      <button class="button button--secondary" type="button">
+        <%- include('partials/icon', { name: 'download' }) %>
+        <span data-i18n="action.export"><%= t('action.export') %></span>
+      </button>
+      <a class="button button--primary" href="./asset.html#add-transaction">
+        <%- include('partials/icon', { name: 'plus' }) %>
+        <span data-i18n="nav.add"><%= t('nav.add') %></span>
+      </a>
+    </div>
+  </header>
+
+  <section class="balance card" aria-labelledby="balance-title">
+    <h2 class="balance__title" id="balance-title" data-i18n="dash.balance"><%= t('dash.balance') %></h2>
+    <p class="balance__value"><data value="<%= portfolio.total.toFixed(2) %>"><%= portfolio.totalText %></data></p>
+    <p class="balance__change">
+      <%- include('partials/change-badge', { trend: 'up', value: portfolio.changePct, text: fmt.pct(portfolio.changePct) }) %>
+      <data value="<%= portfolio.change %>"><%= portfolio.changeText %></data>
+      <span data-i18n="dash.today"><%= t('dash.today') %></span>
+    </p>
+    <%- include('partials/period', { cls: 'balance__period', name: 'balance-period', periods: ['1d', '1w', '1m', '1y', 'all'], checked: '1m' }) %>
+    <figure class="chart balance__chart">
+      <%- include('partials/picture', {
+        cls: 'chart__picture',
+        base: 'charts/portfolio-desktop', widths: [744, 1116, 1488], w: 744, h: 220,
+        sizes: '(min-width: 1280px) 744px, (min-width: 768px) calc(66vw - 48px), 100vw',
+        mobile: { base: 'charts/portfolio-mobile', widths: [296, 444, 592], w: 296, h: 120 },
+        altKey: 'dash.chartAlt'
+      }) %>
+      <%- include('partials/chart-data', { captionKey: 'dash.chartCaption', points: portfolio.chartPoints }) %>
+      <figcaption class="chart__caption" data-i18n="dash.chartCaption"><%= t('dash.chartCaption') %></figcaption>
+    </figure>
+  </section>
+
+  <section class="allocation card" aria-labelledby="allocation-title">
+    <h2 class="allocation__title" id="allocation-title" data-i18n="dash.allocation"><%= t('dash.allocation') %></h2>
+    <p class="allocation__subtitle"><span data-i18n="dash.assetsCount"><%= t('dash.assetsCount') %></span></p>
+    <figure class="allocation__chart">
+      <img class="allocation__donut" src="./img/allocation-donut.svg" width="176" height="176"
+        alt="<%= t('dash.donutAlt') %>" data-i18n-attr="alt:dash.donutAlt">
+      <figcaption class="allocation__caption" data-i18n="dash.donutCaption"><%= t('dash.donutCaption') %></figcaption>
+    </figure>
+    <ul class="legend">
+<% portfolio.allocation.forEach((item) => { %>
+      <li class="legend__item legend__item--<%= item.slug %>">
+        <span class="legend__label"><%= item.label %></span>
+        <data class="legend__value" value="<%= item.valueText.replace(/[$,]/g, '') %>"><%= item.valueText %></data>
+        <data class="legend__share" value="<%= item.share.toFixed(1) %>"><%= item.share.toFixed(1) %>%</data>
+      </li>
+<% }) %>
+    </ul>
+  </section>
+
+  <section class="kpis" aria-labelledby="kpis-title">
+    <h2 class="kpis__title visually-hidden" id="kpis-title" data-i18n="dash.kpis"><%= t('dash.kpis') %></h2>
+    <dl class="kpis__list">
+      <%- include('partials/stat', { labelKey: 'kpi.profit', icon: 'wallet', value: portfolio.profitText, trend: 'up', change: portfolio.profitPct, noteKey: 'kpi.allTime' }) %>
+      <%- include('partials/stat', { labelKey: 'kpi.change', icon: 'chart', value: portfolio.changeText, trend: 'up', change: portfolio.changePct, noteKey: 'kpi.vsYesterday' }) %>
+      <%- include('partials/stat', { labelKey: 'kpi.best', icon: 'arrow-up-right', value: 'Solana', trend: 'up', change: 5.87, note: 'SOL · 24h' }) %>
+      <%- include('partials/stat', { labelKey: 'kpi.worst', icon: 'arrow-down-right', value: 'Ethereum', trend: 'down', change: 1.12, note: 'ETH · 24h' }) %>
+    </dl>
+  </section>
+
+  <section class="holdings card" id="holdings" aria-labelledby="holdings-title">
+    <header class="section-header">
+      <h2 class="section-header__title" id="holdings-title" data-i18n="dash.holdings"><%= t('dash.holdings') %></h2>
+      <p class="section-header__subtitle" data-i18n="dash.holdingsSub"><%= t('dash.holdingsSub') %></p>
+      <nav class="tabs" aria-label="<%= t('dash.sections') %>" data-i18n-attr="aria-label:dash.sections">
+        <ul class="tabs__list">
+          <li class="tabs__item"><a class="tabs__link tabs__link--active" href="#holdings" aria-current="true" data-i18n="dash.tabHoldings"><%= t('dash.tabHoldings') %></a></li>
+          <li class="tabs__item"><a class="tabs__link" href="#recent" data-i18n="dash.tabTransactions"><%= t('dash.tabTransactions') %></a></li>
+          <li class="tabs__item"><a class="tabs__link" href="#watchlist" data-i18n="nav.watchlist"><%= t('nav.watchlist') %></a></li>
+        </ul>
+      </nav>
+      <a class="link-button section-header__link" href="./assets.html">
+        <span data-i18n="dash.allAssets"><%= t('dash.allAssets') %></span>
+        <%- include('partials/icon', { name: 'chevron-right' }) %>
+      </a>
+    </header>
+    <table class="asset-table">
+      <caption class="asset-table__caption visually-hidden" data-i18n="dash.holdingsCaption"><%= t('dash.holdingsCaption') %></caption>
+      <%- include('partials/asset-table-head') %>
+      <tbody class="asset-table__body">
+<% topHoldings.forEach((a, i) => { %>
+        <%- include('partials/asset-row', { a, rank: i + 1 }) %>
+<% }) %>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="recent card" id="recent" aria-labelledby="recent-title">
+    <header class="section-header">
+      <h2 class="section-header__title" id="recent-title" data-i18n="dash.recent"><%= t('dash.recent') %></h2>
+      <a class="link-button section-header__link" href="./asset.html#transactions">
+        <span data-i18n="action.seeAll"><%= t('action.seeAll') %></span>
+        <%- include('partials/icon', { name: 'chevron-right' }) %>
+      </a>
+    </header>
+    <ol class="tx-list">
+<% transactions.forEach((tx) => { %>
+      <%- include('partials/transaction', { tx }) %>
+<% }) %>
+    </ol>
+  </section>
+
+  <aside class="watchlist card" id="watchlist" aria-labelledby="watchlist-title">
+    <header class="section-header">
+      <h2 class="section-header__title" id="watchlist-title" data-i18n="nav.watchlist"><%= t('nav.watchlist') %></h2>
+      <a class="link-button section-header__link" href="./assets.html?filter=watchlist">
+        <span data-i18n="action.manage"><%= t('action.manage') %></span>
+        <%- include('partials/icon', { name: 'chevron-right' }) %>
+      </a>
+    </header>
+    <ul class="watchlist__list">
+<% watchlist.forEach((a) => { %>
+      <li class="watchlist__item"><%- include('partials/coin-card', { a }) %></li>
+<% }) %>
+    </ul>
+  </aside>
+</main>
+
+<%- include('partials/footer') %>
+</body>
+</html>
