@@ -1,0 +1,72 @@
+// Animation system: three keyframes (fade, slide, appear) and the classes that use them.
+// Only opacity and transform are animated, so the layout never reflows.
+@use '../abstracts' as *;
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(#{space(2)});
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slide-in-start {
+  from {
+    opacity: 0;
+    transform: translateX(calc(-1 * #{space(2)}));
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// Utility classes; delay with .anim-delay-1 ... .anim-delay-4 for staggered lists.
+.is-fading {
+  animation: fade-in duration(base) $easing both;
+}
+
+.is-sliding {
+  animation: slide-up duration(slow) $easing both;
+}
+
+.is-sliding-in {
+  animation: slide-in-start duration(slow) $easing both;
+}
+
+.is-appearing {
+  animation: appear duration(slow) $easing both;
+}
+
+@for $i from 1 through 4 {
+  .anim-delay-#{$i} {
+    animation-delay: #{$i * 60}ms;
+  }
+}

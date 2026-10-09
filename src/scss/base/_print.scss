@@ -1,0 +1,59 @@
+// Print: a clean black-on-white page with navigation and controls removed.
+@use '../abstracts' as *;
+
+@media print {
+  :root {
+    --color-bg-base: #fff;
+    --color-bg-surface: #fff;
+    --color-bg-elevated: #fff;
+    --color-border: #ccc;
+    --color-text: #000;
+    --color-text-muted: #444;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+  }
+
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .filters,
+  .pagination,
+  .page-header__actions,
+  .segmented,
+  .tabs,
+  .icon-button,
+  .button {
+    display: none !important;
+  }
+
+  .page__main {
+    max-width: none;
+    padding: 0;
+  }
+
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 9pt;
+  }
+
+  .card,
+  .stat-card,
+  .coin-card,
+  tr {
+    break-inside: avoid;
+  }
+
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  // Charts are images with a dark background: print the data table behind them instead.
+  .chart__data[open] {
+    display: block;
+  }
+}

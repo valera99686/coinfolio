@@ -1,0 +1,67 @@
+// Utility classes for spacing and visibility. They are generated from the token maps,
+// so the scale stays the same as in the design. `!important` is deliberate here.
+@use '../abstracts' as *;
+
+// Spacing: .mt-4, .mb-6, .p-3, .px-4, .gap-2 ... (key x 4 px)
+@each $key, $value in $space {
+  .mt-#{$key} {
+    margin-top: space($key) !important;
+  }
+
+  .mb-#{$key} {
+    margin-bottom: space($key) !important;
+  }
+
+  .p-#{$key} {
+    padding: space($key) !important;
+  }
+
+  .px-#{$key} {
+    padding-inline: space($key) !important;
+  }
+
+  .gap-#{$key} {
+    gap: space($key) !important;
+  }
+}
+
+// Visibility
+.is-hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  @extend %visually-hidden;
+}
+
+// Show or hide from a breakpoint up: .hide-md-up, .show-md-up
+@each $bp, $width in $breakpoints {
+  @if $bp != sm {
+    .hide-#{$bp}-up {
+      @include media-up($bp) {
+        display: none !important;
+      }
+    }
+
+    .show-#{$bp}-up {
+      display: none !important;
+
+      @include media-up($bp) {
+        display: revert !important;
+      }
+    }
+  }
+}
+
+// Text helpers
+.text-muted {
+  color: color(text-muted) !important;
+}
+
+.text-positive {
+  color: color(positive) !important;
+}
+
+.text-negative {
+  color: color(negative) !important;
+}
