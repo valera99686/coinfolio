@@ -19,7 +19,9 @@
     border-bottom: 2px solid transparent;
     color: color(text-muted);
     display: flex;
+    justify-content: center;
     min-height: rem($tap-target);
+    min-width: rem($tap-target);
     padding-inline: space(3);
     white-space: nowrap;
 

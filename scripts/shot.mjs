@@ -33,7 +33,7 @@ try {
   const query = opt.lang ? `?lang=${opt.lang}` : "";
   await tab.goto(`${ORIGIN}/${page}.html${query}`, { waitUntil: "networkidle0", timeout: 60000 });
   await tab.evaluate(() => document.fonts.ready);
-  await new Promise((r) => setTimeout(r, 400));
+  await new Promise((r) => setTimeout(r, 900));
 
   const overlay = await tab.evaluate(() => document.querySelector("vite-error-overlay")?.shadowRoot?.textContent?.slice(0, 1500));
   if (overlay) {

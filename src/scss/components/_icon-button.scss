@@ -21,7 +21,7 @@
   // Toggled state (watchlist star): `aria-pressed` for assistive tech, the colour for everyone.
   &--active,
   &[aria-pressed='true'] {
-    color: color(accent);
+    color: color(accent-text);
   }
 
   // Plain variant (star in tables and cards): no frame, but the same 44 px touch target.

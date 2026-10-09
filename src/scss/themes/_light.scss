@@ -15,11 +15,12 @@ $palette-light: (
   'text-on-accent': $light-text,
   'accent': $light-accent,
   'accent-hover': shade($light-accent, 10%),
-  // gold text on white needs a darker tone to pass 4.5:1
+  // gold text on white needs a darker tone to pass 4.5:1; green and red are darkened for the same reason
   'accent-soft': shade($light-accent, 55%),
+  'accent-text': shade($light-accent, 55%),
   'accent-subtle': rgba($light-accent, 0.2),
-  'positive': shade(#16c784, 38%),
-  'negative': shade(#ff5c65, 22%),
+  'positive': shade(#16c784, 42%),
+  'negative': shade(#ff5c65, 32%),
   'positive-subtle': rgba(#16c784, 0.16),
   'negative-subtle': rgba(#ff5c65, 0.14),
 );

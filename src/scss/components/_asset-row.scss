@@ -144,6 +144,7 @@
       'logo name'
       'logo symbol';
     grid-template-columns: auto 1fr;
+    min-height: rem($tap-target);
   }
 
   &__logo {

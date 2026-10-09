@@ -24,7 +24,7 @@
 
   <section class="market" aria-labelledby="market-title">
     <h2 class="market__title visually-hidden" id="market-title" data-i18n="market.title"><%= t('market.title') %></h2>
-    <dl class="market__list">
+    <dl class="market__list" tabindex="0">
       <%- include('partials/stat', { labelKey: 'market.cap', cls: 'market__item', icon: 'globe', value: market.capText, trend: 'up', change: market.capChange, noteKey: 'market.capNote' }) %>
       <%- include('partials/stat', { labelKey: 'market.volume', cls: 'market__item', icon: 'chart', value: market.volumeText, trend: 'down', change: Math.abs(market.volumeChange), noteKey: 'kpi.vsYesterday' }) %>
       <%- include('partials/stat', { labelKey: 'market.dominance', cls: 'market__item', icon: 'assets', value: market.dominance, trend: 'up', change: 0.3, noteKey: 'market.dominanceNote' }) %>

@@ -39,6 +39,14 @@
       width: rem(20);
     }
 
+    // Transparent extension: the touch target is 44 px high although the track is 28 px.
+    &::after {
+      content: '';
+      inset-block: calc(-1 * #{space(2)});
+      inset-inline: 0;
+      position: absolute;
+    }
+
     &:focus-visible {
       @include focus-ring;
     }

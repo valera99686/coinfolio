@@ -270,3 +270,11 @@
   white-space: normal;
   width: auto;
 }
+
+// Entrance animation (keyframes in base/_animations): the block fades in and slides up once when the
+// page loads. $step staggers neighbours by 60 ms each. Only opacity and transform change, so nothing reflows.
+@mixin reveal($step: 0) {
+  animation: slide-up f.duration(slow) v.$easing backwards;
+  animation-delay: $step * 60ms;
+}
+

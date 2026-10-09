@@ -17,3 +17,10 @@
     }
   }
 }
+
+// The first six top-level blocks of every page appear one after another.
+@for $i from 1 through 6 {
+  .page__main > :nth-child(#{$i}) {
+    @include reveal($i - 1);
+  }
+}
