@@ -1,3 +1,23 @@
 @use '../abstracts' as *;
 
-// Block .about (asset page).
+// "About Bitcoin": short text and two outbound links.
+.about {
+  &__title {
+    @include text-style(h3);
+  }
+
+  &__text {
+    @include text-style(body-m);
+
+    color: color(text-muted);
+    margin-top: space(3);
+    max-width: 72ch;
+  }
+
+  &__links {
+    @include flex(row, flex-start, center, space(2) space(5));
+
+    flex-wrap: wrap;
+    margin-top: space(3);
+  }
+}

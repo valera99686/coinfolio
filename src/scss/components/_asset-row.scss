@@ -196,35 +196,7 @@
   }
 
   &__meter {
-    appearance: none;
-    background: color(bg-elevated);
-    border: 0;
-    border-radius: radius(full);
-    height: rem(6);
-    vertical-align: middle;
-
-    // No standard selector for the parts of <meter>: the bar and its filled value.
-    /* stylelint-disable selector-no-vendor-prefix */
-    width: rem(80);
-
-    &::-webkit-meter-bar {
-      background: color(bg-elevated);
-      border: 0;
-      border-radius: radius(full);
-    }
-
-    &::-webkit-meter-optimum-value,
-    &::-webkit-meter-suboptimum-value,
-    &::-webkit-meter-even-less-good-value {
-      background: color(accent);
-      border-radius: radius(full);
-    }
-
-    &::-moz-meter-bar {
-      background: color(accent);
-      border-radius: radius(full);
-    }
-    /* stylelint-enable selector-no-vendor-prefix */
+    @include meter-bar(rem(6), rem(80));
   }
 
   &__share {

@@ -1,11 +1,9 @@
 @use '../abstracts' as *;
 
 // One transaction row: icon tile, title + date, amount + value. The type modifier only sets
-// three custom properties (tile colour, tile background, amount colour); the rules stay the same.
+// three custom properties (see tx-tones); the rules stay the same.
 .tx {
-  --tx-color: var(--color-accent);
-  --tx-tint: var(--color-accent-subtle);
-  --tx-amount: var(--color-text);
+  @include tx-tones;
 
   border-bottom: 1px solid color(border);
   display: grid;
@@ -18,18 +16,6 @@
 
   &:last-child {
     border-bottom: 0;
-  }
-
-  &--buy {
-    --tx-color: var(--color-positive);
-    --tx-tint: var(--color-positive-subtle);
-    --tx-amount: var(--color-positive);
-  }
-
-  &--sell {
-    --tx-color: var(--color-negative);
-    --tx-tint: var(--color-negative-subtle);
-    --tx-amount: var(--color-negative);
   }
 
   &__icon {

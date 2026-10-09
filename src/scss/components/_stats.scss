@@ -1,3 +1,42 @@
 @use '../abstracts' as *;
 
-// Block .stats (asset page).
+// Market statistics: a definition list in a grid, two columns on phones and three from 768 px.
+.stats {
+  &__title {
+    @include text-style(h3);
+  }
+
+  &__updated {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+    margin-top: space(1);
+  }
+
+  &__list {
+    display: grid;
+    gap: space(5) space(4);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: space(5);
+
+    @include media-up(md) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  &__item {
+    @include flex(column, flex-start, stretch, space(1));
+
+    min-width: 0;
+
+    dt {
+      @extend %overline;
+    }
+
+    dd {
+      @include text-style(h3);
+
+      overflow-wrap: anywhere;
+    }
+  }
+}

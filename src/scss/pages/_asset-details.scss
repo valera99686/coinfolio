@@ -1,4 +1,12 @@
 @use '../abstracts' as *;
 
-// Asset details page (asset.html): .asset-page
-// Page-level composition only: how the blocks are arranged on the 12-column grid.
+// Asset details page (asset.html): breadcrumbs above one article.
+// The article arranges its own panels (components/asset), this file only places the two blocks.
+.asset-page {
+  @include row;
+
+  > .breadcrumbs,
+  > .asset {
+    @include col(12);
+  }
+}

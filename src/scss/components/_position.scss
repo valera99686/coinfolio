@@ -1,3 +1,59 @@
 @use '../abstracts' as *;
 
-// Block .position (asset page).
+// "Your position": value, amount, share-of-portfolio bar and a list of figures.
+// The title is a small caption on phones and a regular panel heading from 768 px.
+.position {
+  &__title {
+    @include text-style-responsive(overline, h3);
+
+    color: color(text-muted);
+
+    @include media-up(md) {
+      color: color(text);
+      text-transform: none;
+    }
+  }
+
+  &__value {
+    @include text-style-responsive(h2-mobile, h2);
+
+    margin-top: space(3);
+  }
+
+  &__amount {
+    @include text-style(body-m);
+
+    color: color(text-muted);
+    margin-top: space(1);
+  }
+
+  &__meter {
+    @include meter-bar(rem(6));
+
+    display: block;
+    margin-top: space(4);
+  }
+
+  &__list {
+    @include flex(column, flex-start, stretch, space(3));
+
+    border-top: 1px solid color(border);
+    margin-top: space(4);
+    padding-top: space(4);
+  }
+
+  &__row {
+    @include flex(row, space-between, center, space(3));
+    @include text-style(body-m);
+
+    font-variant-numeric: tabular-nums;
+
+    dt {
+      color: color(text-muted);
+    }
+
+    &--up dd {
+      color: color(positive);
+    }
+  }
+}

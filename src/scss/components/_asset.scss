@@ -1,3 +1,168 @@
 @use '../abstracts' as *;
 
-// Block .asset (asset page).
+// Asset details article: header (logo, name, tags, actions) and the arrangement of its panels.
+// Below 1280 px the wrappers __main and __side disappear (display: contents), so every panel is a
+// full-width flex item and `order` puts them in the phone order of the Figma file.
+// From 1280 px the wrappers become the 8-column and the 4-column stack.
+.asset {
+  @include row;
+
+  &__header,
+  &__history {
+    @include col(12);
+  }
+
+  &__main,
+  &__side {
+    display: contents;
+
+    @include media-up(lg) {
+      @include flex(column, flex-start, stretch, var(--grid-gutter));
+
+      min-width: 0;
+    }
+  }
+
+  &__main {
+    @include media-up(lg) {
+      @include col(8);
+    }
+  }
+
+  &__side {
+    @include media-up(lg) {
+      @include col(4);
+    }
+  }
+
+  &__price,
+  &__stats,
+  &__about,
+  &__position,
+  &__trade {
+    flex: 1 0 100%;
+
+    @include media-up(lg) {
+      flex: none;
+    }
+  }
+
+  &__price {
+    order: 1;
+  }
+
+  &__position {
+    order: 2;
+  }
+
+  &__stats {
+    order: 3;
+  }
+
+  &__about {
+    order: 4;
+  }
+
+  &__trade {
+    order: 5;
+  }
+
+  &__history {
+    order: 6;
+  }
+
+  // Phones: logo + name + tags, then the buttons on their own rows; the star sits in the corner.
+  &__header {
+    align-items: center;
+    display: grid;
+    gap: 0 space(4);
+    grid-template-areas:
+      'logo title'
+      'logo tags'
+      'actions actions';
+    grid-template-columns: auto 1fr;
+    margin-bottom: space(4);
+    position: relative;
+
+    @include media-up(md) {
+      grid-template-areas:
+        'logo title actions'
+        'logo tags actions';
+      grid-template-columns: auto 1fr auto;
+    }
+  }
+
+  &__logo {
+    border-radius: radius(full);
+    grid-area: logo;
+    height: rem(48);
+    width: rem(48);
+  }
+
+  &__title,
+  &__tags {
+    // Keeps the text clear of the star in the corner.
+    padding-inline-end: space(12);
+
+    @include media-up(md) {
+      padding-inline-end: 0;
+    }
+  }
+
+  &__title {
+    @include text-style-responsive(h1-mobile, h1);
+
+    align-self: end;
+    grid-area: title;
+  }
+
+  &__tags {
+    align-self: start;
+    grid-area: tags;
+    margin-top: space(1);
+  }
+
+  &__actions {
+    @include flex(row, flex-start, center, space(3));
+
+    flex-wrap: wrap;
+    grid-area: actions;
+    margin-top: space(4);
+
+    @include media-up(md) {
+      flex-wrap: nowrap;
+      margin-top: 0;
+    }
+  }
+
+  // Phones: Sell and Buy share a row, "Set alert" is a full-width row under them.
+  &__action {
+    flex: 1 1 40%;
+    order: 1;
+
+    @include media-up(md) {
+      flex: none;
+      order: 0;
+    }
+  }
+
+  &__alert {
+    flex: 1 1 100%;
+    order: 2;
+
+    @include media-up(md) {
+      flex: none;
+      order: 0;
+    }
+  }
+
+  &__watch {
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    position: absolute;
+
+    @include media-up(md) {
+      position: static;
+    }
+  }
+}

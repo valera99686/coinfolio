@@ -1,3 +1,49 @@
 @use '../abstracts' as *;
 
-// Block .trade (asset page).
+// "Add transaction" form: type switch, fields, fee + total, submit.
+.trade {
+  &__title {
+    @include text-style(h3);
+  }
+
+  &__form {
+    @include flex(column, flex-start, stretch, space(4));
+
+    margin-top: space(5);
+  }
+
+  // Full width inside the panel (the shared segmented control only stretches on phones).
+  &__type {
+    display: flex;
+    width: 100%;
+
+    .segmented__label {
+      flex: 1;
+    }
+  }
+
+  &__summary {
+    @include flex(column, flex-start, stretch, space(2));
+
+    border-top: 1px solid color(border);
+    padding-top: space(4);
+  }
+
+  &__row {
+    @include flex(row, space-between, center, space(3));
+    @include text-style(body-m);
+
+    color: color(text-muted);
+    font-variant-numeric: tabular-nums;
+
+    dd {
+      color: color(text);
+    }
+  }
+
+  &__total {
+    @include text-style(h3);
+
+    color: color(text);
+  }
+}

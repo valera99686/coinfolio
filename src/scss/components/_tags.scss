@@ -1,3 +1,26 @@
 @use '../abstracts' as *;
 
-// Block .tags (asset page).
+// Small chips under the asset name: ticker, rank, "in portfolio".
+.tags {
+  @include flex(row, flex-start, center, space(2));
+
+  flex-wrap: wrap;
+
+  abbr {
+    text-decoration: none;
+  }
+
+  &__item {
+    @include text-style(body-s);
+
+    background: color(bg-elevated);
+    border-radius: radius(sm);
+    color: color(text-muted);
+    padding: space(1) space(2);
+
+    &--accent {
+      background: color(accent-subtle);
+      color: color(accent);
+    }
+  }
+}

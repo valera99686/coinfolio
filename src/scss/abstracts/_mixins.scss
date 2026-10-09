@@ -140,3 +140,133 @@
     }
   }
 }
+
+// ---- Compound panels ---------------------------------------------------
+// "Big number + change + period switch + chart" panel shared by the balance (dashboard)
+// and the price (asset page). $ratio-sm / $ratio-md are the exported chart PNG proportions.
+// The including block must have the elements __title, __value, __change, __period and __chart.
+@mixin metric-panel($ratio-sm, $ratio-md) {
+  --chart-ratio: #{$ratio-sm};
+
+  align-content: start;
+  display: grid;
+  gap: f.space(3);
+  grid-template-areas:
+    'title'
+    'value'
+    'change'
+    'period'
+    'chart';
+
+  @include media-up(md) {
+    --chart-ratio: #{$ratio-md};
+
+    gap: f.space(2) f.space(4);
+    grid-template-areas:
+      'title period'
+      'value period'
+      'change period'
+      'chart chart';
+    grid-template-columns: 1fr auto;
+  }
+
+  &__title {
+    @include text-style(overline);
+
+    color: f.color(text-muted);
+    grid-area: title;
+  }
+
+  &__value {
+    @include text-style-responsive(display-mobile, display);
+
+    grid-area: value;
+  }
+
+  &__change {
+    @include flex(row, flex-start, center, f.space(1));
+    @include text-style(body-m);
+
+    color: f.color(text-muted);
+    flex-wrap: wrap;
+    grid-area: change;
+
+    // "+$1,474.48 today" stays together, the badge gets a wider gap.
+    .badge {
+      margin-inline-end: f.space(2);
+    }
+  }
+
+  &__period {
+    align-self: start;
+    grid-area: period;
+  }
+
+  &__chart {
+    grid-area: chart;
+    margin-top: f.space(2);
+  }
+}
+
+// Thin progress bar for <meter> (share of portfolio). There is no standard selector for the parts of
+// <meter>, so the bar and its filled value need the vendor pseudo-elements.
+@mixin meter-bar($height, $width: 100%) {
+  appearance: none;
+  background: f.color(bg-elevated);
+  border: 0;
+  border-radius: f.radius(full);
+  height: $height;
+  vertical-align: middle;
+  width: $width;
+
+  /* stylelint-disable selector-no-vendor-prefix */
+  &::-webkit-meter-bar {
+    background: f.color(bg-elevated);
+    border: 0;
+    border-radius: f.radius(full);
+  }
+
+  &::-webkit-meter-optimum-value,
+  &::-webkit-meter-suboptimum-value,
+  &::-webkit-meter-even-less-good-value {
+    background: f.color(accent);
+    border-radius: f.radius(full);
+  }
+
+  &::-moz-meter-bar {
+    background: f.color(accent);
+    border-radius: f.radius(full);
+  }
+  /* stylelint-enable selector-no-vendor-prefix */
+}
+
+// Colours of a transaction type as custom properties: tile background, tile/icon colour and amount colour.
+// The `--buy` / `--sell` modifiers of the including block only swap these three values.
+@mixin tx-tones {
+  --tx-color: #{f.color(accent)};
+  --tx-tint: #{f.color(accent-subtle)};
+  --tx-amount: #{f.color(text)};
+
+  &--buy {
+    --tx-color: #{f.color(positive)};
+    --tx-tint: #{f.color(positive-subtle)};
+    --tx-amount: #{f.color(positive)};
+  }
+
+  &--sell {
+    --tx-color: #{f.color(negative)};
+    --tx-tint: #{f.color(negative-subtle)};
+    --tx-amount: #{f.color(negative)};
+  }
+}
+
+// Undo %visually-hidden from a breakpoint on (the text is hidden on phones only).
+@mixin visually-hidden-reset {
+  clip-path: none;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: normal;
+  width: auto;
+}

@@ -52,9 +52,18 @@ try {
         continue;
       }
       if (box.right > vw + 1 || box.left < -1) {
-        const parentScroll = el.closest("[data-scroll], .scroll-x");
-        if (!parentScroll) {
-          offenders.push(`${el.tagName.toLowerCase()}.${[...el.classList].join(".")} [${Math.round(box.left)}..${Math.round(box.right)}]`);
+        // An ancestor that clips or scrolls its overflow (scroll strips, visually hidden text) cannot widen the page.
+        let clipped = false;
+        for (let up = el.parentElement; up && up !== document.body; up = up.parentElement) {
+          if (/(auto|scroll|hidden|clip)/.test(getComputedStyle(up).overflowX)) {
+            clipped = true;
+            break;
+          }
+        }
+        if (!clipped) {
+          const parent = el.parentElement ? `${el.parentElement.tagName.toLowerCase()}.${[...el.parentElement.classList].join(".")}` : "";
+          const text = (el.textContent || "").trim().slice(0, 24);
+          offenders.push(`${el.tagName.toLowerCase()}.${[...el.classList].join(".")} in ${parent} "${text}" [${Math.round(box.left)}..${Math.round(box.right)}]`);
         }
       }
     }
