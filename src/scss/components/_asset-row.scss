@@ -1,3 +1,247 @@
 @use '../abstracts' as *;
 
-// Block .asset-row (assets page).
+// One asset. Below 1280 px the row is a card: [asset | sparkline | price / change].
+// From 1280 px it is a table row with all eight cells. The --holding variant (dashboard)
+// shows the value of the user's position instead of the market price in the card.
+.asset-row {
+  @include transition(background-color);
+
+  align-items: center;
+  background: color(bg-surface);
+  border: 1px solid color(border);
+  border-radius: radius(lg);
+  display: grid;
+  gap: space(1) space(3);
+  grid-template-areas:
+    'asset chart price'
+    'asset chart change';
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  padding: space(3) space(4);
+
+  @include hover {
+    background: color(bg-elevated);
+  }
+
+  @include media-up(lg) {
+    background: none;
+    border: 0;
+    display: table-row;
+    padding: 0;
+  }
+
+  // Table cells (>= 1280 px): padding, divider, alignment.
+  @include media-up(lg) {
+    &__rank,
+    &__asset,
+    &__price,
+    &__change,
+    &__holdings,
+    &__allocation,
+    &__chart,
+    &__actions {
+      border-bottom: 1px solid color(border);
+      padding: space(3) space(4);
+      vertical-align: middle;
+    }
+
+    &__price,
+    &__change {
+      text-align: end;
+    }
+  }
+
+  // Cells that only exist in the table layout.
+  &__rank,
+  &__allocation,
+  &__actions {
+    display: none;
+
+    @include media-up(lg) {
+      display: table-cell;
+    }
+  }
+
+  &__asset {
+    grid-area: asset;
+    min-width: 0;
+
+    @include media-up(lg) {
+      display: table-cell;
+    }
+  }
+
+  &__price {
+    grid-area: price;
+
+    @include media-up(lg) {
+      display: table-cell;
+    }
+  }
+
+  &__change {
+    grid-area: change;
+    justify-self: end;
+
+    @include media-up(lg) {
+      display: table-cell;
+    }
+  }
+
+  &__holdings {
+    display: none;
+    text-align: end;
+
+    @include media-up(lg) {
+      display: table-cell;
+    }
+  }
+
+  &__chart {
+    grid-area: chart;
+
+    @include media-up(lg) {
+      display: table-cell;
+    }
+  }
+
+  // Mobile card of the dashboard: the position value takes the price's place.
+  &--holding &__price {
+    display: none;
+
+    @include media-up(lg) {
+      display: table-cell;
+    }
+  }
+
+  &--holding &__holdings {
+    display: block;
+    grid-area: price;
+
+    @include media-up(lg) {
+      display: table-cell;
+    }
+  }
+
+  &--holding &__amount {
+    display: none;
+
+    @include media-up(lg) {
+      display: block;
+    }
+  }
+
+  &__rank {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+  }
+
+  &__link {
+    align-items: center;
+    display: grid;
+    gap: 0 space(3);
+    grid-template-areas:
+      'logo name'
+      'logo symbol';
+    grid-template-columns: auto 1fr;
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__name {
+    @include text-style(body-m-medium);
+    @include truncate;
+
+    align-self: end;
+    grid-area: name;
+  }
+
+  &__symbol {
+    @include text-style(body-s);
+
+    align-self: start;
+    color: color(text-muted);
+    grid-area: symbol;
+  }
+
+  &__price {
+    @include text-style(body-m-medium);
+
+    text-align: end;
+  }
+
+  &__value {
+    @include text-style(body-m-medium);
+
+    display: block;
+  }
+
+  &__amount {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+    display: block;
+  }
+
+  &__empty {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+  }
+
+  &__allocation {
+    white-space: nowrap;
+  }
+
+  &__meter {
+    appearance: none;
+    background: color(bg-elevated);
+    border: 0;
+    border-radius: radius(full);
+    height: rem(6);
+    vertical-align: middle;
+
+    // No standard selector for the parts of <meter>: the bar and its filled value.
+    /* stylelint-disable selector-no-vendor-prefix */
+    width: rem(80);
+
+    &::-webkit-meter-bar {
+      background: color(bg-elevated);
+      border: 0;
+      border-radius: radius(full);
+    }
+
+    &::-webkit-meter-optimum-value,
+    &::-webkit-meter-suboptimum-value,
+    &::-webkit-meter-even-less-good-value {
+      background: color(accent);
+      border-radius: radius(full);
+    }
+
+    &::-moz-meter-bar {
+      background: color(accent);
+      border-radius: radius(full);
+    }
+    /* stylelint-enable selector-no-vendor-prefix */
+  }
+
+  &__share {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+    margin-inline-start: space(2);
+  }
+
+  &__sparkline {
+    aspect-ratio: 3 / 1;
+    height: auto;
+    width: rem(72);
+
+    @include media-up(lg) {
+      width: rem(96);
+    }
+  }
+
+}

@@ -1,3 +1,6 @@
 @use '../abstracts' as *;
 
-// Block .tx-list (dashboard page).
+// Ordered list of transactions (<ol class="tx-list"> of .tx rows).
+.tx-list {
+  display: grid;
+}

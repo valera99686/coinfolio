@@ -1,3 +1,59 @@
 @use '../abstracts' as *;
 
-// Block .asset-table (assets page).
+// The asset table. Desktop (>= 1280 px): a real table. Below that every row is drawn as a
+// card (see _asset-row.scss), so the table parts are plain blocks and the header is hidden.
+.asset-table {
+  display: block;
+  width: 100%;
+
+  @include media-up(lg) {
+    display: table;
+  }
+
+  &__caption {
+    @extend %visually-hidden;
+  }
+
+  &__head {
+    display: none;
+
+    @include media-up(lg) {
+      display: table-header-group;
+    }
+  }
+
+  &__body {
+    display: grid;
+    gap: space(3);
+
+    @include media-up(lg) {
+      display: table-row-group;
+    }
+  }
+
+  &__th {
+    @extend %overline;
+
+    border-bottom: 1px solid color(border);
+    padding: space(3) space(4);
+    text-align: start;
+    white-space: nowrap;
+
+    &--numeric {
+      text-align: end;
+    }
+  }
+
+  &__sort {
+    @extend %overline;
+    @include flex(row, flex-start, center, space(1));
+    @include transition(color);
+
+    display: inline-flex;
+    min-height: rem($tap-target);
+
+    @include hover {
+      color: color(text);
+    }
+  }
+}

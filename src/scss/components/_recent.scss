@@ -1,3 +1,8 @@
 @use '../abstracts' as *;
 
-// Block .recent (dashboard page).
+// "Recent transactions" panel: a heading row and the list of transactions.
+.recent {
+  @include flex(column, flex-start, stretch);
+
+  min-width: 0;
+}

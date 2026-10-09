@@ -1,3 +1,41 @@
 @use '../abstracts' as *;
 
-// Block .kpis (dashboard page).
+// Four KPI tiles. Mobile: a swipeable strip that bleeds to the screen edges (scroll-snap).
+// Tablet: 2 x 2. Desktop: 4 across, each spanning 3 of the 12 columns.
+.kpis {
+  min-width: 0;
+
+  // `position: relative` makes the strip the containing block of visually hidden text inside it,
+  // so that text cannot widen the page while the strip is scrolled.
+  &__list {
+    @include flex(row, flex-start, stretch, var(--grid-gutter));
+
+    margin-inline: calc(-1 * var(--page-margin));
+    overflow-x: auto;
+    padding-inline: var(--page-margin);
+    position: relative;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    @include media-up(md) {
+      @include row;
+
+      margin-inline: 0;
+      overflow: visible;
+      padding-inline: 0;
+    }
+  }
+
+  &__item {
+    flex: 0 0 min(80%, #{rem(280)});
+    scroll-snap-align: start;
+
+    @include media-up(md) {
+      @include col(6);
+    }
+
+    @include media-up(lg) {
+      @include col(3);
+    }
+  }
+}

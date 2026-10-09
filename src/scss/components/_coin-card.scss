@@ -1,3 +1,77 @@
 @use '../abstracts' as *;
 
-// Block .coin-card (dashboard page).
+// Coin tile in the watchlist: header (logo, name, symbol, star), price + change, sparkline.
+.coin-card {
+  @include transition(border-color, box-shadow, transform);
+
+  align-items: end;
+  background: color(bg-base);
+  border: 1px solid color(border);
+  border-radius: radius(lg);
+  display: grid;
+  gap: space(2) space(3);
+  grid-template-areas:
+    'header header'
+    'price spark'
+    'change spark';
+  grid-template-columns: 1fr auto;
+  padding: space(4);
+
+  @include hover {
+    border-color: color(accent-soft);
+    box-shadow: var(--shadow-card);
+    transform: translateY(calc(-1 * #{space(1)}));
+  }
+
+  &__header {
+    align-items: center;
+    display: grid;
+    gap: 0 space(3);
+    grid-area: header;
+    grid-template-areas:
+      'logo title watch'
+      'logo symbol watch';
+    grid-template-columns: auto 1fr auto;
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__title {
+    @include text-style(body-m-medium);
+
+    align-self: end;
+    grid-area: title;
+  }
+
+  &__symbol {
+    @include text-style(body-s);
+
+    align-self: start;
+    color: color(text-muted);
+    grid-area: symbol;
+  }
+
+  // The star keeps its 44 px target; the negative margin only pulls it into the card corner.
+  &__watch {
+    grid-area: watch;
+    margin: calc(-1 * #{space(2)});
+  }
+
+  &__price {
+    @include text-style(h2);
+
+    grid-area: price;
+  }
+
+  &__badge {
+    grid-area: change;
+    justify-self: start;
+  }
+
+  &__sparkline {
+    align-self: end;
+    grid-area: spark;
+  }
+}

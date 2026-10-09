@@ -13,38 +13,11 @@
     margin-inline-start: auto;
     padding-inline: space(1) space(3);
     width: rem($search-width);
+  }
 
-    &:focus-within {
+  &:focus-within {
+    @include media-up(lg) {
       border-color: color(accent-soft);
-    }
-
-    &__input {
-      background: none;
-      border: 0;
-      display: block;
-      flex: 1;
-      min-width: 0;
-      padding: 0;
-
-      &::placeholder {
-        color: color(text-muted);
-      }
-
-      // The whole field shows the focus ring (see :focus-within above).
-      &:focus-visible {
-        outline: none;
-      }
-    }
-
-    &__hint {
-      @include text-style(body-s);
-
-      background: color(bg-elevated);
-      border: 1px solid color(border);
-      border-radius: radius(sm);
-      color: color(text-muted);
-      display: block;
-      padding: space(1) space(2);
     }
   }
 
@@ -56,8 +29,41 @@
     order: -1;
   }
 
-  &__input,
-  &__hint {
+  // Hidden on phones, shown from the desktop breakpoint.
+  &__input {
     display: none;
+
+    @include media-up(lg) {
+      background: none;
+      border: 0;
+      display: block;
+      flex: 1;
+      min-width: 0;
+      padding: 0;
+    }
+
+    &::placeholder {
+      color: color(text-muted);
+    }
+
+    // The whole field shows the focus ring (see :focus-within above).
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__hint {
+    @include text-style(body-s);
+
+    display: none;
+
+    @include media-up(lg) {
+      background: color(bg-elevated);
+      border: 1px solid color(border);
+      border-radius: radius(sm);
+      color: color(text-muted);
+      display: block;
+      padding: space(1) space(2);
+    }
   }
 }

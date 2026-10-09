@@ -23,6 +23,17 @@
     order: 1;
   }
 
+  // Phones: tabs go on their own line below the subtitle, so title and link share the first row.
+  &__tabs {
+    flex-basis: 100%;
+    order: 2;
+
+    @include media-up(md) {
+      flex-basis: auto;
+      order: 0;
+    }
+  }
+
   &__link {
     margin-inline-end: calc(-1 * #{space(1)});
   }

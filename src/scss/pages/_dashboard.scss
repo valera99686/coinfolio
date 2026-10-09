@@ -1,4 +1,42 @@
 @use '../abstracts' as *;
 
-// Dashboard page (index.html): .dashboard
-// Page-level composition only: how the blocks are arranged on the 12-column grid.
+// Dashboard (index.html). The page is a 12-column row; every section chooses its span per breakpoint.
+//   mobile: one column   tablet (>= 768): paired sections   desktop (>= 1280): 8 + 4 / 3 x 4 / 12 / 6 + 6
+.dashboard {
+  @include row;
+
+  > .page-header {
+    @include col(12);
+
+    margin-bottom: space(2);
+  }
+
+  > .balance,
+  > .kpis,
+  > .holdings {
+    @include col(12);
+  }
+
+  > .allocation {
+    @include col(12);
+
+    @include media-up(lg) {
+      @include col(4);
+    }
+  }
+
+  > .balance {
+    @include media-up(lg) {
+      @include col(8);
+    }
+  }
+
+  > .recent,
+  > .watchlist {
+    @include col(12);
+
+    @include media-up(lg) {
+      @include col(6);
+    }
+  }
+}

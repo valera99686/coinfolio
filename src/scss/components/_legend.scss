@@ -1,3 +1,69 @@
 @use '../abstracts' as *;
 
-// Block .legend (dashboard page).
+// Allocation legend: coloured dot, name, amount, share. The dot colour is a custom property
+// set by the modifier, so adding a coin needs one line in the list below and no new rule.
+$legend-items: btc, eth, sol, others;
+
+.legend {
+  display: grid;
+  gap: space(3);
+  min-width: 0;
+
+  &__item {
+    --legend-color: var(--color-text-muted);
+
+    align-items: center;
+    display: grid;
+    gap: 0 space(2);
+    grid-template-areas:
+      'dot label share'
+      '. value value';
+    grid-template-columns: auto 1fr auto;
+
+    // On wide cards everything fits on one line.
+    @include media-up(md) {
+      column-gap: space(3);
+      grid-template-areas: 'dot label value share';
+      grid-template-columns: auto 1fr auto 4ch;
+    }
+
+    &::before {
+      background: var(--legend-color);
+      border-radius: radius(full);
+      content: '';
+      grid-area: dot;
+      height: rem(10);
+      width: rem(10);
+    }
+
+    @each $name in $legend-items {
+      &--#{$name} {
+        --legend-color: var(--coin-#{$name});
+      }
+    }
+  }
+
+  &__label {
+    @include text-style(body-m);
+
+    grid-area: label;
+  }
+
+  &__value {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+    grid-area: value;
+
+    @include media-up(md) {
+      text-align: end;
+    }
+  }
+
+  &__share {
+    @include text-style(body-m-medium);
+
+    grid-area: share;
+    text-align: end;
+  }
+}

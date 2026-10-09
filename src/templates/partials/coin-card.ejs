@@ -5,7 +5,7 @@
       <a class="coin-card__link" href="./asset.html?id=<%= a.slug %>"><%= a.name %></a>
     </h3>
     <abbr class="coin-card__symbol" itemprop="currency" title="<%= a.name %>"><%= a.symbol %></abbr>
-    <button class="icon-button icon-button--active coin-card__watch" type="button" aria-pressed="true">
+    <button class="icon-button icon-button--plain icon-button--active coin-card__watch" type="button" aria-pressed="true">
       <%- include('icon', { name: 'star' }) %>
       <span class="visually-hidden"><span data-i18n="asset.watch"><%= t('asset.watch') %></span> <%= a.name %></span>
     </button>
@@ -14,7 +14,7 @@
     <data itemprop="price" value="<%= a.price %>"><%= a.priceText %></data>
     <meta itemprop="priceCurrency" content="USD">
   </p>
-  <%- include('change-badge', { trend: a.trend, value: a.change24h, text: a.changeText }) %>
+  <%- include('change-badge', { trend: a.trend, value: a.change24h, text: a.changeText, cls: 'coin-card__badge' }) %>
   <img class="coin-card__sparkline" src="./img/sparkline-<%= a.trend %>.svg" width="96" height="32" loading="lazy"
     alt="<%= t('trend.' + a.trend) %>" data-i18n-attr="alt:trend.<%= a.trend %>">
 </article>

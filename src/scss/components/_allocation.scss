@@ -1,3 +1,79 @@
 @use '../abstracts' as *;
 
-// Block .allocation (dashboard page).
+// Allocation donut + legend. Mobile and tablet: donut left, legend right.
+// Desktop (narrow 4-column card): donut centred above the legend.
+.allocation {
+  align-content: start;
+  align-items: center;
+  display: grid;
+  gap: space(3) space(4);
+  grid-template-columns: auto 1fr;
+
+  @include media-up(lg) {
+    gap: space(3);
+    grid-template-columns: 1fr;
+  }
+
+  &__title,
+  &__subtitle {
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    @include text-style(h3);
+  }
+
+  &__subtitle {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+    margin-top: calc(-1 * #{space(2)});
+  }
+
+  // The donut and its centre label share one grid cell.
+  &__chart {
+    display: grid;
+    margin-block: space(2);
+    place-items: center;
+
+    @include media-up(lg) {
+      margin-block: space(4);
+    }
+  }
+
+  &__donut,
+  &__total {
+    grid-area: 1 / 1;
+  }
+
+  &__donut {
+    aspect-ratio: 1;
+    height: auto;
+    width: rem(112);
+
+    @include media-up(md) {
+      width: rem(176);
+    }
+  }
+
+  &__total {
+    @include flex(column, center, center);
+
+    color: color(text-muted);
+  }
+
+  &__count {
+    @include text-style(h2);
+
+    color: color(text);
+  }
+
+  &__unit {
+    @include text-style(body-s);
+  }
+
+  // Text alternative of the donut: already announced through the image alt text.
+  &__caption {
+    @extend %visually-hidden;
+  }
+}

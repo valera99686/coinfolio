@@ -23,4 +23,10 @@
   &[aria-pressed='true'] {
     color: color(accent);
   }
+
+  // Plain variant (star in tables and cards): no frame, but the same 44 px touch target.
+  &--plain {
+    background: none;
+    border-color: transparent;
+  }
 }

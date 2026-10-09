@@ -74,6 +74,7 @@
   "dash.chartCaption": "Portfolio value, last 30 days",
   "dash.allocation": "Allocation",
   "dash.assetsCount": "7 assets · by value",
+  "dash.assetsUnit": "assets",
   "dash.donutAlt": "Donut chart: Bitcoin 55.7%, Ethereum 20.5%, Solana 8.6%, other assets 15.2%",
   "dash.donutCaption": "Share of each asset in the portfolio",
   "dash.kpis": "Key figures",

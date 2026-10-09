@@ -1,3 +1,61 @@
 @use '../abstracts' as *;
 
-// Block .balance (dashboard page).
+// Total balance panel. Mobile: everything stacks in document order.
+// From 768 px the period switch moves to the top-right corner next to the figures.
+.balance {
+  // Exported chart sizes: mobile 296 x 120, desktop 744 x 220 (see the <picture> sources).
+  --chart-ratio: 296 / 120;
+
+  align-content: start;
+  display: grid;
+  gap: space(3);
+  grid-template-areas:
+    'title'
+    'value'
+    'change'
+    'period'
+    'chart';
+
+  @include media-up(md) {
+    --chart-ratio: 744 / 220;
+
+    gap: space(2) space(4);
+    grid-template-areas:
+      'title period'
+      'value period'
+      'change period'
+      'chart chart';
+    grid-template-columns: 1fr auto;
+  }
+
+  &__title {
+    @extend %overline;
+
+    grid-area: title;
+  }
+
+  &__value {
+    @include text-style-responsive(display-mobile, display);
+
+    grid-area: value;
+  }
+
+  &__change {
+    @include flex(row, flex-start, center, space(3));
+    @include text-style(body-m);
+
+    color: color(text-muted);
+    flex-wrap: wrap;
+    grid-area: change;
+  }
+
+  &__period {
+    align-self: start;
+    grid-area: period;
+  }
+
+  &__chart {
+    grid-area: chart;
+    margin-top: space(2);
+  }
+}

@@ -1,3 +1,16 @@
 @use '../abstracts' as *;
 
-// Block .holdings (dashboard page).
+// "Your holdings". On mobile the rows are cards drawn straight on the page, without a panel
+// around them (see the 360 px Figma frame); from 768 px it is a regular card with the table.
+.holdings {
+  background: none;
+  border-color: transparent;
+  min-width: 0;
+  padding: 0;
+
+  @include media-up(md) {
+    background: color(bg-surface);
+    border-color: color(border);
+    padding: space(6);
+  }
+}

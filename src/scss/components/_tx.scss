@@ -1,3 +1,74 @@
 @use '../abstracts' as *;
 
-// Block .tx (dashboard page).
+// One transaction row: icon tile, title + date, amount + value. The type modifier only sets
+// three custom properties (tile colour, tile background, amount colour); the rules stay the same.
+.tx {
+  --tx-color: var(--color-accent);
+  --tx-tint: var(--color-accent-subtle);
+  --tx-amount: var(--color-text);
+
+  border-bottom: 1px solid color(border);
+  display: grid;
+  gap: 0 space(3);
+  grid-template-areas:
+    'icon title amount'
+    'icon date value';
+  grid-template-columns: auto 1fr auto;
+  padding-block: space(3);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &--buy {
+    --tx-color: var(--color-positive);
+    --tx-tint: var(--color-positive-subtle);
+    --tx-amount: var(--color-positive);
+  }
+
+  &--sell {
+    --tx-color: var(--color-negative);
+    --tx-tint: var(--color-negative-subtle);
+    --tx-amount: var(--color-negative);
+  }
+
+  &__icon {
+    @include flex(row, center, center);
+
+    background: var(--tx-tint);
+    border-radius: radius(md);
+    color: var(--tx-color);
+    grid-area: icon;
+    height: rem(40);
+    width: rem(40);
+  }
+
+  &__title {
+    @include text-style(body-m-medium);
+
+    grid-area: title;
+  }
+
+  &__date {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+    grid-area: date;
+  }
+
+  &__amount {
+    @include text-style(body-m-medium);
+
+    color: var(--tx-amount);
+    grid-area: amount;
+    text-align: end;
+  }
+
+  &__value {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+    grid-area: value;
+    text-align: end;
+  }
+}

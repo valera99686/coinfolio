@@ -1,4 +1,4 @@
-<tr class="asset-row" data-asset-id="<%= a.id %>" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+<tr class="asset-row<%= locals.mod ? ' asset-row--' + mod : '' %>" data-asset-id="<%= a.id %>" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
   <td class="asset-row__rank"><%= rank %></td>
   <th class="asset-row__asset" scope="row">
     <a class="asset-row__link" href="./asset.html?id=<%= a.slug %>">
@@ -33,7 +33,7 @@
       alt="<%= t('trend.' + a.trend) %>" data-i18n-attr="alt:trend.<%= a.trend %>">
   </td>
   <td class="asset-row__actions">
-    <button class="icon-button asset-row__watch<%= a.watched ? ' icon-button--active' : '' %>" type="button" aria-pressed="<%= a.watched %>">
+    <button class="icon-button icon-button--plain asset-row__watch<%= a.watched ? ' icon-button--active' : '' %>" type="button" aria-pressed="<%= a.watched %>">
       <%- include('icon', { name: 'star' }) %>
       <span class="visually-hidden"><span data-i18n="asset.watch"><%= t('asset.watch') %></span> <%= a.name %></span>
     </button>

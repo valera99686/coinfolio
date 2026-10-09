@@ -4,6 +4,7 @@
 .tabs {
   max-width: 100%;
   overflow-x: auto;
+  position: relative;
   scrollbar-width: none;
 
   &__list {
