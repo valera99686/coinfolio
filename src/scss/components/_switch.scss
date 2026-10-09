@@ -1,3 +1,72 @@
 @use '../abstracts' as *;
 
-// Block .switch (profile page).
+// Toggle: a checkbox with role="switch" drawn as a track with a knob. Label and hint stand on the left,
+// the label makes the whole text a click target. The state is carried by the knob position as well as by colour.
+.switch {
+  align-items: center;
+  column-gap: space(4);
+  display: grid;
+  grid-template-areas:
+    'label input'
+    'hint input';
+  grid-template-columns: 1fr auto;
+
+  &__input {
+    @include transition(background-color, border-color);
+
+    appearance: none;
+    background: color(bg-elevated);
+    border: 1px solid color(border);
+    border-radius: radius(full);
+    cursor: pointer;
+    grid-area: input;
+    height: rem(28);
+    margin: 0;
+    position: relative;
+    width: rem(48);
+
+    &::before {
+      @include transition(background-color, translate);
+
+      background: color(text-muted);
+      border-radius: radius(full);
+      content: '';
+      height: rem(20);
+      inset-block: 0;
+      inset-inline-start: space(1);
+      margin-block: auto;
+      position: absolute;
+      width: rem(20);
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+
+  &__label {
+    @include text-style(body-m-medium);
+
+    cursor: pointer;
+    grid-area: label;
+  }
+
+  &__hint {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+    grid-area: hint;
+  }
+}
+
+// Checked state: accent track, the knob slides to the end.
+.switch__input:checked {
+  background: color(accent);
+  border-color: color(accent);
+}
+
+.switch__input:checked::before {
+  background: color(bg-base);
+  translate: rem(20) 0;
+}
+

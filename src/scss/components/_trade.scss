@@ -12,16 +12,6 @@
     margin-top: space(5);
   }
 
-  // Full width inside the panel (the shared segmented control only stretches on phones).
-  &__type {
-    display: flex;
-    width: 100%;
-
-    .segmented__label {
-      flex: 1;
-    }
-  }
-
   &__summary {
     @include flex(column, flex-start, stretch, space(2));
 

@@ -10,7 +10,7 @@
       <h1 class="page-header__title" data-i18n="profile.title"><%= t('profile.title') %></h1>
       <p class="page-header__lead" data-i18n="profile.lead"><%= t('profile.lead') %></p>
     </div>
-    <div class="page-header__actions">
+    <div class="page-header__actions profile-page__actions">
       <button class="button page-header__action button--secondary" type="reset" form="settings" data-i18n="action.cancel"><%= t('action.cancel') %></button>
       <button class="button page-header__action button--primary" type="submit" form="settings">
         <%- include('partials/icon', { name: 'check' }) %>
@@ -37,11 +37,11 @@
       <div class="profile-card__stat"><dt data-i18n="profile.transactions"><%= t('profile.transactions') %></dt><dd>48</dd></div>
       <div class="profile-card__stat"><dt data-i18n="nav.watchlist"><%= t('nav.watchlist') %></dt><dd><%= watchlist.length %></dd></div>
     </dl>
+    <input class="visually-hidden profile-card__file" id="avatar-upload" name="avatar" type="file" form="settings" accept="image/png, image/jpeg, image/webp">
     <label class="button button--secondary profile-card__upload" for="avatar-upload">
       <%- include('partials/icon', { name: 'user' }) %>
       <span data-i18n="profile.photo"><%= t('profile.photo') %></span>
     </label>
-    <input class="visually-hidden" id="avatar-upload" name="avatar" type="file" form="settings" accept="image/png, image/jpeg, image/webp">
   </aside>
 
   <nav class="settings-nav card" aria-label="<%= t('settings.nav') %>" data-i18n-attr="aria-label:settings.nav">
@@ -69,14 +69,14 @@
     <ul class="wallets__list">
 <% [['MetaMask', '0x3f…9a2c'], ['Ledger Nano X', 'bc1q…7k4d']].forEach(([name, address]) => { %>
       <li class="wallets__item">
-        <%- include('partials/icon', { name: 'wallet' }) %>
+        <%- include('partials/icon', { name: 'wallet', iconCls: 'wallets__icon', size: 24 }) %>
         <span class="wallets__name"><%= name %></span>
         <code class="wallets__address"><%= address %></code>
         <span class="wallets__status" data-i18n="wallets.synced"><%= t('wallets.synced') %></span>
       </li>
 <% }) %>
     </ul>
-    <button class="button button--secondary" type="button">
+    <button class="button button--secondary button--block" type="button">
       <%- include('partials/icon', { name: 'plus' }) %>
       <span data-i18n="wallets.connect"><%= t('wallets.connect') %></span>
     </button>
@@ -85,90 +85,104 @@
   <form class="settings" id="settings" action="./profile.html" method="post">
     <fieldset class="settings__group card" id="personal">
       <legend class="settings__legend"><h2 class="settings__title" data-i18n="settings.personal"><%= t('settings.personal') %></h2></legend>
-      <p class="settings__hint" data-i18n="personal.hint"><%= t('personal.hint') %></p>
-      <div class="field">
-        <label class="field__label" for="first-name" data-i18n="field.firstName"><%= t('field.firstName') %></label>
-        <input class="field__input" id="first-name" name="firstName" type="text" autocomplete="given-name" value="<%= user.firstName %>" required>
-      </div>
-      <div class="field">
-        <label class="field__label" for="last-name" data-i18n="field.lastName"><%= t('field.lastName') %></label>
-        <input class="field__input" id="last-name" name="lastName" type="text" autocomplete="family-name" value="<%= user.lastName %>" required>
-      </div>
-      <div class="field">
-        <label class="field__label" for="email" data-i18n="field.email"><%= t('field.email') %></label>
-        <input class="field__input" id="email" name="email" type="email" autocomplete="email" value="<%= user.email %>" required aria-describedby="email-hint">
-        <p class="field__hint" id="email-hint" data-i18n="field.emailHint"><%= t('field.emailHint') %></p>
-      </div>
-      <div class="field">
-        <label class="field__label" for="username" data-i18n="field.username"><%= t('field.username') %></label>
-        <input class="field__input" id="username" name="username" type="text" autocomplete="username" value="<%= user.username %>"
-          required minlength="4" pattern="[A-Za-z0-9]{4,}" aria-describedby="username-hint">
-        <p class="field__hint" id="username-hint" data-i18n="field.usernameHint"><%= t('field.usernameHint') %></p>
-        <p class="field__error" id="username-error" role="alert" hidden data-i18n="field.usernameError"><%= t('field.usernameError') %></p>
+      <div class="settings__body">
+        <p class="settings__hint" data-i18n="personal.hint"><%= t('personal.hint') %></p>
+        <div class="settings__fields">
+          <div class="field">
+            <label class="field__label" for="first-name" data-i18n="field.firstName"><%= t('field.firstName') %></label>
+            <input class="field__input" id="first-name" name="firstName" type="text" autocomplete="given-name" value="<%= user.firstName %>" required>
+          </div>
+          <div class="field">
+            <label class="field__label" for="last-name" data-i18n="field.lastName"><%= t('field.lastName') %></label>
+            <input class="field__input" id="last-name" name="lastName" type="text" autocomplete="family-name" value="<%= user.lastName %>" required>
+          </div>
+          <div class="field">
+            <label class="field__label" for="email" data-i18n="field.email"><%= t('field.email') %></label>
+            <input class="field__input" id="email" name="email" type="email" autocomplete="email" value="<%= user.email %>" required aria-describedby="email-hint">
+            <p class="field__hint" id="email-hint" data-i18n="field.emailHint"><%= t('field.emailHint') %></p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="username" data-i18n="field.username"><%= t('field.username') %></label>
+            <input class="field__input" id="username" name="username" type="text" autocomplete="username" value="<%= user.username %>"
+              required minlength="4" pattern="[A-Za-z0-9]{4,}" aria-describedby="username-hint">
+            <p class="field__hint" id="username-hint" data-i18n="field.usernameHint"><%= t('field.usernameHint') %></p>
+            <p class="field__error" id="username-error" role="alert" hidden data-i18n="field.usernameError"><%= t('field.usernameError') %></p>
+          </div>
+        </div>
       </div>
     </fieldset>
 
     <fieldset class="settings__group card" id="preferences">
       <legend class="settings__legend"><h2 class="settings__title" data-i18n="settings.preferences"><%= t('settings.preferences') %></h2></legend>
-      <p class="settings__hint" data-i18n="prefs.hint"><%= t('prefs.hint') %></p>
-      <div class="field">
-        <label class="field__label" for="currency" data-i18n="field.currency"><%= t('field.currency') %></label>
-        <select class="field__select" id="currency" name="currency">
-          <option value="USD" selected>USD — US Dollar</option>
-          <option value="EUR">EUR — Euro</option>
-          <option value="UAH">UAH — Ukrainian Hryvnia</option>
-        </select>
-      </div>
-      <div class="field">
-        <label class="field__label" for="language" data-i18n="field.language"><%= t('field.language') %></label>
-        <select class="field__select" id="language" name="language">
-          <option value="en" selected lang="en">English</option>
-          <option value="uk" lang="uk">Українська</option>
-        </select>
-      </div>
-      <div class="field">
-        <label class="field__label" for="timezone" data-i18n="field.timezone"><%= t('field.timezone') %></label>
-        <select class="field__select" id="timezone" name="timezone">
-          <option value="Europe/Kyiv" selected>Europe/Kyiv (UTC+03:00)</option>
-          <option value="Europe/Warsaw">Europe/Warsaw (UTC+02:00)</option>
-          <option value="UTC">UTC</option>
-        </select>
-      </div>
-      <fieldset class="segmented settings__theme">
-        <legend class="segmented__legend" data-i18n="field.theme"><%= t('field.theme') %></legend>
+      <div class="settings__body">
+        <p class="settings__hint" data-i18n="prefs.hint"><%= t('prefs.hint') %></p>
+        <div class="settings__fields">
+          <div class="field">
+            <label class="field__label" for="currency" data-i18n="field.currency"><%= t('field.currency') %></label>
+            <select class="field__select" id="currency" name="currency">
+              <option value="USD" selected>USD — US Dollar</option>
+              <option value="EUR">EUR — Euro</option>
+              <option value="UAH">UAH — Ukrainian Hryvnia</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field__label" for="language" data-i18n="field.language"><%= t('field.language') %></label>
+            <select class="field__select" id="language" name="language">
+              <option value="en" selected lang="en">English</option>
+              <option value="uk" lang="uk">Українська</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field__label" for="timezone" data-i18n="field.timezone"><%= t('field.timezone') %></label>
+            <select class="field__select" id="timezone" name="timezone">
+              <option value="Europe/Kyiv" selected>Europe/Kyiv (UTC+03:00)</option>
+              <option value="Europe/Warsaw">Europe/Warsaw (UTC+02:00)</option>
+              <option value="UTC">UTC</option>
+            </select>
+          </div>
+          <fieldset class="field settings__theme">
+            <legend class="field__label" data-i18n="field.theme"><%= t('field.theme') %></legend>
+            <div class="segmented segmented--block">
 <% ['dark', 'light', 'system'].forEach((theme) => { %>
-        <input class="segmented__input" type="radio" name="theme" id="theme-<%= theme %>" value="<%= theme %>"<%= theme === 'dark' ? ' checked' : '' %>>
-        <label class="segmented__label" for="theme-<%= theme %>" data-i18n="theme.<%= theme %>"><%= t('theme.' + theme) %></label>
+              <input class="segmented__input" type="radio" name="theme" id="theme-<%= theme %>" value="<%= theme %>"<%= theme === 'dark' ? ' checked' : '' %>>
+              <label class="segmented__label" for="theme-<%= theme %>" data-i18n="theme.<%= theme %>"><%= t('theme.' + theme) %></label>
 <% }) %>
-      </fieldset>
+            </div>
+          </fieldset>
+        </div>
+      </div>
     </fieldset>
 
     <fieldset class="settings__group card" id="notifications">
       <legend class="settings__legend"><h2 class="settings__title" data-i18n="settings.notifications"><%= t('settings.notifications') %></h2></legend>
+      <div class="settings__body">
 <% [['priceAlerts', 'notif.price', true], ['weeklyReport', 'notif.weekly', true], ['productNews', 'notif.news', false]].forEach(([name, key, on]) => { %>
-      <div class="switch">
-        <input class="switch__input" id="<%= name %>" name="<%= name %>" type="checkbox" role="switch"<%= on ? ' checked' : '' %> aria-describedby="<%= name %>-hint">
-        <label class="switch__label" for="<%= name %>" data-i18n="<%= key %>"><%= t(key) %></label>
-        <p class="switch__hint" id="<%= name %>-hint" data-i18n="<%= key %>Hint"><%= t(key + 'Hint') %></p>
-      </div>
+        <div class="switch">
+          <input class="switch__input" id="<%= name %>" name="<%= name %>" type="checkbox" role="switch"<%= on ? ' checked' : '' %> aria-describedby="<%= name %>-hint">
+          <label class="switch__label" for="<%= name %>" data-i18n="<%= key %>"><%= t(key) %></label>
+          <p class="switch__hint" id="<%= name %>-hint" data-i18n="<%= key %>Hint"><%= t(key + 'Hint') %></p>
+        </div>
 <% }) %>
+      </div>
     </fieldset>
 
     <fieldset class="settings__group card" id="security">
       <legend class="settings__legend"><h2 class="settings__title" data-i18n="settings.security"><%= t('settings.security') %></h2></legend>
-      <p class="settings__hint" data-i18n="security.hint"><%= t('security.hint') %></p>
-      <div class="switch">
-        <input class="switch__input" id="two-factor" name="twoFactor" type="checkbox" role="switch" checked aria-describedby="two-factor-hint">
-        <label class="switch__label" for="two-factor" data-i18n="security.2fa"><%= t('security.2fa') %></label>
-        <p class="switch__hint" id="two-factor-hint" data-i18n="security.2faHint"><%= t('security.2faHint') %></p>
-      </div>
-      <div class="settings__row">
-        <p class="settings__label" data-i18n="security.password"><%= t('security.password') %></p>
-        <p class="settings__hint" data-i18n="security.passwordHint"><%= t('security.passwordHint') %></p>
-        <button class="button button--secondary button--small" type="button">
-          <%- include('partials/icon', { name: 'lock' }) %>
-          <span data-i18n="security.change"><%= t('security.change') %></span>
-        </button>
+      <div class="settings__body">
+        <p class="settings__hint" data-i18n="security.hint"><%= t('security.hint') %></p>
+        <div class="switch">
+          <input class="switch__input" id="two-factor" name="twoFactor" type="checkbox" role="switch" checked aria-describedby="two-factor-hint">
+          <label class="switch__label" for="two-factor" data-i18n="security.2fa"><%= t('security.2fa') %></label>
+          <p class="switch__hint" id="two-factor-hint" data-i18n="security.2faHint"><%= t('security.2faHint') %></p>
+        </div>
+        <div class="settings__row">
+          <p class="settings__label" data-i18n="security.password"><%= t('security.password') %></p>
+          <p class="settings__hint" data-i18n="security.passwordHint"><%= t('security.passwordHint') %></p>
+          <button class="button button--secondary button--small settings__button" type="button">
+            <%- include('partials/icon', { name: 'lock' }) %>
+            <span data-i18n="security.change"><%= t('security.change') %></span>
+          </button>
+        </div>
       </div>
     </fieldset>
 

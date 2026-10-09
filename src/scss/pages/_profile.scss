@@ -1,4 +1,58 @@
 @use '../abstracts' as *;
 
-// Profile page (profile.html): .profile-page
-// Page-level composition only: how the blocks are arranged on the 12-column grid.
+// Profile page (profile.html). Phones and tablets: one column, the order is set with grid areas
+// (card, section menu, form, wallets, log out). From 1280 px the card, the menu and the wallets form the
+// 4-column sidebar and the settings form is the 8-column main column next to them.
+.profile-page {
+  display: grid;
+  gap: var(--grid-gutter);
+  grid-template-areas:
+    'header'
+    'card'
+    'menu'
+    'form'
+    'wallets'
+    'logout';
+  grid-template-columns: minmax(0, 1fr);
+
+  @include media-up(lg) {
+    // Areas and row sizes in one declaration: the last row takes the spare height, so the sidebar cards keep their own size.
+    grid-template:
+      'header header' auto
+      'card form' auto
+      'menu form' auto
+      'wallets form' auto
+      '. form' 1fr;
+    grid-template-columns: col-width(4) minmax(0, 1fr);
+  }
+
+  > .page-header {
+    grid-area: header;
+    margin-bottom: space(2);
+  }
+
+  > .profile-card {
+    grid-area: card;
+  }
+
+  > .settings-nav {
+    grid-area: menu;
+  }
+
+  > .wallets {
+    grid-area: wallets;
+  }
+
+  > .settings {
+    grid-area: form;
+  }
+
+  // Save / Cancel sit in the header from 768 px; on phones they are at the end of the form instead.
+  &__actions {
+    display: none;
+
+    @include media-up(md) {
+      display: flex;
+    }
+  }
+}

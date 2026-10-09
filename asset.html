@@ -114,7 +114,7 @@
       <section class="trade card asset__trade" id="add-transaction" aria-labelledby="trade-title">
         <h2 class="trade__title" id="trade-title" data-i18n="nav.add"><%= t('nav.add') %></h2>
         <form class="trade__form" action="./asset.html" method="post">
-          <fieldset class="segmented trade__type">
+          <fieldset class="segmented segmented--block">
             <legend class="segmented__legend visually-hidden" data-i18n="form.type"><%= t('form.type') %></legend>
   <% ['buy', 'sell', 'transfer'].forEach((type) => { %>
             <input class="segmented__input" type="radio" name="type" id="trade-<%= type %>" value="<%= type %>"<%= type === 'buy' ? ' checked' : '' %>>

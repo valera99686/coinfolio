@@ -1,3 +1,91 @@
 @use '../abstracts' as *;
 
-// Block .settings (profile page).
+// The settings form: four panels (fieldset + card), then Save / Cancel on phones.
+// A fieldset cannot lay its <legend> out like a normal heading, so the legend is floated to full width
+// and the body that follows clears it.
+.settings {
+  @include flex(column, flex-start, stretch, var(--grid-gutter));
+
+  min-width: 0;
+
+  // The gap below the title is the legend's own margin: a margin on the clearing body would be swallowed by the clearance.
+  &__legend {
+    float: inline-start;
+    margin-bottom: space(4);
+    width: 100%;
+  }
+
+  &__title {
+    @include text-style(h2-mobile);
+  }
+
+  &__body {
+    @include flex(column, flex-start, stretch, space(4));
+
+    clear: both;
+  }
+
+  &__hint {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+    grid-area: hint;
+  }
+
+  // Fields: one column on phones, two from 768 px.
+  &__fields {
+    display: grid;
+    gap: space(5) space(6);
+
+    @include media-up(md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  // The legend of the theme switch is a visible label above the segmented control.
+  &__theme .field__label {
+    margin-bottom: space(2);
+  }
+
+  // "Password / last changed" with the button on the right.
+  &__row {
+    align-items: center;
+    column-gap: space(4);
+    display: grid;
+    grid-template-areas:
+      'label button'
+      'hint button';
+    grid-template-columns: 1fr auto;
+  }
+
+  &__label {
+    @include text-style(body-m-medium);
+
+    grid-area: label;
+  }
+
+  &__button {
+    grid-area: button;
+  }
+
+  &__actions {
+    @include flex(column-reverse, flex-start, stretch, space(3));
+
+    @include media-up(md) {
+      display: none;
+    }
+  }
+}
+
+// Rows of one panel are separated by a line, but there is none above the first row.
+.switch + .switch,
+.switch + .settings__row {
+  border-top: 1px solid color(border);
+  padding-top: space(4);
+}
+
+// The panel hint belongs to the title above it: pull it up under the title.
+.settings__body > .settings__hint:first-child {
+  margin-top: calc(-1 * #{space(3)});
+}
+

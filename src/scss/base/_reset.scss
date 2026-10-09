@@ -89,8 +89,8 @@ summary {
   cursor: pointer;
 }
 
-ul[class],
-ol[class] {
+// :where() keeps the specificity at zero, so a component can still give its own list a margin.
+:where(ul[class], ol[class]) {
   @extend %list-reset;
 }
 

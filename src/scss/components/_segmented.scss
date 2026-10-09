@@ -43,6 +43,15 @@
     }
   }
 
+  // Fills its container and shares the width equally (trade type, theme switch).
+  &--block {
+    display: flex;
+    width: 100%;
+
+    .segmented__label {
+      flex: 1;
+    }
+  }
 }
 
 // Checked option, and the keyboard focus ring (the radio itself is visually hidden, so its label carries it).

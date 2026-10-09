@@ -1,3 +1,66 @@
 @use '../abstracts' as *;
 
-// Block .wallets (profile page).
+// Connected wallets: a short list (icon tile, name, shortened address, sync status) and a connect button.
+.wallets {
+  &__title {
+    @include text-style(h3);
+  }
+
+  &__hint {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+    margin-top: space(1);
+  }
+
+  &__list {
+    @include flex(column, flex-start, stretch, space(3));
+
+    margin-block: space(4);
+  }
+
+  &__item {
+    align-items: center;
+    display: grid;
+    gap: 0 space(3);
+    grid-template-areas:
+      'icon name status'
+      'icon address status';
+    grid-template-columns: auto 1fr auto;
+  }
+
+  // 24 px icon + 8 px padding on every side = a 40 px tile.
+  &__icon {
+    background: color(accent-subtle);
+    border-radius: radius(md);
+    box-sizing: content-box;
+    color: color(accent);
+    grid-area: icon;
+    padding: space(2);
+  }
+
+  &__name {
+    @include text-style(body-m-medium);
+
+    align-self: end;
+    grid-area: name;
+  }
+
+  &__address {
+    @include text-style(body-s);
+
+    align-self: start;
+    color: color(text-muted);
+    grid-area: address;
+  }
+
+  &__status {
+    @include text-style(body-s);
+
+    background: color(positive-subtle);
+    border-radius: radius(sm);
+    color: color(positive);
+    grid-area: status;
+    padding: space(1) space(2);
+  }
+}

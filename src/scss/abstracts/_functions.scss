@@ -69,3 +69,9 @@
 @function shade($c, $amount) {
   @return color.mix(black, $c, $amount);
 }
+
+// Width of $span of $total grid columns, gutters included: the maths behind col() and the page grids.
+@function col-width($span, $total: 12, $gutter: var(--grid-gutter)) {
+  @return calc((100% - #{$gutter} * #{$total - 1}) / #{$total} * #{$span} + #{$gutter} * #{$span - 1});
+}
+

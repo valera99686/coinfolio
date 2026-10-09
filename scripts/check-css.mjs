@@ -52,7 +52,7 @@ if (gz > GZIP_BUDGET) {
 if (duplicates.length) {
   failed = true;
   console.error(`  duplicated blocks (${MIN_DECLS}+ declarations in more than ${MAX_REPEATS} rules): ${duplicates.length}`);
-  for (const [key, selectors] of duplicates.slice(0, 8)) {
+  for (const [key, selectors] of duplicates) {
     console.error(`   - ${selectors.length}x  ${selectors.slice(0, 4).join(", ")}${selectors.length > 4 ? ", ..." : ""}`);
     console.error(`       ${key.split("|")[1].slice(0, 110)}`);
   }

@@ -50,7 +50,7 @@
 }
 
 @mixin col($span, $total: 12, $gutter: var(--grid-gutter)) {
-  $basis: calc((100% - #{$gutter} * #{$total - 1}) / #{$total} * #{$span} + #{$gutter} * #{$span - 1});
+  $basis: f.col-width($span, $total, $gutter);
 
   flex: 0 0 $basis;
   max-width: $basis;

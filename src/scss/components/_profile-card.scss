@@ -1,3 +1,66 @@
 @use '../abstracts' as *;
 
-// Block .profile-card (profile page).
+// Who is signed in: avatar, name, e-mail, member-since pill, three counters and the photo button.
+.profile-card {
+  @include flex(column, flex-start, center);
+
+  text-align: center;
+
+  &__name {
+    @include text-style-responsive(h2-mobile, h2);
+
+    margin-top: space(4);
+  }
+
+  &__email {
+    @include text-style(body-m);
+
+    color: color(text-muted);
+    margin-top: space(1);
+  }
+
+  &__since {
+    @include text-style(body-s);
+
+    background: color(accent-subtle);
+    border-radius: radius(sm);
+    color: color(accent);
+    margin-top: space(3);
+    padding: space(1) space(2);
+  }
+
+  &__stats {
+    border-top: 1px solid color(border);
+    display: grid;
+    gap: space(2);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: space(5);
+    padding-top: space(5);
+    width: 100%;
+  }
+
+  // The number is shown above its caption, the caption comes first in the markup (<dt> before <dd>).
+  &__stat {
+    @include flex(column-reverse, flex-start, center, space(1));
+
+    dt {
+      @include text-style(body-s);
+
+      color: color(text-muted);
+    }
+
+    dd {
+      @include text-style(h2-mobile);
+    }
+  }
+
+  &__upload {
+    margin-top: space(5);
+    width: 100%;
+  }
+}
+
+// The file input is hidden, so the button that opens it shows the keyboard focus.
+.profile-card__file:focus-visible + .profile-card__upload {
+  @include focus-ring;
+}
