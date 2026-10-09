@@ -1,3 +1,51 @@
 @use '../abstracts' as *;
 
-// Block .chips (assets page).
+// Filter chips: radio inputs drawn as pills. Works without JavaScript; the checked chip is
+// highlighted and the focus ring is drawn on the label because the radio itself is hidden.
+.chips {
+  @include scroll-strip(space(2));
+  @include edge-bleed;
+
+  scroll-snap-type: none;
+
+  @include media-up(md) {
+    @include edge-bleed-reset;
+
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+
+  &__input {
+    @extend %visually-hidden;
+  }
+
+  &__label {
+    @include text-style(label);
+    @include transition(background-color, border-color, color);
+
+    align-items: center;
+    background: color(bg-surface);
+    border: 1px solid color(border);
+    border-radius: radius(full);
+    cursor: pointer;
+    display: inline-flex;
+    flex: none;
+    min-height: rem($tap-target);
+    padding-inline: space(4);
+    white-space: nowrap;
+
+    @include hover {
+      background: color(bg-elevated);
+    }
+  }
+}
+
+.chips__input:checked + .chips__label {
+  background: color(accent-subtle);
+  border-color: color(accent-soft);
+  color: color(accent-soft);
+}
+
+.chips__input:focus-visible + .chips__label {
+  @include focus-ring;
+}

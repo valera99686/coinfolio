@@ -49,6 +49,11 @@
     }
   }
 
+  // Room on the left for an icon drawn over the input (search field).
+  &__input--search {
+    padding-inline-start: space(12);
+  }
+
   &__textarea {
     min-height: rem(96);
     resize: vertical;

@@ -1,3 +1,86 @@
 @use '../abstracts' as *;
 
-// Block .pagination (assets page).
+// Pagination: summary text + page buttons. Phones keep only prev / current / next (44 px buttons),
+// from 768 px the numbered pages and the "..." gap appear too.
+.pagination {
+  @include flex(column, flex-start, stretch, space(3));
+
+  padding-block: space(4);
+
+  @include media-up(md) {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include media-up(lg) {
+    border-top: 1px solid color(border);
+    padding: space(4) space(6);
+  }
+
+  &__summary {
+    @include text-style(body-m);
+
+    color: color(text-muted);
+  }
+
+  &__list {
+    @include flex(row, space-between, center, space(2));
+
+    @include media-up(md) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__item {
+    &--page,
+    &--gap {
+      display: none;
+
+      @include media-up(md) {
+        display: list-item;
+      }
+    }
+
+    // The current page is always visible, also on phones.
+    &--current {
+      display: list-item;
+    }
+
+    &--gap {
+      @include text-style(body-m);
+
+      color: color(text-muted);
+    }
+  }
+
+  &__link {
+    @include flex(row, center, center);
+    @include text-style(label);
+    @include transition(background-color, border-color, color);
+
+    border: 1px solid color(border);
+    border-radius: radius(md);
+    min-height: rem($tap-target);
+    min-width: rem($tap-target);
+
+    @include hover {
+      background: color(bg-elevated);
+    }
+
+    &--active {
+      background: color(accent);
+      border-color: color(accent);
+      color: color(text-on-accent);
+
+      @include hover {
+        background: color(accent-hover);
+      }
+    }
+
+    &[aria-disabled='true'] {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+}

@@ -5,24 +5,15 @@
 .kpis {
   min-width: 0;
 
-  // `position: relative` makes the strip the containing block of visually hidden text inside it,
-  // so that text cannot widen the page while the strip is scrolled.
   &__list {
-    @include flex(row, flex-start, stretch, var(--grid-gutter));
-
-    margin-inline: calc(-1 * var(--page-margin));
-    overflow-x: auto;
-    padding-inline: var(--page-margin);
-    position: relative;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+    @include scroll-strip;
+    @include edge-bleed;
 
     @include media-up(md) {
       @include row;
+      @include edge-bleed-reset;
 
-      margin-inline: 0;
       overflow: visible;
-      padding-inline: 0;
     }
   }
 

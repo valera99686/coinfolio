@@ -11,11 +11,11 @@
       <h1 class="page-header__title" data-i18n="dash.title"><%= t('dash.title') %></h1>
     </div>
     <div class="page-header__actions">
-      <button class="button button--secondary" type="button">
+      <button class="button page-header__action button--secondary" type="button">
         <%- include('partials/icon', { name: 'download' }) %>
         <span data-i18n="action.export"><%= t('action.export') %></span>
       </button>
-      <a class="button button--primary" href="./asset.html#add-transaction">
+      <a class="button page-header__action button--primary" href="./asset.html#add-transaction">
         <%- include('partials/icon', { name: 'plus' }) %>
         <span data-i18n="nav.add"><%= t('nav.add') %></span>
       </a>

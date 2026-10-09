@@ -1,3 +1,21 @@
 @use '../abstracts' as *;
 
-// Block .asset-list (assets page).
+// Filter toolbar above a panel with the table and the pagination. On phones and tablets the
+// panel has no surface of its own (the rows are cards); from 1280 px it is a card around the table.
+.asset-list {
+  @include flex(column, flex-start, stretch, space(4));
+
+  min-width: 0;
+
+  &__panel {
+    background: none;
+    border-color: transparent;
+    overflow: hidden;
+    padding: 0;
+
+    @include media-up(lg) {
+      background: color(bg-surface);
+      border-color: color(border);
+    }
+  }
+}

@@ -11,7 +11,7 @@
   border: 1px solid color(border);
   border-radius: radius(lg);
   display: grid;
-  gap: space(1) space(3);
+  gap: space(1) space(2);
   grid-template-areas:
     'asset chart price'
     'asset chart change';
@@ -237,7 +237,7 @@
   &__sparkline {
     aspect-ratio: 3 / 1;
     height: auto;
-    width: rem(72);
+    width: rem(64);
 
     @include media-up(lg) {
       width: rem(96);

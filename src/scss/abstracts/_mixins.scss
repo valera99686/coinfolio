@@ -57,6 +57,31 @@
   min-width: 0;
 }
 
+// Swipeable horizontal strip (KPI tiles, filter chips). `position: relative` makes the strip the
+// containing block of visually hidden text inside it, so that text cannot widen the page.
+@mixin scroll-strip($gap: var(--grid-gutter)) {
+  @include flex(row, flex-start, stretch, $gap);
+
+  overflow-x: auto;
+  position: relative;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+// Let a strip run to the screen edges inside the page margin, or switch that off again.
+// `scroll-padding` keeps the first snap position inside the page margin instead of at the screen edge.
+@mixin edge-bleed {
+  margin-inline: calc(-1 * var(--page-margin));
+  padding-inline: var(--page-margin);
+  scroll-padding-inline: var(--page-margin);
+}
+
+@mixin edge-bleed-reset {
+  margin-inline: 0;
+  padding-inline: 0;
+  scroll-padding-inline: 0;
+}
+
 // ---- Typography ---------------------------------------------------------
 // One Figma text style -> font family, size, line height, weight and tracking.
 @mixin text-style($name) {

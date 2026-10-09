@@ -11,8 +11,8 @@
       <p class="page-header__lead" data-i18n="profile.lead"><%= t('profile.lead') %></p>
     </div>
     <div class="page-header__actions">
-      <button class="button button--secondary" type="reset" form="settings" data-i18n="action.cancel"><%= t('action.cancel') %></button>
-      <button class="button button--primary" type="submit" form="settings">
+      <button class="button page-header__action button--secondary" type="reset" form="settings" data-i18n="action.cancel"><%= t('action.cancel') %></button>
+      <button class="button page-header__action button--primary" type="submit" form="settings">
         <%- include('partials/icon', { name: 'check' }) %>
         <span data-i18n="action.save"><%= t('action.save') %></span>
       </button>

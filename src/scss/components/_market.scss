@@ -1,3 +1,28 @@
 @use '../abstracts' as *;
 
-// Block .market (assets page).
+// Market summary: three stat cards. Phones: swipeable strip that bleeds to the screen edges;
+// from 768 px they sit side by side, each spanning 4 of the 12 columns.
+.market {
+  min-width: 0;
+
+  &__list {
+    @include scroll-strip;
+    @include edge-bleed;
+
+    @include media-up(md) {
+      @include row;
+      @include edge-bleed-reset;
+
+      overflow: visible;
+    }
+  }
+
+  &__item {
+    flex: 0 0 min(80%, #{rem(280)});
+    scroll-snap-align: start;
+
+    @include media-up(md) {
+      @include col(4);
+    }
+  }
+}

@@ -1,3 +1,57 @@
 @use '../abstracts' as *;
 
-// Block .filters (assets page).
+// Toolbar: search, filter chips, sort order and the apply button.
+// Phones: search on its own line, chips as a swipeable strip, sort + button below.
+// Desktop: everything on one row.
+.filters {
+  @include flex(row, flex-start, center, space(3));
+
+  flex-wrap: wrap;
+
+  &__search {
+    flex: 1 1 100%;
+    position: relative;
+
+    @include media-up(lg) {
+      flex: 0 1 rem(384);
+    }
+  }
+
+  // Search icon drawn inside the input (the input has padding for it, see .field__input--search).
+  &__icon {
+    color: color(text-muted);
+    inset-inline-start: space(4);
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__chips {
+    flex: 1 1 100%;
+
+    @include media-up(lg) {
+      flex: 1 1 auto;
+    }
+  }
+
+  // Label and select side by side.
+  &__sort {
+    align-items: center;
+    flex: 1 1 auto;
+    flex-direction: row;
+
+    @include media-up(lg) {
+      flex: 0 0 auto;
+    }
+  }
+
+  &__label {
+    color: color(text-muted);
+    white-space: nowrap;
+  }
+
+  &__submit {
+    flex: none;
+  }
+}

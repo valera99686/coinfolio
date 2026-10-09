@@ -11,11 +11,11 @@
       <p class="page-header__lead" data-i18n="assets.lead"><%= t('assets.lead') %></p>
     </div>
     <div class="page-header__actions">
-      <button class="button button--secondary" type="button">
+      <button class="button page-header__action button--secondary" type="button">
         <%- include('partials/icon', { name: 'download' }) %>
         <span data-i18n="action.exportCsv"><%= t('action.exportCsv') %></span>
       </button>
-      <a class="button button--primary" href="./asset.html#add-transaction">
+      <a class="button page-header__action button--primary" href="./asset.html#add-transaction">
         <%- include('partials/icon', { name: 'plus' }) %>
         <span data-i18n="nav.add"><%= t('nav.add') %></span>
       </a>
@@ -25,21 +25,21 @@
   <section class="market" aria-labelledby="market-title">
     <h2 class="market__title visually-hidden" id="market-title" data-i18n="market.title"><%= t('market.title') %></h2>
     <dl class="market__list">
-      <%- include('partials/stat', { labelKey: 'market.cap', icon: 'globe', value: market.capText, trend: 'up', change: market.capChange, noteKey: 'market.capNote' }) %>
-      <%- include('partials/stat', { labelKey: 'market.volume', icon: 'chart', value: market.volumeText, trend: 'down', change: Math.abs(market.volumeChange), noteKey: 'kpi.vsYesterday' }) %>
-      <%- include('partials/stat', { labelKey: 'market.dominance', icon: 'assets', value: market.dominance, trend: 'up', change: 0.3, noteKey: 'market.dominanceNote' }) %>
+      <%- include('partials/stat', { labelKey: 'market.cap', cls: 'market__item', icon: 'globe', value: market.capText, trend: 'up', change: market.capChange, noteKey: 'market.capNote' }) %>
+      <%- include('partials/stat', { labelKey: 'market.volume', cls: 'market__item', icon: 'chart', value: market.volumeText, trend: 'down', change: Math.abs(market.volumeChange), noteKey: 'kpi.vsYesterday' }) %>
+      <%- include('partials/stat', { labelKey: 'market.dominance', cls: 'market__item', icon: 'assets', value: market.dominance, trend: 'up', change: 0.3, noteKey: 'market.dominanceNote' }) %>
     </dl>
   </section>
 
-  <section class="asset-list card" aria-labelledby="asset-list-title">
+  <section class="asset-list" aria-labelledby="asset-list-title">
     <h2 class="asset-list__title visually-hidden" id="asset-list-title" data-i18n="assets.listTitle"><%= t('assets.listTitle') %></h2>
 
     <form class="filters" role="search" action="./assets.html" method="get" aria-labelledby="filters-title">
       <h3 class="filters__title visually-hidden" id="filters-title" data-i18n="filters.title"><%= t('filters.title') %></h3>
       <div class="field filters__search">
         <label class="field__label visually-hidden" for="asset-search" data-i18n="filters.search"><%= t('filters.search') %></label>
-        <%- include('partials/icon', { name: 'search' }) %>
-        <input class="field__input" id="asset-search" name="q" type="search" autocomplete="off"
+        <%- include('partials/icon', { name: 'search', iconCls: 'filters__icon' }) %>
+        <input class="field__input field__input--search" id="asset-search" name="q" type="search" autocomplete="off"
           placeholder="<%= t('filters.search') %>" data-i18n-attr="placeholder:filters.search">
       </div>
       <fieldset class="chips filters__chips">
@@ -50,7 +50,7 @@
 <% }) %>
       </fieldset>
       <div class="field filters__sort">
-        <label class="field__label" for="asset-sort" data-i18n="filters.sort"><%= t('filters.sort') %></label>
+        <label class="field__label filters__label" for="asset-sort" data-i18n="filters.sort"><%= t('filters.sort') %></label>
         <select class="field__select" id="asset-sort" name="sort">
           <option value="marketCap" selected data-i18n="sort.cap"><%= t('sort.cap') %></option>
           <option value="price" data-i18n="sort.price"><%= t('sort.price') %></option>
@@ -64,40 +64,42 @@
       </button>
     </form>
 
-    <table class="asset-table">
-      <caption class="asset-table__caption" data-i18n="assets.caption"><%= t('assets.caption') %></caption>
-      <%- include('partials/asset-table-head', { sort: 'marketCap' }) %>
-      <tbody class="asset-table__body">
-<% assets.forEach((a) => { %>
-        <%- include('partials/asset-row', { a, rank: a.rank }) %>
-<% }) %>
-      </tbody>
-    </table>
+    <div class="asset-list__panel card">
+      <table class="asset-table">
+        <caption class="asset-table__caption" data-i18n="assets.caption"><%= t('assets.caption') %></caption>
+        <%- include('partials/asset-table-head', { sort: 'marketCap' }) %>
+        <tbody class="asset-table__body">
+  <% assets.forEach((a) => { %>
+          <%- include('partials/asset-row', { a, rank: a.rank }) %>
+  <% }) %>
+        </tbody>
+      </table>
 
-    <nav class="pagination" aria-label="<%= t('pagination.label') %>" data-i18n-attr="aria-label:pagination.label">
-      <p class="pagination__summary" data-i18n="pagination.summary"><%= t('pagination.summary') %></p>
-      <ul class="pagination__list">
-        <li class="pagination__item">
-          <a class="pagination__link pagination__link--prev" aria-disabled="true">
-            <%- include('partials/icon', { name: 'chevron-left' }) %>
-            <span class="visually-hidden" data-i18n="pagination.prev"><%= t('pagination.prev') %></span>
-          </a>
-        </li>
-<% [1, 2, 3].forEach((n) => { %>
-        <li class="pagination__item">
-          <a class="pagination__link<%= n === 1 ? ' pagination__link--active' : '' %>" href="./assets.html?page=<%= n %>"<%- n === 1 ? ' aria-current="page"' : '' %>><%= n %></a>
-        </li>
-<% }) %>
-        <li class="pagination__item pagination__item--gap" aria-hidden="true">…</li>
-        <li class="pagination__item"><a class="pagination__link" href="./assets.html?page=5">5</a></li>
-        <li class="pagination__item">
-          <a class="pagination__link pagination__link--next" href="./assets.html?page=2" rel="next">
-            <%- include('partials/icon', { name: 'chevron-right' }) %>
-            <span class="visually-hidden" data-i18n="pagination.next"><%= t('pagination.next') %></span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+      <nav class="pagination" aria-label="<%= t('pagination.label') %>" data-i18n-attr="aria-label:pagination.label">
+        <p class="pagination__summary" data-i18n="pagination.summary"><%= t('pagination.summary') %></p>
+        <ul class="pagination__list">
+          <li class="pagination__item">
+            <a class="pagination__link pagination__link--prev" aria-disabled="true">
+              <%- include('partials/icon', { name: 'chevron-left' }) %>
+              <span class="visually-hidden" data-i18n="pagination.prev"><%= t('pagination.prev') %></span>
+            </a>
+          </li>
+  <% [1, 2, 3].forEach((n) => { %>
+          <li class="pagination__item pagination__item--page<%= n === 1 ? ' pagination__item--current' : '' %>">
+            <a class="pagination__link<%= n === 1 ? ' pagination__link--active' : '' %>" href="./assets.html?page=<%= n %>"<%- n === 1 ? ' aria-current="page"' : '' %>><%= n %></a>
+          </li>
+  <% }) %>
+          <li class="pagination__item pagination__item--gap" aria-hidden="true">…</li>
+          <li class="pagination__item pagination__item--page"><a class="pagination__link" href="./assets.html?page=5">5</a></li>
+          <li class="pagination__item">
+            <a class="pagination__link pagination__link--next" href="./assets.html?page=2" rel="next">
+              <%- include('partials/icon', { name: 'chevron-right' }) %>
+              <span class="visually-hidden" data-i18n="pagination.next"><%= t('pagination.next') %></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </section>
 
   <p class="assets-page__hint">
