@@ -1,0 +1,34 @@
+@use '../abstracts' as *;
+
+// In-page navigation (Holdings | Transactions | Watchlist). The active link has aria-current.
+.tabs {
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &__list {
+    @include flex(row, flex-start, stretch, space(1));
+  }
+
+  &__link {
+    @include text-style(label);
+    @include transition(color, border-color);
+
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    color: color(text-muted);
+    display: flex;
+    min-height: rem($tap-target);
+    padding-inline: space(3);
+    white-space: nowrap;
+
+    @include hover {
+      color: color(text);
+    }
+
+    &--active {
+      border-bottom-color: color(accent);
+      color: color(text);
+    }
+  }
+}

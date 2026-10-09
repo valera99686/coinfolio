@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+// "Skip to main content": invisible until a keyboard user tabs to it.
+.skip-link {
+  @extend %visually-hidden;
+
+  &:focus {
+    @include text-style(label);
+
+    background: color(accent);
+    border-radius: radius(md);
+    clip-path: none;
+    color: color(text-on-accent);
+    height: auto;
+    inset: space(2) auto auto space(2);
+    margin: 0;
+    overflow: visible;
+    padding: space(3) space(4);
+    position: fixed;
+    width: auto;
+    z-index: z(overlay);
+  }
+}

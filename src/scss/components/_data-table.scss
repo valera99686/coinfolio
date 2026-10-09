@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+// Small accessible data table (text alternative of a chart).
+.data-table {
+  @include text-style(body-s);
+
+  font-variant-numeric: tabular-nums;
+  max-width: 32rem;
+  width: 100%;
+
+  &__caption {
+    @include text-style(label);
+
+    padding-bottom: space(2);
+    text-align: start;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid color(border);
+    padding: space(2) space(3);
+    text-align: start;
+  }
+
+  th[scope='col'] {
+    @extend %overline;
+  }
+
+  td {
+    text-align: end;
+  }
+}

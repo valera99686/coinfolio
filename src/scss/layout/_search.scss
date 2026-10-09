@@ -1,0 +1,63 @@
+@use '../abstracts' as *;
+
+// Header search. Mobile: only the submit icon (44 px). Desktop: a 280 px field with a
+// "Ctrl K" hint. The submit button comes last in the markup, but is drawn first.
+.site-search {
+  @include flex(row, flex-start, center, space(2));
+
+  @include media-up(lg) {
+    background: color(bg-surface);
+    border: 1px solid color(border);
+    border-radius: radius(md);
+    height: rem($tap-target);
+    margin-inline-start: auto;
+    padding-inline: space(1) space(3);
+    width: rem($search-width);
+
+    &:focus-within {
+      border-color: color(accent-soft);
+    }
+
+    &__input {
+      background: none;
+      border: 0;
+      display: block;
+      flex: 1;
+      min-width: 0;
+      padding: 0;
+
+      &::placeholder {
+        color: color(text-muted);
+      }
+
+      // The whole field shows the focus ring (see :focus-within above).
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    &__hint {
+      @include text-style(body-s);
+
+      background: color(bg-elevated);
+      border: 1px solid color(border);
+      border-radius: radius(sm);
+      color: color(text-muted);
+      display: block;
+      padding: space(1) space(2);
+    }
+  }
+
+  &__label {
+    @extend %visually-hidden;
+  }
+
+  &__submit {
+    order: -1;
+  }
+
+  &__input,
+  &__hint {
+    display: none;
+  }
+}

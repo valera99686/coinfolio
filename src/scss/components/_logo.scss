@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.logo {
+  @include flex(row, flex-start, center, space(2));
+
+  flex: none;
+  min-height: rem($tap-target);
+
+  &__mark {
+    border-radius: radius(sm);
+  }
+
+  &__text {
+    @include text-style(logo);
+  }
+}

@@ -1,0 +1,19 @@
+// Page shell: header, main, footer stacked; main grows so the footer sits at the bottom.
+@use '../abstracts' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+
+  &__main {
+    @include container;
+
+    flex: 1;
+    padding-block: space(6) space(8);
+
+    @include media-up(lg) {
+      padding-block: space(8) space(12);
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@use '../abstracts' as *;
+
+// Round user picture. --sm (header) and --lg (profile) change the size only.
+.avatar {
+  background: color(accent);
+  border-radius: radius(full);
+  display: inline-flex;
+  flex: none;
+  height: rem(48);
+  overflow: hidden;
+  position: relative;
+  width: rem(48);
+
+  &--sm {
+    height: rem(40);
+    width: rem(40);
+
+    // Hit area grows to the 44 px touch target without changing the picture.
+    &::after {
+      content: '';
+      inset: calc((100% - #{rem($tap-target)}) / 2);
+      position: absolute;
+    }
+  }
+
+  &--lg {
+    height: rem(80);
+    width: rem(80);
+  }
+
+  &__picture {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__img {
+    aspect-ratio: 1;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}

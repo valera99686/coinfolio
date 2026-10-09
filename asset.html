@@ -52,7 +52,7 @@
       <%- include('partials/period', { cls: 'price__period', name: 'price-period', periods: ['1h', '24h', '7d', '1m', '1y', 'all'], checked: '7d' }) %>
       <figure class="chart price__chart">
         <%- include('partials/picture', {
-          cls: 'chart__picture',
+          cls: 'chart__picture', imgCls: 'chart__image',
           base: 'charts/btc-desktop', widths: [744, 1116, 1488], w: 744, h: 300,
           sizes: '(min-width: 1280px) 744px, (min-width: 768px) calc(66vw - 48px), 100vw',
           mobile: { base: 'charts/btc-mobile', widths: [328, 492, 656], w: 328, h: 180 },

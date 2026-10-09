@@ -1,0 +1,56 @@
+@use '../abstracts' as *;
+
+// Period switcher (1D 1W 1M 1Y ALL) built from radio inputs, so it works without JavaScript.
+.segmented {
+  @include flex(row, stretch, stretch, space(1));
+
+  background: color(bg-base);
+  border: 1px solid color(border);
+  border-radius: radius(md);
+  padding: space(1);
+
+  @include media-up(md) {
+    display: inline-flex;
+    width: fit-content;
+  }
+
+  &__input {
+    @extend %visually-hidden;
+  }
+
+  &__label {
+    @include text-style(label);
+    @include transition(background-color, color);
+
+    align-items: center;
+    border-radius: radius(sm);
+    color: color(text-muted);
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    min-height: rem($tap-target);
+    min-width: rem($tap-target);
+    padding-inline: space(3);
+
+    @include media-up(md) {
+      flex: none;
+      padding-inline: space(4);
+    }
+
+    @include hover {
+      color: color(text);
+    }
+  }
+
+}
+
+// Checked option, and the keyboard focus ring (the radio itself is visually hidden, so its label carries it).
+.segmented__input:checked + .segmented__label {
+  background: color(bg-elevated);
+  color: color(text);
+}
+
+.segmented__input:focus-visible + .segmented__label {
+  @include focus-ring;
+}

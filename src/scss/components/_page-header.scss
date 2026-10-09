@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+// Title block at the top of every page: overline + h1 on the left, actions on the right.
+.page-header {
+  @include flex(column, flex-start, stretch, space(4));
+
+  margin-bottom: space(6);
+
+  @include media-up(md) {
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__titles {
+    @include flex(column, flex-start, flex-start, space(1));
+  }
+
+  &__overline {
+    @include text-style(body-m);
+
+    color: color(text-muted);
+  }
+
+  &__title {
+    @include text-style-responsive(h1-mobile, h1);
+  }
+
+  &__lead {
+    @include text-style(body-l);
+
+    color: color(text-muted);
+    max-width: 60ch;
+  }
+
+  &__actions {
+    @include flex(row, flex-start, center, space(3));
+
+    flex-wrap: wrap;
+  }
+}

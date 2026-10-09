@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+// Heading row of a panel: title, optional subtitle underneath, then tabs and/or a link on the right.
+.section-header {
+  @include flex(row, flex-start, center, space(2) space(4));
+
+  flex-wrap: wrap;
+  margin-bottom: space(4);
+
+  &__title {
+    @include text-style-responsive(h3, h2);
+
+    margin-inline-end: auto;
+  }
+
+  // Always on its own line, under the title.
+  &__subtitle {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+    flex-basis: 100%;
+    margin-top: calc(-1 * #{space(2)});
+    order: 1;
+  }
+
+  &__link {
+    margin-inline-end: calc(-1 * #{space(1)});
+  }
+}

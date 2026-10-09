@@ -1,0 +1,5 @@
+// Sprite icons: <svg class="icon"><use href="icons.svg#name"/></svg>.
+// Size comes from the width/height attributes, colour from `currentColor` (stroke is set in the sprite).
+.icon {
+  flex: none;
+}

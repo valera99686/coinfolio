@@ -1,0 +1,113 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+// Visual order of the mobile tab bar: the "+" action sits in the middle.
+$tab-order: (index: 1, assets: 2, add: 3, watchlist: 4, profile: 5);
+
+// Mobile: fixed bottom tab bar. Desktop (>= 1280 px): pills in the header.
+.site-nav {
+  background: color(bg-base);
+  border-top: 1px solid color(border);
+  inset: auto 0 0;
+  padding-bottom: env(safe-area-inset-bottom);
+  position: fixed;
+  z-index: z(nav);
+
+  @include media-up(lg) {
+    background: none;
+    border-top: 0;
+    padding-bottom: 0;
+    position: static;
+  }
+
+  &__list {
+    @include flex(row, space-around, center);
+
+    min-height: var(--tabbar-height);
+
+    @include media-up(lg) {
+      gap: space(2);
+      justify-content: flex-start;
+      min-height: 0;
+    }
+  }
+
+  &__item {
+    flex: 1;
+
+    @include media-up(lg) {
+      flex: none;
+    }
+
+    @each $name, $position in $tab-order {
+      &--#{$name} {
+        order: $position;
+      }
+    }
+
+    // Desktop shows Dashboard, Assets and Profile only; Watchlist and "+" live in the page.
+    &--watchlist,
+    &--add {
+      @include media-up(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    @include flex(column, center, center, space(1));
+    @include text-style(body-s);
+    @include transition(color, background-color);
+
+    border-radius: radius(md);
+    color: color(text-muted);
+    min-height: rem($tap-target);
+    min-width: rem($tap-target);
+
+    @include hover {
+      color: color(text);
+    }
+
+    @include media-up(lg) {
+      @include text-style(label);
+
+      flex-direction: row;
+      gap: space(2);
+      padding: space(2) space(3);
+    }
+
+    &--active {
+      color: color(accent-soft);
+
+      @include media-up(lg) {
+        background: color(accent-subtle);
+      }
+    }
+
+    // Centre "+" action of the tab bar.
+    &--add {
+      background: color(accent);
+      border-radius: radius(md);
+      color: color(text-on-accent);
+      height: rem(52);
+      min-height: 0;
+      width: rem(52);
+
+      @include hover {
+        background: color(accent-hover);
+        color: color(text-on-accent);
+      }
+    }
+  }
+
+  &__label {
+    @include media-up(lg) {
+      white-space: nowrap;
+    }
+  }
+
+  // The "+" tab is icon-only: its text stays available for screen readers.
+  &__link--add &__label {
+    @extend %visually-hidden;
+  }
+}

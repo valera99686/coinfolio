@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+// Square icon-only button (bell, filter, star). Its text is visually hidden in the markup.
+.icon-button {
+  @include flex(row, center, center);
+  @include transition(background-color, border-color, color);
+
+  background: color(bg-surface);
+  border: 1px solid color(border);
+  border-radius: radius(md);
+  color: color(text-muted);
+  flex: none;
+  height: rem($tap-target);
+  width: rem($tap-target);
+
+  @include hover {
+    background: color(bg-elevated);
+    color: color(text);
+  }
+
+  // Toggled state (watchlist star): `aria-pressed` for assistive tech, the colour for everyone.
+  &--active,
+  &[aria-pressed='true'] {
+    color: color(accent);
+  }
+}

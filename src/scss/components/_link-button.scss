@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+// Text-only action with an optional trailing chevron ("See all >", "Log out").
+.link-button {
+  @include flex(row, flex-start, center, space(1));
+  @include text-style(label);
+  @include transition(color);
+
+  color: color(accent-soft);
+  cursor: pointer;
+  display: inline-flex;
+  min-height: rem($tap-target);
+  padding-inline: space(1);
+
+  @include hover {
+    color: color(accent-hover);
+  }
+
+  &--danger {
+    color: color(negative);
+
+    @include hover {
+      color: color(negative);
+    }
+  }
+}

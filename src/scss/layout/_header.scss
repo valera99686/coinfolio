@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+// Mobile: 56 px bar with logo, search button, bell and avatar. Desktop: 72 px with nav + search.
+.site-header {
+  @include flex(row, flex-start, center, space(3));
+  @include page-inline;
+
+  background: color(bg-base);
+  border-bottom: 1px solid color(border);
+  min-height: var(--header-height);
+  position: sticky;
+  top: 0;
+  z-index: z(sticky);
+
+  @include media-up(lg) {
+    gap: space(6);
+  }
+
+  &__logo {
+    margin-inline-end: auto;
+
+    @include media-up(lg) {
+      margin-inline-end: 0;
+    }
+  }
+
+  &__actions {
+    @include flex(row, flex-end, center, space(2));
+  }
+
+  &__notifications {
+    position: relative;
+  }
+
+  &__avatar {
+    flex: none;
+  }
+}

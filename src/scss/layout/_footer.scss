@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+
+.site-footer {
+  @include flex(column, flex-start, flex-start, space(3));
+  @include page-inline;
+  @include text-style(body-s);
+
+  border-top: 1px solid color(border);
+  color: color(text-muted);
+  margin: 0;
+  padding-block: space(6) calc(var(--tabbar-height) + #{space(6)});
+
+  @include media-up(md) {
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-block: space(6);
+  }
+
+  &__copy,
+  &__note {
+    margin: 0;
+  }
+
+  &__note {
+    @include media-up(md) {
+      margin-inline-start: auto;
+    }
+  }
+
+  &__langs {
+    @include flex(row, flex-start, center, space(4));
+  }
+
+  &__link {
+    @include transition(color);
+
+    align-items: center;
+    display: inline-flex;
+    min-height: rem($tap-target);
+
+    @include hover {
+      color: color(text);
+    }
+  }
+}

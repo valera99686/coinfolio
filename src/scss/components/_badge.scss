@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+
+// Price-change pill. Direction is carried by the arrow icon and the sign, not by colour alone.
+.badge {
+  @include flex(row, flex-start, center, space(1));
+  @include text-style(label);
+
+  border-radius: radius(sm);
+  display: inline-flex;
+  padding: space(1) space(2);
+
+  &--up {
+    background: color(positive-subtle);
+    color: color(positive);
+  }
+
+  &--down {
+    background: color(negative-subtle);
+    color: color(negative);
+  }
+
+  &__value {
+    font-weight: inherit;
+  }
+}

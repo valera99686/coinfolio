@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+
+// KPI tile (<dl> item): overline label with an icon, a big value, then a badge and a note.
+// Used by the dashboard KPIs and the market summary on the assets page.
+.stat-card {
+  @extend %surface;
+  @include flex(column, flex-start, stretch, space(3));
+
+  min-width: 0;
+  padding: space(5);
+
+  &__label {
+    @extend %overline;
+    @include flex(row, space-between, center, space(2));
+
+    // Icon colour stays muted; only the number carries emphasis.
+    .icon {
+      color: color(text-muted);
+    }
+  }
+
+  &__value {
+    @include text-style-responsive(h2-mobile, h2);
+
+    overflow-wrap: anywhere;
+  }
+
+  &__meta {
+    @include flex(row, flex-start, center, space(2));
+
+    flex-wrap: wrap;
+  }
+
+  &__note {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+  }
+}

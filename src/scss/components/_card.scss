@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+// The shared panel surface. Page blocks mix it in: <section class="balance card">.
+.card {
+  @extend %surface;
+
+  min-width: 0;
+  padding: space(5);
+
+  @include media-up(md) {
+    padding: space(6);
+  }
+}

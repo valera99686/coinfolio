@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+// Chart image (picture: WebP + PNG, art-directed for mobile and desktop) with a text
+// alternative in <details>. Page blocks set --chart-ratio per breakpoint to match the exported PNGs.
+.chart {
+  @include flex(column, flex-start, stretch, space(3));
+
+  min-width: 0;
+
+  &__picture {
+    display: block;
+  }
+
+  &__image {
+    aspect-ratio: var(--chart-ratio, 2 / 1);
+    border-radius: radius(md);
+    height: auto;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  &__caption {
+    @include text-style(body-s);
+
+    color: color(text-muted);
+  }
+
+  &__summary {
+    @include text-style(body-s);
+    @include transition(color);
+
+    align-items: center;
+    color: color(accent-soft);
+    display: inline-flex;
+    min-height: rem($tap-target);
+
+    @include hover {
+      color: color(accent-hover);
+    }
+  }
+}

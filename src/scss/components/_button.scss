@@ -1,0 +1,58 @@
+@use '../abstracts' as *;
+
+// One block, variants by modifier: --primary, --secondary, --small, --block.
+.button {
+  @include flex(row, center, center, space(2));
+  @include text-style(label);
+  @include transition(background-color, border-color, color, transform);
+
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: radius(md);
+  color: color(text);
+  cursor: pointer;
+  min-height: rem($tap-target);
+  padding: space(3) space(5);
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &--primary {
+    background: color(accent);
+    color: color(text-on-accent);
+
+    @include hover {
+      background: color(accent-hover);
+    }
+  }
+
+  &--secondary {
+    background: color(bg-surface);
+    border-color: color(border);
+
+    @include hover {
+      background: color(bg-elevated);
+    }
+  }
+
+  // Compact button for dense rows; keeps a 44 px touch target on touch screens.
+  &--small {
+    min-height: rem(32);
+    padding: space(1) space(3);
+
+    @media (pointer: coarse) {
+      min-height: rem($tap-target);
+    }
+  }
+
+  &--block {
+    width: 100%;
+  }
+}

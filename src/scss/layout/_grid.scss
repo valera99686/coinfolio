@@ -1,0 +1,33 @@
+// Layout grid from Figma: 4 columns on mobile, 8 on tablet, 12 on desktop.
+// The 12-column system is the custom row()/col() mixins; this file defines the
+// breakpoint-dependent page margin and gutter that they read.
+@use '../abstracts' as *;
+
+:root {
+  --page-margin: #{rem($margin-sm)};
+  --grid-gutter: #{rem($gutter-sm)};
+  --header-height: #{rem($header-height-sm)};
+  --tabbar-height: #{rem($tabbar-height)};
+
+  @include media-up(md) {
+    --page-margin: #{rem($margin-md)};
+    --grid-gutter: #{rem($gutter-md)};
+  }
+
+  @include media-up(lg) {
+    --page-margin: #{rem($margin-lg)};
+    --header-height: #{rem($header-height-lg)};
+    --tabbar-height: 0rem;
+  }
+}
+
+// Optional helpers for markup that wants the grid without a block of its own.
+.grid {
+  @include row;
+}
+
+@for $span from 1 through 12 {
+  .grid__col-#{$span} {
+    @include col($span);
+  }
+}
