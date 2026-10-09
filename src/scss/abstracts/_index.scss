@@ -1,0 +1,6 @@
+// Public API of the abstracts layer: `@use '../abstracts' as *;` gives a partial everything below.
+// Nothing here compiles to CSS on its own.
+@forward 'variables';
+@forward 'functions';
+@forward 'mixins';
+@forward 'placeholders';

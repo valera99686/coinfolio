@@ -1,0 +1,4 @@
+// Third-party styles: self-hosted variable fonts (no request to Google Fonts).
+// Space Grotesk for headings and big numbers, Inter for UI text, as in Figma.
+@use '@fontsource-variable/inter/index.css' as inter;
+@use '@fontsource-variable/space-grotesk/index.css' as grotesk;

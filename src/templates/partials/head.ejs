@@ -5,4 +5,12 @@
   <meta name="description" content="<%= t(descKey) %>" data-i18n-attr="content:<%= descKey %>">
   <meta name="theme-color" content="#0B0F1A">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <script>
+    // Apply the saved theme before the first paint (no flash of the wrong theme).
+    try {
+      var theme = localStorage.getItem('coinfolio-theme');
+      if (theme === 'system') { theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'; }
+      if (theme === 'light' || theme === 'dark') { document.documentElement.dataset.theme = theme; }
+    } catch (e) { /* storage blocked: keep the default dark theme */ }
+  </script>
 </head>

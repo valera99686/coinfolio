@@ -1,0 +1,18 @@
+// Default theme = the dark design from Figma. Every colour role becomes a CSS custom
+// property (--color-bg-base, --color-accent, ...), so components stay theme-agnostic.
+@use '../abstracts' as *;
+
+:root {
+  --shadow-card: #{$shadow-card};
+  --shadow-popover: #{$shadow-popover};
+
+  color-scheme: dark;
+
+  @each $name, $value in $palette-dark {
+    --color-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $coin-colors {
+    --coin-#{$name}: #{$value};
+  }
+}

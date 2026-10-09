@@ -1,0 +1,36 @@
+// Placeholder selectors produce no CSS until something @extends them, and then the
+// shared declarations are emitted ONCE for all of the extending selectors.
+@use 'functions' as f;
+@use 'mixins' as m;
+
+%visually-hidden {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+%list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// The "card" surface used by every panel on the four pages.
+%surface {
+  background: f.color(bg-surface);
+  border: 1px solid f.color(border);
+  border-radius: f.radius(lg);
+}
+
+// Uppercase caption above numbers ("TOTAL BALANCE", table headers).
+%overline {
+  @include m.text-style(overline);
+
+  color: f.color(text-muted);
+}

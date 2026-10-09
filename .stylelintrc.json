@@ -1,0 +1,50 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "selector-class-pattern": [
+      "^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
+      {
+        "resolveNestedSelectors": true,
+        "message": "Class names follow BEM: block__element--modifier (an element belongs to a block, never to another element)"
+      }
+    ],
+    "max-nesting-depth": [2, { "ignoreAtRules": ["include", "media", "each", "if", "else", "for"] }],
+    "selector-max-compound-selectors": 2,
+    "selector-max-id": 0,
+    "selector-max-universal": 0,
+    "selector-max-specificity": "0,3,0",
+    "scss/dollar-variable-pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+    "scss/percent-placeholder-pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      { "type": "at-rule", "name": "extend" },
+      { "type": "at-rule", "name": "include", "hasBlock": false },
+      "declarations",
+      { "type": "at-rule", "name": "include", "hasBlock": true },
+      "rules"
+    ],
+    "order/properties-alphabetical-order": true,
+    "declaration-no-important": null,
+    "scss/at-extend-no-missing-placeholder": true,
+    "scss/no-global-function-names": true
+  },
+  "overrides": [
+    {
+      "files": ["src/scss/components/**/*.scss", "src/scss/layout/**/*.scss", "src/scss/pages/**/*.scss"],
+      "rules": {
+        "color-no-hex": true,
+        "declaration-no-important": true,
+        "selector-max-universal": 0
+      }
+    },
+    {
+      "files": ["src/scss/base/_reset.scss", "src/scss/base/_print.scss"],
+      "rules": {
+        "selector-max-universal": null,
+        "declaration-no-important": null
+      }
+    }
+  ]
+}

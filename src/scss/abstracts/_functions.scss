@@ -1,0 +1,71 @@
+// Functions return a VALUE. Anything that returns rules lives in _mixins.scss.
+@use 'sass:color';
+@use 'sass:map';
+@use 'sass:math';
+@use 'variables' as v;
+
+// Pixels -> rem, so the interface scales with the user's font size.
+// rem(44) and rem(44px) both give 2.75rem.
+@function rem($px) {
+  @if math.is-unitless($px) {
+    $px: $px * 1px;
+  }
+
+  @return math.div($px, v.$base-font-size) * 1rem;
+}
+
+// Token lookup with a readable error instead of a silent empty value.
+@function token($map, $key) {
+  @if not map.has-key($map, $key) {
+    @error 'Unknown token "#{$key}". Available: #{map.keys($map)}';
+  }
+
+  @return map.get($map, $key);
+}
+
+@function space($key) {
+  @return rem(token(v.$space, $key));
+}
+
+@function radius($key) {
+  @return rem(token(v.$radius, $key));
+}
+
+@function duration($key) {
+  @return token(v.$duration, $key);
+}
+
+@function z($layer) {
+  @return token(v.$z-layers, $layer);
+}
+
+@function breakpoint($key) {
+  @return token(v.$breakpoints, $key);
+}
+
+// Colour roles are CSS custom properties (see themes/), so a theme switch needs no recompile.
+@function color($name) {
+  @if not map.has-key(v.$palette-dark, $name) {
+    @error 'Unknown colour role "#{$name}". Available: #{map.keys(v.$palette-dark)}';
+  }
+
+  @return var(--color-#{$name});
+}
+
+// color-mix() wrappers: runtime colour maths that works on custom properties.
+@function mix-color($first, $second, $first-share) {
+  @return color-mix(in srgb, #{$first} $first-share, #{$second});
+}
+
+@function color-alpha($name, $percent) {
+  @return color-mix(in srgb, #{color($name)} $percent, transparent);
+}
+
+// Compile-time helpers for static Sass colours (used to derive the light palette).
+@function tint($c, $amount) {
+  @return color.mix(white, $c, $amount);
+}
+
+@function shade($c, $amount) {
+  @return color.mix(black, $c, $amount);
+}

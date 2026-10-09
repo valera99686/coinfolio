@@ -1,0 +1,36 @@
+// Light theme: the same colour roles, switched by <html data-theme="light"> (src/js/theme.js).
+// Only the role values change; no component rule is touched. The light palette is derived
+// with tint()/shade() from the dark tokens, so the accent keeps the brand hue.
+@use '../abstracts' as *;
+
+$light-accent: #f0b90b;
+$light-text: #0b0f1a;
+$palette-light: (
+  'bg-base': #f3f5fa,
+  'bg-surface': #fff,
+  'bg-elevated': shade(#fff, 5%),
+  'border': shade(#fff, 12%),
+  'text': $light-text,
+  'text-muted': tint($light-text, 38%),
+  'text-on-accent': $light-text,
+  'accent': $light-accent,
+  'accent-hover': shade($light-accent, 10%),
+  // gold text on white needs a darker tone to pass 4.5:1
+  'accent-soft': shade($light-accent, 55%),
+  'accent-subtle': rgba($light-accent, 0.2),
+  'positive': shade(#16c784, 38%),
+  'negative': shade(#ff5c65, 22%),
+  'positive-subtle': rgba(#16c784, 0.16),
+  'negative-subtle': rgba(#ff5c65, 0.14),
+);
+
+:root[data-theme='light'] {
+  --shadow-card: 0 8px 24px rgb(11 15 26 / 8%);
+  --shadow-popover: 0 16px 40px rgb(11 15 26 / 16%);
+
+  color-scheme: light;
+
+  @each $name, $value in $palette-light {
+    --color-#{$name}: #{$value};
+  }
+}

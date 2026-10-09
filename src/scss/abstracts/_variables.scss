@@ -1,0 +1,101 @@
+// Design tokens exported from the Figma file of Lab 1 ("Coinfolio").
+// Raw literals (hex, px) live ONLY in this file and in themes/.
+// Components, layout and pages read them through the helpers in _functions.scss.
+
+// ---- Typography --------------------------------------------------------
+$font-heading: 'Space Grotesk Variable', 'Inter Variable', system-ui, sans-serif;
+$font-body: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$base-font-size: 16px;
+
+// Figma text styles. `family` picks the font stack, `line` is in px, `tracking` in em.
+$type-scale: (
+  'display': (family: heading, size: 40px, line: 48px, weight: 700, tracking: -0.02em),
+  'display-mobile': (family: heading, size: 32px, line: 40px, weight: 700, tracking: -0.015em),
+  'h1': (family: heading, size: 32px, line: 40px, weight: 700, tracking: -0.01em),
+  'h1-mobile': (family: heading, size: 24px, line: 32px, weight: 700, tracking: -0.005em),
+  'h2': (family: heading, size: 24px, line: 32px, weight: 500, tracking: -0.005em),
+  'h2-mobile': (family: heading, size: 20px, line: 28px, weight: 500, tracking: 0),
+  'h3': (family: heading, size: 18px, line: 24px, weight: 500, tracking: 0),
+  'logo': (family: heading, size: 20px, line: 24px, weight: 700, tracking: -0.01em),
+  'body-l': (family: body, size: 16px, line: 24px, weight: 400, tracking: 0),
+  'body-m': (family: body, size: 14px, line: 20px, weight: 400, tracking: 0),
+  'body-m-medium': (family: body, size: 14px, line: 20px, weight: 500, tracking: 0),
+  'body-s': (family: body, size: 13px, line: 16px, weight: 400, tracking: 0),
+  'label': (family: body, size: 14px, line: 20px, weight: 600, tracking: 0.002em),
+  'overline': (family: body, size: 13px, line: 16px, weight: 600, tracking: 0.06em),
+);
+
+// ---- Colour palettes (CSS custom properties are generated in themes/) ----
+// Dark is the design from Figma; light is the same roles on a light surface.
+$palette-dark: (
+  'bg-base': #0b0f1a,
+  'bg-surface': #141a29,
+  'bg-elevated': #1c2438,
+  'border': #262f45,
+  'text': #f4f6fb,
+  'text-muted': #8c96ab,
+  'text-on-accent': #0b0f1a,
+  'accent': #f0b90b,
+  'accent-hover': #fcd535,
+  'accent-soft': #f5c542,
+  'accent-subtle': rgba(#f0b90b, 0.14),
+  'positive': #16c784,
+  'negative': #ff5c65,
+  'positive-subtle': rgba(#16c784, 0.14),
+  'negative-subtle': rgba(#ff5c65, 0.14),
+);
+
+// Brand colours of the coins (logos and the allocation legend).
+$coin-colors: (
+  'btc': #f7931a,
+  'eth': #627eea,
+  'sol': #1fb6d9,
+  'ada': #2a6bdb,
+  'dot': #e6007a,
+  'avax': #e84142,
+  'xrp': #3d4b5c,
+  'doge': #c2a633,
+  'usdt': #26a17b,
+  'link': #2a5ada,
+  'others': #8c96ab,
+);
+
+// ---- Layout ------------------------------------------------------------
+// Mobile first: 360 px base, tablet from 768 px, desktop from 1280 px.
+$breakpoints: (sm: 360px, md: 768px, lg: 1280px);
+$container-max: 1200px; // content width at >= 1280 px (12 columns, gutter 24)
+$tap-target: 44px; // minimal touch target
+$header-height-sm: 56px;
+$header-height-lg: 72px;
+$tabbar-height: 64px; // fixed bottom navigation on mobile
+$search-width: 280px;
+
+// Page margins and grid gutters from the Figma layout grids.
+$margin-sm: 16px;
+$margin-md: 32px;
+$margin-lg: 40px;
+$gutter-sm: 16px;
+$gutter-md: 24px;
+
+// Spacing scale: key x 4 px (Figma "space/*" tokens).
+$space: (
+  0: 0,
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  5: 20px,
+  6: 24px,
+  8: 32px,
+  10: 40px,
+  12: 48px,
+  16: 64px,
+);
+$radius: (sm: 8px, md: 12px, lg: 16px, full: 999px);
+
+// ---- Elevation, motion, stacking --------------------------------------
+$shadow-card: 0 8px 24px rgb(0 0 0 / 32%);
+$shadow-popover: 0 16px 40px rgb(0 0 0 / 45%);
+$duration: (fast: 120ms, base: 200ms, slow: 320ms);
+$easing: cubic-bezier(0.2, 0, 0, 1);
+$z-layers: (base: 0, raised: 1, sticky: 10, nav: 20, overlay: 30);

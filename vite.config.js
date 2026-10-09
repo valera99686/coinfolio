@@ -6,6 +6,12 @@ import { site } from "./src/data/site.js";
 export default defineConfig({
   base: "./",
   plugins: [ejsPages({ views: resolve("src/templates"), data: site })],
+  css: {
+    preprocessorOptions: {
+      // Sass module system (@use / @forward) through the modern compiler API.
+      scss: { api: "modern-compiler" },
+    },
+  },
   server: { port: 5173 },
   build: {
     outDir: "dist",

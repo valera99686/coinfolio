@@ -1,0 +1,117 @@
+// Mixins emit RULES. Each one takes parameters, so it is reuse and not copy-paste.
+@use 'sass:map';
+@use 'sass:math';
+@use 'functions' as f;
+@use 'variables' as v;
+
+// ---- Responsive (mobile first: base rules + min-width queries only) ----
+@mixin media-up($bp) {
+  @media (min-width: f.breakpoint($bp)) {
+    @content;
+  }
+}
+
+// ---- Layout helpers ----------------------------------------------------
+// Centred page container; the side margin follows the Figma grid (16 / 32 / 40 px).
+@mixin container($max: v.$container-max) {
+  margin-inline: auto;
+  max-width: calc(#{f.rem($max)} + 2 * var(--page-margin));
+  padding-inline: var(--page-margin);
+  width: 100%;
+}
+
+// Full-width bars (header, footer) whose CONTENT lines up with the container above.
+@mixin page-inline($max: v.$container-max) {
+  padding-inline: max(var(--page-margin), calc((100% - #{f.rem($max)}) / 2));
+}
+
+@mixin flex($dir: row, $justify: flex-start, $align: stretch, $gap: 0) {
+  align-items: $align;
+  display: flex;
+  flex-direction: $dir;
+  gap: $gap;
+  justify-content: $justify;
+}
+
+// Auto-filling CSS grid: as many columns of at least $min as fit.
+@mixin grid-auto($min: f.rem(240), $gap: f.space(4)) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, #{$min}), 1fr));
+}
+
+// ---- Custom 12-column grid with gutters (bonus) --------------------------
+// row() is the flex container; col($span) is a child spanning $span of $total columns.
+// Gutters are real `gap`s, so a column can be a card with its own background.
+@mixin row($gutter: var(--grid-gutter)) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gutter;
+}
+
+@mixin col($span, $total: 12, $gutter: var(--grid-gutter)) {
+  $basis: calc((100% - #{$gutter} * #{$total - 1}) / #{$total} * #{$span} + #{$gutter} * #{$span - 1});
+
+  flex: 0 0 $basis;
+  max-width: $basis;
+  min-width: 0;
+}
+
+// ---- Typography ---------------------------------------------------------
+// One Figma text style -> font family, size, line height, weight and tracking.
+@mixin text-style($name) {
+  $style: f.token(v.$type-scale, $name);
+  $family: map.get($style, family);
+
+
+  @if $family == heading {
+    font-family: v.$font-heading;
+  } @else {
+    font-family: v.$font-body;
+  }
+
+  font-size: f.rem(map.get($style, size));
+  font-weight: map.get($style, weight);
+  letter-spacing: map.get($style, tracking);
+  line-height: math.div(map.get($style, line), map.get($style, size));
+
+  @if $name == 'overline' {
+    text-transform: uppercase;
+  }
+}
+
+// Mobile style first, desktop style from $bp (Figma has separate mobile text styles).
+@mixin text-style-responsive($mobile, $desktop, $bp: md) {
+  @include text-style($mobile);
+
+  @include media-up($bp) {
+    @include text-style($desktop);
+  }
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// ---- Interaction and motion --------------------------------------------
+@mixin transition($props...) {
+  transition-duration: f.duration(base);
+  transition-property: $props;
+  transition-timing-function: v.$easing;
+}
+
+@mixin focus-ring($offset: f.space(1)) {
+  outline: 2px solid f.color(accent-soft);
+  outline-offset: $offset;
+}
+
+// Hover styles only where a real pointer exists (no sticky hover on touch screens).
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
