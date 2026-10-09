@@ -7,7 +7,16 @@
   <meta name="description" content="Your crypto portfolio at a glance: total balance, allocation, holdings and recent transactions." data-i18n-attr="content:desc.dashboard">
   <meta name="theme-color" content="#0B0F1A">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <script type="module" crossorigin src="./assets/main-B3buD-M1.js"></script>
+  <script>
+    // Apply the saved theme before the first paint (no flash of the wrong theme).
+    try {
+      var theme = localStorage.getItem('coinfolio-theme');
+      if (theme === 'system') { theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'; }
+      if (theme === 'light' || theme === 'dark') { document.documentElement.dataset.theme = theme; }
+    } catch (e) { /* storage blocked: keep the default dark theme */ }
+  </script>
+  <script type="module" crossorigin src="./assets/main-BfEw9D18.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-DpsBQQXQ.css">
 </head>
 
 <body class="page page--dashboard">
@@ -98,12 +107,12 @@
       <h1 class="page-header__title" data-i18n="dash.title">Portfolio overview</h1>
     </div>
     <div class="page-header__actions">
-      <button class="button button--secondary" type="button">
+      <button class="button page-header__action button--secondary" type="button">
         <svg class="icon icon--download" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#download"></use></svg>
 
         <span data-i18n="action.export">Export</span>
       </button>
-      <a class="button button--primary" href="./asset.html#add-transaction">
+      <a class="button page-header__action button--primary" href="./asset.html#add-transaction">
         <svg class="icon icon--plus" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#plus"></use></svg>
 
         <span data-i18n="nav.add">Add transaction</span>
@@ -157,7 +166,7 @@
 
   <source type="image/webp" sizes="(min-width: 1280px) 744px, (min-width: 768px) calc(66vw - 48px), 100vw"
     srcset="./img/charts/portfolio-desktop-744.webp 744w, ./img/charts/portfolio-desktop-1116.webp 1116w, ./img/charts/portfolio-desktop-1488.webp 1488w">
-  <img class="chart__picture__img" src="./img/charts/portfolio-desktop-744.png" width="744" height="220" sizes="(min-width: 1280px) 744px, (min-width: 768px) calc(66vw - 48px), 100vw"
+  <img class="chart__image" src="./img/charts/portfolio-desktop-744.png" width="744" height="220" sizes="(min-width: 1280px) 744px, (min-width: 768px) calc(66vw - 48px), 100vw"
     srcset="./img/charts/portfolio-desktop-744.png 744w, ./img/charts/portfolio-desktop-1116.png 1116w, ./img/charts/portfolio-desktop-1488.png 1488w"
     alt="Line chart: portfolio value grew from about $45.6k to $49.0k over the last month" data-i18n-attr="alt:dash.chartAlt" loading="lazy" decoding="async">
 </picture>
@@ -198,6 +207,10 @@
     <figure class="allocation__chart">
       <img class="allocation__donut" src="./img/allocation-donut.svg" width="176" height="176"
         alt="Donut chart: Bitcoin 55.7%, Ethereum 20.5%, Solana 8.6%, other assets 15.2%" data-i18n-attr="alt:dash.donutAlt">
+      <p class="allocation__total" aria-hidden="true">
+        <strong class="allocation__count">7</strong>
+        <span class="allocation__unit" data-i18n="dash.assetsUnit">assets</span>
+      </p>
       <figcaption class="allocation__caption" data-i18n="dash.donutCaption">Share of each asset in the portfolio</figcaption>
     </figure>
     <ul class="legend">
@@ -231,8 +244,8 @@
 
   <section class="kpis" aria-labelledby="kpis-title">
     <h2 class="kpis__title visually-hidden" id="kpis-title" data-i18n="dash.kpis">Key figures</h2>
-    <dl class="kpis__list">
-      <div class="stat-card stat-card--up">
+    <dl class="kpis__list" tabindex="0">
+      <div class="stat-card stat-card--up kpis__item">
   <dt class="stat-card__label">
     <span data-i18n="kpi.profit">Total profit</span>
     <svg class="icon icon--wallet" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#wallet"></use></svg>
@@ -254,7 +267,7 @@
   </dd>
 </div>
 
-      <div class="stat-card stat-card--up">
+      <div class="stat-card stat-card--up kpis__item">
   <dt class="stat-card__label">
     <span data-i18n="kpi.change">24h change</span>
     <svg class="icon icon--chart" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#chart"></use></svg>
@@ -276,7 +289,7 @@
   </dd>
 </div>
 
-      <div class="stat-card stat-card--up">
+      <div class="stat-card stat-card--up kpis__item">
   <dt class="stat-card__label">
     <span data-i18n="kpi.best">Best performer</span>
     <svg class="icon icon--arrow-up-right" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-up-right"></use></svg>
@@ -298,7 +311,7 @@
   </dd>
 </div>
 
-      <div class="stat-card stat-card--down">
+      <div class="stat-card stat-card--down kpis__item">
   <dt class="stat-card__label">
     <span data-i18n="kpi.worst">Worst performer</span>
     <svg class="icon icon--arrow-down-right" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-down-right"></use></svg>
@@ -327,7 +340,7 @@
     <header class="section-header">
       <h2 class="section-header__title" id="holdings-title" data-i18n="dash.holdings">Your holdings</h2>
       <p class="section-header__subtitle" data-i18n="dash.holdingsSub">Top 5 of 7 assets, sorted by value</p>
-      <nav class="tabs" aria-label="Portfolio sections" data-i18n-attr="aria-label:dash.sections">
+      <nav class="tabs section-header__tabs" aria-label="Portfolio sections" data-i18n-attr="aria-label:dash.sections">
         <ul class="tabs__list">
           <li class="tabs__item"><a class="tabs__link tabs__link--active" href="#holdings" aria-current="true" data-i18n="dash.tabHoldings">Holdings</a></li>
           <li class="tabs__item"><a class="tabs__link" href="#recent" data-i18n="dash.tabTransactions">Transactions</a></li>
@@ -346,15 +359,15 @@
   <tr>
     <th class="asset-table__th" scope="col" data-i18n="table.rank">#</th>
     <th class="asset-table__th" scope="col" data-i18n="table.asset">Asset</th>
-    <th class="asset-table__th" scope="col" aria-sort="none">
+    <th class="asset-table__th asset-table__th--numeric" scope="col" aria-sort="none">
       <button class="asset-table__sort" type="button">
         <svg class="icon icon--sort" width="14" height="14" aria-hidden="true" focusable="false"><use href="./img/icons.svg#sort"></use></svg>
 
         <span data-i18n="table.price">Price</span>
       </button>
     </th>
-    <th class="asset-table__th" scope="col" data-i18n="table.change">24h</th>
-    <th class="asset-table__th" scope="col" data-i18n="table.holdings">Holdings</th>
+    <th class="asset-table__th asset-table__th--numeric" scope="col" data-i18n="table.change">24h</th>
+    <th class="asset-table__th asset-table__th--numeric" scope="col" data-i18n="table.holdings">Holdings</th>
     <th class="asset-table__th" scope="col" data-i18n="table.allocation">Allocation</th>
     <th class="asset-table__th" scope="col" data-i18n="table.chart">Last 7 days</th>
     <th class="asset-table__th" scope="col"><span class="visually-hidden" data-i18n="table.actions">Actions</span></th>
@@ -363,7 +376,7 @@
 
       <tbody class="asset-table__body">
 
-        <tr class="asset-row" data-asset-id="1" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+        <tr class="asset-row asset-row--holding" data-asset-id="1" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
   <td class="asset-row__rank">1</td>
   <th class="asset-row__asset" scope="row">
     <a class="asset-row__link" href="./asset.html?id=btc">
@@ -401,7 +414,7 @@
       alt="7-day trend: rising" data-i18n-attr="alt:trend.up">
   </td>
   <td class="asset-row__actions">
-    <button class="icon-button asset-row__watch" type="button" aria-pressed="false">
+    <button class="icon-button icon-button--plain asset-row__watch" type="button" aria-pressed="false">
       <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
 
       <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Bitcoin</span>
@@ -410,7 +423,7 @@
 </tr>
 
 
-        <tr class="asset-row" data-asset-id="2" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+        <tr class="asset-row asset-row--holding" data-asset-id="2" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
   <td class="asset-row__rank">2</td>
   <th class="asset-row__asset" scope="row">
     <a class="asset-row__link" href="./asset.html?id=eth">
@@ -448,7 +461,7 @@
       alt="7-day trend: falling" data-i18n-attr="alt:trend.down">
   </td>
   <td class="asset-row__actions">
-    <button class="icon-button asset-row__watch" type="button" aria-pressed="false">
+    <button class="icon-button icon-button--plain asset-row__watch" type="button" aria-pressed="false">
       <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
 
       <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Ethereum</span>
@@ -457,7 +470,7 @@
 </tr>
 
 
-        <tr class="asset-row" data-asset-id="4" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+        <tr class="asset-row asset-row--holding" data-asset-id="4" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
   <td class="asset-row__rank">3</td>
   <th class="asset-row__asset" scope="row">
     <a class="asset-row__link" href="./asset.html?id=sol">
@@ -495,7 +508,7 @@
       alt="7-day trend: rising" data-i18n-attr="alt:trend.up">
   </td>
   <td class="asset-row__actions">
-    <button class="icon-button asset-row__watch icon-button--active" type="button" aria-pressed="true">
+    <button class="icon-button icon-button--plain asset-row__watch icon-button--active" type="button" aria-pressed="true">
       <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
 
       <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Solana</span>
@@ -504,7 +517,7 @@
 </tr>
 
 
-        <tr class="asset-row" data-asset-id="6" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+        <tr class="asset-row asset-row--holding" data-asset-id="6" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
   <td class="asset-row__rank">4</td>
   <th class="asset-row__asset" scope="row">
     <a class="asset-row__link" href="./asset.html?id=ada">
@@ -542,7 +555,7 @@
       alt="7-day trend: falling" data-i18n-attr="alt:trend.down">
   </td>
   <td class="asset-row__actions">
-    <button class="icon-button asset-row__watch" type="button" aria-pressed="false">
+    <button class="icon-button icon-button--plain asset-row__watch" type="button" aria-pressed="false">
       <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
 
       <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Cardano</span>
@@ -551,7 +564,7 @@
 </tr>
 
 
-        <tr class="asset-row" data-asset-id="9" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+        <tr class="asset-row asset-row--holding" data-asset-id="9" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
   <td class="asset-row__rank">5</td>
   <th class="asset-row__asset" scope="row">
     <a class="asset-row__link" href="./asset.html?id=dot">
@@ -589,7 +602,7 @@
       alt="7-day trend: rising" data-i18n-attr="alt:trend.up">
   </td>
   <td class="asset-row__actions">
-    <button class="icon-button asset-row__watch" type="button" aria-pressed="false">
+    <button class="icon-button icon-button--plain asset-row__watch" type="button" aria-pressed="false">
       <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
 
       <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Polkadot</span>
@@ -689,7 +702,7 @@
       <a class="coin-card__link" href="./asset.html?id=sol">Solana</a>
     </h3>
     <abbr class="coin-card__symbol" itemprop="currency" title="Solana">SOL</abbr>
-    <button class="icon-button icon-button--active coin-card__watch" type="button" aria-pressed="true">
+    <button class="icon-button icon-button--plain icon-button--active coin-card__watch" type="button" aria-pressed="true">
       <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
 
       <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Solana</span>
@@ -700,7 +713,7 @@
     <meta itemprop="priceCurrency" content="USD">
   </p>
   
-<span class="badge badge--up">
+<span class="badge badge--up coin-card__badge">
   <svg class="icon icon--arrow-up-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-up-right"></use></svg>
 
   <span class="visually-hidden" data-i18n="change.up">Up</span>
@@ -719,7 +732,7 @@
       <a class="coin-card__link" href="./asset.html?id=xrp">XRP</a>
     </h3>
     <abbr class="coin-card__symbol" itemprop="currency" title="XRP">XRP</abbr>
-    <button class="icon-button icon-button--active coin-card__watch" type="button" aria-pressed="true">
+    <button class="icon-button icon-button--plain icon-button--active coin-card__watch" type="button" aria-pressed="true">
       <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
 
       <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> XRP</span>
@@ -730,7 +743,7 @@
     <meta itemprop="priceCurrency" content="USD">
   </p>
   
-<span class="badge badge--up">
+<span class="badge badge--up coin-card__badge">
   <svg class="icon icon--arrow-up-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-up-right"></use></svg>
 
   <span class="visually-hidden" data-i18n="change.up">Up</span>
@@ -749,7 +762,7 @@
       <a class="coin-card__link" href="./asset.html?id=doge">Dogecoin</a>
     </h3>
     <abbr class="coin-card__symbol" itemprop="currency" title="Dogecoin">DOGE</abbr>
-    <button class="icon-button icon-button--active coin-card__watch" type="button" aria-pressed="true">
+    <button class="icon-button icon-button--plain icon-button--active coin-card__watch" type="button" aria-pressed="true">
       <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
 
       <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Dogecoin</span>
@@ -760,7 +773,7 @@
     <meta itemprop="priceCurrency" content="USD">
   </p>
   
-<span class="badge badge--up">
+<span class="badge badge--up coin-card__badge">
   <svg class="icon icon--arrow-up-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-up-right"></use></svg>
 
   <span class="visually-hidden" data-i18n="change.up">Up</span>
@@ -779,7 +792,7 @@
       <a class="coin-card__link" href="./asset.html?id=avax">Avalanche</a>
     </h3>
     <abbr class="coin-card__symbol" itemprop="currency" title="Avalanche">AVAX</abbr>
-    <button class="icon-button icon-button--active coin-card__watch" type="button" aria-pressed="true">
+    <button class="icon-button icon-button--plain icon-button--active coin-card__watch" type="button" aria-pressed="true">
       <svg class="icon icon--star" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#star"></use></svg>
 
       <span class="visually-hidden"><span data-i18n="asset.watch">Watch</span> Avalanche</span>
@@ -790,7 +803,7 @@
     <meta itemprop="priceCurrency" content="USD">
   </p>
   
-<span class="badge badge--down">
+<span class="badge badge--down coin-card__badge">
   <svg class="icon icon--arrow-down-right" width="16" height="16" aria-hidden="true" focusable="false"><use href="./img/icons.svg#arrow-down-right"></use></svg>
 
   <span class="visually-hidden" data-i18n="change.down">Down</span>

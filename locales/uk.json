@@ -74,6 +74,7 @@
   "dash.chartCaption": "Вартість портфеля за 30 днів",
   "dash.allocation": "Розподіл",
   "dash.assetsCount": "7 активів · за вартістю",
+  "dash.assetsUnit": "активів",
   "dash.donutAlt": "Кільцева діаграма: Bitcoin 55,7 %, Ethereum 20,5 %, Solana 8,6 %, інші активи 15,2 %",
   "dash.donutCaption": "Частка кожного активу в портфелі",
   "dash.kpis": "Ключові показники",
