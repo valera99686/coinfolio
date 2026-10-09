@@ -39,14 +39,14 @@
   }
 
   &__title {
-    @include text-style(body-m-medium);
+    @extend %type-body-m-medium;
 
     align-self: end;
     grid-area: title;
   }
 
   &__symbol {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     align-self: start;
     color: color(text-muted);
@@ -60,7 +60,7 @@
   }
 
   &__price {
-    @include text-style(h2);
+    @extend %type-h2;
 
     grid-area: price;
   }

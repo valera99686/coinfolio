@@ -2,8 +2,8 @@
 
 // Text-only action with an optional trailing chevron ("See all >", "Log out").
 .link-button {
+  @extend %type-label;
   @include flex(row, flex-start, center, space(1));
-  @include text-style(label);
   @include transition(color);
 
   color: color(accent-soft);

@@ -16,7 +16,7 @@
   }
 
   &__title {
-    @include text-style(h2-mobile);
+    @extend %type-h2-mobile;
   }
 
   &__body {
@@ -26,7 +26,7 @@
   }
 
   &__hint {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     color: color(text-muted);
     grid-area: hint;
@@ -59,7 +59,7 @@
   }
 
   &__label {
-    @include text-style(body-m-medium);
+    @extend %type-body-m-medium;
 
     grid-area: label;
   }

@@ -4,5 +4,5 @@
 // From 768 px the period switch moves to the top-right corner next to the figures.
 // Exported chart sizes: mobile 296 x 120, desktop 744 x 220 (see the <picture> sources).
 .balance {
-  @include metric-panel(296 / 120, 744 / 220);
+  @include metric-panel('296 / 120', '744 / 220');
 }

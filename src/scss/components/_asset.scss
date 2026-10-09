@@ -5,11 +5,11 @@
 // full-width flex item and `order` puts them in the phone order of the Figma file.
 // From 1280 px the wrappers become the 8-column and the 4-column stack.
 .asset {
-  @include row;
+  @extend %row;
 
   &__header,
   &__history {
-    @include col(12);
+    @extend %col-12;
   }
 
   &__main,
@@ -110,7 +110,7 @@
   }
 
   &__title {
-    @include text-style-responsive(h1-mobile, h1);
+    @extend %type-h1-mobile-h1;
 
     align-self: end;
     grid-area: title;

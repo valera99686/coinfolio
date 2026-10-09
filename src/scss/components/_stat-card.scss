@@ -20,7 +20,7 @@
   }
 
   &__value {
-    @include text-style-responsive(h2-mobile, h2);
+    @extend %type-h2-mobile-h2;
 
     overflow-wrap: anywhere;
   }
@@ -32,7 +32,7 @@
   }
 
   &__note {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     color: color(text-muted);
   }

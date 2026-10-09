@@ -131,7 +131,7 @@
   }
 
   &__rank {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     color: color(text-muted);
   }
@@ -151,7 +151,7 @@
   }
 
   &__name {
-    @include text-style(body-m-medium);
+    @extend %type-body-m-medium;
     @include truncate;
 
     align-self: end;
@@ -159,7 +159,7 @@
   }
 
   &__symbol {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     align-self: start;
     color: color(text-muted);
@@ -167,26 +167,26 @@
   }
 
   &__price {
-    @include text-style(body-m-medium);
+    @extend %type-body-m-medium;
 
     text-align: end;
   }
 
   &__value {
-    @include text-style(body-m-medium);
+    @extend %type-body-m-medium;
 
     display: block;
   }
 
   &__amount {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     color: color(text-muted);
     display: block;
   }
 
   &__empty {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     color: color(text-muted);
   }
@@ -200,7 +200,7 @@
   }
 
   &__share {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     color: color(text-muted);
     margin-inline-start: space(2);

@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  @include text-style(body-m);
+  @extend %type-body-m;
 
   background: color(bg-base);
   color: color(text);

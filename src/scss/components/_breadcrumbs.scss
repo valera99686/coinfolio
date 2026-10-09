@@ -2,7 +2,7 @@
 
 // "Assets > Bitcoin". The chevron between the items is drawn with borders, so it is not read aloud.
 .breadcrumbs {
-  @include text-style(body-m);
+  @extend %type-body-m;
 
   &__list {
     @include flex(row, flex-start, center);

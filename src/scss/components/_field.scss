@@ -7,13 +7,13 @@
   min-width: 0;
 
   &__label {
-    @include text-style(body-m-medium);
+    @extend %type-body-m-medium;
   }
 
   &__input,
   &__select,
   &__textarea {
-    @include text-style(body-l);
+    @extend %type-body-l;
     @include transition(border-color, box-shadow);
 
     background: color(bg-surface);
@@ -61,7 +61,7 @@
 
   &__hint,
   &__error {
-    @include text-style(body-s);
+    @extend %type-body-s;
   }
 
   &__hint {

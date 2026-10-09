@@ -11,6 +11,6 @@
   }
 
   &__text {
-    @include text-style(logo);
+    @extend %type-logo;
   }
 }

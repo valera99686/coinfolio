@@ -55,8 +55,8 @@ $tab-order: (index: 1, assets: 2, add: 3, watchlist: 4, profile: 5);
   }
 
   &__link {
+    @extend %type-body-s;
     @include flex(column, center, center, space(1));
-    @include text-style(body-s);
     @include transition(color, background-color);
 
     border-radius: radius(md);

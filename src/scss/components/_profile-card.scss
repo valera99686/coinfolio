@@ -7,20 +7,20 @@
   text-align: center;
 
   &__name {
-    @include text-style-responsive(h2-mobile, h2);
+    @extend %type-h2-mobile-h2;
 
     margin-top: space(4);
   }
 
   &__email {
-    @include text-style(body-m);
+    @extend %type-body-m;
 
     color: color(text-muted);
     margin-top: space(1);
   }
 
   &__since {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     background: color(accent-subtle);
     border-radius: radius(sm);
@@ -44,13 +44,13 @@
     @include flex(column-reverse, flex-start, center, space(1));
 
     dt {
-      @include text-style(body-s);
+      @extend %type-body-s;
 
       color: color(text-muted);
     }
 
     dd {
-      @include text-style(h2-mobile);
+      @extend %type-h2-mobile;
     }
   }
 

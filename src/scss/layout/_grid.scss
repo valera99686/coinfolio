@@ -23,7 +23,7 @@
 
 // Optional helpers for markup that wants the grid without a block of its own.
 .grid {
-  @include row;
+  @extend %row;
 }
 
 @for $span from 1 through 12 {

@@ -3,10 +3,10 @@
 // Asset details page (asset.html): breadcrumbs above one article.
 // The article arranges its own panels (components/asset), this file only places the two blocks.
 .asset-page {
-  @include row;
+  @extend %row;
 
   > .breadcrumbs,
   > .asset {
-    @include col(12);
+    @extend %col-12;
   }
 }

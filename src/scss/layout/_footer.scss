@@ -1,9 +1,9 @@
 @use '../abstracts' as *;
 
 .site-footer {
+  @extend %type-body-s;
   @include flex(column, flex-start, flex-start, space(3));
   @include page-inline;
-  @include text-style(body-s);
 
   border-top: 1px solid color(border);
   color: color(text-muted);

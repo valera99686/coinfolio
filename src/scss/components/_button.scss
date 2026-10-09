@@ -2,8 +2,8 @@
 
 // One block, variants by modifier: --primary, --secondary, --small, --block.
 .button {
+  @extend %type-label;
   @include flex(row, center, center, space(2));
-  @include text-style(label);
   @include transition(background-color, border-color, color, transform);
 
   background: transparent;

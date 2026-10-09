@@ -4,7 +4,7 @@
 // The title is a small caption on phones and a regular panel heading from 768 px.
 .position {
   &__title {
-    @include text-style-responsive(overline, h3);
+    @extend %type-overline-h3;
 
     color: color(text-muted);
 
@@ -15,13 +15,13 @@
   }
 
   &__value {
-    @include text-style-responsive(h2-mobile, h2);
+    @extend %type-h2-mobile-h2;
 
     margin-top: space(3);
   }
 
   &__amount {
-    @include text-style(body-m);
+    @extend %type-body-m;
 
     color: color(text-muted);
     margin-top: space(1);
@@ -43,8 +43,8 @@
   }
 
   &__row {
+    @extend %type-body-m;
     @include flex(row, space-between, center, space(3));
-    @include text-style(body-m);
 
     font-variant-numeric: tabular-nums;
 

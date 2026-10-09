@@ -12,7 +12,7 @@
   }
 
   &__link {
-    @include text-style(label);
+    @extend %type-label;
     @include transition(color, border-color);
 
     align-items: center;

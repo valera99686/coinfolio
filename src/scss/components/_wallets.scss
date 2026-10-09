@@ -3,11 +3,11 @@
 // Connected wallets: a short list (icon tile, name, shortened address, sync status) and a connect button.
 .wallets {
   &__title {
-    @include text-style(h3);
+    @extend %type-h3;
   }
 
   &__hint {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     color: color(text-muted);
     margin-top: space(1);
@@ -40,14 +40,14 @@
   }
 
   &__name {
-    @include text-style(body-m-medium);
+    @extend %type-body-m-medium;
 
     align-self: end;
     grid-area: name;
   }
 
   &__address {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     align-self: start;
     color: color(text-muted);
@@ -55,7 +55,7 @@
   }
 
   &__status {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     background: color(positive-subtle);
     border-radius: radius(sm);

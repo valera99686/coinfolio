@@ -8,14 +8,14 @@
   margin-bottom: space(4);
 
   &__title {
-    @include text-style-responsive(h3, h2);
+    @extend %type-h3-h2;
 
     margin-inline-end: auto;
   }
 
   // Always on its own line, under the title.
   &__subtitle {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     color: color(text-muted);
     flex-basis: 100%;

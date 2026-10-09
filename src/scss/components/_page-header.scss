@@ -23,17 +23,17 @@
   }
 
   &__overline {
-    @include text-style(body-m);
+    @extend %type-body-m;
 
     color: color(text-muted);
   }
 
   &__title {
-    @include text-style-responsive(h1-mobile, h1);
+    @extend %type-h1-mobile-h1;
   }
 
   &__lead {
-    @include text-style(body-l);
+    @extend %type-body-l;
 
     color: color(text-muted);
     max-width: 60ch;

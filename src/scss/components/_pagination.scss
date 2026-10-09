@@ -19,7 +19,7 @@
   }
 
   &__summary {
-    @include text-style(body-m);
+    @extend %type-body-m;
 
     color: color(text-muted);
   }
@@ -48,15 +48,15 @@
     }
 
     &--gap {
-      @include text-style(body-m);
+      @extend %type-body-m;
 
       color: color(text-muted);
     }
   }
 
   &__link {
+    @extend %type-label;
     @include flex(row, center, center);
-    @include text-style(label);
     @include transition(background-color, border-color, color);
 
     border: 1px solid color(border);

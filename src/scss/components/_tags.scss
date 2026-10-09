@@ -11,7 +11,7 @@
   }
 
   &__item {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     background: color(bg-elevated);
     border-radius: radius(sm);

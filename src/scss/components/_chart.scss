@@ -20,13 +20,13 @@
   }
 
   &__caption {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     color: color(text-muted);
   }
 
   &__summary {
-    @include text-style(body-s);
+    @extend %type-body-s;
     @include transition(color);
 
     align-items: center;

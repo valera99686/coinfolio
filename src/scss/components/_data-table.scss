@@ -2,14 +2,14 @@
 
 // Small accessible data table (text alternative of a chart).
 .data-table {
-  @include text-style(body-s);
+  @extend %type-body-s;
 
   font-variant-numeric: tabular-nums;
   max-width: 32rem;
   width: 100%;
 
   &__caption {
-    @include text-style(label);
+    @extend %type-label;
 
     padding-bottom: space(2);
     text-align: start;

@@ -2,8 +2,8 @@
 
 // Price-change pill. Direction is carried by the arrow icon and the sign, not by colour alone.
 .badge {
+  @extend %type-label;
   @include flex(row, flex-start, center, space(1));
-  @include text-style(label);
 
   border-radius: radius(sm);
   display: inline-flex;

@@ -2,19 +2,19 @@
 
 // Headings follow the Figma text styles; blocks may override size with text-style().
 h1 {
-  @include text-style-responsive(h1-mobile, h1);
+  @extend %type-h1-mobile-h1;
 }
 
 h2 {
-  @include text-style-responsive(h2-mobile, h2);
+  @extend %type-h2-mobile-h2;
 }
 
 h3 {
-  @include text-style(h3);
+  @extend %type-h3;
 }
 
 small {
-  @include text-style(body-s);
+  @extend %type-body-s;
 }
 
 abbr[title] {

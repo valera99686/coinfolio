@@ -32,7 +32,7 @@
   }
 
   &__link {
-    @include text-style(label);
+    @extend %type-label;
     @include transition(background-color, border-color, color);
 
     align-items: center;

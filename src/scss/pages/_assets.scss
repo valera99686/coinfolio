@@ -3,13 +3,13 @@
 // Assets page (assets.html): header, market summary, filter toolbar + table, hint.
 // Every section is a full-width row of the 12-column grid; the sections handle their own insides.
 .assets-page {
-  @include row;
+  @extend %row;
 
   > .page-header,
   > .market,
   > .asset-list,
   > .assets-page__hint {
-    @include col(12);
+    @extend %col-12;
   }
 
   > .page-header {
@@ -17,8 +17,8 @@
   }
 
   &__hint {
+    @extend %type-body-s;
     @include flex(row, flex-start, center, space(2));
-    @include text-style(body-s);
 
     color: color(text-muted);
   }

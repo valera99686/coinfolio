@@ -5,7 +5,7 @@
   @extend %visually-hidden;
 
   &:focus {
-    @include text-style(label);
+    @extend %type-label;
 
     background: color(accent);
     border-radius: radius(md);

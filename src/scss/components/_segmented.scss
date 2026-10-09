@@ -19,7 +19,7 @@
   }
 
   &__label {
-    @include text-style(label);
+    @extend %type-label;
     @include transition(background-color, color);
 
     align-items: center;

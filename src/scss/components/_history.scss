@@ -72,8 +72,8 @@
 
     // Icon tile: the +/- sign is decoration (the type is written in the row), so it has no text alternative.
     &::before {
+      @extend %type-h3;
       @include flex(row, center, center);
-      @include text-style(h3);
 
       align-self: center;
       background: var(--tx-tint);
@@ -98,10 +98,9 @@
   }
 
   &__date,
-  &__type,
   &__price,
   &__total {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     color: color(text-muted);
 
@@ -122,18 +121,19 @@
   }
 
   &__type {
-    @include text-style(body-m-medium);
+    @extend %type-body-m-medium;
 
     color: color(text);
     grid-area: type;
 
     @include media-up(md) {
+      padding: space(3);
       text-align: start;
     }
   }
 
   &__amount {
-    @include text-style(body-m-medium);
+    @extend %type-body-m-medium;
 
     color: var(--tx-amount);
     grid-area: amount;

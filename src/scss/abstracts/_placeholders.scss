@@ -1,7 +1,10 @@
 // Placeholder selectors produce no CSS until something @extends them, and then the
 // shared declarations are emitted ONCE for all of the extending selectors.
+@use 'sass:list';
+@use 'sass:map';
 @use 'functions' as f;
 @use 'mixins' as m;
+@use 'variables' as v;
 
 %visually-hidden {
   border: 0;
@@ -34,3 +37,32 @@
 
   color: f.color(text-muted);
 }
+
+// ---- Typography: one placeholder per Figma text style -----------------------
+// `@extend %type-h3` instead of repeating the six declarations in every block that uses the style.
+// Inside a media query a placeholder cannot be extended, there `@include text-style(...)` is used.
+@each $name in map.keys(v.$type-scale) {
+  %type-#{$name} {
+    @include m.text-style($name);
+  }
+}
+
+@each $pair in v.$type-responsive {
+  $phone: list.nth($pair, 1);
+  $desktop: list.nth($pair, 2);
+
+  %type-#{$phone}-#{$desktop} {
+    @include m.text-style-responsive($phone, $desktop);
+  }
+}
+
+// ---- Grid: the two blocks every page repeats -------------------------------
+// A flex row of the 12-column grid, and a child that spans the whole row.
+%row {
+  @include m.row;
+}
+
+%col-12 {
+  @include m.col(12);
+}
+

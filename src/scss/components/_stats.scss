@@ -3,11 +3,11 @@
 // Market statistics: a definition list in a grid, two columns on phones and three from 768 px.
 .stats {
   &__title {
-    @include text-style(h3);
+    @extend %type-h3;
   }
 
   &__updated {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     color: color(text-muted);
     margin-top: space(1);
@@ -34,7 +34,7 @@
     }
 
     dd {
-      @include text-style(h3);
+      @extend %type-h3;
 
       overflow-wrap: anywhere;
     }

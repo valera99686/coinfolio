@@ -3,7 +3,7 @@
 // "Add transaction" form: type switch, fields, fee + total, submit.
 .trade {
   &__title {
-    @include text-style(h3);
+    @extend %type-h3;
   }
 
   &__form {
@@ -20,8 +20,8 @@
   }
 
   &__row {
+    @extend %type-body-m;
     @include flex(row, space-between, center, space(3));
-    @include text-style(body-m);
 
     color: color(text-muted);
     font-variant-numeric: tabular-nums;
@@ -32,7 +32,7 @@
   }
 
   &__total {
-    @include text-style(h3);
+    @extend %type-h3;
 
     color: color(text);
   }

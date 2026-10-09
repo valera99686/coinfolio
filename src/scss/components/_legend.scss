@@ -44,13 +44,13 @@ $legend-items: btc, eth, sol, others;
   }
 
   &__label {
-    @include text-style(body-m);
+    @extend %type-body-m;
 
     grid-area: label;
   }
 
   &__value {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     color: color(text-muted);
     grid-area: value;
@@ -61,7 +61,7 @@ $legend-items: btc, eth, sol, others;
   }
 
   &__share {
-    @include text-style(body-m-medium);
+    @extend %type-body-m-medium;
 
     grid-area: share;
     text-align: end;

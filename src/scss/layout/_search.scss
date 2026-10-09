@@ -53,7 +53,7 @@
   }
 
   &__hint {
-    @include text-style(body-s);
+    @extend %type-body-s;
 
     display: none;
 

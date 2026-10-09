@@ -3,7 +3,7 @@
 // Price panel: pair, big price, change, period switch, chart. Same layout as the balance panel.
 // Exported chart sizes: mobile 328 x 180, desktop 744 x 300 (see the <picture> sources).
 .price {
-  @include metric-panel(328 / 180, 744 / 300);
+  @include metric-panel('328 / 180', '744 / 300');
 
   // Phones: no surface, the chart runs on the page background like in the phone frame of the Figma file.
   background: none;

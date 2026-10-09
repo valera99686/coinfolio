@@ -25,6 +25,16 @@ $type-scale: (
   'overline': (family: body, size: 13px, line: 16px, weight: 600, tracking: 0.06em),
 );
 
+// Text styles that change with the screen: (phone style, desktop style from 768 px).
+// Every pair gets one placeholder, so the pair is compiled once however many blocks use it.
+$type-responsive: (
+  ('h1-mobile', 'h1'),
+  ('h2-mobile', 'h2'),
+  ('display-mobile', 'display'),
+  ('h3', 'h2'),
+  ('overline', 'h3'),
+);
+
 // ---- Colour palettes (CSS custom properties are generated in themes/) ----
 // Dark is the design from Figma; light is the same roles on a light surface.
 $palette-dark: (

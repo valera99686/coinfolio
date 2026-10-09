@@ -3,11 +3,11 @@
 // "About Bitcoin": short text and two outbound links.
 .about {
   &__title {
-    @include text-style(h3);
+    @extend %type-h3;
   }
 
   &__text {
-    @include text-style(body-m);
+    @extend %type-body-m;
 
     color: color(text-muted);
     margin-top: space(3);
