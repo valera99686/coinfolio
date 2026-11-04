@@ -1,4 +1,4 @@
-import{h as s,t as a,i as d,n as p,o as u,e as c,p as h,f as n,k as m,a as $,q as b}from"./main-CFzDqIMR.js";import{e as y}from"./common-B4A-HMxj.js";const f=["1h","24h","7d","1m","1y","all"],v=t=>new URL(t).hostname.replace(/^www\./,"");function k(t){const e=encodeURIComponent(t.id);return s`<header class="asset__header">
+import{h as s,t as a,i as d,n as p,o as u,e as c,p as h,f as n,k as m,a as $,q as b}from"./main-B7_KIXTQ.js";import{e as y}from"./common-DCB5gK-q.js";const f=["1h","24h","7d","1m","1y","all"],v=t=>new URL(t).hostname.replace(/^www\./,"");function k(t){const e=encodeURIComponent(t.id);return s`<header class="asset__header">
     <img class="asset__logo" src="./img/coins/${t.id}.svg" alt="" width="48" height="48">
     <h1 class="asset__title" itemprop="name">${t.name}</h1>
     <ul class="tags asset__tags">

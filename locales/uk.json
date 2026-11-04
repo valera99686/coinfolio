@@ -279,5 +279,7 @@
   "wallets.connected": "{name} підключено.",
   "wallets.connectFailed": "Не вдалося підключити гаманець.",
   "wallets.emptyTitle": "Гаманців ще немає",
-  "wallets.emptyText": "Підключіть гаманець, щоб синхронізувати баланси."
+  "wallets.emptyText": "Підключіть гаманець, щоб синхронізувати баланси.",
+
+  "asset.heading": "Деталі активу"
 }
