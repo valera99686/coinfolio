@@ -279,5 +279,7 @@
   "wallets.connected": "{name} connected.",
   "wallets.connectFailed": "The wallet could not be connected.",
   "wallets.emptyTitle": "No wallets yet",
-  "wallets.emptyText": "Connect a wallet to sync your balances."
+  "wallets.emptyText": "Connect a wallet to sync your balances.",
+
+  "asset.heading": "Asset details"
 }

@@ -13,7 +13,9 @@
   </nav>
 
   <%# The article is filled by src/js/pages/asset.js from the API: header, price chart, stats, position, form, history. %>
-  <article class="asset" itemscope itemtype="https://schema.org/ExchangeRateSpecification" aria-busy="true"></article>
+  <article class="asset" itemscope itemtype="https://schema.org/ExchangeRateSpecification" aria-busy="true">
+    <h1 class="visually-hidden" data-i18n="asset.heading"><%= t('asset.heading') %></h1>
+  </article>
   <div class="asset-page__state" hidden></div>
 </main>
 

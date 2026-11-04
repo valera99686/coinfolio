@@ -80,9 +80,7 @@ class ProfilePage {
     const since = dayjs(profile.memberSince);
     $('[data-slot="name"]').textContent = `${profile.firstName} ${profile.lastName}`;
     $('[data-slot="email"]').textContent = profile.email;
-    const time = $('[data-slot="since"]');
-    time.textContent = since.format("MMM YYYY");
-    time.setAttribute("datetime", since.format("YYYY-MM"));
+    render($('[data-slot="since"]'), html`<time datetime="${since.format("YYYY-MM")}">${since.format("MMM YYYY")}</time>`);
   }
 
   /** Puts the values of the API into the fields. The theme is local: the chosen one wins over the stored one. */
