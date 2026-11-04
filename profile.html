@@ -15,8 +15,8 @@
       if (theme === 'light' || theme === 'dark') { document.documentElement.dataset.theme = theme; }
     } catch (e) { /* storage blocked: keep the default dark theme */ }
   </script>
-  <script type="module" crossorigin src="./assets/main-BfEw9D18.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-DpsBQQXQ.css">
+  <script type="module" crossorigin src="./assets/main-CFzDqIMR.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-DeTzUuDS.css">
 </head>
 
 <body class="page page--profile">
@@ -63,7 +63,7 @@
       </li>
 
       <li class="site-nav__item site-nav__item--add">
-        <a class="site-nav__link site-nav__link--add" href="./asset.html#add-transaction">
+        <a class="site-nav__link site-nav__link--add" href="./asset.html#/item/btc/trade">
           <svg class="icon icon--plus" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#plus"></use></svg>
 
           <span class="site-nav__label" data-i18n="nav.add">Add transaction</span>
@@ -119,20 +119,20 @@
   <aside class="profile-card card" aria-labelledby="profile-name">
     <picture class="avatar avatar--lg profile-card__avatar">
       <source type="image/webp" srcset="./img/profile/avatar-80.webp 1x, ./img/profile/avatar-160.webp 2x, ./img/profile/avatar-240.webp 3x">
-      <img class="avatar__img" src="./img/profile/avatar-80.jpg"
+      <img class="avatar__img" id="profile-avatar" src="./img/profile/avatar-80.jpg"
         srcset="./img/profile/avatar-80.jpg 1x, ./img/profile/avatar-160.jpg 2x, ./img/profile/avatar-240.jpg 3x"
-        width="80" height="80" alt="Profile picture of Valerii Povzun" data-i18n-attr="alt:profile.avatarAlt">
+        width="80" height="80" alt="Your profile picture" data-i18n-attr="alt:profile.avatarAlt">
     </picture>
-    <h2 class="profile-card__name" id="profile-name">Valerii Povzun</h2>
-    <p class="profile-card__email">valera@coinfolio.app</p>
+    <h2 class="profile-card__name" id="profile-name" data-slot="name">&nbsp;</h2>
+    <p class="profile-card__email" data-slot="email">&nbsp;</p>
     <p class="profile-card__since">
       <span data-i18n="profile.memberSince">Member since</span>
-      <time datetime="2025-03">Mar 2025</time>
+      <time data-slot="since" datetime="">…</time>
     </p>
     <dl class="profile-card__stats">
-      <div class="profile-card__stat"><dt data-i18n="nav.assets">Assets</dt><dd>7</dd></div>
-      <div class="profile-card__stat"><dt data-i18n="profile.transactions">Transactions</dt><dd>48</dd></div>
-      <div class="profile-card__stat"><dt data-i18n="nav.watchlist">Watchlist</dt><dd>4</dd></div>
+      <div class="profile-card__stat"><dt data-i18n="nav.assets">Assets</dt><dd data-slot="stat-assets">–</dd></div>
+      <div class="profile-card__stat"><dt data-i18n="profile.transactions">Transactions</dt><dd data-slot="stat-transactions">–</dd></div>
+      <div class="profile-card__stat"><dt data-i18n="nav.watchlist">Watchlist</dt><dd data-slot="stat-watchlist">–</dd></div>
     </dl>
     <input class="visually-hidden profile-card__file" id="avatar-upload" name="avatar" type="file" form="settings" accept="image/png, image/jpeg, image/webp">
     <label class="button button--secondary profile-card__upload" for="avatar-upload">
@@ -198,26 +198,8 @@
   <section class="wallets card" id="wallets" aria-labelledby="wallets-title">
     <h2 class="wallets__title" id="wallets-title" data-i18n="settings.wallets">Connected wallets</h2>
     <p class="wallets__hint" data-i18n="wallets.hint">Read-only sync, no private keys stored</p>
-    <ul class="wallets__list">
-
-      <li class="wallets__item">
-        <svg class="icon icon--wallet wallets__icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="./img/icons.svg#wallet"></use></svg>
-
-        <span class="wallets__name">MetaMask</span>
-        <code class="wallets__address">0x3f…9a2c</code>
-        <span class="wallets__status" data-i18n="wallets.synced">Synced</span>
-      </li>
-
-      <li class="wallets__item">
-        <svg class="icon icon--wallet wallets__icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="./img/icons.svg#wallet"></use></svg>
-
-        <span class="wallets__name">Ledger Nano X</span>
-        <code class="wallets__address">bc1q…7k4d</code>
-        <span class="wallets__status" data-i18n="wallets.synced">Synced</span>
-      </li>
-
-    </ul>
-    <button class="button button--secondary button--block" type="button">
+    <ul class="wallets__list" aria-busy="true"></ul>
+    <button class="button button--secondary button--block" type="button" id="connect-wallet">
       <svg class="icon icon--plus" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#plus"></use></svg>
 
       <span data-i18n="wallets.connect">Connect wallet</span>
@@ -232,23 +214,25 @@
         <div class="settings__fields">
           <div class="field">
             <label class="field__label" for="first-name" data-i18n="field.firstName">First name</label>
-            <input class="field__input" id="first-name" name="firstName" type="text" autocomplete="given-name" value="Valerii" required>
+            <input class="field__input" id="first-name" name="firstName" type="text" autocomplete="given-name" required aria-describedby="first-name-error" aria-invalid="false">
+            <p class="field__error" id="first-name-error" data-error-for="firstName"></p>
           </div>
           <div class="field">
             <label class="field__label" for="last-name" data-i18n="field.lastName">Last name</label>
-            <input class="field__input" id="last-name" name="lastName" type="text" autocomplete="family-name" value="Povzun" required>
+            <input class="field__input" id="last-name" name="lastName" type="text" autocomplete="family-name" required aria-describedby="last-name-error" aria-invalid="false">
+            <p class="field__error" id="last-name-error" data-error-for="lastName"></p>
           </div>
           <div class="field">
             <label class="field__label" for="email" data-i18n="field.email">Email</label>
-            <input class="field__input" id="email" name="email" type="email" autocomplete="email" value="valera@coinfolio.app" required aria-describedby="email-hint">
+            <input class="field__input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint email-error" aria-invalid="false">
             <p class="field__hint" id="email-hint" data-i18n="field.emailHint">Used for sign-in and weekly reports</p>
+            <p class="field__error" id="email-error" data-error-for="email"></p>
           </div>
           <div class="field">
             <label class="field__label" for="username" data-i18n="field.username">Username</label>
-            <input class="field__input" id="username" name="username" type="text" autocomplete="username" value="vpovzun"
-              required minlength="4" pattern="[A-Za-z0-9]{4,}" aria-describedby="username-hint">
+            <input class="field__input" id="username" name="username" type="text" autocomplete="username" required minlength="4" maxlength="24" pattern="[A-Za-z0-9]{4,24}" aria-describedby="username-hint username-error" aria-invalid="false">
             <p class="field__hint" id="username-hint" data-i18n="field.usernameHint">At least 4 characters, letters and digits only</p>
-            <p class="field__error" id="username-error" role="alert" hidden data-i18n="field.usernameError">Username must be at least 4 characters long</p>
+            <p class="field__error" id="username-error" data-error-for="username"></p>
           </div>
         </div>
       </div>
@@ -262,7 +246,7 @@
           <div class="field">
             <label class="field__label" for="currency" data-i18n="field.currency">Base currency</label>
             <select class="field__select" id="currency" name="currency">
-              <option value="USD" selected>USD — US Dollar</option>
+              <option value="USD">USD — US Dollar</option>
               <option value="EUR">EUR — Euro</option>
               <option value="UAH">UAH — Ukrainian Hryvnia</option>
             </select>
@@ -270,14 +254,14 @@
           <div class="field">
             <label class="field__label" for="language" data-i18n="field.language">Language</label>
             <select class="field__select" id="language" name="language">
-              <option value="en" selected lang="en">English</option>
+              <option value="en" lang="en">English</option>
               <option value="uk" lang="uk">Українська</option>
             </select>
           </div>
           <div class="field">
             <label class="field__label" for="timezone" data-i18n="field.timezone">Time zone</label>
             <select class="field__select" id="timezone" name="timezone">
-              <option value="Europe/Kyiv" selected>Europe/Kyiv (UTC+03:00)</option>
+              <option value="Europe/Kyiv">Europe/Kyiv (UTC+03:00)</option>
               <option value="Europe/Warsaw">Europe/Warsaw (UTC+02:00)</option>
               <option value="UTC">UTC</option>
             </select>
@@ -286,13 +270,13 @@
             <legend class="field__label" data-i18n="field.theme">Theme</legend>
             <div class="segmented segmented--block">
 
-              <input class="segmented__input" type="radio" name="theme" id="theme-dark" value="dark" checked>
+              <input class="segmented__input" type="radio" name="theme" id="theme-dark" value="dark" data-no-draft>
               <label class="segmented__label" for="theme-dark" data-i18n="theme.dark">Dark</label>
 
-              <input class="segmented__input" type="radio" name="theme" id="theme-light" value="light">
+              <input class="segmented__input" type="radio" name="theme" id="theme-light" value="light" data-no-draft>
               <label class="segmented__label" for="theme-light" data-i18n="theme.light">Light</label>
 
-              <input class="segmented__input" type="radio" name="theme" id="theme-system" value="system">
+              <input class="segmented__input" type="radio" name="theme" id="theme-system" value="system" data-no-draft>
               <label class="segmented__label" for="theme-system" data-i18n="theme.system">System</label>
 
             </div>
@@ -306,13 +290,13 @@
       <div class="settings__body">
 
         <div class="switch">
-          <input class="switch__input" id="priceAlerts" name="priceAlerts" type="checkbox" role="switch" checked aria-describedby="priceAlerts-hint">
+          <input class="switch__input" id="priceAlerts" name="priceAlerts" type="checkbox" role="switch" aria-describedby="priceAlerts-hint">
           <label class="switch__label" for="priceAlerts" data-i18n="notif.price">Price alerts</label>
           <p class="switch__hint" id="priceAlerts-hint" data-i18n="notif.priceHint">When a watchlist coin moves more than 5% in 24 hours</p>
         </div>
 
         <div class="switch">
-          <input class="switch__input" id="weeklyReport" name="weeklyReport" type="checkbox" role="switch" checked aria-describedby="weeklyReport-hint">
+          <input class="switch__input" id="weeklyReport" name="weeklyReport" type="checkbox" role="switch" aria-describedby="weeklyReport-hint">
           <label class="switch__label" for="weeklyReport" data-i18n="notif.weekly">Weekly report</label>
           <p class="switch__hint" id="weeklyReport-hint" data-i18n="notif.weeklyHint">Portfolio performance summary every Monday</p>
         </div>
@@ -331,14 +315,14 @@
       <div class="settings__body">
         <p class="settings__hint" data-i18n="security.hint">Last sign-in: today, 09:02 · Chrome on Windows</p>
         <div class="switch">
-          <input class="switch__input" id="two-factor" name="twoFactor" type="checkbox" role="switch" checked aria-describedby="two-factor-hint">
+          <input class="switch__input" id="two-factor" name="twoFactor" type="checkbox" role="switch" aria-describedby="two-factor-hint">
           <label class="switch__label" for="two-factor" data-i18n="security.2fa">Two-factor authentication</label>
           <p class="switch__hint" id="two-factor-hint" data-i18n="security.2faHint">Extra protection with an authenticator app</p>
         </div>
         <div class="settings__row">
           <p class="settings__label" data-i18n="security.password">Password</p>
           <p class="settings__hint" data-i18n="security.passwordHint">Last changed 3 months ago</p>
-          <button class="button button--secondary button--small settings__button" type="button">
+          <button class="button button--secondary button--small settings__button" type="button" data-demo>
             <svg class="icon icon--lock" width="20" height="20" aria-hidden="true" focusable="false"><use href="./img/icons.svg#lock"></use></svg>
 
             <span data-i18n="security.change">Change password</span>
@@ -347,6 +331,7 @@
       </div>
     </fieldset>
 
+    <p class="settings__status" role="status" data-status></p>
     <div class="settings__actions">
       <button class="button button--secondary" type="reset" data-i18n="action.cancel">Cancel</button>
       <button class="button button--primary" type="submit">
