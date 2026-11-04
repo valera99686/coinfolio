@@ -41,6 +41,13 @@ export function render(element, fragment) {
   element.innerHTML = String(fragment);
 }
 
+/** Swaps an element for a fragment of markup (the element is gone, the fragment's nodes take its place). */
+export function replaceNode(element, fragment) {
+  const template = document.createElement("template");
+  template.innerHTML = String(fragment);
+  element.replaceWith(template.content);
+}
+
 export function icon(name, { size = 20, cls = "" } = {}) {
   return html`<svg class="icon icon--${name}${cls ? " " + cls : ""}" width="${size}" height="${size}" aria-hidden="true" focusable="false"><use href="./img/icons.svg#${name}"></use></svg>`;
 }

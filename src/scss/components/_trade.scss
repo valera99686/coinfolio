@@ -36,4 +36,23 @@
 
     color: color(text);
   }
+
+  // Result of the last attempt: "Transaction added." or the error of the server.
+  &__status {
+    @extend %type-body-m;
+
+    color: color(text-muted);
+
+    &:empty {
+      display: none;
+    }
+
+    &[data-tone='error'] {
+      color: color(negative);
+    }
+
+    &[data-tone='success'] {
+      color: color(positive);
+    }
+  }
 }

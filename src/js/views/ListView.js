@@ -14,15 +14,17 @@ export class ListView {
    * @param {() => object} options.renderSkeleton  one placeholder row
    * @param {"tr"|"li"} [options.tag]
    * @param {number} [options.columns]  colspan of the message cell when the tag is "tr"
+   * @param {"md"|"lg"} [options.tableFrom]  from which breakpoint the rows of the table are real table rows
    * @param {() => void} [options.onRetry]
    * @param {HTMLElement} [options.busy]  element that gets aria-busy (defaults to root)
    */
-  constructor(root, { renderItem, renderSkeleton, tag = "li", columns = 1, onRetry, busy = root } = {}) {
+  constructor(root, { renderItem, renderSkeleton, tag = "li", columns = 1, tableFrom = "lg", onRetry, busy = root } = {}) {
     this.root = root;
     this.renderItem = renderItem;
     this.renderSkeleton = renderSkeleton;
     this.tag = tag;
     this.columns = columns;
+    this.tableFrom = tableFrom;
     this.onRetry = onRetry;
     this.busy = busy;
     this.root.addEventListener("click", (event) => {
@@ -39,7 +41,7 @@ export class ListView {
   /** A message that takes the place of the items. */
   message(content) {
     return this.tag === "tr"
-      ? html`<tr class="state-row"><td class="state-row__cell" colspan="${this.columns}">${content}</td></tr>`
+      ? html`<tr class="state-row state-row--table-${this.tableFrom}"><td class="state-row__cell state-row__cell--${this.tableFrom}" colspan="${this.columns}">${content}</td></tr>`
       : html`<li class="state-row">${content}</li>`;
   }
 

@@ -17,6 +17,17 @@ export function formatPrice(value) {
   return "$" + number(2, digits)(value);
 }
 
+/** +$1,474.46 / −$0.0004: a signed change of a price (small prices keep their extra decimals). */
+export function formatSignedPrice(value) {
+  return (value < 0 ? "−" : "+") + formatPrice(Math.abs(value));
+}
+
+/** $62,480 – $64,232 for big prices, $0.4402 – $0.4561 for small ones. */
+export function formatRange(low, high) {
+  const part = (v) => (high >= 1000 ? formatUsd(v, 0) : formatPrice(v));
+  return `${part(low)} – ${part(high)}`;
+}
+
 export function formatSignedUsd(value) {
   return (value < 0 ? "−" : "+") + formatUsd(Math.abs(value));
 }

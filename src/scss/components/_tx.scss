@@ -58,3 +58,12 @@
     text-align: end;
   }
 }
+
+.tx--skeleton {
+  display: block;
+  padding-block: space(3);
+
+  .skeleton {
+    height: rem(40);
+  }
+}

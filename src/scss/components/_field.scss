@@ -59,6 +59,11 @@
     resize: vertical;
   }
 
+  // An empty message box takes no room; the text appears with the validation message.
+  &__error:empty {
+    display: none;
+  }
+
   &__hint,
   &__error {
     @extend %type-body-s;

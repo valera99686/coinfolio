@@ -112,6 +112,8 @@ server.use(jsonServer.defaults({ logger, noGzip: false }));
 server.get("/health", (_req, res) => res.json({ status: "ok" }));
 // Artificial latency, so that the loading states and the optimistic updates can be seen.
 server.use((_req, _res, next) => (DELAY > 0 ? setTimeout(next, DELAY) : next()));
+// The guard reads the body, so it is parsed before it (the router would parse it only after the guard).
+server.use(jsonServer.bodyParser);
 server.use(guard);
 server.use(router);
 

@@ -19,10 +19,18 @@ async function open(browser, path, { width = 1280, height = 900, offline = false
   const page = await browser.newPage();
   await page.setViewport({ width, height });
   page.errors = [];
-  page.on("pageerror", (error) => page.errors.push(error.message));
+  page.on("pageerror", (error) => page.errors.push((error.stack || error.message).split("\n").slice(0, 3).join(" | ")));
   await page.goto(WEB + path, { waitUntil: "networkidle0", timeout: 60000 });
   await sleep(400);
   return page;
+}
+
+async function fill(page, selector, value) {
+  await page.focus(selector);
+  await page.keyboard.down("Control");
+  await page.keyboard.press("a");
+  await page.keyboard.up("Control");
+  await page.keyboard.type(value);
 }
 
 const text = (page, selector) => page.$eval(selector, (el) => el.textContent.trim()).catch(() => null);
@@ -119,6 +127,133 @@ const scenarios = {
     await sleep(600);
     check("page=99 falls back to the last page", url(far).searchParams.get("page") === "4" && (await count(far, ".asset-row")) === 6);
     await far.close();
+
+    check("no script errors", page.errors.length === 0, page.errors.join("; "));
+    await page.close();
+  },
+
+  async asset(browser) {
+    console.log("asset details page");
+    const page = await open(browser, "/asset.html#/item/btc");
+    check("title and breadcrumb come from the coin", (await text(page, ".asset__title")) === "Bitcoin" && (await text(page, "[data-crumb]")) === "Bitcoin");
+    check("document title is set from the API data", (await page.title()) === "Bitcoin (BTC) — Coinfolio");
+    check("the chart is drawn from the series", (await count(page, "svg.line-chart .line-chart__line")) === 1);
+    check("the position is 0.4250 BTC", (await text(page, ".position__amount")).startsWith("0.4250 BTC"));
+    const rows = await waitForRows(page, ".history__row", (r) => r.length === 4);
+    check("history has 4 BTC transactions", rows.length === 4, String(rows.length));
+    check("the summary counts them", (await text(page, '[data-slot="history-summary"]')) === "4 transactions · net 0.4250 BTC");
+
+    // period switch keeps its state in the URL and does not reload the page
+    await page.click('label[for="price-period-1m"]');
+    await sleep(200);
+    check("the period is in the URL", url(page).searchParams.get("period") === "1m");
+    check("the chart caption follows the period", (await text(page, '[data-slot="chart-caption"]')).includes("last 30 days"));
+
+    // history tabs filter on the server
+    await page.click('a[data-tx="buy"]');
+    const buys = await waitForRows(page, ".history__row", (r) => r.length === 3);
+    check("tab Buys shows 3 transactions", buys.length === 3, String(buys.length));
+    check("the tab is in the URL", url(page).searchParams.get("tx") === "buy");
+    await page.click('a[data-tx="sell"]');
+    const sells = await waitForRows(page, ".history__row", (r) => r.length === 1);
+    check("tab Sells shows 1 transaction", sells.length === 1);
+    await page.goBack();
+    const again = await waitForRows(page, ".history__row", (r) => r.length === 3);
+    check("Back returns to the Buys tab", again.length === 3 && url(page).searchParams.get("tx") === "buy");
+    await page.click('a[data-tx=""]');
+    await waitForRows(page, ".history__row", (r) => r.length === 4);
+
+    // the form: validation first
+    await page.click('#trade-form [type="submit"]');
+    check("an empty quantity is refused", (await text(page, '[data-error-for="amount"]')) === "This field is required.");
+    check("the field is marked aria-invalid", (await page.$eval("#trade-qty", (el) => el.getAttribute("aria-invalid"))) === "true");
+    check("the focus goes to the first wrong field", (await page.evaluate(() => document.activeElement.id)) === "trade-qty");
+    await page.click('label[for="trade-sell"]');
+    await page.type("#trade-qty", "5");
+    await page.click('#trade-form [type="submit"]');
+    check("selling more than you hold is refused (setCustomValidity)", (await text(page, '[data-error-for="amount"]')) === "You can sell at most 0.4250 BTC.", await text(page, '[data-error-for="amount"]'));
+    await fill(page, "#trade-qty", "0.1");
+    await sleep(150);
+    check("the message disappears when the value is fixed", (await text(page, '[data-error-for="amount"]')) === "" || (await text(page, '[data-error-for="amount"]')) === null);
+    check("live total = 0.1 x 64,218.4 = $6,421.84", (await text(page, "[data-total]")) === "$6,421.84", await text(page, "[data-total]"));
+    check("live fee is 0.1% of the total", (await text(page, "[data-fee]")) === "$6.42", await text(page, "[data-fee]"));
+    await page.$eval("#trade-date", (el) => {
+      el.value = "2999-01-01T10:00";
+      el.dispatchEvent(new Event("input", { bubbles: true }));
+    });
+    await page.click('#trade-form [type="submit"]');
+    check("a date in the future is refused", (await text(page, '[data-error-for="date"]')).length > 0, await text(page, '[data-error-for="date"]'));
+
+    // a valid buy goes to the API
+    const before = (await fetch(`${API}/transactions?_limit=1`)).headers.get("x-total-count");
+    await page.click('label[for="trade-buy"]');
+    await page.$eval("#trade-date", (el) => {
+      el.value = el.max;
+      el.dispatchEvent(new Event("input", { bubbles: true }));
+    });
+    await fill(page, "#trade-qty", "0.01");
+    await page.type("#trade-note", "e2e <b>note</b>");
+    await page.click('#trade-form [type="submit"]');
+    await waitForRows(page, ".history__row", (r) => r.length === 5, 10000);
+    const afterCount = (await fetch(`${API}/transactions?_limit=1`)).headers.get("x-total-count");
+    check("POST /transactions created the record", Number(afterCount) === Number(before) + 1, `${before} -> ${afterCount}`);
+    check("the history shows 5 transactions now", (await count(page, ".history__row")) === 5);
+    const coin = await (await fetch(`${API}/coins/btc`)).json();
+    check("the position of BTC was updated (PATCH /coins/btc)", Math.abs(coin.amount - 0.435) < 1e-9, String(coin.amount));
+    check("the position card shows the new amount", (await text(page, ".position__amount")).startsWith("0.4350 BTC"), await text(page, ".position__amount"));
+    check("the form is empty again", (await page.$eval("#trade-qty", (el) => el.value)) === "");
+    const notes = await (await fetch(`${API}/transactions?coinId=btc&_sort=id&_order=desc&_limit=1`)).json();
+    check("the note is stored as text, not as markup", notes[0].note === "e2e <b>note</b>");
+    check("the note is not rendered as HTML", (await count(page, ".history__table b")) === 0);
+
+    // draft
+    await page.type("#trade-qty", "0.77");
+    await page.reload({ waitUntil: "networkidle0" });
+    await sleep(500);
+    check("the unsent draft survives a reload", (await page.$eval("#trade-qty", (el) => el.value)) === "0.77");
+
+    // optimistic star with a rollback
+    const star = ".asset__watch";
+    const was = await page.$eval(star, (b) => b.getAttribute("aria-pressed"));
+    await page.setRequestInterception(true);
+    // the failing request is held back for a moment, so that the optimistic state can be observed
+    const failing = (request) => (request.method() === "PATCH" ? setTimeout(() => request.abort("failed"), 700) : request.continue());
+    page.on("request", failing);
+    await page.click(star);
+    const flipped = await page.$eval(star, (b) => b.getAttribute("aria-pressed"));
+    check("the star flips at once, before the answer of the server", flipped !== was);
+    await sleep(1500);
+    check("when the request fails the star goes back", (await page.$eval(star, (b) => b.getAttribute("aria-pressed"))) === was);
+    check("the user is told about it", (await text(page, ".toast--error .toast__text")) !== null);
+    page.off("request", failing);
+    page.on("request", (request) => request.continue());
+    await page.click(star);
+    await sleep(1200);
+    const saved = await (await fetch(`${API}/coins/btc`)).json();
+    check("a successful click is saved on the server", String(saved.watched) === (was === "true" ? "false" : "true"));
+    await page.click(star);
+    await sleep(900);
+
+    // routes
+    await page.goto(WEB + "/asset.html#/item/sol", { waitUntil: "networkidle0" });
+    await sleep(500);
+    check("#/item/sol opens Solana", (await text(page, ".asset__title")) === "Solana");
+    await page.goto(WEB + "/asset.html#/item/xrp", { waitUntil: "networkidle0" });
+    await sleep(500);
+    check("a coin that is not held has an empty position", (await text(page, ".position__value")).includes("do not hold"), await text(page, ".position__value"));
+    await page.goto(WEB + "/asset.html#/item/nope", { waitUntil: "networkidle0" });
+    await sleep(500);
+    check("an unknown coin shows 'Coin not found'", (await text(page, ".state__title")) === "Coin not found");
+    await page.goto(WEB + "/asset.html#/nowhere", { waitUntil: "networkidle0" });
+    await sleep(300);
+    check("an unknown route shows 'Page not found'", (await text(page, ".state__title")) === "Page not found");
+    await page.goto(WEB + "/asset.html#/item/btc/trade?type=sell", { waitUntil: "networkidle0" });
+    await sleep(900);
+    check("#/item/btc/trade?type=sell selects Sell", (await page.$eval("#trade-sell", (el) => el.checked)) === true);
+    check("and puts the cursor into the quantity field", (await page.evaluate(() => document.activeElement.id)) === "trade-qty");
+    await page.goto(WEB + "/asset.html?id=eth", { waitUntil: "networkidle0" });
+    await sleep(500);
+    check("the old address asset.html?id=eth still works", (await text(page, ".asset__title")) === "Ethereum");
 
     check("no script errors", page.errors.length === 0, page.errors.join("; "));
     await page.close();

@@ -55,5 +55,9 @@
     &--up dd {
       color: color(positive);
     }
+
+    &--down dd {
+      color: color(negative);
+    }
   }
 }

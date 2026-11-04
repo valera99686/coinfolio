@@ -37,3 +37,15 @@
     color: color(text-muted);
   }
 }
+
+.stat-card--skeleton {
+  min-height: rem(144);
+
+  .skeleton {
+    height: rem(16);
+  }
+
+  .skeleton--value {
+    height: rem(32);
+  }
+}

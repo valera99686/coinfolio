@@ -5,10 +5,18 @@
 .state-row {
   list-style: none;
 
-  &--table {
+  &--table-lg {
     display: block;
 
     @include media-up(lg) {
+      display: table-row;
+    }
+  }
+
+  &--table-md {
+    display: block;
+
+    @include media-up(md) {
       display: table-row;
     }
   }
@@ -17,8 +25,16 @@
     display: block;
     padding: 0;
 
-    @include media-up(lg) {
-      display: table-cell;
+    &--lg {
+      @include media-up(lg) {
+        display: table-cell;
+      }
+    }
+
+    &--md {
+      @include media-up(md) {
+        display: table-cell;
+      }
     }
   }
 }

@@ -162,3 +162,29 @@
     }
   }
 }
+
+// Placeholder row while the history is loading (a card on phones, a table row from 768 px).
+.history__skeleton {
+  display: block;
+
+  @include media-up(md) {
+    display: table-row;
+  }
+
+  &-cell {
+    display: block;
+    padding: space(3) 0;
+
+    @include media-up(md) {
+      display: table-cell;
+
+      .skeleton {
+        height: rem(32);
+      }
+    }
+
+    .skeleton {
+      height: rem(64);
+    }
+  }
+}

@@ -6,7 +6,7 @@ import { badge } from "./common.js";
 
 export const coinHref = (id) => `./asset.html#/item/${encodeURIComponent(id)}`;
 
-const watchButton = (coin, cls) => html`<button class="icon-button icon-button--plain ${cls}${coin.watched ? " icon-button--active" : ""}" type="button" aria-pressed="${coin.watched}" data-action="watch">${icon("star")}<span class="visually-hidden">${t("asset.watch")} ${coin.name}</span></button>`;
+const watchButton = (coin, cls) => html`<button class="icon-button icon-button--plain ${cls}${coin.watched ? " icon-button--active" : ""}" type="button" aria-pressed="${String(Boolean(coin.watched))}" data-action="watch">${icon("star")}<span class="visually-hidden">${t("asset.watch")} ${coin.name}</span></button>`;
 
 /** A row of the asset table (a card below 1280 px). `mod: "holding"` is the dashboard variant. */
 export function assetRow(coin, { rank = coin.rank, share = 0, mod = "" } = {}) {

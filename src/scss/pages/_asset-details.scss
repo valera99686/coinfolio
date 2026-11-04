@@ -6,7 +6,8 @@
   @extend %row;
 
   > .breadcrumbs,
-  > .asset {
+  > .asset,
+  > .asset-page__state {
     @extend %col-12;
   }
 }
