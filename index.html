@@ -4,14 +4,15 @@
 <body class="page page--dashboard">
 <%- include('partials/header') %>
 
+<%# Every block below is filled by src/js/pages/dashboard.js from the API; the markup only holds the headings and the places for the data. %>
 <main class="page__main dashboard" id="main">
   <header class="page-header">
     <div class="page-header__titles">
-      <p class="page-header__overline" data-i18n="dash.greeting"><%= t('dash.greeting') %></p>
+      <p class="page-header__overline" data-slot="greeting">&nbsp;</p>
       <h1 class="page-header__title" data-i18n="dash.title"><%= t('dash.title') %></h1>
     </div>
     <div class="page-header__actions">
-      <button class="button page-header__action button--secondary" type="button">
+      <button class="button page-header__action button--secondary" type="button" id="export-transactions">
         <%- include('partials/icon', { name: 'download' }) %>
         <span data-i18n="action.export"><%= t('action.export') %></span>
       </button>
@@ -22,65 +23,33 @@
     </div>
   </header>
 
-  <section class="balance card" aria-labelledby="balance-title">
+  <section class="balance card" aria-labelledby="balance-title" aria-busy="true">
     <h2 class="balance__title" id="balance-title" data-i18n="dash.balance"><%= t('dash.balance') %></h2>
-    <p class="balance__value"><data value="<%= portfolio.total.toFixed(2) %>"><%= portfolio.totalText %></data></p>
-    <p class="balance__change">
-      <%- include('partials/change-badge', { trend: 'up', value: portfolio.changePct, text: fmt.pct(portfolio.changePct) }) %>
-      <data value="<%= portfolio.change %>"><%= portfolio.changeText %></data>
-      <span data-i18n="dash.today"><%= t('dash.today') %></span>
-    </p>
+    <p class="balance__value" data-slot="balance-value"><span class="skeleton skeleton--value"></span></p>
+    <p class="balance__change" data-slot="balance-change"></p>
     <%- include('partials/period', { cls: 'balance__period', name: 'balance-period', periods: ['1d', '1w', '1m', '1y', 'all'], checked: '1m' }) %>
     <figure class="chart balance__chart">
-      <%- include('partials/picture', {
-        cls: 'chart__picture', imgCls: 'chart__image',
-        base: 'charts/portfolio-desktop', widths: [744, 1116, 1488], w: 744, h: 220,
-        sizes: '(min-width: 1280px) 744px, (min-width: 768px) calc(66vw - 48px), 100vw',
-        mobile: { base: 'charts/portfolio-mobile', widths: [296, 444, 592], w: 296, h: 120 },
-        altKey: 'dash.chartAlt'
-      }) %>
-      <%- include('partials/chart-data', { captionKey: 'dash.chartCaption', points: portfolio.chartPoints }) %>
-      <figcaption class="chart__caption" data-i18n="dash.chartCaption"><%= t('dash.chartCaption') %></figcaption>
+      <div data-slot="chart"><span class="skeleton skeleton--xl"></span></div>
+      <div data-slot="chart-data"></div>
+      <figcaption class="chart__caption" data-slot="chart-caption"></figcaption>
     </figure>
   </section>
 
-  <section class="allocation card" aria-labelledby="allocation-title">
+  <section class="allocation card" aria-labelledby="allocation-title" aria-busy="true">
     <h2 class="allocation__title" id="allocation-title" data-i18n="dash.allocation"><%= t('dash.allocation') %></h2>
-    <p class="allocation__subtitle"><span data-i18n="dash.assetsCount"><%= t('dash.assetsCount') %></span></p>
-    <figure class="allocation__chart">
-      <img class="allocation__donut" src="./img/allocation-donut.svg" width="176" height="176"
-        alt="<%= t('dash.donutAlt') %>" data-i18n-attr="alt:dash.donutAlt">
-      <p class="allocation__total" aria-hidden="true">
-        <strong class="allocation__count"><%= portfolio.assetsCount %></strong>
-        <span class="allocation__unit" data-i18n="dash.assetsUnit"><%= t('dash.assetsUnit') %></span>
-      </p>
-      <figcaption class="allocation__caption" data-i18n="dash.donutCaption"><%= t('dash.donutCaption') %></figcaption>
-    </figure>
-    <ul class="legend">
-<% portfolio.allocation.forEach((item) => { %>
-      <li class="legend__item legend__item--<%= item.slug %>">
-        <span class="legend__label"><%= item.label %></span>
-        <data class="legend__value" value="<%= item.valueText.replace(/[$,]/g, '') %>"><%= item.valueText %></data>
-        <data class="legend__share" value="<%= item.share.toFixed(1) %>"><%= item.share.toFixed(1) %>%</data>
-      </li>
-<% }) %>
-    </ul>
+    <p class="allocation__subtitle" data-slot="allocation-subtitle">&nbsp;</p>
+    <div class="allocation__body" data-slot="allocation"><span class="skeleton skeleton--lg"></span></div>
   </section>
 
   <section class="kpis" aria-labelledby="kpis-title">
     <h2 class="kpis__title visually-hidden" id="kpis-title" data-i18n="dash.kpis"><%= t('dash.kpis') %></h2>
-    <dl class="kpis__list" tabindex="0">
-      <%- include('partials/stat', { labelKey: 'kpi.profit', cls: 'kpis__item', icon: 'wallet', value: portfolio.profitText, trend: 'up', change: portfolio.profitPct, noteKey: 'kpi.allTime' }) %>
-      <%- include('partials/stat', { labelKey: 'kpi.change', cls: 'kpis__item', icon: 'chart', value: portfolio.changeText, trend: 'up', change: portfolio.changePct, noteKey: 'kpi.vsYesterday' }) %>
-      <%- include('partials/stat', { labelKey: 'kpi.best', cls: 'kpis__item', icon: 'arrow-up-right', value: 'Solana', trend: 'up', change: 5.87, note: 'SOL · 24h' }) %>
-      <%- include('partials/stat', { labelKey: 'kpi.worst', cls: 'kpis__item', icon: 'arrow-down-right', value: 'Ethereum', trend: 'down', change: 1.12, note: 'ETH · 24h' }) %>
-    </dl>
+    <dl class="kpis__list" tabindex="0" aria-busy="true" data-slot="kpis"></dl>
   </section>
 
   <section class="holdings card" id="holdings" aria-labelledby="holdings-title">
     <header class="section-header">
       <h2 class="section-header__title" id="holdings-title" data-i18n="dash.holdings"><%= t('dash.holdings') %></h2>
-      <p class="section-header__subtitle" data-i18n="dash.holdingsSub"><%= t('dash.holdingsSub') %></p>
+      <p class="section-header__subtitle" data-slot="holdings-subtitle">&nbsp;</p>
       <nav class="tabs section-header__tabs" aria-label="<%= t('dash.sections') %>" data-i18n-attr="aria-label:dash.sections">
         <ul class="tabs__list">
           <li class="tabs__item"><a class="tabs__link tabs__link--active" href="#holdings" aria-current="true" data-i18n="dash.tabHoldings"><%= t('dash.tabHoldings') %></a></li>
@@ -93,30 +62,22 @@
         <%- include('partials/icon', { name: 'chevron-right' }) %>
       </a>
     </header>
-    <table class="asset-table">
+    <table class="asset-table" aria-busy="true">
       <caption class="asset-table__caption visually-hidden" data-i18n="dash.holdingsCaption"><%= t('dash.holdingsCaption') %></caption>
       <%- include('partials/asset-table-head') %>
-      <tbody class="asset-table__body">
-<% topHoldings.forEach((a, i) => { %>
-        <%- include('partials/asset-row', { a, rank: i + 1, mod: 'holding' }) %>
-<% }) %>
-      </tbody>
+      <tbody class="asset-table__body"></tbody>
     </table>
   </section>
 
   <section class="recent card" id="recent" aria-labelledby="recent-title">
     <header class="section-header">
       <h2 class="section-header__title" id="recent-title" data-i18n="dash.recent"><%= t('dash.recent') %></h2>
-      <a class="link-button section-header__link" href="./asset.html#transactions">
+      <a class="link-button section-header__link" href="./asset.html#/item/btc">
         <span data-i18n="action.seeAll"><%= t('action.seeAll') %></span>
         <%- include('partials/icon', { name: 'chevron-right' }) %>
       </a>
     </header>
-    <ol class="tx-list">
-<% transactions.forEach((tx) => { %>
-      <%- include('partials/transaction', { tx }) %>
-<% }) %>
-    </ol>
+    <ol class="tx-list" aria-busy="true"></ol>
   </section>
 
   <aside class="watchlist card" id="watchlist" aria-labelledby="watchlist-title">
@@ -127,11 +88,7 @@
         <%- include('partials/icon', { name: 'chevron-right' }) %>
       </a>
     </header>
-    <ul class="watchlist__list">
-<% watchlist.forEach((a) => { %>
-      <li class="watchlist__item"><%- include('partials/coin-card', { a }) %></li>
-<% }) %>
-    </ul>
+    <ul class="watchlist__list" aria-busy="true"></ul>
   </aside>
 </main>
 

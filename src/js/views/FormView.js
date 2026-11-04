@@ -33,11 +33,12 @@ export class FormView {
   }
 
   fields() {
-    return [...this.form.elements].filter((el) => el.name && !el.disabled && !["submit", "button", "reset", "fieldset"].includes(el.type) && el.tagName !== "OUTPUT");
+    return [...this.form.elements].filter((el) => el.name && !el.disabled && !["submit", "button", "reset", "fieldset", "file"].includes(el.type) && el.tagName !== "OUTPUT");
   }
 
   values() {
-    return Object.fromEntries(new FormData(this.form).entries());
+    // files are never part of a draft or of the JSON that goes to the API
+    return Object.fromEntries([...new FormData(this.form).entries()].filter(([, value]) => typeof value === "string"));
   }
 
   // --- draft --------------------------------------------------------------------------------------------

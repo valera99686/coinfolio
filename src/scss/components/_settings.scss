@@ -68,6 +68,25 @@
     grid-area: button;
   }
 
+  // Result of the last save.
+  &__status {
+    @extend %type-body-m;
+
+    color: color(text-muted);
+
+    &:empty {
+      display: none;
+    }
+
+    &[data-tone='error'] {
+      color: color(negative);
+    }
+
+    &[data-tone='success'] {
+      color: color(positive);
+    }
+  }
+
   &__actions {
     @include flex(column-reverse, flex-start, stretch, space(3));
 
@@ -88,4 +107,3 @@
 .settings__body > .settings__hint:first-child {
   margin-top: calc(-1 * #{space(3)});
 }
-

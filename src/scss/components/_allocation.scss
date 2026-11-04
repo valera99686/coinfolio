@@ -19,6 +19,11 @@
     grid-column: 1 / -1;
   }
 
+  // The data is drawn into this wrapper; it takes no box, so its chart and legend are items of the card grid.
+  &__body {
+    display: contents;
+  }
+
   &__title {
     @extend %type-h3;
   }

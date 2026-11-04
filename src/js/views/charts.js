@@ -52,7 +52,7 @@ export const formatTick = (value) => (value >= 1000 ? "$" + (value / 1000).toFix
  * Area chart drawn from numbers: the same data the "Show chart data" table lists. It scales with its container
  * (viewBox) and keeps the proportion given by the --chart-ratio of the page block.
  */
-export function lineChart(values, { period, asOf, ratio = [744, 300], labels = 7, color = null } = {}) {
+export function lineChart(values, { period, asOf, ratio = [744, 300], labels = 7, color = null, label = "chart.alt" } = {}) {
   const [width, height] = ratio;
   const left = 8;
   const right = 64; // room for the price axis
@@ -70,7 +70,7 @@ export function lineChart(values, { period, asOf, ratio = [744, 300], labels = 7
   const ticks = ticksOf(min, max);
   const names = axisLabels(period, asOf, labels);
 
-  return html`<svg class="line-chart line-chart--${trend}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${t("chart.alt", {
+  return html`<svg class="line-chart line-chart--${trend}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${t(label, {
     from: formatTick(values[0]),
     to: formatTick(values.at(-1)),
   })}">
@@ -93,7 +93,7 @@ export function chartRows(values, { period, asOf, count = 5 }) {
 }
 
 /** Donut of the allocation: one stroked circle per slice, the colour of the slice is a CSS variable of the coin. */
-export function donut(allocation, { size = 176, stroke = 22, cls = "" } = {}) {
+export function donut(allocation, { size = 176, stroke = 22, cls = "", label = "" } = {}) {
   const radius = (size - stroke) / 2 - 4;
   const circumference = 2 * Math.PI * radius;
   const gap = allocation.length > 1 ? 3 : 0;
@@ -105,5 +105,5 @@ export function donut(allocation, { size = 176, stroke = 22, cls = "" } = {}) {
     offset += (slice.share / 100) * circumference;
     return circle;
   });
-  return html`<svg class="donut${cls ? " " + cls : ""}" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}" role="img">${slices}</svg>`;
+  return html`<svg class="donut${cls ? " " + cls : ""}" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}" role="img" aria-label="${label}">${slices}</svg>`;
 }

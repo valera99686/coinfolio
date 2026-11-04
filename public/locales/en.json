@@ -75,7 +75,7 @@
   "dash.allocation": "Allocation",
   "dash.assetsCount": "7 assets · by value",
   "dash.assetsUnit": "assets",
-  "dash.donutAlt": "Donut chart: Bitcoin 55.7%, Ethereum 20.5%, Solana 8.6%, other assets 15.2%",
+  "dash.donutAlt": "Donut chart of the portfolio: {list}",
   "dash.donutCaption": "Share of each asset in the portfolio",
   "dash.kpis": "Key figures",
   "kpi.profit": "Total profit",
@@ -172,7 +172,7 @@
 
   "profile.title": "Profile & settings",
   "profile.lead": "Manage your personal information, preferences and security.",
-  "profile.avatarAlt": "Profile picture of Valerii Povzun",
+  "profile.avatarAlt": "Your profile picture",
   "profile.memberSince": "Member since",
   "profile.transactions": "Transactions",
   "profile.photo": "Change photo",
@@ -273,5 +273,29 @@
   "history.emptyText": "Your {symbol} transactions will appear here.",
   "asset.notFoundTitle": "Coin not found",
   "asset.notFoundText": "There is no coin with the id “{id}”.",
-  "asset.loading": "Loading the coin…"
+  "asset.loading": "Loading the coin…",
+
+  "dash.greetingMorning": "Good morning, {name}",
+  "dash.greetingAfternoon": "Good afternoon, {name}",
+  "dash.greetingEvening": "Good evening, {name}",
+  "dash.assetsCountN": "{count} assets · by value",
+  "dash.holdingsSubN": "Top {shown} of {total} assets, sorted by value",
+  "dash.others": "Others ({count})",
+  "dash.chartCaptionN": "Portfolio value, {range}",
+  "chart.altValue": "Line chart: the portfolio value moved from {from} to {to} over the selected period",
+  "dash.watchEmptyTitle": "Your watchlist is empty",
+  "dash.watchEmptyText": "Star a coin on the Assets page to follow it here.",
+  "dash.noHoldingsTitle": "No assets yet",
+  "dash.noHoldingsText": "Add your first transaction to see your portfolio.",
+
+  "profile.saved": "Settings saved.",
+  "profile.saveFailed": "The settings could not be saved.",
+  "profile.photoInvalid": "Choose a PNG, JPEG or WebP image up to 2 MB.",
+  "profile.photoPreview": "Photo preview updated. The demo does not store images.",
+  "profile.since": "{date}",
+  "demo.unavailable": "This action is not available in the demo.",
+  "wallets.connected": "{name} connected.",
+  "wallets.connectFailed": "The wallet could not be connected.",
+  "wallets.emptyTitle": "No wallets yet",
+  "wallets.emptyText": "Connect a wallet to sync your balances."
 }

@@ -75,7 +75,7 @@
   "dash.allocation": "Розподіл",
   "dash.assetsCount": "7 активів · за вартістю",
   "dash.assetsUnit": "активів",
-  "dash.donutAlt": "Кільцева діаграма: Bitcoin 55,7 %, Ethereum 20,5 %, Solana 8,6 %, інші активи 15,2 %",
+  "dash.donutAlt": "Кільцева діаграма портфеля: {list}",
   "dash.donutCaption": "Частка кожного активу в портфелі",
   "dash.kpis": "Ключові показники",
   "kpi.profit": "Загальний прибуток",
@@ -172,7 +172,7 @@
 
   "profile.title": "Профіль і налаштування",
   "profile.lead": "Керуйте особистими даними, налаштуваннями та безпекою.",
-  "profile.avatarAlt": "Фото профілю Валерія Повзуна",
+  "profile.avatarAlt": "Ваше фото профілю",
   "profile.memberSince": "Користувач з",
   "profile.transactions": "Транзакції",
   "profile.photo": "Змінити фото",
@@ -273,5 +273,29 @@
   "history.emptyText": "Тут з'являться ваші транзакції {symbol}.",
   "asset.notFoundTitle": "Монету не знайдено",
   "asset.notFoundText": "Монети з ідентифікатором «{id}» не існує.",
-  "asset.loading": "Завантаження монети…"
+  "asset.loading": "Завантаження монети…",
+
+  "dash.greetingMorning": "Доброго ранку, {name}",
+  "dash.greetingAfternoon": "Добрий день, {name}",
+  "dash.greetingEvening": "Добрий вечір, {name}",
+  "dash.assetsCountN": "{count} активів · за вартістю",
+  "dash.holdingsSubN": "Топ {shown} із {total} активів за вартістю",
+  "dash.others": "Інші ({count})",
+  "dash.chartCaptionN": "Вартість портфеля, {range}",
+  "chart.altValue": "Лінійний графік: вартість портфеля змінилася з {from} до {to} за обраний період",
+  "dash.watchEmptyTitle": "Обране порожнє",
+  "dash.watchEmptyText": "Позначте монету зірочкою на сторінці активів, щоб стежити за нею тут.",
+  "dash.noHoldingsTitle": "Активів ще немає",
+  "dash.noHoldingsText": "Додайте першу транзакцію, щоб побачити портфель.",
+
+  "profile.saved": "Налаштування збережено.",
+  "profile.saveFailed": "Не вдалося зберегти налаштування.",
+  "profile.photoInvalid": "Оберіть зображення PNG, JPEG або WebP до 2 МБ.",
+  "profile.photoPreview": "Попередній перегляд фото оновлено. Демо не зберігає зображення.",
+  "profile.since": "{date}",
+  "demo.unavailable": "Ця дія недоступна в демо-версії.",
+  "wallets.connected": "{name} підключено.",
+  "wallets.connectFailed": "Не вдалося підключити гаманець.",
+  "wallets.emptyTitle": "Гаманців ще немає",
+  "wallets.emptyText": "Підключіть гаманець, щоб синхронізувати баланси."
 }

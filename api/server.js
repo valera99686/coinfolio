@@ -75,6 +75,14 @@ function checkTransaction(body) {
   return errors;
 }
 
+function checkWallet(body) {
+  const errors = {};
+  if (!isText(body?.name, 30)) {errors.name = "Name is required (up to 30 characters).";}
+  if (typeof body?.address !== "string" || !/^[0-9A-Za-z…]{6,24}$/.test(body.address)) {errors.address = "Use a short address such as 0x3f…9a2c.";}
+  if (router.db.get("wallets").size().value() >= 6) {errors.wallets = "The demo allows up to 6 wallets.";}
+  return errors;
+}
+
 /** Everything except the writes the app needs is rejected. */
 function guard(req, res, next) {
   if (["GET", "HEAD", "OPTIONS"].includes(req.method)) {
@@ -94,6 +102,11 @@ function guard(req, res, next) {
         fee: req.body.fee,
         note: (req.body.note ?? "").trim(),
       };
+    }
+  } else if (req.method === "POST" && resource === "wallets" && !id) {
+    errors = checkWallet(req.body);
+    if (!Object.keys(errors).length) {
+      req.body = { name: req.body.name.trim(), address: req.body.address, status: "synced" };
     }
   } else if (req.method === "PATCH" && resource === "coins" && id) {
     errors = checkFields(req.body, COIN_FIELDS);

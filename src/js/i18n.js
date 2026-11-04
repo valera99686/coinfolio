@@ -49,6 +49,13 @@ export function t(key, vars) {
 
 export const getLanguage = () => language;
 
+/** Remembers the language for the next visits; the page has to be reloaded to apply it. */
+export function setLanguage(lang) {
+  if (SUPPORTED.includes(lang)) {
+    storeLang(lang);
+  }
+}
+
 /** Loads the dictionary of the chosen language. Must finish before a page renders its first list. */
 export async function initI18n() {
   const requested = new URLSearchParams(window.location.search).get("lang") || readStoredLang() || "en";

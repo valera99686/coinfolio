@@ -24,7 +24,7 @@
     @include media-up(md) {
       column-gap: space(3);
       grid-template-areas: 'dot label value share';
-      grid-template-columns: auto 1fr auto 4ch;
+      grid-template-columns: auto 1fr auto 5ch;
     }
 
     &::before {

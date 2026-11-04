@@ -30,7 +30,11 @@ async function fill(page, selector, value) {
   await page.keyboard.down("Control");
   await page.keyboard.press("a");
   await page.keyboard.up("Control");
-  await page.keyboard.type(value);
+  if (value === "") {
+    await page.keyboard.press("Backspace");
+  } else {
+    await page.keyboard.type(value);
+  }
 }
 
 const text = (page, selector) => page.$eval(selector, (el) => el.textContent.trim()).catch(() => null);
@@ -255,6 +259,153 @@ const scenarios = {
     await sleep(500);
     check("the old address asset.html?id=eth still works", (await text(page, ".asset__title")) === "Ethereum");
 
+    check("no script errors", page.errors.length === 0, page.errors.join("; "));
+    await page.close();
+  },
+
+  async dashboard(browser) {
+    console.log("dashboard");
+    const held = (await (await fetch(`${API}/coins?amount_gte=0.000001&_sort=value&_order=desc&_limit=100`)).json());
+    const total = held.reduce((sum, coin) => sum + coin.value, 0);
+    const usd = (n) => "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const page = await open(browser, "/index.html");
+    await sleep(600);
+    check("the balance is the sum of the positions in the API", (await text(page, '[data-slot="balance-value"]')) === usd(total), `${await text(page, '[data-slot="balance-value"]')} vs ${usd(total)}`);
+    check("greeting uses the name from the profile", /^Good (morning|afternoon|evening), Valerii$/.test(await text(page, '[data-slot="greeting"]')), await text(page, '[data-slot="greeting"]'));
+    check("the holdings table shows the 5 biggest positions", (await count(page, ".holdings .asset-row")) === 5);
+    const names = await waitForRows(page, ".holdings .asset-row__name", (r) => r.length === 5);
+    check("the biggest position comes first", names[0] === held[0].name, names[0]);
+    check("the donut has a slice per legend item", (await count(page, ".donut__slice")) === (await count(page, ".legend__item")) && (await count(page, ".legend__item")) === 4);
+    check("the allocation says how many assets there are", (await text(page, ".allocation__count")) === String(held.length));
+    check("4 KPI cards", (await count(page, ".kpis__item")) === 4);
+    const dates = await page.$$eval(".tx-list .tx__date", (els) => els.map((el) => el.getAttribute("datetime")));
+    check("5 recent transactions, newest first", dates.length === 5 && dates.every((d, i) => i === 0 || dates[i - 1] >= d), dates.join());
+    const watched = (await (await fetch(`${API}/coins?watched=true&_limit=1`)).headers.get("x-total-count"));
+    check("the watchlist matches the starred coins of the API", (await count(page, ".watchlist .coin-card")) === Number(watched), `${await count(page, ".watchlist .coin-card")} vs ${watched}`);
+
+    await page.click('label[for="balance-period-1w"]');
+    await sleep(200);
+    check("the period is kept in the URL", url(page).searchParams.get("period") === "1w");
+    check("the chart caption follows the period", (await text(page, '[data-slot="chart-caption"]')) === "Portfolio value, last 7 days");
+
+    // unwatch a coin on the dashboard: optimistic, then the list is read again
+    const cards = await count(page, ".watchlist .coin-card");
+    await page.click(".watchlist .coin-card__watch");
+    await sleep(1500);
+    check("the starred coin leaves the watchlist", (await count(page, ".watchlist .coin-card")) === cards - 1, `${cards} -> ${await count(page, ".watchlist .coin-card")}`);
+    const now = await (await fetch(`${API}/coins?watched=true&_limit=1`)).headers.get("x-total-count");
+    check("and the API knows about it", Number(now) === Number(watched) - 1);
+    check("no script errors", page.errors.length === 0, page.errors.join("; "));
+    await page.close();
+  },
+
+  async states(browser) {
+    console.log("loading, error and retry states");
+    // 1. the API does not answer at all
+    let blocked = true;
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1280, height: 900 });
+    await page.setRequestInterception(true);
+    page.on("request", (request) => (blocked && request.url().startsWith(API) ? request.abort("failed") : request.continue()));
+    await page.goto(WEB + "/assets.html", { waitUntil: "networkidle0", timeout: 90000 });
+    // a lost GET is tried again twice (0.8 s and 1.6 s later) before the error is shown
+    await page.waitForSelector(".asset-table .state--error", { timeout: 15000 }).catch(() => null);
+    check("assets: a failed request shows an error with a retry button", (await count(page, ".asset-table .state--error")) === 1 && (await count(page, '.asset-table [data-action="retry"]')) === 1);
+    check("the message is readable", (await text(page, ".state__text")).includes("Network error"));
+    blocked = false;
+    await page.click('.asset-table [data-action="retry"]');
+    const rows = await waitForRows(page, ".asset-row__name", (r) => r.length === 10);
+    check("Retry loads the list once the API is back", rows.length === 10);
+    await page.close();
+
+    // 2. a slow API: skeletons are visible, then replaced
+    const slow = await browser.newPage();
+    await slow.setViewport({ width: 1280, height: 900 });
+    await slow.setRequestInterception(true);
+    slow.on("request", (request) => (request.url().startsWith(API) && request.method() === "GET" ? setTimeout(() => request.continue(), 900) : request.continue()));
+    await slow.goto(WEB + "/index.html", { waitUntil: "domcontentloaded" });
+    await sleep(500);
+    check("dashboard: skeletons while the data is on its way", (await count(slow, ".skeleton")) > 3);
+    check("the table is marked aria-busy while loading", (await slow.$eval(".holdings .asset-table", (el) => el.getAttribute("aria-busy"))) === "true");
+    await sleep(3500);
+    check("skeletons are gone when the data has arrived", (await count(slow, ".skeleton")) === 0);
+    check("aria-busy is cleared", (await slow.$eval(".holdings .asset-table", (el) => el.getAttribute("aria-busy"))) === "false");
+    await slow.close();
+
+    // 3. the cache: the second visit of the same list does not go to the network again
+    const cached = await browser.newPage();
+    await cached.setViewport({ width: 1280, height: 900 });
+    let requests = 0;
+    cached.on("request", (request) => request.url().startsWith(API) && request.method() === "GET" && (requests += 1));
+    await cached.goto(WEB + "/assets.html", { waitUntil: "networkidle0" });
+    const first = requests;
+    await cached.click('label[for="filter-gainers"]');
+    await waitForRows(cached, ".asset-row__name", (r) => r.length === 10);
+    const afterFilter = requests;
+    await cached.click('label[for="filter-all"]');
+    await waitForRows(cached, ".asset-row__name", (r) => r[0] === "Bitcoin");
+    const afterBack = requests;
+    check("a new filter goes to the API", afterFilter > first);
+    check("the same list again comes from the cache (no list request)", afterBack - afterFilter <= 0, `${afterBack - afterFilter} extra requests`);
+    await cached.close();
+  },
+
+  async profile(browser) {
+    console.log("profile page");
+    const page = await open(browser, "/profile.html");
+    await sleep(500);
+    check("the form is filled from the API", (await page.$eval("#first-name", (el) => el.value)) === "Valerii" && (await page.$eval("#email", (el) => el.value)) === "valera@coinfolio.app");
+    check("the card shows the name and the counters", (await text(page, '[data-slot="name"]')) === "Valerii Povzun" && (await text(page, '[data-slot="stat-assets"]')) === "7");
+    check("the transactions counter is read from X-Total-Count", Number(await text(page, '[data-slot="stat-transactions"]')) >= 48);
+    check("two wallets are listed", (await count(page, ".wallets__item")) >= 2);
+    check("the switches follow the settings", (await page.$eval("#priceAlerts", (el) => el.checked)) === true && (await page.$eval("#productNews", (el) => el.checked)) === false);
+
+    // validation
+    await fill(page, "#first-name", "");
+    await fill(page, "#email", "nope");
+    await fill(page, "#username", "ab");
+    await page.click('.profile-page__actions [type="submit"]');
+    check("an empty name is refused", (await text(page, '[data-error-for="firstName"]')) === "This field is required.");
+    check("a wrong e-mail is refused", (await text(page, '[data-error-for="email"]')) === "Please enter a valid value.", await text(page, '[data-error-for="email"]'));
+    check("a short username is refused", (await text(page, '[data-error-for="username"]')).length > 0, await text(page, '[data-error-for="username"]'));
+    check("the focus goes to the first wrong field", (await page.evaluate(() => document.activeElement.id)) === "first-name");
+
+    // Cancel puts the saved values back
+    await page.click('.profile-page__actions [type="reset"]');
+    await sleep(200);
+    check("Cancel restores the values of the API", (await page.$eval("#first-name", (el) => el.value)) === "Valerii" && (await text(page, '[data-error-for="firstName"]')) === "");
+
+    // a valid save goes to the API
+    await fill(page, "#first-name", "Valeriy");
+    await page.click("label[for=productNews]");
+    await page.click('.profile-page__actions [type="submit"]');
+    await sleep(1200);
+    const saved = await (await fetch(`${API}/profile`)).json();
+    check("PATCH /profile stored the name and the switch", saved.firstName === "Valeriy" && saved.productNews === true, JSON.stringify([saved.firstName, saved.productNews]));
+    check("the card shows the new name", (await text(page, '[data-slot="name"]')) === "Valeriy Povzun");
+    check("the user is told that it is saved", (await text(page, ".settings__status")) === "Settings saved.", await text(page, ".settings__status"));
+    await fetch(`${API}/profile`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ firstName: "Valerii", productNews: false }) });
+
+    // the server validates as well, whatever the browser says
+    const refused = await fetch(`${API}/profile`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username: "x", role: "admin" }) });
+    check("the API answers 422 to a bad body", refused.status === 422);
+    const forbidden = await fetch(`${API}/coins/btc`, { method: "DELETE" });
+    check("the API refuses DELETE", forbidden.status === 405);
+
+    // a draft survives a reload
+    await page.reload({ waitUntil: "networkidle0" });
+    await sleep(500);
+    await fill(page, "#last-name", "Draftov");
+    await page.reload({ waitUntil: "networkidle0" });
+    await sleep(700);
+    check("an unsaved change comes back after a reload (draft)", (await page.$eval("#last-name", (el) => el.value)) === "Draftov");
+    await page.click('.profile-page__actions [type="reset"]');
+
+    // wallets
+    const wallets = await count(page, ".wallets__item");
+    await page.click("#connect-wallet");
+    const grown = await waitForRows(page, ".wallets__item", (r) => r.length === wallets + 1);
+    check("Connect wallet adds a wallet (POST /wallets)", grown.length === wallets + 1);
     check("no script errors", page.errors.length === 0, page.errors.join("; "));
     await page.close();
   },

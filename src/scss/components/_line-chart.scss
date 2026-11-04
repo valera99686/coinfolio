@@ -15,6 +15,11 @@
     color: color(text-muted);
   }
 
+  // The portfolio chart is gold, like the brand; a coin chart takes the colour of its direction.
+  &--gold {
+    color: color(accent);
+  }
+
   &__stop {
     stop-color: currentcolor;
 
