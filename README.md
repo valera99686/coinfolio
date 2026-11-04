@@ -93,15 +93,16 @@ json-server is read-only for everybody; the server lets through only the writes 
 
 ### Publishing the API (Render, free plan)
 
-GitHub Pages serves only static files, so the API runs on its own host. `render.yaml` describes it:
-
-1. Sign in on <https://render.com> with GitHub, **New > Blueprint**, pick the `coinfolio` repository, *Apply*.
-2. When the service is live, copy its address (for example `https://coinfolio-api.onrender.com`).
-3. `cp .env.production.example .env.production`, put the address into `VITE_API_URL`, then `npm run deploy`.
+GitHub Pages serves only static files, so the API runs on its own host: **<https://coinfolio-api.onrender.com>**
+(Render web service, free plan, built from the `api/` folder of this repository: `npm install`, `npm run start`;
+`NODE_VERSION=20`, `API_DELAY=150`). `render.yaml` describes the same service as a Blueprint, so it can be recreated with
+**New > Blueprint** in two clicks. The address is stored in `.env.production` (`VITE_API_URL`), `npm run build` and
+`npm run deploy` read it; without it the app talks to `http://localhost:3001`, which also works from the preview
+while `npm run api` is running.
 
 The free plan puts the service to sleep after 15 minutes without requests; the first request then takes up to a minute
-(the interface shows skeletons and the message *The server is waking up*). The data resets whenever the service restarts.
-Without `VITE_API_URL` the site talks to `http://localhost:3001`, which works from the preview too while `npm run api` is running.
+(the interface shows skeletons and the message *The server is waking up*, a lost GET is repeated twice). The data resets
+whenever the service restarts, because the working copy of `db.json` lives in the memory of the free instance.
 
 ## How it is built
 
