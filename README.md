@@ -104,6 +104,21 @@ The free plan puts the service to sleep after 15 minutes without requests; the f
 (the interface shows skeletons and the message *The server is waking up*, a lost GET is repeated twice). The data resets
 whenever the service restarts, because the working copy of `db.json` lives in the memory of the free instance.
 
+### Lab 4 — results
+
+| Check | Result |
+|---|---|
+| `npm run test:unit` (formatters, portfolio maths, cache, services, the real API) | 25 of 25 |
+| `npm run e2e` in Chrome (Assets 24, Asset details 40, Dashboard 14, states 9, Profile 18) | 105 of 105 |
+| axe-core, 4 pages x 2 themes x 360 / 1280 px | 0 violations in 16 runs |
+| Horizontal overflow, 4 pages x 14 widths (320 - 1920 px) | none in 56 cases |
+| W3C Nu Html Checker on the published pages | 0 messages on all 4 |
+| Relative links / i18n keys | 132 links, 240 keys, nothing missing |
+| Build | CSS 70.5 kB (11.7 kB gzip), main JS 67.4 kB (26.3 kB gzip), page chunks 5 - 11 kB |
+
+The preview talks to the API on Render (<https://coinfolio-api.onrender.com>). After a pause the first request can take
+up to a minute while the free instance wakes up; the interface shows skeletons and a message meanwhile.
+
 ## How it is built
 
 - **Vite** multi-page build (`vite.config.js`), `base: "./"` so the build works on any static host; the page code is split per page.
