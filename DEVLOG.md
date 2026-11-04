@@ -57,5 +57,34 @@ Snippet I like: one mixin gives the balance (dashboard) and the price (asset pag
 }
 ```
 
-## Week 4
+## Week 4 — Lab 4 (JS, API, forms)
+- The data moved out of the code: `scripts/seed-db.mjs` writes `api/db.json` (36 coins, 48 transactions, six price
+  series per coin, profile, wallets) with a seeded random walk, so the file is reproducible. The numbers of the mockups
+  (balance $49,011.73, profit $7,761.73, day change $828.78) come out of the seed by calculation, not by copying.
+- Classes with one job each: `HttpClient` (network), `ItemService` / `CoinService` (queries), `ListView` (DOM states),
+  `Paginator`, `FormView`, `HashRouter`, `RequestCache`. Replacing json-server would touch the first two only.
+- The server does the work: filter chips became `amount_gte`, `change24h_gte`, `watched`, search is `q`, sort is
+  `_sort/_order`, the total comes from `X-Total-Count`. The client never filters an array.
+- The write protection is part of the API: the public free host must not let anyone delete the coins, so `api/server.js`
+  allows four kinds of writes and validates every body (and returns `422` with the fields).
+- Problem: the guard read `req.body` before json-server's router had parsed it, so every valid POST was refused.
+  The body is parsed in front of the guard now (`jsonServer.bodyParser`), and a test covers it.
+- Problem: `aria-pressed="${false}"` printed an empty attribute (the template drops `false`), so the star had no state;
+  found by the end-to-end test of the rollback, which could not read it.
+- Problem: `q=` searches every field, and the long coin descriptions made `q=eth` match half of the list.
+  The texts moved to their own collection (`/details`).
+- Problem: the e2e run changed the data of the server it ran against; the checks that depend on the seed
+  (counts, balances) run on a fresh API, the others compare with the API itself.
+- The free host sleeps: the first request can take a minute, so a lost GET is repeated twice and the interface says
+  that the server is waking up instead of failing at once.
+
+Snippet I like: the optimistic update is one function, used by the table, the cards and the details page:
+
+```js
+applyWatch(button, !was);              // 1. show the result at once
+try { await coinService.setWatched(id, !was); }
+catch { applyWatch(button, was); }     // 3. roll back and tell the user
+```
+
+## Week 5
 -

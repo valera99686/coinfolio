@@ -21,3 +21,11 @@ AI assistant: Claude (Claude Code).
   Verification: `npm test`, screenshots at 360 / 768 / 1280 px in both themes compared with Figma, axe-core on every
   page, overflow check from 320 to 1920 px.
 
+## Lab 4
+- "Do lab 4 with the API" (the API has to be hosted, not only local).
+  The assistant read the lab guide, then wrote the seed script, the json-server wrapper with write protection, the
+  client classes (HttpClient, services, views, router, cache), the four page controllers, the tests and the Render blueprint.
+  I decided to host the API separately, to keep one project and to work without sub-agents.
+  Verification: `npm test` (25 unit and API tests, lint, build, HTML validation), `npm run e2e` (105 checks in Chrome),
+  `npm run audit` (axe-core on every page and theme, overflow on 14 widths). I will deploy the API myself.
+
