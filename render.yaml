@@ -1,0 +1,17 @@
+# Render Blueprint: the json-server API of Coinfolio as a free web service.
+# New > Blueprint > pick this repository; Render reads this file and builds ./api.
+services:
+  - type: web
+    name: coinfolio-api
+    runtime: node
+    plan: free
+    rootDir: api
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      # a little latency, so that the loading states of the interface can be seen
+      - key: API_DELAY
+        value: "150"

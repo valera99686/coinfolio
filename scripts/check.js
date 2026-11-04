@@ -37,12 +37,45 @@ for (const page of pages) {
   }
 }
 
+// Text that JavaScript renders: t("key") with a literal key must exist in every dictionary, and a key built at
+// run time (t("period." + name)) must have at least one entry with that prefix.
+const jsFiles = [];
+const walk = (dir) => {
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const path = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      walk(path);
+    } else if (path.endsWith(".js")) {
+      jsFiles.push(path);
+    }
+  }
+};
+walk("src/js");
+const jsKeys = new Set();
+const jsPrefixes = new Set();
+for (const file of jsFiles) {
+  const code = readFileSync(file, "utf8");
+  for (const [, key] of code.matchAll(/\bt\(\s*["'`]([\w.]+)["'`]\s*[,)]/g)) {
+    jsKeys.add(key);
+  }
+  for (const [, prefix] of code.matchAll(/\bt\(\s*["'`]([\w.]+\.)["'`]\s*\+/g)) {
+    jsPrefixes.add(prefix);
+  }
+  for (const [, prefix] of code.matchAll(/\bt\(`([\w.]+?)\$\{/g)) {
+    jsPrefixes.add(prefix);
+  }
+}
+jsKeys.forEach((key) => keys.add(key));
+const missingPrefix = Object.entries(locales).flatMap(([file, dict]) =>
+  [...jsPrefixes].filter((prefix) => !Object.keys(dict).some((key) => key.startsWith(prefix))).map((prefix) => `${file}: ${prefix}*`),
+);
+
 const missing = Object.entries(locales).flatMap(([file, dict]) =>
   [...keys].filter((key) => !(key in dict)).map((key) => `${file}: ${key}`),
 );
 
 console.log(`pages: ${pages.length}`);
 console.log(`relative links and images checked: ${links}, broken: ${broken.length}`);
-console.log(`i18n keys used: ${keys.size}, locales: ${Object.keys(locales).join(", ")}, missing: ${missing.length}`);
-[...broken, ...missing].forEach((line) => console.log("  " + line));
-process.exitCode = broken.length || missing.length ? 1 : 0;
+console.log(`i18n keys used: ${keys.size} (${jsKeys.size} from scripts), locales: ${Object.keys(locales).join(", ")}, missing: ${missing.length + missingPrefix.length}`);
+[...broken, ...missing, ...missingPrefix].forEach((line) => console.log("  " + line));
+process.exitCode = broken.length || missing.length || missingPrefix.length ? 1 : 0;

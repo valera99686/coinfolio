@@ -18,7 +18,9 @@
     "check": "node scripts/check.js",
     "check:css": "node scripts/check-css.mjs",
     "shot": "node scripts/shot.mjs",
-    "test": "npm run build && npm run validate && npm run check && npm run check:css",
+    "test:unit": "node --test \"tests/*.test.js\"",
+    "e2e": "node scripts/e2e.mjs",
+    "test": "npm run test:unit && npm run build && npm run validate && npm run check && npm run check:css",
     "deploy": "npm test && gh-pages -d dist --dotfiles -m \"Deploy preview\""
   },
   "devDependencies": {

@@ -12,7 +12,7 @@ const PORT = Number(process.env.PORT) || 3001;
 const DELAY = Number(process.env.API_DELAY ?? 300);
 
 // The working copy lives next to db.json (git-ignored), so the committed seed never changes.
-const dataDir = join(here, ".data");
+const dataDir = process.env.API_DATA_DIR || join(here, ".data");
 mkdirSync(dataDir, { recursive: true });
 const dbFile = join(dataDir, "db.json");
 copyFileSync(join(here, "db.json"), dbFile);
