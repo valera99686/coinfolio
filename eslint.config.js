@@ -9,7 +9,7 @@ export default [
     languageOptions: { ecmaVersion: "latest", sourceType: "module", globals: globals.browser },
   },
   {
-    files: ["*.config.js", "build/**/*.js", "scripts/**/*.{js,mjs}", "src/data/**/*.js"],
+    files: ["*.config.js", "build/**/*.js", "api/**/*.js", "scripts/**/*.{js,mjs}", "src/data/**/*.js"],
     languageOptions: { ecmaVersion: "latest", sourceType: "module", globals: globals.node },
   },
   {

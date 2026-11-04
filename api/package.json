@@ -1,0 +1,17 @@
+{
+  "name": "coinfolio-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "json-server backend of Coinfolio (coins, transactions, charts, profile)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "json-server": "0.17.4"
+  }
+}

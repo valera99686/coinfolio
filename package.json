@@ -6,6 +6,9 @@
   "description": "Coinfolio: crypto portfolio tracker (KPI web course, topic 1)",
   "scripts": {
     "dev": "vite",
+    "api": "node api/server.js",
+    "start": "concurrently -k -n api,web \"npm:api\" \"npm:dev\"",
+    "seed": "node scripts/seed-db.mjs",
     "build": "npm run lint && vite build",
     "preview": "vite preview",
     "lint": "npm run lint:js && npm run lint:css",
@@ -20,11 +23,13 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
+    "concurrently": "^10.0.6",
     "ejs": "^3.1.10",
     "eslint": "^9.39.5",
     "gh-pages": "^6.3.0",
     "globals": "^17.12.0",
     "html-validate": "^11.4.0",
+    "json-server": "^0.17.4",
     "puppeteer-core": "^25.13.0",
     "sass": "^1.105.1",
     "stylelint": "^17.16.0",

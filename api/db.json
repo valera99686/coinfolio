@@ -1,0 +1,1907 @@
+{
+  "coins": [
+    {
+      "id": "btc",
+      "rank": 1,
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "category": "Layer 1",
+      "price": 64218.4,
+      "change24h": 2.35,
+      "marketCap": 1268000000000,
+      "volume24h": 31800000000,
+      "supply": 19750000,
+      "ath": 73750.07,
+      "low24h": 62480.1,
+      "high24h": 64231.9,
+      "amount": 0.425,
+      "avgBuy": 52430.44,
+      "costBasis": 22282.94,
+      "value": 27292.82,
+      "watched": false,
+      "spark": [62743.9, 62948.1, 63093.1, 63315.9, 63310.6, 63389.6, 63577.5, 63815.2, 63756.4, 63634.6, 63831.6, 63923.5, 63800.3, 64064.3, 64231.9, 64231.9, 64087.3, 63981.2, 64163.8, 64231.9, 64227.6, 64124.4, 64191.3, 64231.9, 64218.4]
+    },
+    {
+      "id": "eth",
+      "rank": 2,
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "category": "Layer 1",
+      "price": 3142.75,
+      "change24h": -1.12,
+      "marketCap": 378000000000,
+      "volume24h": 15200000000,
+      "supply": 120276828,
+      "ath": 6542.64,
+      "low24h": 3138.04,
+      "high24h": 3183.12,
+      "amount": 3.2,
+      "avgBuy": 2700,
+      "costBasis": 8640,
+      "value": 10056.8,
+      "watched": false,
+      "spark": [3178.35, 3174.13, 3163.96, 3167.94, 3155.36, 3150.33, 3153, 3159.11, 3158.24, 3155.85, 3162.72, 3171.02, 3168.69, 3173.21, 3171.69, 3161.46, 3159.21, 3161.35, 3158.36, 3154.61, 3147.3, 3144.49, 3149, 3155.2, 3142.75]
+    },
+    {
+      "id": "usdt",
+      "rank": 3,
+      "symbol": "USDT",
+      "name": "Tether",
+      "category": "Stablecoin",
+      "price": 1.0001,
+      "change24h": 0.01,
+      "marketCap": 118000000000,
+      "volume24h": 48600000000,
+      "supply": 117988201180,
+      "ath": 2.12889,
+      "low24h": 0.986636,
+      "high24h": 1.00427,
+      "amount": 1250,
+      "avgBuy": 1,
+      "costBasis": 1250,
+      "value": 1250.13,
+      "watched": false,
+      "spark": [1, 0.99753, 0.999918, 0.998602, 0.998743, 0.997679, 0.994461, 0.992569, 0.990165, 0.988118, 0.99019, 0.991815, 0.994641, 0.993577, 0.992855, 0.992224, 0.995351, 0.992417, 0.993336, 0.990456, 0.992846, 0.996244, 0.999753, 1.00277, 1.0001]
+    },
+    {
+      "id": "sol",
+      "rank": 4,
+      "symbol": "SOL",
+      "name": "Solana",
+      "category": "Layer 1",
+      "price": 148.36,
+      "change24h": 5.87,
+      "marketCap": 69000000000,
+      "volume24h": 3400000000,
+      "supply": 465084929,
+      "ath": 175.276,
+      "low24h": 139.924,
+      "high24h": 148.583,
+      "amount": 28.5,
+      "avgBuy": 118,
+      "costBasis": 3363,
+      "value": 4228.26,
+      "watched": true,
+      "spark": [140.134, 140.332, 140.256, 141.028, 141.363, 141.346, 141.912, 141.997, 142.866, 143.298, 143.72, 144.284, 144.221, 144.442, 144.4, 144.863, 145.026, 145.893, 146.476, 147.045, 147.001, 147.462, 147.815, 148.045, 148.36]
+    },
+    {
+      "id": "xrp",
+      "rank": 5,
+      "symbol": "XRP",
+      "name": "XRP",
+      "category": "Payments",
+      "price": 0.5873,
+      "change24h": 0.92,
+      "marketCap": 33000000000,
+      "volume24h": 1300000000,
+      "supply": 56189341052,
+      "ath": 1.3584,
+      "low24h": 0.58103,
+      "high24h": 0.589682,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": true,
+      "spark": [0.581946, 0.582587, 0.581903, 0.582675, 0.583422, 0.58437, 0.586265, 0.58759, 0.586887, 0.58734, 0.585311, 0.586504, 0.587804, 0.586591, 0.587644, 0.588799, 0.587235, 0.586409, 0.58495, 0.586591, 0.585783, 0.585717, 0.586439, 0.586029, 0.5873]
+    },
+    {
+      "id": "ada",
+      "rank": 6,
+      "symbol": "ADA",
+      "name": "Cardano",
+      "category": "Layer 1",
+      "price": 0.4521,
+      "change24h": -0.64,
+      "marketCap": 16300000000,
+      "volume24h": 410000000,
+      "supply": 36053970361,
+      "ath": 0.767571,
+      "low24h": 0.450328,
+      "high24h": 0.455695,
+      "amount": 5200,
+      "avgBuy": 0.4278,
+      "costBasis": 2224.56,
+      "value": 2350.92,
+      "watched": false,
+      "spark": [0.455012, 0.454532, 0.452978, 0.451924, 0.452695, 0.451005, 0.452107, 0.453091, 0.451258, 0.452088, 0.451509, 0.452054, 0.452028, 0.45166, 0.452285, 0.451935, 0.452784, 0.451387, 0.451052, 0.452241, 0.451528, 0.452662, 0.453181, 0.453956, 0.4521]
+    },
+    {
+      "id": "doge",
+      "rank": 7,
+      "symbol": "DOGE",
+      "name": "Dogecoin",
+      "category": "Meme",
+      "price": 0.1242,
+      "change24h": 0.87,
+      "marketCap": 15900000000,
+      "volume24h": 900000000,
+      "supply": 128019323671,
+      "ath": 0.362155,
+      "low24h": 0.122421,
+      "high24h": 0.124783,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": true,
+      "spark": [0.123129, 0.122971, 0.122605, 0.12279, 0.12291, 0.122693, 0.123131, 0.123527, 0.123475, 0.123464, 0.123284, 0.123057, 0.123464, 0.123889, 0.123706, 0.12371, 0.123568, 0.12394, 0.124353, 0.124585, 0.124596, 0.124491, 0.124544, 0.124332, 0.1242]
+    },
+    {
+      "id": "avax",
+      "rank": 8,
+      "symbol": "AVAX",
+      "name": "Avalanche",
+      "category": "Layer 1",
+      "price": 27.9,
+      "change24h": -2.48,
+      "marketCap": 11400000000,
+      "volume24h": 520000000,
+      "supply": 408602151,
+      "ath": 51.8746,
+      "low24h": 27.8581,
+      "high24h": 28.6524,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": true,
+      "spark": [28.6095, 28.5555, 28.5732, 28.4847, 28.4958, 28.4794, 28.4851, 28.5198, 28.5906, 28.5933, 28.556, 28.5575, 28.5171, 28.4905, 28.41, 28.4486, 28.4593, 28.4419, 28.3509, 28.2711, 28.1458, 28.0248, 28.0162, 27.9053, 27.9]
+    },
+    {
+      "id": "dot",
+      "rank": 9,
+      "symbol": "DOT",
+      "name": "Polkadot",
+      "category": "Infrastructure",
+      "price": 6.84,
+      "change24h": 1.93,
+      "marketCap": 9800000000,
+      "volume24h": 230000000,
+      "supply": 1432748538,
+      "ath": 17.2044,
+      "low24h": 6.70042,
+      "high24h": 6.8659,
+      "amount": 310,
+      "avgBuy": 6.41,
+      "costBasis": 1987.1,
+      "value": 2120.4,
+      "watched": false,
+      "spark": [6.71049, 6.72276, 6.73767, 6.73659, 6.73364, 6.76281, 6.7653, 6.79887, 6.81871, 6.82325, 6.83219, 6.84968, 6.85235, 6.85562, 6.84923, 6.8459, 6.83335, 6.84413, 6.83877, 6.84049, 6.82876, 6.82197, 6.85104, 6.85231, 6.84]
+    },
+    {
+      "id": "link",
+      "rank": 10,
+      "symbol": "LINK",
+      "name": "Chainlink",
+      "category": "Infrastructure",
+      "price": 14.27,
+      "change24h": 3.41,
+      "marketCap": 8700000000,
+      "volume24h": 380000000,
+      "supply": 609670638,
+      "ath": 17.7496,
+      "low24h": 13.7787,
+      "high24h": 14.2914,
+      "amount": 120,
+      "avgBuy": 12.52,
+      "costBasis": 1502.4,
+      "value": 1712.4,
+      "watched": false,
+      "spark": [13.7994, 13.8276, 13.831, 13.8189, 13.8087, 13.8734, 13.8549, 13.8875, 13.939, 13.9467, 13.9884, 13.9789, 13.9514, 13.9343, 13.919, 13.9409, 13.9971, 13.9823, 14.036, 14.088, 14.1426, 14.2013, 14.185, 14.2216, 14.27]
+    },
+    {
+      "id": "bch",
+      "rank": 11,
+      "symbol": "BCH",
+      "name": "Bitcoin Cash",
+      "category": "Payments",
+      "price": 412.6,
+      "change24h": -0.37,
+      "marketCap": 8100000000,
+      "volume24h": 290000000,
+      "supply": 19631604,
+      "ath": 663.407,
+      "low24h": 410.882,
+      "high24h": 416.151,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [414.132, 413.86, 415.007, 415.066, 415.528, 414.891, 415.09, 414.235, 413.98, 414.895, 414.612, 413.565, 412.961, 413.556, 412.477, 413.166, 412.816, 412.681, 412.603, 411.499, 412.191, 412.088, 413.354, 413.54, 412.6]
+    },
+    {
+      "id": "uni",
+      "rank": 12,
+      "symbol": "UNI",
+      "name": "Uniswap",
+      "category": "DeFi",
+      "price": 8.95,
+      "change24h": 2.14,
+      "marketCap": 7600000000,
+      "volume24h": 210000000,
+      "supply": 849162011,
+      "ath": 15.2749,
+      "low24h": 8.71125,
+      "high24h": 8.96342,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [8.76248, 8.73891, 8.72434, 8.75306, 8.75282, 8.77622, 8.80264, 8.81024, 8.82576, 8.85399, 8.85522, 8.86765, 8.87488, 8.87423, 8.89397, 8.89607, 8.88395, 8.89436, 8.8955, 8.90024, 8.92315, 8.9156, 8.90434, 8.92463, 8.95]
+    },
+    {
+      "id": "xlm",
+      "rank": 13,
+      "symbol": "XLM",
+      "name": "Stellar",
+      "category": "Payments",
+      "price": 0.1186,
+      "change24h": 0.42,
+      "marketCap": 7100000000,
+      "volume24h": 120000000,
+      "supply": 59865092749,
+      "ath": 0.23378,
+      "low24h": 0.11769,
+      "high24h": 0.11909,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [0.118104, 0.118155, 0.117867, 0.118151, 0.118599, 0.118332, 0.118145, 0.118362, 0.118766, 0.118493, 0.1184, 0.118778, 0.118624, 0.118912, 0.118765, 0.118398, 0.118542, 0.118295, 0.118526, 0.118271, 0.118136, 0.117997, 0.118282, 0.118701, 0.1186]
+    },
+    {
+      "id": "atom",
+      "rank": 14,
+      "symbol": "ATOM",
+      "name": "Cosmos",
+      "category": "Infrastructure",
+      "price": 7.62,
+      "change24h": -1.08,
+      "marketCap": 6700000000,
+      "volume24h": 190000000,
+      "supply": 879265092,
+      "ath": 11.2956,
+      "low24h": 7.60857,
+      "high24h": 7.72573,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [7.70319, 7.68114, 7.65876, 7.64679, 7.65292, 7.63894, 7.66439, 7.67502, 7.70252, 7.68585, 7.68974, 7.69697, 7.68898, 7.69041, 7.70956, 7.71077, 7.71416, 7.69944, 7.69069, 7.67039, 7.68869, 7.66245, 7.64147, 7.64579, 7.62]
+    },
+    {
+      "id": "near",
+      "rank": 15,
+      "symbol": "NEAR",
+      "name": "NEAR Protocol",
+      "category": "Layer 1",
+      "price": 6.31,
+      "change24h": 3.76,
+      "marketCap": 6200000000,
+      "volume24h": 340000000,
+      "supply": 982567353,
+      "ath": 7.41488,
+      "low24h": 6.07222,
+      "high24h": 6.32895,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [6.08134, 6.09299, 6.10638, 6.12101, 6.13706, 6.14383, 6.15596, 6.18153, 6.18373, 6.18237, 6.18853, 6.18219, 6.20442, 6.2101, 6.22114, 6.22845, 6.22996, 6.25762, 6.25515, 6.24536, 6.27544, 6.26919, 6.29676, 6.31947, 6.31]
+    },
+    {
+      "id": "icp",
+      "rank": 16,
+      "symbol": "ICP",
+      "name": "Internet Computer",
+      "category": "Infrastructure",
+      "price": 11.84,
+      "change24h": -2.31,
+      "marketCap": 5800000000,
+      "volume24h": 110000000,
+      "supply": 489864865,
+      "ath": 31.1131,
+      "low24h": 11.8097,
+      "high24h": 12.1382,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [12.12, 12.0749, 12.0396, 12.0265, 12.0541, 12.0414, 12.0132, 12.0376, 11.9951, 11.9949, 12.0229, 12.049, 12.0045, 11.9588, 11.9356, 11.9018, 11.879, 11.8411, 11.8274, 11.8555, 11.8806, 11.8708, 11.8796, 11.8701, 11.84]
+    },
+    {
+      "id": "fil",
+      "rank": 17,
+      "symbol": "FIL",
+      "name": "Filecoin",
+      "category": "Infrastructure",
+      "price": 5.48,
+      "change24h": 1.12,
+      "marketCap": 5400000000,
+      "volume24h": 170000000,
+      "supply": 985401460,
+      "ath": 7.74798,
+      "low24h": 5.40496,
+      "high24h": 5.5129,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [5.4193, 5.41615, 5.42066, 5.41308, 5.42178, 5.4324, 5.45002, 5.44332, 5.46059, 5.46426, 5.45877, 5.46787, 5.45735, 5.44642, 5.44911, 5.46796, 5.4873, 5.48399, 5.4761, 5.47045, 5.48046, 5.50222, 5.50464, 5.49353, 5.48]
+    },
+    {
+      "id": "apt",
+      "rank": 18,
+      "symbol": "APT",
+      "name": "Aptos",
+      "category": "Layer 1",
+      "price": 8.17,
+      "change24h": -0.93,
+      "marketCap": 5000000000,
+      "volume24h": 200000000,
+      "supply": 611995104,
+      "ath": 11.3084,
+      "low24h": 8.12546,
+      "high24h": 8.25906,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [8.24669, 8.23537, 8.22156, 8.19778, 8.17084, 8.153, 8.15247, 8.17772, 8.18018, 8.16946, 8.15513, 8.14991, 8.13767, 8.16654, 8.15924, 8.18774, 8.18778, 8.17771, 8.18779, 8.16777, 8.1497, 8.16335, 8.16181, 8.18234, 8.17]
+    },
+    {
+      "id": "etc",
+      "rank": 19,
+      "symbol": "ETC",
+      "name": "Ethereum Classic",
+      "category": "Layer 1",
+      "price": 24.36,
+      "change24h": 0.58,
+      "marketCap": 4600000000,
+      "volume24h": 140000000,
+      "supply": 188834154,
+      "ath": 50.5616,
+      "low24h": 23.9867,
+      "high24h": 24.4084,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [24.2195, 24.2774, 24.3084, 24.3275, 24.3601, 24.3718, 24.3148, 24.2629, 24.2107, 24.2014, 24.1912, 24.1889, 24.1217, 24.1371, 24.0812, 24.089, 24.0227, 24.0637, 24.1407, 24.1233, 24.1386, 24.2301, 24.3208, 24.3293, 24.36]
+    },
+    {
+      "id": "hbar",
+      "rank": 20,
+      "symbol": "HBAR",
+      "name": "Hedera",
+      "category": "Layer 1",
+      "price": 0.0718,
+      "change24h": 1.64,
+      "marketCap": 4300000000,
+      "volume24h": 80000000,
+      "supply": 59888579387,
+      "ath": 0.0984111,
+      "low24h": 0.0705355,
+      "high24h": 0.0722154,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [0.0706415, 0.0708886, 0.0711225, 0.0711184, 0.0712204, 0.0711964, 0.0711502, 0.0711119, 0.0710669, 0.0710785, 0.0710665, 0.0710966, 0.0709967, 0.0712255, 0.0710713, 0.071165, 0.0711999, 0.0714369, 0.0716842, 0.071766, 0.0718947, 0.0721072, 0.0719343, 0.0718761, 0.0718]
+    },
+    {
+      "id": "arb",
+      "rank": 21,
+      "symbol": "ARB",
+      "name": "Arbitrum",
+      "category": "Layer 2",
+      "price": 1.04,
+      "change24h": -1.77,
+      "marketCap": 4000000000,
+      "volume24h": 260000000,
+      "supply": 3846153846,
+      "ath": 1.47295,
+      "low24h": 1.03844,
+      "high24h": 1.06209,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [1.05874, 1.0605, 1.0565, 1.05759, 1.05829, 1.0564, 1.0547, 1.05389, 1.05426, 1.05144, 1.04771, 1.0489, 1.04865, 1.04863, 1.04703, 1.04332, 1.04134, 1.04293, 1.04157, 1.0432, 1.04322, 1.04017, 1.04003, 1.04136, 1.04]
+    },
+    {
+      "id": "op",
+      "rank": 22,
+      "symbol": "OP",
+      "name": "Optimism",
+      "category": "Layer 2",
+      "price": 2.31,
+      "change24h": 2.89,
+      "marketCap": 3700000000,
+      "volume24h": 230000000,
+      "supply": 1601731602,
+      "ath": 5.40495,
+      "low24h": 2.24175,
+      "high24h": 2.31409,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [2.24512, 2.24554, 2.24686, 2.25536, 2.25778, 2.25741, 2.25847, 2.26785, 2.26617, 2.26934, 2.26881, 2.2692, 2.27999, 2.28145, 2.27813, 2.27611, 2.27857, 2.28754, 2.29624, 2.29426, 2.29011, 2.29804, 2.29953, 2.31062, 2.31]
+    },
+    {
+      "id": "vet",
+      "rank": 23,
+      "symbol": "VET",
+      "name": "VeChain",
+      "category": "Infrastructure",
+      "price": 0.0334,
+      "change24h": -0.45,
+      "marketCap": 3400000000,
+      "volume24h": 60000000,
+      "supply": 101796407186,
+      "ath": 0.0826207,
+      "low24h": 0.0332281,
+      "high24h": 0.0336809,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [0.033551, 0.0334572, 0.0334496, 0.0333541, 0.0333208, 0.033278, 0.0333296, 0.0333707, 0.0333429, 0.0334444, 0.0335149, 0.0335396, 0.0336305, 0.0335369, 0.0335785, 0.033579, 0.033487, 0.0334524, 0.0333833, 0.0333704, 0.0333953, 0.0333907, 0.033461, 0.0334658, 0.0334]
+    },
+    {
+      "id": "inj",
+      "rank": 24,
+      "symbol": "INJ",
+      "name": "Injective",
+      "category": "DeFi",
+      "price": 24.7,
+      "change24h": 4.12,
+      "marketCap": 3100000000,
+      "volume24h": 150000000,
+      "supply": 125506073,
+      "ath": 49.9407,
+      "low24h": 23.687,
+      "high24h": 24.737,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [23.7226, 23.7732, 23.7924, 23.8636, 23.891, 23.9015, 23.948, 23.8932, 23.9844, 24.0262, 23.9797, 24.0857, 24.1579, 24.246, 24.3103, 24.4168, 24.5105, 24.5542, 24.6279, 24.6685, 24.6389, 24.5947, 24.6354, 24.5955, 24.7]
+    },
+    {
+      "id": "mkr",
+      "rank": 25,
+      "symbol": "MKR",
+      "name": "Maker",
+      "category": "DeFi",
+      "price": 1812,
+      "change24h": -0.66,
+      "marketCap": 2800000000,
+      "volume24h": 50000000,
+      "supply": 1545254,
+      "ath": 4209.51,
+      "low24h": 1807.11,
+      "high24h": 1830.63,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [1824.04, 1822.72, 1820.46, 1820.92, 1822.86, 1823.16, 1824.77, 1825.46, 1827.4, 1827.89, 1825.58, 1823.83, 1820.07, 1822.06, 1823.59, 1825.72, 1822.35, 1821.03, 1817.09, 1815.57, 1813.21, 1816.23, 1810.15, 1809.82, 1812]
+    },
+    {
+      "id": "aave",
+      "rank": 26,
+      "symbol": "AAVE",
+      "name": "Aave",
+      "category": "DeFi",
+      "price": 136.4,
+      "change24h": 1.93,
+      "marketCap": 2600000000,
+      "volume24h": 120000000,
+      "supply": 19061584,
+      "ath": 357.714,
+      "low24h": 133.616,
+      "high24h": 136.749,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [133.817, 134.351, 134.372, 134.631, 134.852, 134.567, 134.266, 133.918, 134.125, 134.354, 134.514, 134.334, 134.209, 134.104, 134.444, 134.695, 135.258, 135.698, 136.269, 136.237, 136.088, 136.544, 136.477, 136.274, 136.4]
+    },
+    {
+      "id": "grt",
+      "rank": 27,
+      "symbol": "GRT",
+      "name": "The Graph",
+      "category": "Infrastructure",
+      "price": 0.2043,
+      "change24h": -1.26,
+      "marketCap": 2400000000,
+      "volume24h": 70000000,
+      "supply": 11747430250,
+      "ath": 0.303691,
+      "low24h": 0.203994,
+      "high24h": 0.207829,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [0.206907, 0.206656, 0.207211, 0.207518, 0.207011, 0.206435, 0.206046, 0.205743, 0.205679, 0.205272, 0.205492, 0.206121, 0.206174, 0.206193, 0.206037, 0.205573, 0.205713, 0.205887, 0.205529, 0.204764, 0.20457, 0.204693, 0.204581, 0.204523, 0.2043]
+    },
+    {
+      "id": "algo",
+      "rank": 28,
+      "symbol": "ALGO",
+      "name": "Algorand",
+      "category": "Layer 1",
+      "price": 0.1672,
+      "change24h": 0.71,
+      "marketCap": 2200000000,
+      "volume24h": 50000000,
+      "supply": 13157894737,
+      "ath": 0.434796,
+      "low24h": 0.165413,
+      "high24h": 0.168341,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [0.166021, 0.166312, 0.16583, 0.165661, 0.165909, 0.165796, 0.166066, 0.166079, 0.166543, 0.166491, 0.166403, 0.166832, 0.167182, 0.16734, 0.167914, 0.167941, 0.167816, 0.168089, 0.168017, 0.167567, 0.167262, 0.167607, 0.168016, 0.167531, 0.1672]
+    },
+    {
+      "id": "stx",
+      "rank": 29,
+      "symbol": "STX",
+      "name": "Stacks",
+      "category": "Layer 2",
+      "price": 1.69,
+      "change24h": 3.05,
+      "marketCap": 2000000000,
+      "volume24h": 90000000,
+      "supply": 1183431953,
+      "ath": 4.44897,
+      "low24h": 1.63752,
+      "high24h": 1.69254,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [1.63998, 1.64439, 1.64944, 1.64766, 1.64824, 1.65281, 1.65746, 1.65961, 1.6653, 1.66497, 1.6625, 1.66934, 1.6721, 1.67319, 1.6743, 1.67712, 1.68255, 1.68084, 1.67884, 1.68494, 1.68134, 1.68771, 1.68437, 1.6826, 1.69]
+    },
+    {
+      "id": "sand",
+      "rank": 30,
+      "symbol": "SAND",
+      "name": "The Sandbox",
+      "category": "Gaming",
+      "price": 0.4018,
+      "change24h": -2.04,
+      "marketCap": 1850000000,
+      "volume24h": 80000000,
+      "supply": 4604280737,
+      "ath": 0.885457,
+      "low24h": 0.400908,
+      "high24h": 0.410782,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [0.410167, 0.408562, 0.407745, 0.408076, 0.407726, 0.408483, 0.40938, 0.409567, 0.408323, 0.409175, 0.409581, 0.409257, 0.409736, 0.409105, 0.407499, 0.406323, 0.40594, 0.406208, 0.405643, 0.404552, 0.402819, 0.402666, 0.401956, 0.40151, 0.4018]
+    },
+    {
+      "id": "mana",
+      "rank": 31,
+      "symbol": "MANA",
+      "name": "Decentraland",
+      "category": "Gaming",
+      "price": 0.3891,
+      "change24h": -1.52,
+      "marketCap": 1700000000,
+      "volume24h": 60000000,
+      "supply": 4369056798,
+      "ath": 0.948989,
+      "low24h": 0.388516,
+      "high24h": 0.396431,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [0.395106, 0.394739, 0.393942, 0.394906, 0.395008, 0.393431, 0.393325, 0.394017, 0.39421, 0.39437, 0.395276, 0.395837, 0.3943, 0.3948, 0.393846, 0.394871, 0.393417, 0.394264, 0.393043, 0.393811, 0.392334, 0.390965, 0.39115, 0.389517, 0.3891]
+    },
+    {
+      "id": "egld",
+      "rank": 32,
+      "symbol": "EGLD",
+      "name": "MultiversX",
+      "category": "Layer 1",
+      "price": 31.12,
+      "change24h": 0.34,
+      "marketCap": 1550000000,
+      "volume24h": 40000000,
+      "supply": 49807198,
+      "ath": 64.737,
+      "low24h": 30.8426,
+      "high24h": 31.2085,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [31.0146, 31.1051, 31.0355, 31.0702, 31.1045, 31.0464, 31.0388, 31.1054, 31.0712, 31.1618, 31.1158, 31.073, 31.1614, 31.1303, 31.1044, 31.0613, 31.0188, 31.0655, 30.9762, 30.8889, 30.9354, 30.9148, 31.0249, 31.1336, 31.12]
+    },
+    {
+      "id": "flow",
+      "rank": 33,
+      "symbol": "FLOW",
+      "name": "Flow",
+      "category": "Layer 1",
+      "price": 0.5214,
+      "change24h": -0.88,
+      "marketCap": 1400000000,
+      "volume24h": 30000000,
+      "supply": 2685078634,
+      "ath": 1.32336,
+      "low24h": 0.51919,
+      "high24h": 0.526818,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [0.526029, 0.525955, 0.524639, 0.523483, 0.522742, 0.521908, 0.522122, 0.520619, 0.520291, 0.520746, 0.520837, 0.51997, 0.520987, 0.520972, 0.520546, 0.521952, 0.521272, 0.521049, 0.5224, 0.523293, 0.522553, 0.523106, 0.523186, 0.522808, 0.5214]
+    },
+    {
+      "id": "xtz",
+      "rank": 34,
+      "symbol": "XTZ",
+      "name": "Tezos",
+      "category": "Layer 1",
+      "price": 0.8127,
+      "change24h": 0.19,
+      "marketCap": 1250000000,
+      "volume24h": 30000000,
+      "supply": 1538082933,
+      "ath": 2.35107,
+      "low24h": 0.809528,
+      "high24h": 0.817634,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [0.811159, 0.811027, 0.81351, 0.812037, 0.811467, 0.814565, 0.81437, 0.816409, 0.815165, 0.813375, 0.81261, 0.810744, 0.811764, 0.811321, 0.814307, 0.813548, 0.811592, 0.812938, 0.812031, 0.812787, 0.812397, 0.810887, 0.812863, 0.813911, 0.8127]
+    },
+    {
+      "id": "axs",
+      "rank": 35,
+      "symbol": "AXS",
+      "name": "Axie Infinity",
+      "category": "Gaming",
+      "price": 6.28,
+      "change24h": 2.47,
+      "marketCap": 1120000000,
+      "volume24h": 70000000,
+      "supply": 178343949,
+      "ath": 16.966,
+      "low24h": 6.11802,
+      "high24h": 6.28942,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [6.12862, 6.12743, 6.14107, 6.15911, 6.14189, 6.12721, 6.14089, 6.13995, 6.15645, 6.17679, 6.16558, 6.17956, 6.19964, 6.19061, 6.20903, 6.19302, 6.20529, 6.18408, 6.20341, 6.22002, 6.23788, 6.2548, 6.26449, 6.25901, 6.28]
+    },
+    {
+      "id": "shib",
+      "rank": 36,
+      "symbol": "SHIB",
+      "name": "Shiba Inu",
+      "category": "Meme",
+      "price": 0.00001927,
+      "change24h": 1.31,
+      "marketCap": 1050000000,
+      "volume24h": 50000000,
+      "supply": 54488842760768,
+      "ath": 0.0000561578,
+      "low24h": 0.0000189923,
+      "high24h": 0.0000193219,
+      "amount": 0,
+      "avgBuy": 0,
+      "costBasis": 0,
+      "value": 0,
+      "watched": false,
+      "spark": [0.0000190208, 0.0000190564, 0.00001909, 0.0000191098, 0.0000190795, 0.0000191029, 0.0000190878, 0.0000190539, 0.0000190435, 0.0000190917, 0.000019088, 0.0000190936, 0.0000191291, 0.0000191642, 0.0000191232, 0.0000191101, 0.0000190619, 0.0000190401, 0.000019075, 0.0000191086, 0.0000191315, 0.0000191796, 0.0000192318, 0.000019293, 0.00001927]
+    }
+  ],
+  "details": [
+    {
+      "id": "btc",
+      "website": "https://bitcoin.org/",
+      "whitepaper": "https://bitcoin.org/bitcoin.pdf",
+      "about": "Bitcoin is the first decentralised digital currency, launched in 2009. It runs on a public proof-of-work blockchain with a hard cap of 21 million coins, which is why it is often called “digital gold”. Transactions are verified by a global network of miners without any central authority."
+    },
+    {
+      "id": "eth",
+      "website": "https://ethereum.org/",
+      "whitepaper": "https://ethereum.org/en/whitepaper/",
+      "about": "Ethereum is a programmable blockchain. Smart contracts let developers build lending, trading and NFT apps on top of it, and validators secure the network by staking ETH."
+    },
+    {
+      "id": "usdt",
+      "website": "https://tether.to/",
+      "about": "Tether is a stablecoin pegged to the US dollar. It is the most traded asset on crypto exchanges and is used to move value between markets without leaving the dollar."
+    },
+    {
+      "id": "sol",
+      "website": "https://solana.com/",
+      "about": "Solana is a high-throughput layer 1 chain that combines proof of stake with proof of history. Low fees and fast finality make it popular for payments, trading and games."
+    },
+    {
+      "id": "xrp",
+      "website": "https://xrpl.org/",
+      "about": "XRP is the native asset of the XRP Ledger, built for fast and cheap cross-border payments. Transfers settle in a few seconds."
+    },
+    {
+      "id": "ada",
+      "website": "https://cardano.org/",
+      "about": "Cardano is a proof-of-stake blockchain developed through peer-reviewed research. It supports smart contracts and a native token standard."
+    },
+    {
+      "id": "doge",
+      "website": "https://dogecoin.com/",
+      "about": "Dogecoin started as a joke in 2013 and grew into one of the largest meme coins. It is mostly used for tips and small payments."
+    },
+    {
+      "id": "avax",
+      "website": "https://www.avax.network/",
+      "about": "Avalanche is a layer 1 platform with sub-second finality. Developers can launch their own application-specific chains called subnets."
+    },
+    {
+      "id": "dot",
+      "website": "https://polkadot.network/",
+      "about": "Polkadot connects many specialised blockchains (parachains) into one network that shares security through a central relay chain."
+    },
+    {
+      "id": "link",
+      "website": "https://chain.link/",
+      "about": "Chainlink is a network of oracles that brings real-world data, such as prices, onto blockchains so smart contracts can use it."
+    },
+    {
+      "id": "bch",
+      "website": "https://bitcoincash.org/",
+      "about": "Bitcoin Cash split from Bitcoin in 2017 with larger blocks, aiming at cheap everyday payments."
+    },
+    {
+      "id": "uni",
+      "website": "https://uniswap.org/",
+      "about": "Uniswap is the largest decentralised exchange. Liquidity providers fund pools and traders swap tokens against them with no order book."
+    },
+    {
+      "id": "xlm",
+      "website": "https://stellar.org/",
+      "about": "Stellar is an open network for moving money. It connects banks, payment systems and people with low-cost transfers."
+    },
+    {
+      "id": "atom",
+      "website": "https://cosmos.network/",
+      "about": "Cosmos is an “internet of blockchains”: independent chains talk to each other through the IBC protocol."
+    },
+    {
+      "id": "near",
+      "website": "https://near.org/",
+      "about": "NEAR is a sharded proof-of-stake chain with human-readable account names and a focus on easy onboarding for developers."
+    },
+    {
+      "id": "icp",
+      "website": "https://internetcomputer.org/",
+      "about": "The Internet Computer runs web apps and backends fully on-chain, without traditional cloud hosting."
+    },
+    {
+      "id": "fil",
+      "website": "https://filecoin.io/",
+      "about": "Filecoin is a decentralised storage market. Providers rent out disk space and are paid in FIL for proving they store the data."
+    },
+    {
+      "id": "apt",
+      "website": "https://aptoslabs.com/",
+      "about": "Aptos is a layer 1 blockchain built with the Move language, designed for safe and parallel transaction execution."
+    },
+    {
+      "id": "etc",
+      "website": "https://ethereumclassic.org/",
+      "about": "Ethereum Classic is the original Ethereum chain that kept proof of work after the 2016 fork."
+    },
+    {
+      "id": "hbar",
+      "website": "https://hedera.com/",
+      "about": "Hedera uses a hashgraph consensus run by a council of large companies, aiming at high throughput and predictable fees."
+    },
+    {
+      "id": "arb",
+      "website": "https://arbitrum.io/",
+      "about": "Arbitrum is an optimistic rollup that scales Ethereum: transactions run off-chain and are settled on Ethereum."
+    },
+    {
+      "id": "op",
+      "website": "https://www.optimism.io/",
+      "about": "Optimism is an Ethereum layer 2 rollup and the home of the OP Stack, a toolkit for launching new rollups."
+    },
+    {
+      "id": "vet",
+      "website": "https://www.vechain.org/",
+      "about": "VeChain tracks products across supply chains. Companies record the origin and journey of goods on the blockchain."
+    },
+    {
+      "id": "inj",
+      "website": "https://injective.com/",
+      "about": "Injective is a chain built for finance, with an on-chain order book for spot and derivatives markets."
+    },
+    {
+      "id": "mkr",
+      "website": "https://makerdao.com/",
+      "about": "Maker issues the DAI stablecoin against crypto collateral. MKR holders vote on the risk rules of the protocol."
+    },
+    {
+      "id": "aave",
+      "website": "https://aave.com/",
+      "about": "Aave is a lending market where users deposit assets to earn interest or borrow against collateral."
+    },
+    {
+      "id": "grt",
+      "website": "https://thegraph.com/",
+      "about": "The Graph indexes blockchain data so apps can query it quickly, like a search engine for on-chain information."
+    },
+    {
+      "id": "algo",
+      "website": "https://algorand.co/",
+      "about": "Algorand is a pure proof-of-stake chain with instant finality and low, fixed transaction fees."
+    },
+    {
+      "id": "stx",
+      "website": "https://www.stacks.co/",
+      "about": "Stacks brings smart contracts to Bitcoin: contracts run on a separate layer and settle on the Bitcoin chain."
+    },
+    {
+      "id": "sand",
+      "website": "https://www.sandbox.game/",
+      "about": "The Sandbox is a virtual world where players build, own and trade game assets and land as NFTs."
+    },
+    {
+      "id": "mana",
+      "website": "https://decentraland.org/",
+      "about": "Decentraland is a 3D virtual world owned by its users. MANA pays for land, avatars and wearables."
+    },
+    {
+      "id": "egld",
+      "website": "https://multiversx.com/",
+      "about": "MultiversX is a sharded layer 1 chain that processes transactions in parallel across several shards."
+    },
+    {
+      "id": "flow",
+      "website": "https://flow.com/",
+      "about": "Flow is a chain designed for games and collectibles, where NFTs and apps reach mainstream users."
+    },
+    {
+      "id": "xtz",
+      "website": "https://tezos.com/",
+      "about": "Tezos is a self-amending blockchain: holders vote on protocol upgrades, which then roll out without hard forks."
+    },
+    {
+      "id": "axs",
+      "website": "https://axieinfinity.com/",
+      "about": "Axie Infinity is a play-to-earn game where players breed and battle creatures called Axies."
+    },
+    {
+      "id": "shib",
+      "website": "https://shibatoken.com/",
+      "about": "Shiba Inu is a meme token that grew an ecosystem around it, including its own decentralised exchange."
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "coinId": "eth",
+      "type": "buy",
+      "date": "2025-03-02T11:07",
+      "amount": 0.365,
+      "price": 2607.19,
+      "fee": 0.95,
+      "note": ""
+    },
+    {
+      "id": 2,
+      "coinId": "sol",
+      "type": "buy",
+      "date": "2025-03-02T14:07",
+      "amount": 4.354,
+      "price": 105.35,
+      "fee": 0.46,
+      "note": ""
+    },
+    {
+      "id": 3,
+      "coinId": "link",
+      "type": "buy",
+      "date": "2025-03-05T14:21",
+      "amount": 8.687,
+      "price": 13.57,
+      "fee": 0.12,
+      "note": ""
+    },
+    {
+      "id": 4,
+      "coinId": "link",
+      "type": "sell",
+      "date": "2025-03-16T07:10",
+      "amount": 23.124,
+      "price": 13.1,
+      "fee": 0.3,
+      "note": ""
+    },
+    {
+      "id": 5,
+      "coinId": "usdt",
+      "type": "sell",
+      "date": "2025-05-03T11:14",
+      "amount": 448,
+      "price": 1,
+      "fee": 0.45,
+      "note": ""
+    },
+    {
+      "id": 6,
+      "coinId": "usdt",
+      "type": "sell",
+      "date": "2025-06-07T16:42",
+      "amount": 85,
+      "price": 1,
+      "fee": 0.09,
+      "note": ""
+    },
+    {
+      "id": 7,
+      "coinId": "link",
+      "type": "sell",
+      "date": "2025-06-12T09:14",
+      "amount": 16.444,
+      "price": 13.13,
+      "fee": 0.22,
+      "note": ""
+    },
+    {
+      "id": 8,
+      "coinId": "dot",
+      "type": "buy",
+      "date": "2025-06-12T15:11",
+      "amount": 19,
+      "price": 6.0323,
+      "fee": 0.11,
+      "note": ""
+    },
+    {
+      "id": 9,
+      "coinId": "eth",
+      "type": "buy",
+      "date": "2025-06-17T07:26",
+      "amount": 0.298,
+      "price": 2632.6,
+      "fee": 0.78,
+      "note": ""
+    },
+    {
+      "id": 10,
+      "coinId": "sol",
+      "type": "buy",
+      "date": "2025-06-24T13:22",
+      "amount": 3.194,
+      "price": 124.47,
+      "fee": 0.4,
+      "note": ""
+    },
+    {
+      "id": 11,
+      "coinId": "dot",
+      "type": "buy",
+      "date": "2025-07-02T10:09",
+      "amount": 20,
+      "price": 6.2618,
+      "fee": 0.13,
+      "note": ""
+    },
+    {
+      "id": 12,
+      "coinId": "eth",
+      "type": "buy",
+      "date": "2025-07-07T06:06",
+      "amount": 0.582,
+      "price": 2775.51,
+      "fee": 1.62,
+      "note": ""
+    },
+    {
+      "id": 13,
+      "coinId": "eth",
+      "type": "buy",
+      "date": "2025-08-09T11:04",
+      "amount": 0.502,
+      "price": 2678.54,
+      "fee": 1.34,
+      "note": ""
+    },
+    {
+      "id": 14,
+      "coinId": "eth",
+      "type": "buy",
+      "date": "2025-08-20T06:13",
+      "amount": 0.342,
+      "price": 2739.96,
+      "fee": 0.94,
+      "note": ""
+    },
+    {
+      "id": 15,
+      "coinId": "ada",
+      "type": "buy",
+      "date": "2025-08-22T18:28",
+      "amount": 1097,
+      "price": 0.4637,
+      "fee": 0.51,
+      "note": ""
+    },
+    {
+      "id": 16,
+      "coinId": "link",
+      "type": "sell",
+      "date": "2025-09-19T09:37",
+      "amount": 9.294,
+      "price": 12.82,
+      "fee": 0.12,
+      "note": ""
+    },
+    {
+      "id": 17,
+      "coinId": "sol",
+      "type": "buy",
+      "date": "2025-10-01T08:41",
+      "amount": 5.044,
+      "price": 127.15,
+      "fee": 0.64,
+      "note": ""
+    },
+    {
+      "id": 18,
+      "coinId": "eth",
+      "type": "sell",
+      "date": "2025-10-04T06:45",
+      "amount": 0.283,
+      "price": 2624.13,
+      "fee": 0.74,
+      "note": ""
+    },
+    {
+      "id": 19,
+      "coinId": "link",
+      "type": "buy",
+      "date": "2025-10-13T08:19",
+      "amount": 25.513,
+      "price": 13.9,
+      "fee": 0.35,
+      "note": ""
+    },
+    {
+      "id": 20,
+      "coinId": "sol",
+      "type": "buy",
+      "date": "2025-10-25T18:33",
+      "amount": 4.656,
+      "price": 116.62,
+      "fee": 0.54,
+      "note": ""
+    },
+    {
+      "id": 21,
+      "coinId": "dot",
+      "type": "sell",
+      "date": "2025-11-23T12:48",
+      "amount": 44,
+      "price": 6.8794,
+      "fee": 0.3,
+      "note": ""
+    },
+    {
+      "id": 22,
+      "coinId": "usdt",
+      "type": "buy",
+      "date": "2025-11-28T06:21",
+      "amount": 203,
+      "price": 1,
+      "fee": 0.2,
+      "note": ""
+    },
+    {
+      "id": 23,
+      "coinId": "ada",
+      "type": "buy",
+      "date": "2026-01-01T18:27",
+      "amount": 785,
+      "price": 0.4415,
+      "fee": 0.35,
+      "note": ""
+    },
+    {
+      "id": 24,
+      "coinId": "link",
+      "type": "buy",
+      "date": "2026-01-11T14:28",
+      "amount": 18.878,
+      "price": 13.83,
+      "fee": 0.26,
+      "note": ""
+    },
+    {
+      "id": 25,
+      "coinId": "eth",
+      "type": "buy",
+      "date": "2026-02-01T07:01",
+      "amount": 0.483,
+      "price": 2595.79,
+      "fee": 1.25,
+      "note": ""
+    },
+    {
+      "id": 26,
+      "coinId": "sol",
+      "type": "buy",
+      "date": "2026-02-20T16:43",
+      "amount": 4.486,
+      "price": 118.07,
+      "fee": 0.53,
+      "note": ""
+    },
+    {
+      "id": 27,
+      "coinId": "btc",
+      "type": "buy",
+      "date": "2026-03-14T10:02",
+      "amount": 0.35,
+      "price": 49880,
+      "fee": 17.46,
+      "note": ""
+    },
+    {
+      "id": 28,
+      "coinId": "usdt",
+      "type": "buy",
+      "date": "2026-03-27T12:24",
+      "amount": 374,
+      "price": 1,
+      "fee": 0.37,
+      "note": ""
+    },
+    {
+      "id": 29,
+      "coinId": "ada",
+      "type": "buy",
+      "date": "2026-04-30T07:45",
+      "amount": 883,
+      "price": 0.4786,
+      "fee": 0.42,
+      "note": ""
+    },
+    {
+      "id": 30,
+      "coinId": "ada",
+      "type": "buy",
+      "date": "2026-05-08T16:32",
+      "amount": 1253,
+      "price": 0.4151,
+      "fee": 0.52,
+      "note": ""
+    },
+    {
+      "id": 31,
+      "coinId": "sol",
+      "type": "buy",
+      "date": "2026-05-10T12:20",
+      "amount": 3.301,
+      "price": 131.82,
+      "fee": 0.44,
+      "note": ""
+    },
+    {
+      "id": 32,
+      "coinId": "usdt",
+      "type": "buy",
+      "date": "2026-05-19T11:35",
+      "amount": 84,
+      "price": 1,
+      "fee": 0.08,
+      "note": ""
+    },
+    {
+      "id": 33,
+      "coinId": "btc",
+      "type": "sell",
+      "date": "2026-07-03T11:20",
+      "amount": 0.05,
+      "price": 61020,
+      "fee": 3.05,
+      "note": "Took some profit"
+    },
+    {
+      "id": 34,
+      "coinId": "dot",
+      "type": "buy",
+      "date": "2026-07-11T13:59",
+      "amount": 24,
+      "price": 6.7876,
+      "fee": 0.16,
+      "note": ""
+    },
+    {
+      "id": 35,
+      "coinId": "eth",
+      "type": "buy",
+      "date": "2026-07-19T16:01",
+      "amount": 0.581,
+      "price": 2415.01,
+      "fee": 1.4,
+      "note": ""
+    },
+    {
+      "id": 36,
+      "coinId": "link",
+      "type": "buy",
+      "date": "2026-07-28T12:19",
+      "amount": 7.969,
+      "price": 12.58,
+      "fee": 0.1,
+      "note": ""
+    },
+    {
+      "id": 37,
+      "coinId": "sol",
+      "type": "buy",
+      "date": "2026-08-04T15:44",
+      "amount": 4.854,
+      "price": 107.03,
+      "fee": 0.52,
+      "note": ""
+    },
+    {
+      "id": 38,
+      "coinId": "ada",
+      "type": "buy",
+      "date": "2026-08-04T17:48",
+      "amount": 711,
+      "price": 0.4196,
+      "fee": 0.3,
+      "note": ""
+    },
+    {
+      "id": 39,
+      "coinId": "ada",
+      "type": "buy",
+      "date": "2026-08-13T08:33",
+      "amount": 1195,
+      "price": 0.4323,
+      "fee": 0.52,
+      "note": ""
+    },
+    {
+      "id": 40,
+      "coinId": "dot",
+      "type": "buy",
+      "date": "2026-08-21T18:15",
+      "amount": 52,
+      "price": 6.4527,
+      "fee": 0.34,
+      "note": ""
+    },
+    {
+      "id": 41,
+      "coinId": "dot",
+      "type": "buy",
+      "date": "2026-08-25T08:37",
+      "amount": 31,
+      "price": 6.8835,
+      "fee": 0.21,
+      "note": ""
+    },
+    {
+      "id": 42,
+      "coinId": "dot",
+      "type": "buy",
+      "date": "2026-08-28T14:54",
+      "amount": 22,
+      "price": 7.092,
+      "fee": 0.16,
+      "note": ""
+    },
+    {
+      "id": 43,
+      "coinId": "btc",
+      "type": "buy",
+      "date": "2026-08-28T16:05",
+      "amount": 0.1,
+      "price": 58410,
+      "fee": 5.84,
+      "note": "Bought the dip"
+    },
+    {
+      "id": 44,
+      "coinId": "ada",
+      "type": "buy",
+      "date": "2026-09-10T08:25",
+      "amount": 1000,
+      "price": 0.4521,
+      "fee": 0.45,
+      "note": ""
+    },
+    {
+      "id": 45,
+      "coinId": "sol",
+      "type": "buy",
+      "date": "2026-09-12T21:37",
+      "amount": 4,
+      "price": 148.36,
+      "fee": 0.59,
+      "note": ""
+    },
+    {
+      "id": 46,
+      "coinId": "usdt",
+      "type": "transfer",
+      "date": "2026-09-14T12:02",
+      "amount": 250,
+      "price": 1.0001,
+      "fee": 0.25,
+      "note": ""
+    },
+    {
+      "id": 47,
+      "coinId": "eth",
+      "type": "sell",
+      "date": "2026-09-15T18:40",
+      "amount": 0.5,
+      "price": 3142.75,
+      "fee": 1.57,
+      "note": ""
+    },
+    {
+      "id": 48,
+      "coinId": "btc",
+      "type": "buy",
+      "date": "2026-09-16T09:14",
+      "amount": 0.025,
+      "price": 64218.4,
+      "fee": 1.61,
+      "note": "Weekly DCA"
+    }
+  ],
+  "charts": [
+    {
+      "id": "btc",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [64163.4, 64222.5, 64250.9, 64318.5, 64316.9, 64333, 64404.4, 64399.1, 64345.7, 64306.3, 64244.5, 64280.4, 64218.4],
+        "24h": [62743.9, 62948.1, 63093.1, 63315.9, 63310.6, 63389.6, 63577.5, 63815.2, 63756.4, 63634.6, 63831.6, 63923.5, 63800.3, 64064.3, 64231.9, 64231.9, 64087.3, 63981.2, 64163.8, 64231.9, 64227.6, 64124.4, 64191.3, 64231.9, 64218.4],
+        "7d": [58400, 58438.7, 59223, 59925.2, 60141.7, 60486.7, 60512.1, 60544, 60568.4, 60557.3, 60505.8, 60157.4, 60340.8, 60686.2, 60622.2, 60870.6, 60559.8, 60527.4, 61374, 61135.2, 61690.9, 61837.9, 61925.4, 62190.6, 62355.7, 62248.1, 62635.1, 63512.9, 64218.4],
+        "1m": [62298.3, 63189.7, 64018.7, 63889.4, 63815.4, 64849.2, 64614.6, 65582.8, 66644.2, 65960, 66140.4, 66333.7, 67144.2, 66653.5, 66663, 67016.5, 66729.3, 65909.1, 65862, 65859.9, 64945.6, 64289.5, 63543.2, 64647.3, 64797.7, 63924.2, 63822.3, 63561, 64445.5, 64387.1, 64218.4],
+        "1y": [43614.7, 42217.8, 44274.1, 44550.6, 45865.5, 44808.3, 43459.9, 45690.7, 45610.3, 45040.5, 44677.5, 43386.2, 44761.2, 46386.4, 47391.3, 48269.7, 50067.4, 49508.5, 49410.8, 50190.1, 49455.2, 50958.7, 50651.2, 49856.6, 52407.1, 54643.6, 57254.1, 57374.5, 57973, 58115.3, 58412.8, 57242.7, 57182.3, 58649.7, 60699.7, 61624.5, 61998.6, 64298.2, 62772.1, 62087.7, 64483, 64469.8, 65433.3, 63881.6, 62330.6, 61818.6, 62980.3, 62165, 63729.4, 63169.6, 62418.2, 64045.7, 64218.4],
+        "all": [162184, 163082, 152070, 144652, 135482, 135004, 139829, 134255, 138299, 126979, 114425, 115087, 108803, 106969, 99942.7, 106992, 111378, 99835.7, 100063, 104712, 97896.7, 84336.9, 86396.2, 98113.1, 106661, 105181, 111314, 124294, 117324, 112313, 99086.6, 91655.7, 83541.1, 84322.8, 78524.7, 85459.2, 92464.6, 97368.2, 91189.1, 96956.5, 101369, 86997.5, 84490.5, 71339.6, 75857.3, 78324.7, 63803.7, 65810.7, 79517.3, 82294.2, 67452.5, 67645.9, 54116.2, 67769.6, 75776.5, 67040.8, 70512.9, 75604.8, 65542.9, 77875, 64218.4]
+      }
+    },
+    {
+      "id": "eth",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [3145.85, 3146.66, 3142.11, 3141.43, 3141.18, 3137.15, 3138.44, 3136.11, 3137.39, 3139.75, 3141.85, 3142.36, 3142.75],
+        "24h": [3178.35, 3174.13, 3163.96, 3167.94, 3155.36, 3150.33, 3153, 3159.11, 3158.24, 3155.85, 3162.72, 3171.02, 3168.69, 3173.21, 3171.69, 3161.46, 3159.21, 3161.35, 3158.36, 3154.61, 3147.3, 3144.49, 3149, 3155.2, 3142.75],
+        "7d": [3140.75, 3117.33, 3143.67, 3160.91, 3155.82, 3170.95, 3197.55, 3188.78, 3170.2, 3150.53, 3145.18, 3168.39, 3151.22, 3152.97, 3144.17, 3151.24, 3177.46, 3179.81, 3192.19, 3168.13, 3151.71, 3140.27, 3135.41, 3116.53, 3145.74, 3169.67, 3190.51, 3166.6, 3142.75],
+        "1m": [2669.13, 2647.84, 2630.14, 2689.9, 2749.09, 2757.46, 2818.62, 2857.73, 2894.22, 2939.23, 2974.79, 2945.97, 2944.19, 2962.26, 2925.44, 2901.93, 2889.1, 2944.03, 2907.54, 2885.56, 2929.33, 2948.14, 2919.06, 2981.32, 2990.35, 3029.67, 3049.84, 3058.02, 3117.12, 3078.89, 3142.75],
+        "1y": [5506.99, 5269.26, 5126.19, 4854.4, 4755.6, 4515.15, 4233.21, 4384.07, 4407.4, 4515.97, 4681.82, 4742.99, 4536.98, 4292.6, 4521.99, 4276.51, 4269.43, 4263.79, 4211.06, 4263.43, 4326.19, 4126.04, 3983.28, 4220.82, 4174.38, 4075.8, 3871.54, 4014.44, 4104.99, 3981.46, 3923.69, 3857.26, 3763.99, 3534.83, 3486.08, 3676.4, 3860.95, 3634.66, 3438.48, 3293.04, 3316.28, 3531.31, 3254.33, 3461.84, 3361.36, 3619.1, 3566.56, 3433.33, 3454.33, 3190.57, 3038.48, 3167.65, 3142.75],
+        "all": [7239.4, 7247.56, 7090.16, 7112.67, 7317.62, 6635.91, 6306.1, 6898.48, 6585.52, 6224.61, 5682.95, 5089.06, 4743.81, 4122.28, 4729.68, 4280.38, 3863.56, 3203.74, 3762.95, 3672.32, 3492.37, 3037.3, 2853.99, 2754.49, 2376.8, 2522.98, 3036.12, 2591.87, 2625.48, 3044.3, 2665.85, 2258.52, 2397.1, 2822.98, 2481.39, 2222.12, 2387.71, 2836.93, 2973.33, 2631.53, 2694.39, 2477.58, 2339.91, 1791.27, 1502.96, 1674.74, 1099.96, 1596.24, 1820.82, 1344.05, 1574.07, 1273.46, 1099.96, 1140.67, 1164.17, 1423.66, 1549.06, 1647.25, 2213.71, 2707.32, 3142.75]
+      }
+    },
+    {
+      "id": "usdt",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [1.00089, 1.00209, 1.00182, 1.00151, 1.00098, 1.00062, 1.00074, 0.99977, 1.00063, 0.999832, 1.00011, 0.999526, 1.0001],
+        "24h": [1, 0.99753, 0.999918, 0.998602, 0.998743, 0.997679, 0.994461, 0.992569, 0.990165, 0.988118, 0.99019, 0.991815, 0.994641, 0.993577, 0.992855, 0.992224, 0.995351, 0.992417, 0.993336, 0.990456, 0.992846, 0.996244, 0.999753, 1.00277, 1.0001],
+        "7d": [0.990142, 0.98326, 0.976658, 0.981968, 0.977793, 0.981224, 0.986488, 0.985321, 0.992382, 0.996516, 0.993857, 1.00306, 0.996357, 1.00241, 1.00814, 1.00431, 1.00369, 1.00827, 1.00889, 1.00589, 1.01815, 1.0229, 1.02091, 1.01333, 1.02267, 1.01768, 1.00919, 1.00765, 1.0001],
+        "1m": [0.972273, 0.973553, 0.979367, 0.982775, 0.970421, 0.983168, 0.964343, 0.946229, 0.940413, 0.928198, 0.931585, 0.934039, 0.931279, 0.941222, 0.94435, 0.952647, 0.960156, 0.944785, 0.959655, 0.959071, 0.97015, 0.968456, 0.976537, 0.969675, 0.976156, 0.990001, 0.985957, 0.982525, 0.987997, 0.997821, 1.0001],
+        "1y": [0.91321, 0.905782, 0.928643, 0.958842, 0.99369, 1.03601, 1.08628, 1.07095, 1.0522, 1.07163, 1.05154, 1.06752, 1.04849, 1.03846, 1.04928, 1.02548, 1.04212, 1.07742, 1.12497, 1.09182, 1.12301, 1.16239, 1.19404, 1.19713, 1.19454, 1.16137, 1.16191, 1.20195, 1.231, 1.21446, 1.18103, 1.19465, 1.16917, 1.15299, 1.13115, 1.13009, 1.0996, 1.1479, 1.18977, 1.18193, 1.17324, 1.13561, 1.14905, 1.12692, 1.10214, 1.07489, 1.05308, 1.06881, 1.06841, 1.04908, 1.05428, 1.02845, 1.0001],
+        "all": [2.22703, 2.10864, 2.06504, 2.02969, 1.95714, 1.77233, 1.78565, 1.88663, 1.72394, 1.89669, 1.88263, 1.89394, 1.74032, 1.83293, 1.67744, 1.4922, 1.3001, 1.16599, 1.10266, 0.919856, 1.11423, 0.987412, 1.13203, 1.04427, 1.15097, 1.30734, 1.35345, 1.37012, 1.43884, 1.57106, 1.40437, 1.48546, 1.55806, 1.66178, 1.79631, 1.64957, 1.64367, 1.72452, 1.52354, 1.48163, 1.42484, 1.43883, 1.52734, 1.53953, 1.34074, 1.47717, 1.59161, 1.74937, 1.8617, 1.91591, 1.87038, 1.72208, 1.77429, 1.6304, 1.53261, 1.54297, 1.39308, 1.24791, 1.32794, 1.13506, 1.0001]
+      }
+    },
+    {
+      "id": "sol",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [148.514, 148.551, 148.642, 148.435, 148.379, 148.164, 148.2, 148.164, 148.135, 148.216, 148.311, 148.335, 148.36],
+        "24h": [140.134, 140.332, 140.256, 141.028, 141.363, 141.346, 141.912, 141.997, 142.866, 143.298, 143.72, 144.284, 144.221, 144.442, 144.4, 144.863, 145.026, 145.893, 146.476, 147.045, 147.001, 147.462, 147.815, 148.045, 148.36],
+        "7d": [138.11, 137.305, 137.395, 137.278, 137.831, 139.603, 140.635, 142.05, 142.95, 143.234, 142.349, 142.881, 141.999, 141.578, 142.657, 143.398, 142.274, 141.178, 140.482, 141.364, 142.967, 142.614, 142.47, 144.27, 144.879, 144.628, 146.284, 146.931, 148.36],
+        "1m": [157.218, 157.545, 159.026, 156.916, 156.086, 152.611, 152.862, 154.296, 151.456, 149.088, 146.611, 148.208, 145.821, 145.011, 144.579, 144.126, 146.067, 143.329, 144.972, 146.998, 144.839, 146.592, 145.227, 146.222, 145.03, 146.289, 145.691, 146.573, 146.949, 147.421, 148.36],
+        "1y": [83.7286, 87.3609, 85.2396, 85.308, 84.711, 82.2284, 82.5407, 80.4296, 78.2357, 82.1558, 87.2274, 88.0149, 88.7989, 93.118, 97.0441, 99.0088, 97.737, 95.3241, 98.5376, 101.56, 99.1902, 99.2114, 103.295, 102.566, 104.34, 107.381, 106.419, 104.74, 107.655, 108.679, 112.329, 111.249, 109.372, 110.944, 115.926, 116.582, 115.436, 119.169, 117.583, 118.105, 116.803, 121.238, 123.307, 127.285, 131.103, 129.689, 133.566, 136.038, 140.363, 141.799, 138.981, 144.335, 148.36],
+        "all": [128.14, 125.643, 114.839, 126.29, 118.139, 116.659, 122.394, 131.541, 139.125, 147.957, 150.645, 149.446, 150.516, 161.7, 171.332, 174.897, 173.895, 174.706, 180.456, 187.945, 198.941, 191.568, 184.32, 173.028, 182.203, 181.609, 170.521, 169.208, 173.974, 179.373, 173.145, 168.303, 157.551, 151.438, 161.175, 152.502, 143.288, 137.924, 130.503, 141.655, 146.548, 141.377, 146.932, 150.381, 145.463, 134.363, 131.22, 129.204, 121.115, 122.766, 134.06, 126.198, 130.843, 141.468, 142.256, 150.779, 154.542, 161.208, 154.349, 150.517, 148.36]
+      }
+    },
+    {
+      "id": "xrp",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [0.587089, 0.587506, 0.587724, 0.587735, 0.587477, 0.587201, 0.586934, 0.586429, 0.586654, 0.586557, 0.587016, 0.587655, 0.5873],
+        "24h": [0.581946, 0.582587, 0.581903, 0.582675, 0.583422, 0.58437, 0.586265, 0.58759, 0.586887, 0.58734, 0.585311, 0.586504, 0.587804, 0.586591, 0.587644, 0.588799, 0.587235, 0.586409, 0.58495, 0.586591, 0.585783, 0.585717, 0.586439, 0.586029, 0.5873],
+        "7d": [0.58221, 0.581852, 0.582998, 0.586896, 0.580567, 0.578807, 0.577688, 0.578954, 0.572663, 0.573228, 0.568504, 0.574104, 0.574992, 0.570089, 0.572476, 0.576091, 0.57851, 0.575348, 0.58038, 0.578325, 0.58338, 0.583183, 0.586369, 0.586956, 0.59224, 0.585378, 0.586651, 0.581753, 0.5873],
+        "1m": [0.557297, 0.558007, 0.558906, 0.56044, 0.557519, 0.557283, 0.552126, 0.549958, 0.542368, 0.5469, 0.558531, 0.564823, 0.557163, 0.567493, 0.579968, 0.574423, 0.583489, 0.57674, 0.576195, 0.568362, 0.578668, 0.587689, 0.578258, 0.572208, 0.565488, 0.567052, 0.571595, 0.577006, 0.580285, 0.588739, 0.5873],
+        "1y": [1.02211, 0.999802, 0.959053, 0.956304, 0.905563, 0.894143, 0.848359, 0.822346, 0.855997, 0.900984, 0.910926, 0.861675, 0.855235, 0.87069, 0.875173, 0.849216, 0.894087, 0.882314, 0.82816, 0.814528, 0.851761, 0.815318, 0.809737, 0.852367, 0.850004, 0.838221, 0.836745, 0.811993, 0.785329, 0.750081, 0.734925, 0.730463, 0.714501, 0.745927, 0.746826, 0.718591, 0.702375, 0.69411, 0.735966, 0.694587, 0.649392, 0.638899, 0.645235, 0.674477, 0.693312, 0.689021, 0.683896, 0.653606, 0.645313, 0.604897, 0.61606, 0.564848, 0.5873],
+        "all": [0.695077, 0.683858, 0.659482, 0.66597, 0.656204, 0.698977, 0.67928, 0.710436, 0.674187, 0.725989, 0.776421, 0.754832, 0.736182, 0.759605, 0.729714, 0.695527, 0.745103, 0.718154, 0.687591, 0.700573, 0.728702, 0.699035, 0.661035, 0.711908, 0.761726, 0.72139, 0.737367, 0.769878, 0.80375, 0.789962, 0.759918, 0.705466, 0.727933, 0.661858, 0.609242, 0.54253, 0.588259, 0.636453, 0.610173, 0.664794, 0.710915, 0.735847, 0.759637, 0.777529, 0.717206, 0.769013, 0.82308, 0.800365, 0.772161, 0.812277, 0.795736, 0.806814, 0.828366, 0.777317, 0.745425, 0.731286, 0.732331, 0.692046, 0.651286, 0.626068, 0.5873]
+      }
+    },
+    {
+      "id": "ada",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [0.452975, 0.453501, 0.453389, 0.45318, 0.45277, 0.452567, 0.452879, 0.452795, 0.452656, 0.452151, 0.452519, 0.452429, 0.4521],
+        "24h": [0.455012, 0.454532, 0.452978, 0.451924, 0.452695, 0.451005, 0.452107, 0.453091, 0.451258, 0.452088, 0.451509, 0.452054, 0.452028, 0.45166, 0.452285, 0.451935, 0.452784, 0.451387, 0.451052, 0.452241, 0.451528, 0.452662, 0.453181, 0.453956, 0.4521],
+        "7d": [0.450131, 0.447209, 0.449364, 0.448442, 0.449107, 0.446625, 0.451027, 0.450496, 0.453473, 0.45776, 0.461199, 0.457979, 0.454609, 0.453626, 0.451644, 0.453351, 0.455701, 0.451819, 0.448114, 0.45256, 0.453237, 0.457515, 0.458062, 0.456796, 0.453181, 0.450898, 0.45054, 0.45416, 0.4521],
+        "1m": [0.397145, 0.403392, 0.401653, 0.408204, 0.407692, 0.413909, 0.408852, 0.416536, 0.417126, 0.420315, 0.415258, 0.416871, 0.421902, 0.419561, 0.416811, 0.418073, 0.420514, 0.429832, 0.432646, 0.43459, 0.43016, 0.438897, 0.437108, 0.44459, 0.442452, 0.439576, 0.438146, 0.447436, 0.452445, 0.456327, 0.4521],
+        "1y": [0.4819, 0.463231, 0.475924, 0.46859, 0.451977, 0.452644, 0.42989, 0.449026, 0.463935, 0.459884, 0.441958, 0.463025, 0.46602, 0.4455, 0.442427, 0.430962, 0.429549, 0.447644, 0.426386, 0.443648, 0.436621, 0.415885, 0.411657, 0.420673, 0.399338, 0.404998, 0.419, 0.395221, 0.390533, 0.391037, 0.376555, 0.371586, 0.388388, 0.408809, 0.400016, 0.422227, 0.402287, 0.396903, 0.401022, 0.403291, 0.426333, 0.419473, 0.428169, 0.432609, 0.438285, 0.424877, 0.447323, 0.442923, 0.443398, 0.452357, 0.456229, 0.451497, 0.4521],
+        "all": [0.231801, 0.23575, 0.243764, 0.25292, 0.271483, 0.273148, 0.257773, 0.264093, 0.28867, 0.278218, 0.281925, 0.267923, 0.272624, 0.263451, 0.278775, 0.273817, 0.26147, 0.254082, 0.267906, 0.270862, 0.274677, 0.269941, 0.268138, 0.253947, 0.258443, 0.256154, 0.277061, 0.288757, 0.289248, 0.286341, 0.280003, 0.304245, 0.321924, 0.338228, 0.332715, 0.331449, 0.328517, 0.344992, 0.355937, 0.352502, 0.352559, 0.342563, 0.367114, 0.371398, 0.362196, 0.3765, 0.385771, 0.395105, 0.388959, 0.374013, 0.381263, 0.372112, 0.391939, 0.405299, 0.400974, 0.424414, 0.438699, 0.438851, 0.457962, 0.443848, 0.4521]
+      }
+    },
+    {
+      "id": "doge",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [0.12438, 0.12452, 0.12451, 0.124459, 0.124317, 0.124212, 0.124286, 0.124372, 0.124272, 0.124298, 0.124187, 0.124059, 0.1242],
+        "24h": [0.123129, 0.122971, 0.122605, 0.12279, 0.12291, 0.122693, 0.123131, 0.123527, 0.123475, 0.123464, 0.123284, 0.123057, 0.123464, 0.123889, 0.123706, 0.12371, 0.123568, 0.12394, 0.124353, 0.124585, 0.124596, 0.124491, 0.124544, 0.124332, 0.1242],
+        "7d": [0.119588, 0.119255, 0.119557, 0.120013, 0.120638, 0.121291, 0.121974, 0.122887, 0.123858, 0.123665, 0.124129, 0.125245, 0.12523, 0.125062, 0.126336, 0.127361, 0.127979, 0.127693, 0.127612, 0.126987, 0.125784, 0.125527, 0.125008, 0.126263, 0.125493, 0.124691, 0.124634, 0.123993, 0.1242],
+        "1m": [0.108325, 0.108673, 0.110004, 0.109765, 0.1083, 0.110329, 0.108293, 0.108807, 0.106962, 0.108293, 0.108928, 0.110038, 0.110858, 0.112652, 0.11415, 0.115885, 0.115579, 0.114166, 0.11589, 0.115998, 0.116659, 0.116842, 0.116643, 0.117771, 0.116411, 0.11808, 0.120183, 0.118203, 0.120265, 0.122165, 0.1242],
+        "1y": [0.101133, 0.106527, 0.103627, 0.107942, 0.103713, 0.107506, 0.10588, 0.101813, 0.101761, 0.10071, 0.105643, 0.109426, 0.112039, 0.109696, 0.1098, 0.111883, 0.107797, 0.108366, 0.104785, 0.108958, 0.109978, 0.109674, 0.11215, 0.107823, 0.111205, 0.111563, 0.115525, 0.114779, 0.114608, 0.114799, 0.115966, 0.118978, 0.117995, 0.116802, 0.117448, 0.114218, 0.117172, 0.122519, 0.119632, 0.11551, 0.114592, 0.115367, 0.115076, 0.118032, 0.12341, 0.124122, 0.120391, 0.11756, 0.11718, 0.115488, 0.116304, 0.120432, 0.1242],
+        "all": [0.322116, 0.294808, 0.292787, 0.295633, 0.281691, 0.284394, 0.278255, 0.287783, 0.278287, 0.294789, 0.318287, 0.314375, 0.29616, 0.289543, 0.267048, 0.267836, 0.242522, 0.221305, 0.206779, 0.201145, 0.223201, 0.210928, 0.20156, 0.215027, 0.22709, 0.244739, 0.254466, 0.23436, 0.212613, 0.190885, 0.191503, 0.195977, 0.194554, 0.177442, 0.180645, 0.176981, 0.163105, 0.158408, 0.166609, 0.14479, 0.17295, 0.200791, 0.218748, 0.196888, 0.168666, 0.149612, 0.123733, 0.129189, 0.125235, 0.121314, 0.100945, 0.125756, 0.142501, 0.154925, 0.131922, 0.153194, 0.128172, 0.117924, 0.122748, 0.10781, 0.1242]
+      }
+    },
+    {
+      "id": "avax",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [27.9514, 27.9642, 27.9528, 27.9306, 27.9388, 27.9529, 27.9297, 27.9203, 27.9208, 27.9429, 27.9284, 27.8961, 27.9],
+        "24h": [28.6095, 28.5555, 28.5732, 28.4847, 28.4958, 28.4794, 28.4851, 28.5198, 28.5906, 28.5933, 28.556, 28.5575, 28.5171, 28.4905, 28.41, 28.4486, 28.4593, 28.4419, 28.3509, 28.2711, 28.1458, 28.0248, 28.0162, 27.9053, 27.9],
+        "7d": [28.1398, 27.8273, 27.6944, 27.7238, 27.8295, 27.9915, 27.8051, 28.051, 28.0956, 28.1385, 28.167, 28.1318, 28.2551, 28.1962, 27.9754, 27.8138, 27.8314, 28.0686, 28.1456, 27.8415, 27.8395, 27.964, 28.2253, 28.2094, 27.9873, 27.9974, 28.167, 28.0235, 27.9],
+        "1m": [31.3141, 30.7892, 30.9565, 30.3624, 30.7046, 30.6036, 30.4472, 30.639, 30.9939, 31.4386, 31.6268, 31.5533, 30.9492, 31.197, 31.0636, 30.6275, 30.3454, 29.8455, 30.2072, 30.2543, 29.9126, 29.4343, 29.1834, 28.9346, 28.4047, 27.9627, 27.7005, 27.2556, 27.6589, 27.3538, 27.9],
+        "1y": [17.051, 17.967, 18.7876, 19.6834, 20.2566, 20.3228, 20.8801, 21.4514, 21.5359, 22.3632, 22.067, 23.0855, 23.9019, 23.8965, 24.3253, 23.8286, 23.1838, 22.9664, 22.7508, 22.5677, 22.6118, 23.0008, 22.4877, 23.3105, 22.6817, 23.2628, 22.7205, 23.5285, 23.1297, 23.1036, 23.096, 23.2288, 22.5917, 22.194, 22.3832, 22.2574, 23.1097, 24.0678, 25.0153, 25.2508, 25.6129, 25.2205, 24.8855, 25.3324, 25.0376, 24.5653, 25.1929, 26.2271, 25.6117, 25.7657, 26.0464, 26.954, 27.9],
+        "all": [34.1101, 34.3384, 33.5928, 31.4547, 29.942, 27.5448, 26.1197, 26.3414, 27.3161, 29.7707, 28.6013, 26.507, 26.1331, 27.1125, 30.1799, 30.785, 31.3711, 34.5989, 37.2305, 36.0388, 38.7912, 39.0059, 39.6501, 38.059, 37.7127, 36.6099, 34.584, 32.7627, 33.7437, 34.0522, 34.6759, 36.0784, 35.173, 34.3115, 33.1236, 32.7628, 34.6686, 34.4808, 37.4104, 35.7104, 33.1159, 33.6917, 31.7602, 30.432, 28.2394, 27.9023, 30.8841, 29.0844, 31.9977, 30.4759, 30.5456, 28.5026, 30.8555, 32.4788, 30.1937, 29.5509, 27.5717, 24.8228, 27.5685, 26.2308, 27.9]
+      }
+    },
+    {
+      "id": "dot",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [6.83337, 6.83278, 6.82973, 6.83509, 6.83622, 6.82924, 6.83084, 6.82606, 6.82504, 6.82804, 6.83002, 6.8348, 6.84],
+        "24h": [6.71049, 6.72276, 6.73767, 6.73659, 6.73364, 6.76281, 6.7653, 6.79887, 6.81871, 6.82325, 6.83219, 6.84968, 6.85235, 6.85562, 6.84923, 6.8459, 6.83335, 6.84413, 6.83877, 6.84049, 6.82876, 6.82197, 6.85104, 6.85231, 6.84],
+        "7d": [6.88116, 6.82251, 6.79495, 6.87226, 6.95008, 6.97664, 6.98526, 7.00106, 7.04932, 7.01006, 7.06335, 6.99817, 6.93486, 6.92732, 6.90163, 6.93257, 6.9624, 7.03027, 6.99057, 6.93353, 6.88704, 6.90293, 6.97776, 6.9651, 6.91537, 6.8569, 6.84431, 6.90209, 6.84],
+        "1m": [7.16506, 7.07573, 7.12744, 7.14372, 7.20017, 7.22844, 7.30015, 7.31674, 7.41104, 7.41791, 7.31437, 7.31958, 7.40575, 7.38363, 7.27078, 7.24228, 7.28772, 7.22356, 7.27209, 7.27914, 7.17479, 7.0891, 7.17682, 7.26023, 7.31945, 7.24288, 7.13417, 7.01392, 7.05797, 6.91432, 6.84],
+        "1y": [11.6277, 11.3531, 11.6778, 11.8608, 11.3864, 11.7788, 11.6567, 11.7897, 11.7086, 11.3102, 10.6726, 11.0295, 11.2179, 11.2557, 11.2952, 11.3305, 11.0455, 10.6329, 10.1551, 9.80187, 9.20886, 9.08099, 9.16683, 9.47432, 9.32874, 9.00708, 9.23867, 8.93642, 8.67849, 8.36385, 8.1235, 8.30539, 7.9414, 7.42007, 7.0135, 7.13057, 7.26001, 7.53493, 7.07705, 7.37808, 7.60761, 7.0089, 6.59144, 7.01242, 6.65764, 6.57767, 6.61298, 6.52059, 6.86968, 6.59079, 6.79421, 6.96878, 6.84],
+        "all": [5.6978, 5.87554, 6.19054, 5.7317, 5.36376, 5.2112, 5.58611, 5.12306, 5.19412, 5.68845, 5.87891, 6.25507, 6.6625, 6.77626, 6.90533, 6.92636, 6.78092, 6.34316, 5.86359, 5.94102, 6.33839, 6.59418, 6.31726, 6.02718, 6.0007, 6.4727, 6.48758, 6.83033, 6.34282, 6.23711, 6.68919, 6.93487, 7.02056, 6.77749, 6.90033, 7.03548, 6.65535, 7.08384, 6.77091, 7.14135, 7.12912, 7.56589, 7.28436, 7.59075, 7.37518, 7.24982, 7.0187, 7.19105, 6.91226, 6.83349, 7.08251, 6.9061, 6.68869, 6.94157, 6.87328, 6.51645, 6.036, 6.02219, 6.2694, 6.41307, 6.84]
+      }
+    },
+    {
+      "id": "link",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [14.297, 14.2854, 14.2851, 14.2995, 14.3125, 14.3056, 14.2971, 14.2795, 14.2686, 14.2707, 14.2843, 14.2691, 14.27],
+        "24h": [13.7994, 13.8276, 13.831, 13.8189, 13.8087, 13.8734, 13.8549, 13.8875, 13.939, 13.9467, 13.9884, 13.9789, 13.9514, 13.9343, 13.919, 13.9409, 13.9971, 13.9823, 14.036, 14.088, 14.1426, 14.2013, 14.185, 14.2216, 14.27],
+        "7d": [13.5693, 13.5571, 13.6478, 13.8022, 13.7528, 13.6604, 13.7303, 13.8407, 13.9376, 13.9076, 13.9512, 13.862, 13.8537, 13.8647, 13.9825, 14.1322, 14.1358, 14.0836, 14.1189, 14.1591, 14.0516, 14.1015, 14.1186, 14.1074, 14.1675, 14.21, 14.0812, 14.181, 14.27],
+        "1m": [12.3343, 12.204, 12.0667, 12.0024, 12.3249, 12.6089, 12.4779, 12.3369, 12.5503, 12.421, 12.5175, 12.51, 12.7634, 12.8276, 13.0287, 13.3178, 13.3499, 13.3118, 13.561, 13.5, 13.4406, 13.6331, 13.899, 13.9485, 14.1449, 14.3999, 14.3656, 14.2645, 14.2816, 14.1506, 14.27],
+        "1y": [19.5267, 20.0372, 20.7671, 20.162, 19.9611, 20.244, 21.0051, 21.0385, 21.6256, 21.2038, 20.8308, 20.7014, 20.4496, 19.6957, 19.0172, 19.6431, 19.3604, 19.0231, 18.805, 18.2259, 17.3031, 16.8928, 17.6017, 16.8225, 16.3379, 17.3314, 17.5339, 16.9226, 16.2534, 16.9382, 16.0303, 15.2174, 15.9065, 15.8843, 15.8803, 15.873, 15.6645, 16.4049, 15.8051, 15.3011, 14.879, 14.4887, 13.9503, 14.0808, 13.4813, 14.2263, 15.1347, 14.2859, 14.8891, 14.8728, 14.2552, 14.4004, 14.27],
+        "all": [30.0931, 32.2987, 31.8866, 29.5815, 30.1594, 31.5306, 31.004, 32.6677, 31.7905, 29.3852, 26.557, 24.5799, 24.5726, 25.6076, 23.5653, 22.7622, 21.1457, 22.9425, 22.7231, 24.4376, 23.6883, 21.968, 24.2761, 22.8045, 22.6186, 22.537, 19.7658, 21.1586, 19.7471, 17.528, 16.7159, 18.8197, 17.8184, 19.4972, 19.8155, 17.7397, 16.4325, 18.7386, 17.89, 16.0883, 18.3253, 17.8577, 17.9966, 15.9804, 15.4833, 16.8728, 16.3412, 14.7577, 14.6924, 12.9887, 15.0779, 14.9217, 13.1255, 14.9731, 14.4168, 14.4825, 15.5308, 13.7688, 15.5916, 16.8734, 14.27]
+      }
+    },
+    {
+      "id": "bch",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [412.039, 412.04, 411.565, 411.121, 411.264, 411.718, 411.483, 411.88, 412.011, 411.898, 412.274, 412.245, 412.6],
+        "24h": [414.132, 413.86, 415.007, 415.066, 415.528, 414.891, 415.09, 414.235, 413.98, 414.895, 414.612, 413.565, 412.961, 413.556, 412.477, 413.166, 412.816, 412.681, 412.603, 411.499, 412.191, 412.088, 413.354, 413.54, 412.6],
+        "7d": [407.448, 404.946, 408.29, 411.316, 411.034, 412.906, 415.329, 412.945, 409.402, 410.284, 408.445, 410.506, 411.164, 414.93, 414.245, 418.127, 418.466, 414.413, 413.53, 416.191, 415.271, 417.149, 414.911, 414.938, 413.782, 416.34, 413.541, 409.113, 412.6],
+        "1m": [379.445, 378.155, 382.356, 388.141, 385.338, 384.697, 390.093, 384.913, 380.223, 381.491, 384.021, 390.005, 390.446, 395.667, 395.643, 393.212, 389.175, 393.132, 397.258, 396.99, 394.53, 402.369, 397.209, 394.115, 398.528, 396.49, 405.35, 401.739, 408.354, 413.577, 412.6],
+        "1y": [205.293, 204.354, 209.493, 216.286, 211.484, 207.986, 201.706, 202.886, 214.599, 225.853, 230.655, 242.032, 238.646, 243.151, 251.13, 251.364, 261.489, 256.885, 262.851, 256.888, 251.628, 254.761, 257.906, 260.835, 263.083, 271.414, 279.049, 289.676, 290.601, 302.092, 307.318, 307.102, 313.038, 320.466, 322.454, 320.967, 332.514, 332.706, 337.4, 349.757, 362.474, 368.921, 380.528, 386.728, 398.5, 396.026, 390.654, 387.65, 393.3, 400.175, 400.71, 405.552, 412.6],
+        "all": [652.097, 647.173, 683.437, 652.135, 694.351, 727.181, 680.189, 728.002, 681.983, 638.601, 592.157, 602.207, 645.838, 686.429, 632.824, 672.465, 714.199, 739.52, 746.279, 741.475, 683.949, 698.929, 696.24, 712.198, 656.628, 601.121, 591.258, 589.719, 632.938, 659.547, 704.539, 648.018, 684.436, 652.022, 642.41, 652.433, 676.915, 653.465, 588.595, 549.8, 518.485, 519.079, 457.144, 434.513, 386.383, 417.558, 386.746, 416.517, 407.606, 359.584, 313.399, 276.422, 285.368, 239.092, 285.58, 336.262, 339.282, 390.752, 397.355, 436.437, 412.6]
+      }
+    },
+    {
+      "id": "uni",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [8.93689, 8.94586, 8.9392, 8.93161, 8.93565, 8.94075, 8.94053, 8.94999, 8.9485, 8.94994, 8.94769, 8.95753, 8.95],
+        "24h": [8.76248, 8.73891, 8.72434, 8.75306, 8.75282, 8.77622, 8.80264, 8.81024, 8.82576, 8.85399, 8.85522, 8.86765, 8.87488, 8.87423, 8.89397, 8.89607, 8.88395, 8.89436, 8.8955, 8.90024, 8.92315, 8.9156, 8.90434, 8.92463, 8.95],
+        "7d": [8.77808, 8.83489, 8.82781, 8.89287, 8.89776, 8.82737, 8.87895, 8.93601, 8.94141, 8.92351, 8.97964, 8.94522, 9.00501, 9.08719, 9.1912, 9.151, 9.09805, 9.06869, 8.99442, 9.01347, 8.94947, 9.03786, 8.97683, 8.92114, 8.85482, 8.88072, 8.8725, 8.92524, 8.95],
+        "1m": [9.41364, 9.21121, 9.09851, 8.89793, 8.93139, 9.04625, 8.86553, 8.98467, 9.12449, 9.03503, 8.88938, 8.97875, 9.01548, 9.05319, 9.06552, 9.19702, 9.09436, 9.07702, 9.21408, 9.30029, 9.36902, 9.17691, 9.33533, 9.35612, 9.15567, 9.00448, 8.97185, 8.83467, 8.91782, 8.88368, 8.95],
+        "1y": [9.22632, 8.77017, 8.88851, 8.49734, 8.80361, 8.39741, 8.54706, 8.62817, 8.64739, 8.36915, 7.90307, 8.2734, 8.26756, 8.54562, 8.71907, 8.94439, 8.92507, 9.17728, 9.05248, 9.4104, 9.67405, 10.0973, 10.3178, 9.92086, 9.5165, 9.10153, 9.05553, 8.93496, 9.15661, 9.3223, 9.31163, 9.472, 9.31698, 9.61118, 9.32786, 9.55926, 9.47724, 9.59616, 9.72301, 9.79614, 9.65592, 9.95377, 9.79932, 9.86474, 9.86862, 9.59207, 9.2824, 9.11494, 8.6931, 9.10009, 9.27476, 8.78762, 8.95],
+        "all": [6.05185, 5.79853, 5.49369, 6.07333, 5.97487, 6.0587, 5.64861, 5.49088, 5.97043, 5.59032, 5.59774, 5.47382, 5.2854, 5.31272, 4.94154, 5.41642, 5.15013, 4.90743, 4.67756, 4.98852, 4.5373, 4.58178, 4.70056, 4.72715, 5.22324, 5.72807, 5.59549, 5.18553, 5.06731, 5.08094, 5.40635, 4.98773, 5.39743, 5.42332, 5.8621, 6.19802, 6.65267, 7.21856, 7.40913, 7.99408, 8.20997, 8.622, 8.30512, 8.72122, 8.29928, 8.13575, 8.58676, 8.13582, 7.66436, 7.59652, 7.67996, 7.51924, 7.63446, 7.90944, 7.74965, 7.58366, 8.05014, 8.62205, 8.75074, 8.39083, 8.95]
+      }
+    },
+    {
+      "id": "xlm",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [0.118454, 0.118516, 0.118551, 0.118573, 0.118594, 0.118675, 0.118604, 0.118599, 0.118563, 0.118512, 0.118539, 0.118634, 0.1186],
+        "24h": [0.118104, 0.118155, 0.117867, 0.118151, 0.118599, 0.118332, 0.118145, 0.118362, 0.118766, 0.118493, 0.1184, 0.118778, 0.118624, 0.118912, 0.118765, 0.118398, 0.118542, 0.118295, 0.118526, 0.118271, 0.118136, 0.117997, 0.118282, 0.118701, 0.1186],
+        "7d": [0.116209, 0.116289, 0.115168, 0.114571, 0.11455, 0.114599, 0.114013, 0.114551, 0.115468, 0.115791, 0.115474, 0.115198, 0.114397, 0.114035, 0.114888, 0.11382, 0.114425, 0.115819, 0.116394, 0.117607, 0.11839, 0.118775, 0.11793, 0.11848, 0.119379, 0.11945, 0.120344, 0.119447, 0.1186],
+        "1m": [0.1218, 0.120061, 0.117824, 0.117822, 0.118346, 0.120608, 0.122233, 0.12256, 0.122635, 0.122665, 0.123211, 0.121624, 0.12308, 0.125032, 0.124004, 0.122511, 0.12326, 0.123403, 0.124191, 0.123995, 0.12526, 0.125474, 0.123718, 0.12133, 0.122932, 0.122278, 0.120419, 0.121093, 0.121185, 0.119741, 0.1186],
+        "1y": [0.0634878, 0.0672747, 0.071229, 0.0750966, 0.0734733, 0.0751355, 0.0763486, 0.0759165, 0.0795679, 0.0772692, 0.0750957, 0.0769924, 0.0765357, 0.0787901, 0.0808747, 0.0815865, 0.0839609, 0.0874584, 0.0883045, 0.0909644, 0.0890211, 0.0870475, 0.0858471, 0.0892726, 0.0911203, 0.091775, 0.0946455, 0.0945788, 0.0972306, 0.100075, 0.101274, 0.10419, 0.106343, 0.106264, 0.105881, 0.108958, 0.107236, 0.110917, 0.11416, 0.114054, 0.112396, 0.111046, 0.113509, 0.115372, 0.117928, 0.121137, 0.123024, 0.121294, 0.122647, 0.121965, 0.120929, 0.120947, 0.1186],
+        "all": [0.294986, 0.292196, 0.267434, 0.284452, 0.306955, 0.326945, 0.330931, 0.337327, 0.32247, 0.294261, 0.27707, 0.300322, 0.294959, 0.308616, 0.284911, 0.301269, 0.307677, 0.302269, 0.295951, 0.292907, 0.305953, 0.302261, 0.285168, 0.261465, 0.265506, 0.267922, 0.286476, 0.266853, 0.287924, 0.287102, 0.268658, 0.248202, 0.219744, 0.211783, 0.201526, 0.19731, 0.200389, 0.212159, 0.222696, 0.228236, 0.221373, 0.195638, 0.167424, 0.185145, 0.190356, 0.201149, 0.20358, 0.183051, 0.16326, 0.163953, 0.163671, 0.170073, 0.141344, 0.156961, 0.132643, 0.140527, 0.11929, 0.109423, 0.110745, 0.12013, 0.1186]
+      }
+    },
+    {
+      "id": "atom",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [7.61339, 7.61766, 7.62617, 7.62806, 7.62659, 7.62639, 7.62443, 7.63098, 7.62805, 7.63014, 7.62383, 7.61948, 7.62],
+        "24h": [7.70319, 7.68114, 7.65876, 7.64679, 7.65292, 7.63894, 7.66439, 7.67502, 7.70252, 7.68585, 7.68974, 7.69697, 7.68898, 7.69041, 7.70956, 7.71077, 7.71416, 7.69944, 7.69069, 7.67039, 7.68869, 7.66245, 7.64147, 7.64579, 7.62],
+        "7d": [7.97164, 7.93672, 7.97092, 7.96543, 7.95378, 7.86466, 7.88706, 7.85164, 7.87013, 7.89186, 7.87435, 7.90392, 7.91235, 7.97534, 7.998, 8.03074, 7.95765, 8.00478, 7.9028, 7.87669, 7.9219, 7.85626, 7.77612, 7.74469, 7.708, 7.73108, 7.75389, 7.6894, 7.62],
+        "1m": [7.16021, 7.13844, 7.09734, 7.26828, 7.19572, 7.22296, 7.35064, 7.26788, 7.3373, 7.31988, 7.38934, 7.55101, 7.51709, 7.45446, 7.38049, 7.48047, 7.64833, 7.64902, 7.60475, 7.68933, 7.72044, 7.73973, 7.82466, 7.77099, 7.74878, 7.76232, 7.75938, 7.72728, 7.79869, 7.71633, 7.62],
+        "1y": [7.4556, 7.17559, 6.98139, 6.6408, 7.00877, 6.93617, 7.25234, 7.57446, 7.85428, 7.80882, 7.91846, 7.94237, 7.79319, 7.60186, 7.4238, 7.58364, 7.42268, 7.66868, 7.95531, 7.71876, 8.03459, 7.69258, 7.46561, 7.66247, 7.88665, 7.55659, 7.6482, 7.79716, 8.06499, 7.73273, 8.11144, 8.47376, 8.52712, 8.55427, 8.21206, 7.93334, 7.89626, 7.56122, 7.23222, 7.39959, 7.14845, 6.99171, 6.65016, 6.89995, 7.23178, 7.13321, 7.45086, 7.41484, 7.45587, 7.38785, 7.6116, 7.91763, 7.62],
+        "all": [4.39267, 4.6499, 5.00623, 4.88472, 4.66973, 4.70112, 4.986, 5.30567, 5.24351, 5.21385, 4.90955, 5.33857, 5.2985, 5.38217, 5.82529, 5.62677, 5.67483, 5.98732, 5.81075, 5.76614, 6.06972, 6.40421, 6.23506, 5.98293, 6.39582, 6.49974, 6.83472, 6.97463, 7.36217, 7.18947, 7.60989, 7.73139, 7.51911, 7.63484, 7.59645, 7.90759, 8.125, 8.12372, 7.81207, 7.46804, 7.52426, 7.40077, 7.29932, 7.25192, 7.38224, 7.4954, 7.56481, 7.99917, 7.85561, 8.20919, 7.98949, 8.11625, 8.14644, 8.21206, 7.99901, 8.26558, 8.18916, 8.22466, 7.88801, 7.64879, 7.62]
+      }
+    },
+    {
+      "id": "near",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [6.30191, 6.29806, 6.30196, 6.30236, 6.29631, 6.29796, 6.29767, 6.29475, 6.30021, 6.30396, 6.30873, 6.31161, 6.31],
+        "24h": [6.08134, 6.09299, 6.10638, 6.12101, 6.13706, 6.14383, 6.15596, 6.18153, 6.18373, 6.18237, 6.18853, 6.18219, 6.20442, 6.2101, 6.22114, 6.22845, 6.22996, 6.25762, 6.25515, 6.24536, 6.27544, 6.26919, 6.29676, 6.31947, 6.31],
+        "7d": [5.88288, 5.8946, 5.92166, 5.8732, 5.88383, 5.94888, 6.01925, 6.04042, 6.11259, 6.1036, 6.1571, 6.11931, 6.06519, 6.05443, 6.10217, 6.09926, 6.06366, 6.1124, 6.13808, 6.18986, 6.18621, 6.14239, 6.1954, 6.26595, 6.25639, 6.20839, 6.22967, 6.24435, 6.31],
+        "1m": [6.10876, 6.03894, 6.07361, 6.05446, 5.99327, 5.95023, 5.84795, 5.87223, 5.84682, 5.82451, 5.91544, 5.87395, 5.84931, 5.95404, 6.05163, 6.06121, 6.1571, 6.23343, 6.1569, 6.2736, 6.25074, 6.27232, 6.23939, 6.20806, 6.2959, 6.23353, 6.28746, 6.19021, 6.19215, 6.28801, 6.31],
+        "1y": [8.15092, 8.28369, 7.96571, 7.92069, 8.14674, 8.1864, 8.42894, 8.26484, 8.38823, 8.28395, 7.85005, 7.47024, 7.52095, 7.17131, 7.38199, 7.23656, 7.30298, 7.04985, 7.00913, 7.32541, 6.91548, 7.14353, 7.41824, 7.50654, 7.46293, 7.70693, 7.94228, 7.62691, 7.18695, 6.88288, 6.98011, 6.90866, 6.80744, 6.91456, 6.97438, 7.23655, 7.24694, 6.96055, 7.09258, 7.19022, 7.30042, 7.10337, 6.91373, 6.7221, 6.65627, 6.80555, 7.12333, 7.32701, 7.34857, 6.95148, 6.46768, 6.20603, 6.31],
+        "all": [8.84593, 8.1429, 8.73588, 8.57021, 8.2057, 8.39014, 7.72371, 7.74802, 7.23128, 6.73993, 7.4416, 8.00337, 7.39132, 7.96459, 7.97658, 8.14456, 7.73323, 8.42865, 8.03876, 8.23462, 7.92483, 7.53271, 7.33755, 7.52027, 7.09483, 7.72019, 7.33326, 6.9036, 7.17871, 6.43367, 6.87227, 6.35011, 5.66618, 5.91892, 6.05659, 5.56013, 5.63769, 5.53902, 5.18672, 4.48512, 4.99202, 5.44465, 5.1303, 4.88494, 5.21404, 4.79387, 4.64559, 5.45288, 6.12421, 6.51317, 6.52026, 6.03017, 5.82986, 6.49892, 6.10848, 6.75823, 6.41777, 6.76302, 6.37957, 6.95813, 6.31]
+      }
+    },
+    {
+      "id": "icp",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [11.8489, 11.8571, 11.8563, 11.8456, 11.8481, 11.8307, 11.8334, 11.825, 11.8252, 11.8264, 11.8347, 11.8431, 11.84],
+        "24h": [12.12, 12.0749, 12.0396, 12.0265, 12.0541, 12.0414, 12.0132, 12.0376, 11.9951, 11.9949, 12.0229, 12.049, 12.0045, 11.9588, 11.9356, 11.9018, 11.879, 11.8411, 11.8274, 11.8555, 11.8806, 11.8708, 11.8796, 11.8701, 11.84],
+        "7d": [11.9606, 11.9334, 11.9259, 11.8831, 11.9163, 11.8331, 11.7846, 11.7668, 11.8454, 11.8824, 11.9869, 11.9183, 11.9705, 12.1008, 11.9838, 12.0947, 12.1606, 12.0372, 11.9243, 11.8196, 11.9188, 12.0181, 12.0966, 11.9836, 11.992, 11.9002, 11.9801, 11.856, 11.84],
+        "1m": [10.0598, 9.92719, 10.0275, 10.0482, 10.2746, 10.1561, 10.2376, 10.4681, 10.4566, 10.5165, 10.6386, 10.6832, 10.8205, 10.9397, 11.0418, 11.1784, 11.4378, 11.3496, 11.3366, 11.2845, 11.415, 11.6712, 11.7101, 11.6585, 11.5603, 11.543, 11.6997, 11.6573, 11.7682, 11.8216, 11.84],
+        "1y": [7.29035, 7.62479, 8.0739, 8.37303, 8.27254, 8.45015, 8.21842, 8.53139, 8.69667, 8.50979, 8.73988, 8.71744, 8.86174, 9.20455, 9.09474, 8.86205, 8.94828, 9.35604, 9.45497, 9.41214, 9.73609, 9.66874, 9.67497, 9.45721, 9.23895, 9.58154, 9.60009, 9.88812, 10.2341, 10.4496, 10.2875, 10.7019, 10.6032, 10.8379, 10.7568, 10.8584, 10.6276, 10.957, 10.7844, 11.1565, 11.1936, 11.2161, 11.6389, 11.7556, 11.5833, 11.4168, 11.3082, 11.6162, 11.9393, 12.0104, 12.1928, 11.9815, 11.84],
+        "all": [21.5782, 22.0521, 20.1272, 19.8234, 20.5682, 21.6171, 19.9247, 20.3629, 20.1847, 18.4784, 19.4194, 17.543, 17.5889, 16.8745, 17.2991, 15.8478, 14.0253, 13.3158, 13.0454, 13.9126, 13.7689, 14.1508, 15.8153, 16.0787, 16.1415, 16.6182, 16.1927, 18.0262, 18.7717, 17.8199, 17.3218, 17.9713, 16.5074, 16.8125, 17.592, 17.0551, 15.9759, 15.6215, 17.449, 18.2554, 18.1281, 19.5977, 19.1751, 19.4583, 20.666, 19.5643, 17.793, 18.1033, 17.6655, 15.9042, 14.9622, 13.8427, 14.7411, 13.3058, 13.2467, 11.8281, 10.7416, 9.4973, 9.5462, 10.2464, 11.84]
+      }
+    },
+    {
+      "id": "fil",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [5.46974, 5.46743, 5.46546, 5.46439, 5.46685, 5.46379, 5.47208, 5.4684, 5.4654, 5.46691, 5.47262, 5.47148, 5.48],
+        "24h": [5.4193, 5.41615, 5.42066, 5.41308, 5.42178, 5.4324, 5.45002, 5.44332, 5.46059, 5.46426, 5.45877, 5.46787, 5.45735, 5.44642, 5.44911, 5.46796, 5.4873, 5.48399, 5.4761, 5.47045, 5.48046, 5.50222, 5.50464, 5.49353, 5.48],
+        "7d": [5.52655, 5.56502, 5.60641, 5.54773, 5.53027, 5.5657, 5.54115, 5.48893, 5.51585, 5.48502, 5.50663, 5.48448, 5.47286, 5.45907, 5.49631, 5.44838, 5.41662, 5.42448, 5.4505, 5.4118, 5.41473, 5.38219, 5.41852, 5.46366, 5.4095, 5.42042, 5.44766, 5.46507, 5.48],
+        "1m": [5.37152, 5.32824, 5.28296, 5.26318, 5.22792, 5.26378, 5.32272, 5.2896, 5.18786, 5.23255, 5.12698, 5.20072, 5.18439, 5.22971, 5.30386, 5.22301, 5.3059, 5.37945, 5.34575, 5.42995, 5.51812, 5.55491, 5.58644, 5.5499, 5.4613, 5.44262, 5.45457, 5.52284, 5.50525, 5.47308, 5.48],
+        "1y": [3.07303, 3.19139, 3.28133, 3.2071, 3.20928, 3.20423, 3.33261, 3.34365, 3.39569, 3.58291, 3.67215, 3.85136, 4.04264, 3.98044, 3.94322, 4.08703, 4.20383, 4.12679, 4.23843, 4.13963, 4.12773, 4.30384, 4.22595, 4.32195, 4.31949, 4.31683, 4.22086, 4.41548, 4.47828, 4.59555, 4.56218, 4.64211, 4.83128, 4.89784, 5.01624, 5.11855, 5.08921, 5.02857, 4.93219, 5.10379, 5.09153, 5.10901, 5.13191, 5.27178, 5.45005, 5.44932, 5.38839, 5.56389, 5.51081, 5.48833, 5.54315, 5.4866, 5.48],
+        "all": [2.67532, 2.47153, 2.4006, 2.43946, 2.618, 2.57833, 2.51092, 2.71882, 2.92077, 2.74852, 2.91126, 2.77264, 2.77592, 2.89029, 3.13245, 3.37301, 3.53881, 3.33741, 3.29575, 3.38832, 3.39213, 3.5687, 3.60841, 3.7774, 3.70391, 3.69192, 3.85679, 3.8012, 3.85211, 3.88176, 3.72209, 3.77071, 3.89535, 3.89314, 3.70565, 3.57814, 3.54649, 3.40868, 3.60912, 3.72855, 3.67838, 3.93478, 4.00219, 3.92159, 3.8632, 4.01514, 4.22832, 4.49764, 4.31845, 4.18853, 4.44129, 4.51155, 4.61711, 4.8448, 4.97442, 5.11174, 5.32366, 5.4805, 5.32359, 5.59288, 5.48]
+      }
+    },
+    {
+      "id": "apt",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [8.17991, 8.17359, 8.1724, 8.17482, 8.17701, 8.17189, 8.17402, 8.17383, 8.16309, 8.16344, 8.17017, 8.17282, 8.17],
+        "24h": [8.24669, 8.23537, 8.22156, 8.19778, 8.17084, 8.153, 8.15247, 8.17772, 8.18018, 8.16946, 8.15513, 8.14991, 8.13767, 8.16654, 8.15924, 8.18774, 8.18778, 8.17771, 8.18779, 8.16777, 8.1497, 8.16335, 8.16181, 8.18234, 8.17],
+        "7d": [8.47031, 8.38744, 8.36342, 8.37818, 8.40763, 8.3389, 8.31236, 8.32586, 8.24891, 8.15968, 8.12243, 8.10074, 8.0738, 8.06248, 8.03812, 8.09171, 8.13897, 8.06279, 8.10165, 8.08256, 8.01194, 8.00254, 7.99716, 8.01282, 8.04707, 8.06903, 8.13455, 8.16857, 8.17],
+        "1m": [9.45089, 9.47235, 9.26273, 9.15369, 9.09565, 9.06818, 8.92844, 8.80322, 8.61365, 8.5555, 8.53255, 8.55236, 8.45395, 8.51126, 8.60949, 8.66814, 8.66287, 8.58012, 8.58705, 8.6818, 8.56951, 8.52221, 8.31672, 8.36078, 8.40888, 8.4225, 8.48754, 8.34464, 8.41533, 8.37971, 8.17],
+        "1y": [4.75825, 4.96922, 4.82747, 4.93042, 5.03213, 4.96697, 5.26375, 5.37971, 5.62126, 5.46893, 5.34453, 5.63962, 5.89893, 6.0583, 5.90283, 5.89573, 6.15831, 6.28855, 6.37075, 6.22456, 6.09793, 6.19348, 6.18393, 6.44486, 6.68214, 6.55813, 6.78273, 6.61379, 6.91059, 7.1998, 7.17399, 7.16299, 7.07664, 7.33342, 7.42093, 7.60526, 7.56209, 7.49838, 7.57583, 7.85872, 8.04191, 8.0119, 8.15743, 8.28467, 8.18624, 8.29032, 8.14187, 8.04418, 7.96092, 8.19295, 8.46193, 8.31492, 8.17],
+        "all": [18.189, 16.7136, 17.2323, 16.0256, 17.2481, 18.369, 16.6409, 16.58, 15.8248, 14.7781, 15.5471, 15.0599, 15.2918, 15.7404, 16.3916, 17.1698, 15.5934, 14.4927, 13.3559, 11.8529, 10.5445, 11.5276, 10.23, 9.04676, 8.51559, 7.8793, 7.90182, 6.31336, 7.12492, 5.91808, 6.4096, 5.28216, 5.66246, 4.8322, 4.06926, 4.41507, 5.32724, 6.41131, 4.91462, 5.75589, 6.52499, 6.97763, 7.62883, 7.13777, 7.12308, 8.1146, 8.16648, 7.0586, 6.32142, 5.07371, 5.92823, 7.43633, 6.91022, 7.50198, 6.45025, 5.18893, 6.24098, 6.0501, 5.50255, 6.77092, 8.17]
+      }
+    },
+    {
+      "id": "etc",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [24.3517, 24.356, 24.3497, 24.3629, 24.3577, 24.3828, 24.3619, 24.3747, 24.3472, 24.3702, 24.3729, 24.3536, 24.36],
+        "24h": [24.2195, 24.2774, 24.3084, 24.3275, 24.3601, 24.3718, 24.3148, 24.2629, 24.2107, 24.2014, 24.1912, 24.1889, 24.1217, 24.1371, 24.0812, 24.089, 24.0227, 24.0637, 24.1407, 24.1233, 24.1386, 24.2301, 24.3208, 24.3293, 24.36],
+        "7d": [24.7274, 24.7522, 24.5491, 24.4186, 24.229, 24.135, 23.9269, 24.0455, 24.1132, 24.1172, 24.0808, 23.9486, 24.1213, 23.9823, 24.0542, 23.9844, 24.1482, 24.0165, 24.2053, 24.094, 24.3239, 24.264, 24.274, 24.5015, 24.4015, 24.4135, 24.2378, 24.439, 24.36],
+        "1m": [20.6951, 20.6946, 20.6792, 20.4141, 20.7587, 20.5909, 20.8393, 20.6408, 20.8516, 21.0277, 20.7789, 20.7583, 21.2328, 21.6038, 21.8509, 21.6781, 21.7427, 21.8686, 22.0712, 22.3792, 22.1222, 22.3118, 22.8353, 23.2014, 23.2238, 22.9933, 23.4774, 23.9759, 24.3218, 24.2631, 24.36],
+        "1y": [18.4098, 18.2166, 18.4641, 18.772, 19.7863, 19.0773, 18.8207, 19.0899, 18.6499, 18.1158, 18.1601, 18.7616, 18.9663, 19.9633, 19.6624, 19.2826, 19.5165, 19.7784, 19.8378, 20.2073, 19.7138, 20.5028, 20.302, 20.9622, 21.8236, 22.0158, 21.5741, 21.4997, 21.5066, 21.5219, 22.4306, 22.7095, 22.3829, 22.0784, 22.7786, 23.5157, 23.0995, 22.9407, 22.555, 22.8875, 23.4073, 22.8633, 22.3623, 23.2891, 23.1562, 23.4025, 24.397, 24.8186, 25.3861, 24.7916, 24.4185, 24.5493, 24.36],
+        "all": [55.8361, 53.4633, 55.2782, 59.331, 54.4746, 54.9993, 58.1768, 58.087, 54.6561, 54.69, 56.3904, 58.8159, 59.5444, 55.1967, 53.073, 50.1389, 46.5128, 45.4726, 49.1142, 48.5638, 43.5648, 43.9194, 44.7851, 41.2833, 37.5448, 37.1712, 32.5679, 32.3571, 35.0452, 38.5132, 40.886, 40.9185, 38.869, 36.6326, 32.3982, 32.9295, 36.4404, 39.6599, 42.8158, 45.4256, 43.9568, 47.0412, 47.3847, 46.5703, 41.4557, 43.4337, 44.9455, 43.7102, 45.3622, 41.4264, 40.2846, 35.2144, 35.6544, 40.1773, 38.5383, 35.7394, 32.0817, 34.6733, 30.7358, 29.4583, 24.36]
+      }
+    },
+    {
+      "id": "hbar",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [0.0718949, 0.0719089, 0.0718216, 0.071843, 0.0717537, 0.0716682, 0.0717151, 0.0717605, 0.0717839, 0.0717709, 0.0718216, 0.0718595, 0.0718],
+        "24h": [0.0706415, 0.0708886, 0.0711225, 0.0711184, 0.0712204, 0.0711964, 0.0711502, 0.0711119, 0.0710669, 0.0710785, 0.0710665, 0.0710966, 0.0709967, 0.0712255, 0.0710713, 0.071165, 0.0711999, 0.0714369, 0.0716842, 0.071766, 0.0718947, 0.0721072, 0.0719343, 0.0718761, 0.0718],
+        "7d": [0.0692557, 0.0698514, 0.0691616, 0.0693731, 0.0692634, 0.0697355, 0.0698844, 0.0694626, 0.0699791, 0.0705722, 0.0702355, 0.0699299, 0.0699718, 0.0698161, 0.0691389, 0.0692158, 0.0694208, 0.0697126, 0.0698783, 0.0697911, 0.0704551, 0.0710981, 0.0714198, 0.0721166, 0.0724443, 0.0725116, 0.0729787, 0.0724745, 0.0718],
+        "1m": [0.0747744, 0.0761201, 0.0757667, 0.0767665, 0.0769528, 0.0780708, 0.0785067, 0.0780261, 0.0767809, 0.0764256, 0.0776856, 0.0762125, 0.0751336, 0.0742075, 0.0747929, 0.074752, 0.0741024, 0.0751792, 0.0737113, 0.0738271, 0.0734976, 0.0728769, 0.0727368, 0.0719367, 0.0732186, 0.0717136, 0.0716758, 0.0724121, 0.0725464, 0.0719077, 0.0718],
+        "1y": [0.135197, 0.13188, 0.136018, 0.139292, 0.136557, 0.130484, 0.126918, 0.1246, 0.126251, 0.120942, 0.121906, 0.124106, 0.122697, 0.116766, 0.120681, 0.113881, 0.108264, 0.105377, 0.109794, 0.114279, 0.113779, 0.114368, 0.115864, 0.114985, 0.113557, 0.106906, 0.10734, 0.110551, 0.105435, 0.102311, 0.0977455, 0.0920177, 0.096552, 0.0915953, 0.091605, 0.0951106, 0.100171, 0.104194, 0.100068, 0.0980425, 0.0926344, 0.0958925, 0.0893278, 0.0866757, 0.0846286, 0.0806661, 0.0739623, 0.0746775, 0.073292, 0.0751849, 0.0790673, 0.0712136, 0.0718],
+        "all": [0.158394, 0.154401, 0.147874, 0.14144, 0.1315, 0.131114, 0.126548, 0.120501, 0.126132, 0.13739, 0.137016, 0.145472, 0.145646, 0.137071, 0.124501, 0.120737, 0.129412, 0.118995, 0.112435, 0.123832, 0.131016, 0.119174, 0.128254, 0.125788, 0.115262, 0.12785, 0.139499, 0.145102, 0.132356, 0.135778, 0.132877, 0.122801, 0.126996, 0.128932, 0.129027, 0.13262, 0.126647, 0.136514, 0.125338, 0.109574, 0.0999955, 0.0859793, 0.0924496, 0.0860721, 0.0871903, 0.0912434, 0.0978073, 0.105166, 0.104819, 0.102368, 0.0910738, 0.0874864, 0.0790384, 0.0714421, 0.0830075, 0.090022, 0.10254, 0.102813, 0.0977598, 0.0848815, 0.0718]
+      }
+    },
+    {
+      "id": "arb",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [1.04196, 1.0405, 1.04085, 1.04148, 1.04075, 1.03999, 1.0399, 1.03971, 1.04031, 1.04037, 1.03912, 1.03963, 1.04],
+        "24h": [1.05874, 1.0605, 1.0565, 1.05759, 1.05829, 1.0564, 1.0547, 1.05389, 1.05426, 1.05144, 1.04771, 1.0489, 1.04865, 1.04863, 1.04703, 1.04332, 1.04134, 1.04293, 1.04157, 1.0432, 1.04322, 1.04017, 1.04003, 1.04136, 1.04],
+        "7d": [1.03703, 1.02782, 1.03149, 1.02246, 1.0179, 1.02023, 1.01936, 1.01546, 1.0137, 1.02629, 1.0225, 1.01864, 1.0194, 1.01192, 1.00324, 0.994663, 1.00596, 1.0055, 1.00121, 1.00805, 1.01378, 1.01674, 1.01628, 1.01955, 1.02493, 1.01952, 1.02928, 1.03291, 1.04],
+        "1m": [1.03468, 1.04539, 1.06045, 1.05021, 1.06949, 1.05508, 1.05984, 1.06825, 1.0866, 1.08428, 1.07468, 1.09341, 1.07739, 1.0835, 1.10391, 1.08501, 1.09858, 1.0902, 1.08349, 1.07952, 1.09255, 1.08593, 1.09144, 1.07971, 1.07125, 1.0529, 1.03921, 1.03792, 1.03514, 1.05283, 1.04],
+        "1y": [1.30991, 1.28026, 1.29105, 1.28994, 1.23035, 1.24482, 1.23535, 1.1857, 1.16303, 1.13926, 1.09722, 1.15706, 1.14987, 1.15784, 1.1811, 1.2347, 1.21106, 1.23743, 1.24746, 1.27939, 1.24482, 1.29486, 1.25837, 1.20924, 1.19228, 1.13527, 1.12083, 1.11946, 1.08574, 1.12172, 1.12181, 1.17422, 1.15715, 1.11339, 1.17668, 1.22307, 1.17815, 1.12972, 1.12107, 1.05778, 1.04524, 1.08267, 1.02622, 1.0083, 0.991308, 1.00071, 0.996727, 1.04484, 1.01893, 0.996954, 0.942978, 1.00394, 1.04],
+        "all": [1.70488, 1.76324, 1.72251, 1.61982, 1.63834, 1.61723, 1.60858, 1.64543, 1.73161, 1.61682, 1.6061, 1.64219, 1.56892, 1.499, 1.42851, 1.39773, 1.52334, 1.63185, 1.65239, 1.66039, 1.62641, 1.75413, 1.86457, 1.77665, 1.7181, 1.70708, 1.84487, 1.81849, 1.80402, 1.65953, 1.64606, 1.72063, 1.85722, 1.71981, 1.65411, 1.71722, 1.63179, 1.6308, 1.62174, 1.69222, 1.5574, 1.54484, 1.57047, 1.48971, 1.3683, 1.23595, 1.13516, 1.09204, 0.937798, 1.01261, 0.915992, 1.01659, 1.05552, 1.19441, 1.04803, 1.06612, 0.967128, 0.949029, 1.0966, 1.05447, 1.04]
+      }
+    },
+    {
+      "id": "op",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [2.30744, 2.30487, 2.30523, 2.30355, 2.30199, 2.304, 2.30561, 2.30524, 2.30328, 2.30614, 2.30793, 2.3104, 2.31],
+        "24h": [2.24512, 2.24554, 2.24686, 2.25536, 2.25778, 2.25741, 2.25847, 2.26785, 2.26617, 2.26934, 2.26881, 2.2692, 2.27999, 2.28145, 2.27813, 2.27611, 2.27857, 2.28754, 2.29624, 2.29426, 2.29011, 2.29804, 2.29953, 2.31062, 2.31],
+        "7d": [2.15285, 2.14714, 2.13691, 2.12765, 2.15175, 2.1653, 2.17262, 2.19395, 2.22421, 2.25068, 2.25293, 2.26813, 2.27693, 2.27059, 2.28389, 2.29826, 2.28966, 2.28315, 2.28289, 2.27346, 2.29696, 2.3011, 2.30438, 2.29102, 2.30007, 2.31116, 2.31028, 2.30179, 2.31],
+        "1m": [2.50527, 2.46855, 2.51469, 2.47129, 2.44584, 2.41472, 2.37482, 2.36022, 2.36308, 2.31285, 2.29265, 2.30517, 2.31874, 2.34395, 2.39143, 2.35711, 2.31079, 2.31241, 2.26342, 2.29183, 2.32203, 2.33578, 2.36944, 2.38771, 2.36195, 2.39589, 2.35933, 2.32893, 2.30832, 2.27013, 2.31],
+        "1y": [1.25244, 1.3122, 1.37859, 1.35122, 1.42897, 1.43611, 1.44836, 1.41033, 1.39941, 1.38851, 1.39347, 1.47112, 1.46518, 1.42062, 1.40609, 1.43333, 1.38779, 1.40831, 1.414, 1.47342, 1.52815, 1.57905, 1.54248, 1.56221, 1.60736, 1.66075, 1.73504, 1.7825, 1.84822, 1.80353, 1.86676, 1.91303, 1.97621, 1.99875, 1.98501, 2.0453, 2.04461, 2.07108, 2.10688, 2.0751, 2.04892, 2.08594, 2.09577, 2.16735, 2.1615, 2.14545, 2.21296, 2.19581, 2.21018, 2.28839, 2.25414, 2.24031, 2.31],
+        "all": [1.04634, 0.990607, 1.0438, 1.13108, 1.23358, 1.2086, 1.15533, 1.25436, 1.28211, 1.35404, 1.38991, 1.45494, 1.38069, 1.47766, 1.45431, 1.45798, 1.45912, 1.52946, 1.60396, 1.57509, 1.53704, 1.63132, 1.64134, 1.65319, 1.71123, 1.77527, 1.84501, 1.94199, 1.99271, 2.08734, 2.16382, 2.21598, 2.30311, 2.34497, 2.40616, 2.35137, 2.36479, 2.41601, 2.41121, 2.50984, 2.50217, 2.42495, 2.38201, 2.47946, 2.51505, 2.45272, 2.37743, 2.31979, 2.37695, 2.36519, 2.44306, 2.52837, 2.4872, 2.41191, 2.44575, 2.38599, 2.36214, 2.39438, 2.31681, 2.31472, 2.31]
+      }
+    },
+    {
+      "id": "vet",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [0.0333371, 0.0333599, 0.0333699, 0.0334015, 0.0334227, 0.0334286, 0.0334282, 0.0334062, 0.0334229, 0.0334242, 0.0334217, 0.0333966, 0.0334],
+        "24h": [0.033551, 0.0334572, 0.0334496, 0.0333541, 0.0333208, 0.033278, 0.0333296, 0.0333707, 0.0333429, 0.0334444, 0.0335149, 0.0335396, 0.0336305, 0.0335369, 0.0335785, 0.033579, 0.033487, 0.0334524, 0.0333833, 0.0333704, 0.0333953, 0.0333907, 0.033461, 0.0334658, 0.0334],
+        "7d": [0.0328275, 0.0327176, 0.0324661, 0.0327728, 0.0329519, 0.0331767, 0.0334241, 0.0334246, 0.0336108, 0.0334876, 0.0332294, 0.0331607, 0.0333994, 0.0336307, 0.0333146, 0.0335591, 0.0334479, 0.0332153, 0.033316, 0.0331935, 0.0335105, 0.0338279, 0.0337903, 0.0339086, 0.0338003, 0.0335752, 0.0333717, 0.0335157, 0.0334],
+        "1m": [0.0339245, 0.0342637, 0.0340417, 0.0339122, 0.0342555, 0.0339053, 0.0338088, 0.0335781, 0.0335997, 0.0342609, 0.0343741, 0.0340473, 0.0344181, 0.0342357, 0.0336959, 0.0331878, 0.0326737, 0.0330448, 0.0335462, 0.0334643, 0.0339153, 0.0344454, 0.035047, 0.0348422, 0.0345141, 0.0343292, 0.0338081, 0.033278, 0.0339753, 0.0334569, 0.0334],
+        "1y": [0.0186276, 0.0193309, 0.0194609, 0.0188419, 0.0190588, 0.0198888, 0.0192815, 0.0201703, 0.0211734, 0.0216299, 0.0223377, 0.0226492, 0.023412, 0.0241287, 0.0248717, 0.0244304, 0.0239695, 0.0239291, 0.0250575, 0.024457, 0.0242008, 0.0247398, 0.0245968, 0.0252403, 0.025415, 0.0259095, 0.0269981, 0.027279, 0.0269869, 0.0265863, 0.0265778, 0.0265518, 0.0265429, 0.0277525, 0.0272712, 0.0282083, 0.0286197, 0.0296633, 0.030863, 0.0317343, 0.0314748, 0.0308993, 0.0310625, 0.0321553, 0.0315064, 0.0310896, 0.0311882, 0.0322531, 0.0331674, 0.0325519, 0.0332165, 0.0334324, 0.0334],
+        "all": [0.0231459, 0.0229893, 0.0215375, 0.0223757, 0.0239422, 0.0223746, 0.0224356, 0.0239771, 0.0254117, 0.026232, 0.0265709, 0.025688, 0.0241129, 0.0241235, 0.0228054, 0.0215514, 0.021331, 0.0215212, 0.0222884, 0.0227586, 0.0223854, 0.0213678, 0.0228481, 0.0233247, 0.0238179, 0.0255658, 0.0266937, 0.0259705, 0.0269439, 0.0271182, 0.0290828, 0.0297566, 0.0285462, 0.0305592, 0.0328619, 0.0311445, 0.0293084, 0.028387, 0.0268746, 0.0252522, 0.0268862, 0.0252504, 0.0271985, 0.0279453, 0.0283201, 0.0294518, 0.0299897, 0.0285812, 0.0286917, 0.0299166, 0.0307375, 0.02904, 0.0279353, 0.0270279, 0.0291198, 0.0283864, 0.0305145, 0.0286549, 0.0303948, 0.0310965, 0.0334]
+      }
+    },
+    {
+      "id": "inj",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [24.6753, 24.6623, 24.6884, 24.6652, 24.6833, 24.6716, 24.6585, 24.653, 24.6794, 24.7012, 24.6921, 24.7178, 24.7],
+        "24h": [23.7226, 23.7732, 23.7924, 23.8636, 23.891, 23.9015, 23.948, 23.8932, 23.9844, 24.0262, 23.9797, 24.0857, 24.1579, 24.246, 24.3103, 24.4168, 24.5105, 24.5542, 24.6279, 24.6685, 24.6389, 24.5947, 24.6354, 24.5955, 24.7],
+        "7d": [22.8245, 23.0808, 22.9456, 22.9144, 22.953, 22.981, 23.0257, 22.9369, 22.9999, 23.09, 23.401, 23.7275, 23.619, 23.6252, 23.5932, 23.6109, 23.8333, 23.8188, 23.8986, 24.1202, 24.2131, 24.0837, 24.1698, 24.2442, 24.2139, 24.5103, 24.5617, 24.7579, 24.7],
+        "1m": [29.0296, 29.2507, 28.6192, 27.9042, 27.4832, 27.5574, 27.9105, 28.0673, 28.0498, 28.1843, 28.1639, 28.4862, 28.3915, 28.0654, 27.5928, 27.3209, 27.3038, 27.6434, 27.0126, 26.7275, 26.1802, 26.2019, 25.5843, 25.2953, 24.9617, 24.2721, 24.58, 24.9365, 24.9394, 24.8324, 24.7],
+        "1y": [33.5632, 33.9376, 33.3817, 33.3068, 32.2836, 33.0685, 31.6782, 30.1171, 31.3103, 29.6253, 28.6078, 28.349, 26.8687, 26.5704, 27.7866, 28.6371, 28.9897, 29.116, 28.1716, 27.8406, 28.4352, 26.7526, 25.152, 25.7894, 26.6896, 27.6925, 28.1399, 29.2683, 28.4919, 28.9817, 29.6782, 31.2953, 31.1283, 29.9282, 28.605, 27.3706, 26.3506, 26.2685, 26.0839, 25.3304, 24.4377, 23.7663, 25.3694, 24.8548, 23.2666, 21.5813, 23.238, 23.3348, 23.344, 22.2684, 23.2584, 24.7576, 24.7],
+        "all": [46.1445, 47.5222, 49.6933, 51.1038, 53.3674, 49.1484, 49.2355, 51.9654, 47.8353, 44.6541, 45.3954, 45.3118, 41.2029, 41.9444, 38.7586, 39.9621, 37.6316, 34.2423, 31.2015, 33.8839, 31.5205, 28.7011, 30.1307, 33.3655, 30.7382, 33.8511, 33.403, 30.434, 29.3368, 31.6692, 34.6826, 34.4818, 33.0933, 34.5251, 35.537, 36.1896, 32.0168, 33.8211, 34.8092, 34.1427, 36.1907, 31.966, 31.9606, 34.2875, 30.1769, 25.9589, 23.3623, 25.4196, 26.6125, 26.4028, 25.2012, 27.1284, 30.1198, 31.0632, 29.7417, 28.441, 25.2534, 26.6119, 22.9778, 25.1846, 24.7]
+      }
+    },
+    {
+      "id": "mkr",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [1812.72, 1812.7, 1811.99, 1813.32, 1812.03, 1812.95, 1811.96, 1811.71, 1812.72, 1810.12, 1810.69, 1810.63, 1812],
+        "24h": [1824.04, 1822.72, 1820.46, 1820.92, 1822.86, 1823.16, 1824.77, 1825.46, 1827.4, 1827.89, 1825.58, 1823.83, 1820.07, 1822.06, 1823.59, 1825.72, 1822.35, 1821.03, 1817.09, 1815.57, 1813.21, 1816.23, 1810.15, 1809.82, 1812],
+        "7d": [1873.25, 1890.67, 1899.98, 1879.11, 1891.24, 1873.88, 1878.35, 1859.63, 1859.12, 1862.25, 1870.97, 1858.22, 1865.77, 1856.87, 1836.52, 1840.11, 1820.36, 1811.44, 1830.9, 1813.69, 1803.67, 1809.54, 1793.16, 1794.42, 1784.84, 1791.48, 1788.16, 1792.9, 1812],
+        "1m": [1904.93, 1863.68, 1852.56, 1855.17, 1882.64, 1853.79, 1882.01, 1890.23, 1853.88, 1861.09, 1871.45, 1839.02, 1811.27, 1780.89, 1758.26, 1778.95, 1752.67, 1735.91, 1755.52, 1763.06, 1781.27, 1794.07, 1781.24, 1797.6, 1795.07, 1818.15, 1777.11, 1807.33, 1777.52, 1803.17, 1812],
+        "1y": [1327.97, 1273.76, 1319.73, 1359.08, 1377, 1361.57, 1303.36, 1318.29, 1320.58, 1294.46, 1306.33, 1255.94, 1237.68, 1274.86, 1314.39, 1265.48, 1332.95, 1326.13, 1381.38, 1413.91, 1476.14, 1475.07, 1489.41, 1529.81, 1540.1, 1509.15, 1552.1, 1527.84, 1548.83, 1520.73, 1475.22, 1542.87, 1578.6, 1583.48, 1650.88, 1713.87, 1694.04, 1737.47, 1705.6, 1702.1, 1767.45, 1744.02, 1725.89, 1794.08, 1753.22, 1743.09, 1808.16, 1762.19, 1741.83, 1751.57, 1803.63, 1789.2, 1812],
+        "all": [2398.98, 2422.26, 2461.47, 2617.96, 2750.87, 2627.03, 2678.85, 2470.14, 2656.59, 2592.51, 2381.96, 2161.85, 2297.76, 2144.91, 1989.63, 2165.1, 2363.61, 2361.74, 2214.29, 2366.35, 2256.51, 2172.57, 2258.96, 2415.06, 2596.63, 2478.24, 2532.55, 2684.49, 2742.8, 2551.12, 2604.26, 2649.4, 2603.36, 2388.48, 2524.13, 2522.64, 2358.83, 2216.16, 2380.29, 2544.7, 2484.23, 2402.51, 2194.45, 2144.03, 2253.59, 2274.87, 2237.19, 2095.82, 2168.17, 2081.05, 1965.11, 1783.39, 1951.14, 2036.33, 2073.27, 2267.25, 2077.4, 1919.12, 1766.61, 1724.09, 1812]
+      }
+    },
+    {
+      "id": "aave",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [136.657, 136.524, 136.646, 136.537, 136.541, 136.448, 136.522, 136.555, 136.664, 136.632, 136.649, 136.534, 136.4],
+        "24h": [133.817, 134.351, 134.372, 134.631, 134.852, 134.567, 134.266, 133.918, 134.125, 134.354, 134.514, 134.334, 134.209, 134.104, 134.444, 134.695, 135.258, 135.698, 136.269, 136.237, 136.088, 136.544, 136.477, 136.274, 136.4],
+        "7d": [128.961, 130.466, 130.198, 130.84, 130.014, 130.475, 129.769, 129.465, 128.498, 130.088, 130.788, 131.442, 132.247, 133.913, 134.642, 133.637, 132.733, 132.596, 133.837, 134.394, 134.284, 134.271, 133.676, 135.166, 135.782, 136.899, 137.557, 136.479, 136.4],
+        "1m": [147.53, 148.417, 148.379, 145.619, 146.961, 147.665, 149.854, 151.236, 152.919, 150.06, 148.928, 149.225, 151.166, 148.108, 150.4, 151.297, 151.726, 150.454, 149.581, 147.13, 146.766, 143.905, 144.069, 140.891, 140.951, 143.139, 145.121, 142.681, 139.224, 137.846, 136.4],
+        "1y": [164.362, 156.949, 149.941, 155.062, 152.875, 156.259, 152.672, 147.046, 147.779, 152.629, 151.338, 152.07, 147.656, 150.906, 152.403, 153.551, 158.262, 155.047, 159.558, 156.1, 151.484, 155.622, 149.141, 148.843, 156.035, 163.123, 168.372, 171.829, 171.293, 171.621, 170.727, 163.133, 166.448, 161.988, 163.764, 165.347, 166.702, 162.825, 168.426, 165.937, 163.395, 157.256, 152.641, 151.039, 149.571, 142.752, 136.885, 138.554, 139.436, 132.446, 131.823, 128.362, 136.4],
+        "all": [100.386, 93.9986, 101.573, 97.9458, 90.4576, 92.7872, 101.586, 99.7343, 94.2423, 93.36, 93.2087, 90.6299, 82.6383, 86.321, 88.8762, 84.7284, 89.3978, 96.9952, 100.202, 102.642, 107.402, 106.368, 109.26, 108.303, 108.97, 103.182, 108.355, 107.653, 100.071, 105.551, 97.9942, 100.217, 94.3888, 96.8888, 100.732, 97.5065, 92.4805, 87.3018, 90.1498, 96.8105, 89.0033, 89.0557, 95.2239, 92.2425, 85.7267, 87.5743, 81.4723, 84.3936, 91.8687, 85.6299, 84.8971, 93.452, 102.12, 110.665, 117.293, 126.012, 118.825, 119.622, 127.481, 132.654, 136.4]
+      }
+    },
+    {
+      "id": "grt",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [0.204578, 0.204513, 0.204338, 0.204214, 0.204077, 0.204038, 0.204139, 0.204079, 0.203888, 0.204141, 0.204206, 0.204317, 0.2043],
+        "24h": [0.206907, 0.206656, 0.207211, 0.207518, 0.207011, 0.206435, 0.206046, 0.205743, 0.205679, 0.205272, 0.205492, 0.206121, 0.206174, 0.206193, 0.206037, 0.205573, 0.205713, 0.205887, 0.205529, 0.204764, 0.20457, 0.204693, 0.204581, 0.204523, 0.2043],
+        "7d": [0.204763, 0.203605, 0.202034, 0.203073, 0.203009, 0.201981, 0.203192, 0.205692, 0.205045, 0.203587, 0.20324, 0.201969, 0.201739, 0.200247, 0.202539, 0.204918, 0.205266, 0.207736, 0.207066, 0.209407, 0.209146, 0.207463, 0.206318, 0.205834, 0.204844, 0.204317, 0.203718, 0.201933, 0.2043],
+        "1m": [0.183499, 0.182443, 0.180344, 0.184098, 0.188066, 0.189137, 0.189975, 0.191624, 0.195762, 0.199223, 0.198103, 0.20002, 0.197712, 0.195264, 0.198873, 0.201678, 0.203165, 0.204404, 0.202946, 0.200209, 0.198698, 0.200928, 0.19987, 0.201002, 0.199538, 0.201802, 0.205758, 0.203773, 0.201382, 0.20024, 0.2043],
+        "1y": [0.110761, 0.114597, 0.119457, 0.11972, 0.125248, 0.124192, 0.130313, 0.132425, 0.138499, 0.134773, 0.13809, 0.140755, 0.13952, 0.140973, 0.137694, 0.140504, 0.141218, 0.143354, 0.142963, 0.144609, 0.150498, 0.15485, 0.161593, 0.16815, 0.167475, 0.169164, 0.166824, 0.162988, 0.169956, 0.177089, 0.175089, 0.172797, 0.175977, 0.17486, 0.172456, 0.17224, 0.175458, 0.178835, 0.184354, 0.189114, 0.193499, 0.191684, 0.195331, 0.198241, 0.199773, 0.199319, 0.20503, 0.207629, 0.206255, 0.208028, 0.20809, 0.204413, 0.2043],
+        "all": [0.121713, 0.120265, 0.111814, 0.119823, 0.130901, 0.141006, 0.135143, 0.130503, 0.13073, 0.133716, 0.137239, 0.147693, 0.140917, 0.144474, 0.153396, 0.146698, 0.154371, 0.157558, 0.154508, 0.154364, 0.14848, 0.146784, 0.147554, 0.145515, 0.150863, 0.15684, 0.151877, 0.158104, 0.155278, 0.15035, 0.144705, 0.141124, 0.145148, 0.15696, 0.155794, 0.148131, 0.159367, 0.166072, 0.177341, 0.168829, 0.175897, 0.186334, 0.181249, 0.187941, 0.179977, 0.191216, 0.184595, 0.186159, 0.196905, 0.19458, 0.194593, 0.196228, 0.201392, 0.196923, 0.192273, 0.19794, 0.199106, 0.193006, 0.202011, 0.196981, 0.2043]
+      }
+    },
+    {
+      "id": "algo",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [0.166874, 0.166956, 0.167148, 0.167334, 0.167344, 0.167279, 0.16719, 0.167476, 0.167541, 0.167436, 0.167331, 0.167296, 0.1672],
+        "24h": [0.166021, 0.166312, 0.16583, 0.165661, 0.165909, 0.165796, 0.166066, 0.166079, 0.166543, 0.166491, 0.166403, 0.166832, 0.167182, 0.16734, 0.167914, 0.167941, 0.167816, 0.168089, 0.168017, 0.167567, 0.167262, 0.167607, 0.168016, 0.167531, 0.1672],
+        "7d": [0.171464, 0.169931, 0.169039, 0.167298, 0.167644, 0.169474, 0.171091, 0.170801, 0.172067, 0.171046, 0.16958, 0.167926, 0.167904, 0.168504, 0.167261, 0.168771, 0.167377, 0.168997, 0.170484, 0.16874, 0.168393, 0.168286, 0.168178, 0.167105, 0.169108, 0.168799, 0.168584, 0.166885, 0.1672],
+        "1m": [0.162024, 0.160954, 0.160538, 0.160739, 0.158982, 0.15861, 0.161738, 0.161598, 0.160031, 0.160407, 0.160478, 0.160137, 0.159462, 0.160504, 0.159836, 0.158578, 0.159409, 0.156963, 0.160079, 0.160296, 0.160687, 0.158295, 0.160659, 0.163787, 0.164962, 0.162683, 0.164367, 0.163606, 0.162648, 0.166223, 0.1672],
+        "1y": [0.0824654, 0.0853904, 0.0853564, 0.0838305, 0.0821978, 0.0843828, 0.0874398, 0.0894915, 0.0943197, 0.0996644, 0.104225, 0.104622, 0.10852, 0.113326, 0.115996, 0.121043, 0.119324, 0.116995, 0.120702, 0.120078, 0.121095, 0.120936, 0.124869, 0.123046, 0.128291, 0.127279, 0.12727, 0.127566, 0.129677, 0.127292, 0.128337, 0.126069, 0.131265, 0.134219, 0.136771, 0.135301, 0.137549, 0.14228, 0.143455, 0.142819, 0.147986, 0.152487, 0.153729, 0.15902, 0.163263, 0.162005, 0.165515, 0.170334, 0.167697, 0.169289, 0.167872, 0.169209, 0.1672],
+        "all": [0.161945, 0.148754, 0.160603, 0.154855, 0.166637, 0.175515, 0.167547, 0.154413, 0.150213, 0.139791, 0.154062, 0.149103, 0.150422, 0.157494, 0.167555, 0.17858, 0.17632, 0.185874, 0.193033, 0.179338, 0.187856, 0.192664, 0.190567, 0.189957, 0.183507, 0.171366, 0.176354, 0.174566, 0.174915, 0.172616, 0.176682, 0.179644, 0.184566, 0.170734, 0.167749, 0.170784, 0.181801, 0.191899, 0.180067, 0.179205, 0.166722, 0.156038, 0.159371, 0.169067, 0.156497, 0.148741, 0.147355, 0.144596, 0.14536, 0.155143, 0.158939, 0.148557, 0.138434, 0.142123, 0.142019, 0.146879, 0.160003, 0.162241, 0.155111, 0.152822, 0.1672]
+      }
+    },
+    {
+      "id": "stx",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [1.68936, 1.68907, 1.68878, 1.68776, 1.68664, 1.68587, 1.6848, 1.68353, 1.68508, 1.68739, 1.68989, 1.68957, 1.69],
+        "24h": [1.63998, 1.64439, 1.64944, 1.64766, 1.64824, 1.65281, 1.65746, 1.65961, 1.6653, 1.66497, 1.6625, 1.66934, 1.6721, 1.67319, 1.6743, 1.67712, 1.68255, 1.68084, 1.67884, 1.68494, 1.68134, 1.68771, 1.68437, 1.6826, 1.69],
+        "7d": [1.65052, 1.64724, 1.6699, 1.69205, 1.69301, 1.68048, 1.66803, 1.68492, 1.67948, 1.67041, 1.66284, 1.65308, 1.65051, 1.6558, 1.64941, 1.65043, 1.65553, 1.67346, 1.67715, 1.67046, 1.66897, 1.66748, 1.68527, 1.7037, 1.69619, 1.71889, 1.70588, 1.6951, 1.69],
+        "1m": [1.5679, 1.55563, 1.558, 1.57807, 1.58541, 1.59094, 1.61669, 1.59756, 1.60941, 1.60163, 1.58906, 1.60349, 1.59528, 1.62129, 1.63516, 1.67039, 1.69898, 1.68601, 1.68966, 1.67835, 1.66232, 1.65266, 1.66887, 1.65509, 1.65015, 1.65439, 1.65953, 1.65956, 1.65104, 1.66537, 1.69],
+        "1y": [1.76314, 1.76379, 1.80147, 1.84856, 1.88972, 1.81509, 1.78728, 1.82489, 1.82559, 1.83475, 1.77947, 1.74365, 1.66795, 1.70232, 1.63981, 1.58442, 1.63368, 1.671, 1.76241, 1.72005, 1.73103, 1.78265, 1.77531, 1.6962, 1.73106, 1.6712, 1.7112, 1.79125, 1.73584, 1.65678, 1.74807, 1.69863, 1.64938, 1.71493, 1.63936, 1.65959, 1.73405, 1.65461, 1.57462, 1.52222, 1.46239, 1.4945, 1.57046, 1.54594, 1.58554, 1.63003, 1.66013, 1.59844, 1.63725, 1.71088, 1.69256, 1.69963, 1.69],
+        "all": [4.2012, 4.12359, 4.16263, 4.42417, 4.66925, 4.42079, 4.48351, 4.67149, 4.68372, 4.4908, 4.70991, 4.64255, 4.29573, 4.37747, 4.32955, 3.95449, 4.24599, 3.9606, 4.05387, 4.22747, 3.84214, 3.92585, 3.9725, 4.24761, 4.38013, 4.28446, 4.55072, 4.23449, 3.8304, 3.43328, 3.0903, 2.68824, 2.65327, 2.30694, 1.8955, 2.12049, 2.32684, 2.04289, 2.18357, 2.19864, 2.10463, 2.27645, 2.21847, 1.95059, 2.19643, 2.36104, 2.47995, 2.43473, 2.31091, 2.4565, 2.72331, 2.52384, 2.20833, 2.41296, 2.39283, 2.70093, 2.32504, 2.23277, 2.29052, 1.89137, 1.69]
+      }
+    },
+    {
+      "id": "sand",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [0.402433, 0.402026, 0.402391, 0.402806, 0.402741, 0.402662, 0.402591, 0.402793, 0.402297, 0.401926, 0.402129, 0.402012, 0.4018],
+        "24h": [0.410167, 0.408562, 0.407745, 0.408076, 0.407726, 0.408483, 0.40938, 0.409567, 0.408323, 0.409175, 0.409581, 0.409257, 0.409736, 0.409105, 0.407499, 0.406323, 0.40594, 0.406208, 0.405643, 0.404552, 0.402819, 0.402666, 0.401956, 0.40151, 0.4018],
+        "7d": [0.402036, 0.402171, 0.402319, 0.400855, 0.398767, 0.399541, 0.400805, 0.403628, 0.405345, 0.403733, 0.405638, 0.404639, 0.404013, 0.402739, 0.398448, 0.397902, 0.40065, 0.401255, 0.404003, 0.405305, 0.401035, 0.397186, 0.399552, 0.402513, 0.399254, 0.402373, 0.400696, 0.399712, 0.4018],
+        "1m": [0.46201, 0.45695, 0.447937, 0.441101, 0.440634, 0.43455, 0.426015, 0.419883, 0.415366, 0.421148, 0.412441, 0.413082, 0.412102, 0.41156, 0.406151, 0.397168, 0.397226, 0.402555, 0.410337, 0.417922, 0.423548, 0.423821, 0.427378, 0.418541, 0.42578, 0.418197, 0.409368, 0.399157, 0.403138, 0.40565, 0.4018],
+        "1y": [0.218629, 0.22416, 0.21818, 0.223194, 0.223651, 0.233663, 0.226953, 0.219641, 0.22752, 0.238823, 0.23795, 0.244969, 0.245825, 0.241704, 0.235382, 0.232533, 0.229873, 0.241505, 0.239639, 0.250689, 0.263247, 0.25877, 0.25032, 0.243299, 0.251892, 0.262786, 0.275552, 0.281511, 0.293466, 0.298655, 0.301778, 0.313525, 0.322358, 0.319566, 0.320838, 0.333153, 0.328046, 0.331022, 0.324883, 0.336938, 0.345575, 0.344, 0.346945, 0.35883, 0.371627, 0.365062, 0.375579, 0.374605, 0.383827, 0.388373, 0.393363, 0.401957, 0.4018],
+        "all": [0.667424, 0.669703, 0.624502, 0.597259, 0.555483, 0.527123, 0.531776, 0.480138, 0.495551, 0.527648, 0.531052, 0.543126, 0.524926, 0.553988, 0.519496, 0.514363, 0.507455, 0.559369, 0.559308, 0.543212, 0.487166, 0.444306, 0.486207, 0.484365, 0.477015, 0.459128, 0.518283, 0.464784, 0.483939, 0.425649, 0.42421, 0.432863, 0.452844, 0.477909, 0.496114, 0.496491, 0.455708, 0.51196, 0.471873, 0.513638, 0.533724, 0.507241, 0.461508, 0.493927, 0.451656, 0.509588, 0.453077, 0.393869, 0.407487, 0.45375, 0.437137, 0.397379, 0.378439, 0.367721, 0.40241, 0.415442, 0.412668, 0.357552, 0.336576, 0.342483, 0.4018]
+      }
+    },
+    {
+      "id": "mana",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [0.388482, 0.38852, 0.389043, 0.389154, 0.388842, 0.388663, 0.388362, 0.388632, 0.388267, 0.388778, 0.389187, 0.389208, 0.3891],
+        "24h": [0.395106, 0.394739, 0.393942, 0.394906, 0.395008, 0.393431, 0.393325, 0.394017, 0.39421, 0.39437, 0.395276, 0.395837, 0.3943, 0.3948, 0.393846, 0.394871, 0.393417, 0.394264, 0.393043, 0.393811, 0.392334, 0.390965, 0.39115, 0.389517, 0.3891],
+        "7d": [0.39616, 0.397733, 0.399328, 0.398027, 0.39441, 0.392941, 0.394829, 0.398602, 0.395086, 0.395987, 0.396613, 0.393805, 0.397688, 0.394293, 0.391347, 0.390913, 0.394207, 0.391322, 0.394832, 0.396078, 0.398907, 0.396929, 0.393459, 0.388805, 0.384103, 0.386587, 0.390449, 0.389581, 0.3891],
+        "1m": [0.360661, 0.357306, 0.355183, 0.351143, 0.347845, 0.352641, 0.354928, 0.352778, 0.351806, 0.356818, 0.353554, 0.354034, 0.359684, 0.360103, 0.365961, 0.366291, 0.370602, 0.376171, 0.385542, 0.389163, 0.387074, 0.392414, 0.39502, 0.390638, 0.388587, 0.387223, 0.387628, 0.38342, 0.383308, 0.387586, 0.3891],
+        "1y": [0.24824, 0.247906, 0.263431, 0.276509, 0.274006, 0.285033, 0.279676, 0.282292, 0.278928, 0.275596, 0.279685, 0.27684, 0.285082, 0.277442, 0.287609, 0.301949, 0.31184, 0.309505, 0.316391, 0.322058, 0.316202, 0.308826, 0.307773, 0.30709, 0.313008, 0.308345, 0.308115, 0.308014, 0.320497, 0.325448, 0.328458, 0.320256, 0.32828, 0.332048, 0.329446, 0.322519, 0.328279, 0.330395, 0.329891, 0.325048, 0.325909, 0.324529, 0.338042, 0.348437, 0.358718, 0.371348, 0.366831, 0.381131, 0.380542, 0.3842, 0.392282, 0.383583, 0.3891],
+        "all": [0.550395, 0.578297, 0.570052, 0.607913, 0.636473, 0.597995, 0.619083, 0.597678, 0.59955, 0.599721, 0.605985, 0.634363, 0.655825, 0.662409, 0.693713, 0.706418, 0.736215, 0.679146, 0.687001, 0.66516, 0.676857, 0.668422, 0.656592, 0.695869, 0.716165, 0.752534, 0.75023, 0.729468, 0.728158, 0.686776, 0.706251, 0.699367, 0.661085, 0.700983, 0.695191, 0.641871, 0.60334, 0.635543, 0.675384, 0.623521, 0.594321, 0.555794, 0.560079, 0.532968, 0.567938, 0.566547, 0.527082, 0.523515, 0.489935, 0.44601, 0.468492, 0.474763, 0.436707, 0.386735, 0.419604, 0.370178, 0.396158, 0.341552, 0.372137, 0.411364, 0.3891]
+      }
+    },
+    {
+      "id": "egld",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [31.0906, 31.1248, 31.1179, 31.1065, 31.1134, 31.089, 31.1297, 31.1057, 31.0969, 31.0965, 31.0673, 31.0839, 31.12],
+        "24h": [31.0146, 31.1051, 31.0355, 31.0702, 31.1045, 31.0464, 31.0388, 31.1054, 31.0712, 31.1618, 31.1158, 31.073, 31.1614, 31.1303, 31.1044, 31.0613, 31.0188, 31.0655, 30.9762, 30.8889, 30.9354, 30.9148, 31.0249, 31.1336, 31.12],
+        "7d": [30.036, 30.314, 30.3975, 30.2023, 30.1174, 30.1784, 30.0706, 30.0814, 30.3433, 30.6741, 30.6469, 30.7385, 30.5715, 30.6468, 30.9901, 30.7256, 30.6479, 30.647, 30.9375, 31.2167, 31.096, 31.2121, 31.1711, 31.3362, 31.2246, 31.0889, 31.0698, 30.9127, 31.12],
+        "1m": [30.1377, 30.7721, 30.51, 30.8179, 31.41, 31.2002, 30.9139, 30.9532, 30.5962, 31.157, 31.5155, 31.7476, 32.2043, 31.6765, 31.4543, 31.0859, 31.2529, 30.8985, 30.4678, 30.0777, 29.5319, 29.2835, 29.3608, 29.9445, 29.4272, 29.3936, 29.7575, 30.1864, 30.3423, 30.9166, 31.12],
+        "1y": [26.4191, 26.8744, 27.7692, 28.7737, 29.9809, 30.3623, 29.4343, 28.3522, 28.9711, 28.9674, 28.4862, 28.1262, 27.2981, 28.0115, 28.3544, 27.271, 26.2952, 27.0619, 27.3925, 27.3452, 28.1028, 28.8389, 28.9241, 29.9114, 30.71, 31.4116, 31.7221, 31.5361, 30.9688, 30.1644, 30.3224, 31.4305, 32.2426, 32.4248, 33.0978, 32.4096, 32.6555, 33.197, 33.4476, 32.6695, 33.0216, 32.2067, 32.9236, 32.9222, 33.3704, 32.5916, 32.9445, 32.8227, 32.7763, 32.31, 31.4648, 30.4796, 31.12],
+        "all": [45.9622, 49.4767, 45.0688, 45.4164, 42.1133, 38.1395, 36.5955, 34.342, 34.3458, 36.5415, 32.777, 29.2005, 31.4779, 34.0654, 37.5082, 34.8523, 36.2132, 35.3433, 32.3444, 33.9157, 33.1814, 31.8848, 28.5917, 24.5927, 20.2272, 23.5851, 22.0846, 20.2962, 18.4784, 20.5234, 18.3051, 16.5466, 20.0499, 23.4726, 25.6391, 24.5689, 20.3384, 21.9512, 21.6831, 25.0179, 26.4305, 25.5753, 21.8841, 21.6444, 18.5996, 19.1599, 20.9344, 18.6604, 22.1688, 17.8753, 16.7878, 19.8341, 22.5307, 25.1773, 26.4647, 26.1437, 29.3127, 27.5649, 30.6964, 28.9222, 31.12]
+      }
+    },
+    {
+      "id": "flow",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [0.521394, 0.52116, 0.521284, 0.521374, 0.521027, 0.520961, 0.521101, 0.521214, 0.521101, 0.521533, 0.521317, 0.521218, 0.5214],
+        "24h": [0.526029, 0.525955, 0.524639, 0.523483, 0.522742, 0.521908, 0.522122, 0.520619, 0.520291, 0.520746, 0.520837, 0.51997, 0.520987, 0.520972, 0.520546, 0.521952, 0.521272, 0.521049, 0.5224, 0.523293, 0.522553, 0.523106, 0.523186, 0.522808, 0.5214],
+        "7d": [0.527502, 0.523481, 0.52265, 0.520721, 0.515824, 0.519096, 0.519365, 0.517843, 0.519017, 0.515878, 0.517957, 0.518942, 0.518478, 0.521969, 0.521678, 0.517345, 0.51795, 0.517808, 0.518387, 0.516536, 0.517624, 0.511387, 0.512972, 0.513991, 0.516485, 0.516262, 0.520419, 0.519441, 0.5214],
+        "1m": [0.509991, 0.514151, 0.512078, 0.507207, 0.502223, 0.494709, 0.500205, 0.49617, 0.499715, 0.502699, 0.496691, 0.505721, 0.506687, 0.511109, 0.503391, 0.498497, 0.503854, 0.512654, 0.51147, 0.513454, 0.514736, 0.508667, 0.515721, 0.517884, 0.523197, 0.513404, 0.513992, 0.509644, 0.518086, 0.522581, 0.5214],
+        "1y": [0.651632, 0.621397, 0.614094, 0.590523, 0.617696, 0.591219, 0.584949, 0.583637, 0.558435, 0.555115, 0.525511, 0.539966, 0.566608, 0.562019, 0.562264, 0.578575, 0.56453, 0.569617, 0.571383, 0.568795, 0.590143, 0.611791, 0.621038, 0.621656, 0.593394, 0.578868, 0.593439, 0.567823, 0.536289, 0.549863, 0.544009, 0.54447, 0.544716, 0.567136, 0.562916, 0.537523, 0.547357, 0.530114, 0.532666, 0.523159, 0.513219, 0.513939, 0.497705, 0.490626, 0.486455, 0.499566, 0.519751, 0.499374, 0.494995, 0.505117, 0.523037, 0.527092, 0.5214],
+        "all": [1.09671, 1.0916, 1.09593, 1.08007, 0.99187, 0.992204, 1.01556, 0.961211, 0.91591, 0.829451, 0.785274, 0.790203, 0.847648, 0.929429, 1.01872, 0.940139, 0.911427, 1.00145, 1.07428, 0.972884, 1.05898, 1.06654, 1.0154, 0.941001, 0.884961, 0.866805, 0.871596, 0.866849, 0.899672, 0.842796, 0.875376, 0.944208, 0.938007, 0.874467, 0.951144, 0.97137, 0.87106, 0.902517, 0.795667, 0.697392, 0.686179, 0.680337, 0.585911, 0.537087, 0.627158, 0.596388, 0.589737, 0.598919, 0.545695, 0.600639, 0.514141, 0.524131, 0.609781, 0.558958, 0.609734, 0.504847, 0.594793, 0.62029, 0.552573, 0.526505, 0.5214]
+      }
+    },
+    {
+      "id": "xtz",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [0.811917, 0.812328, 0.812958, 0.812922, 0.813494, 0.812992, 0.813364, 0.813247, 0.813367, 0.813195, 0.813408, 0.81345, 0.8127],
+        "24h": [0.811159, 0.811027, 0.81351, 0.812037, 0.811467, 0.814565, 0.81437, 0.816409, 0.815165, 0.813375, 0.81261, 0.810744, 0.811764, 0.811321, 0.814307, 0.813548, 0.811592, 0.812938, 0.812031, 0.812787, 0.812397, 0.810887, 0.812863, 0.813911, 0.8127],
+        "7d": [0.799545, 0.807491, 0.811647, 0.804493, 0.807754, 0.808382, 0.810678, 0.803837, 0.802814, 0.806214, 0.804184, 0.802932, 0.798065, 0.801343, 0.792822, 0.79369, 0.790174, 0.789249, 0.785782, 0.792951, 0.800074, 0.796619, 0.795588, 0.800005, 0.798951, 0.804047, 0.803956, 0.805668, 0.8127],
+        "1m": [0.703537, 0.712957, 0.709758, 0.716252, 0.712802, 0.719657, 0.727368, 0.718094, 0.718129, 0.730542, 0.735082, 0.744121, 0.745191, 0.751529, 0.76379, 0.770695, 0.773629, 0.785966, 0.776722, 0.778887, 0.780816, 0.784809, 0.778568, 0.782031, 0.791032, 0.795124, 0.802424, 0.809386, 0.81657, 0.804898, 0.8127],
+        "1y": [0.605899, 0.615277, 0.609456, 0.610106, 0.586737, 0.602425, 0.608622, 0.585612, 0.571312, 0.558086, 0.539238, 0.556596, 0.554567, 0.573567, 0.577449, 0.573478, 0.556246, 0.536802, 0.545066, 0.555831, 0.588258, 0.598824, 0.608045, 0.621911, 0.645675, 0.670321, 0.700377, 0.701641, 0.727167, 0.724503, 0.751348, 0.732813, 0.7327, 0.731048, 0.736187, 0.757618, 0.76001, 0.786741, 0.771298, 0.771398, 0.781525, 0.81275, 0.826713, 0.832914, 0.808973, 0.807175, 0.814708, 0.806897, 0.812024, 0.825615, 0.804422, 0.835728, 0.8127],
+        "all": [1.30646, 1.23617, 1.22223, 1.10113, 1.12272, 1.13168, 1.05052, 1.04828, 1.13238, 1.06642, 1.12163, 1.04947, 1.15713, 1.21102, 1.1517, 1.16622, 1.11327, 1.00833, 1.02734, 1.09103, 0.996554, 1.09242, 1.18166, 1.20365, 1.19794, 1.18852, 1.08195, 1.05357, 1.08472, 1.09976, 1.04591, 1.14727, 1.158, 1.05716, 0.995794, 1.07363, 1.03198, 1.11168, 1.05593, 1.10534, 1.04835, 1.02277, 1.00124, 1.09762, 0.991157, 1.06674, 1.15133, 1.03048, 0.947118, 0.858398, 0.77979, 0.774433, 0.700855, 0.64609, 0.723546, 0.74344, 0.803995, 0.724643, 0.698335, 0.782138, 0.8127]
+      }
+    },
+    {
+      "id": "axs",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [6.27604, 6.28458, 6.29211, 6.28957, 6.28799, 6.28428, 6.2822, 6.27663, 6.2719, 6.27302, 6.27256, 6.27715, 6.28],
+        "24h": [6.12862, 6.12743, 6.14107, 6.15911, 6.14189, 6.12721, 6.14089, 6.13995, 6.15645, 6.17679, 6.16558, 6.17956, 6.19964, 6.19061, 6.20903, 6.19302, 6.20529, 6.18408, 6.20341, 6.22002, 6.23788, 6.2548, 6.26449, 6.25901, 6.28],
+        "7d": [6.3319, 6.39402, 6.36085, 6.35548, 6.40408, 6.37011, 6.39348, 6.40132, 6.38286, 6.36665, 6.3784, 6.32093, 6.35875, 6.36418, 6.30965, 6.36832, 6.30939, 6.35698, 6.34956, 6.29144, 6.23461, 6.20948, 6.27248, 6.25404, 6.28314, 6.31286, 6.29633, 6.26315, 6.28],
+        "1m": [6.91492, 6.98434, 7.06747, 7.02841, 6.97053, 7.03124, 7.03651, 7.07902, 7.12105, 7.01729, 6.83173, 6.87628, 6.86872, 6.7017, 6.66565, 6.72401, 6.75629, 6.80127, 6.68022, 6.53013, 6.46041, 6.43226, 6.47866, 6.38809, 6.20479, 6.14897, 6.16094, 6.22016, 6.29592, 6.22617, 6.28],
+        "1y": [4.09026, 4.32344, 4.24923, 4.13157, 4.20132, 4.35451, 4.34551, 4.59481, 4.67656, 4.55814, 4.61434, 4.83108, 4.98305, 5.11029, 4.98326, 5.22744, 5.26725, 5.13117, 5.11023, 5.29764, 5.21927, 5.33456, 5.52964, 5.60463, 5.53889, 5.62627, 5.54567, 5.6828, 5.61339, 5.48339, 5.61337, 5.47462, 5.44477, 5.41968, 5.67197, 5.84228, 5.70794, 5.87102, 5.83937, 5.94369, 6.19348, 6.26066, 6.26972, 6.15656, 6.04177, 5.93513, 6.11361, 6.33863, 6.30316, 6.30403, 6.48943, 6.42255, 6.28],
+        "all": [5.54157, 5.41713, 5.54329, 5.52778, 5.85193, 6.24197, 6.00042, 5.63682, 5.70677, 5.95916, 5.64297, 5.65826, 5.96513, 5.63025, 5.68132, 5.98566, 5.53161, 5.6483, 5.73979, 5.7895, 5.51642, 5.62479, 5.73011, 5.74533, 5.60077, 5.21427, 5.64167, 5.81295, 5.99441, 5.73508, 5.47341, 5.40665, 5.24687, 5.40414, 5.2448, 5.33988, 5.28558, 5.23396, 5.63485, 5.76571, 5.65488, 6.06698, 6.28737, 6.52592, 6.9181, 6.88993, 6.53343, 6.92071, 6.97333, 7.03401, 7.0059, 6.8237, 6.35396, 6.51925, 6.39402, 6.05328, 5.80027, 5.94014, 6.36018, 6.09674, 6.28]
+      }
+    },
+    {
+      "id": "shib",
+      "asOf": "2026-09-16T09:14",
+      "series": {
+        "1h": [0.0000192515, 0.0000192619, 0.0000192543, 0.0000192461, 0.0000192488, 0.0000192497, 0.000019267, 0.0000192723, 0.0000192528, 0.0000192683, 0.0000192781, 0.000019268, 0.00001927],
+        "24h": [0.0000190208, 0.0000190564, 0.00001909, 0.0000191098, 0.0000190795, 0.0000191029, 0.0000190878, 0.0000190539, 0.0000190435, 0.0000190917, 0.000019088, 0.0000190936, 0.0000191291, 0.0000191642, 0.0000191232, 0.0000191101, 0.0000190619, 0.0000190401, 0.000019075, 0.0000191086, 0.0000191315, 0.0000191796, 0.0000192318, 0.000019293, 0.00001927],
+        "7d": [0.0000187778, 0.000018977, 0.0000192054, 0.0000191438, 0.0000193728, 0.0000193898, 0.0000193722, 0.0000193736, 0.0000194048, 0.0000196468, 0.0000196597, 0.0000195151, 0.000019468, 0.0000194766, 0.0000195783, 0.0000195481, 0.0000195043, 0.0000196236, 0.0000195462, 0.0000196262, 0.0000194837, 0.0000193996, 0.0000193432, 0.0000192147, 0.0000191125, 0.0000190423, 0.0000191042, 0.0000193349, 0.00001927],
+        "1m": [0.0000187171, 0.0000183717, 0.0000180969, 0.0000184047, 0.0000184035, 0.0000185085, 0.0000188459, 0.0000188805, 0.0000185658, 0.0000181987, 0.0000181546, 0.0000181774, 0.0000181393, 0.000018098, 0.0000182848, 0.0000184992, 0.0000186656, 0.0000188817, 0.0000188428, 0.0000186668, 0.0000186604, 0.0000185956, 0.0000188274, 0.0000191016, 0.0000193713, 0.0000196724, 0.0000193027, 0.0000194283, 0.0000192822, 0.00001945, 0.00001927],
+        "1y": [0.0000334005, 0.0000329058, 0.0000313019, 0.0000314198, 0.0000297351, 0.0000291351, 0.0000303826, 0.0000313764, 0.0000302452, 0.0000315378, 0.0000327304, 0.00003228, 0.0000311388, 0.0000308781, 0.0000311151, 0.000032233, 0.0000321548, 0.0000314897, 0.0000304928, 0.0000293867, 0.0000280937, 0.0000283209, 0.0000299004, 0.0000296151, 0.0000281395, 0.0000276348, 0.00002697, 0.0000268271, 0.0000264065, 0.0000253539, 0.0000240161, 0.0000241887, 0.000025109, 0.0000237104, 0.0000251507, 0.0000235292, 0.0000220777, 0.0000214787, 0.0000208298, 0.0000202736, 0.0000189473, 0.0000191615, 0.0000196781, 0.0000182216, 0.0000190005, 0.0000197751, 0.0000187819, 0.000019522, 0.0000203266, 0.0000212123, 0.0000207408, 0.0000196186, 0.00001927],
+        "all": [0.0000406675, 0.0000403093, 0.0000366202, 0.0000366734, 0.0000383016, 0.0000414598, 0.0000445043, 0.0000423519, 0.0000428989, 0.0000399019, 0.0000400814, 0.0000412678, 0.0000399533, 0.0000423442, 0.0000429995, 0.0000404076, 0.0000376396, 0.0000388206, 0.0000409499, 0.0000431817, 0.0000445987, 0.0000448768, 0.0000416235, 0.0000435576, 0.0000435201, 0.000046377, 0.0000454355, 0.0000435862, 0.00004503, 0.0000442439, 0.0000439827, 0.0000437293, 0.0000406491, 0.0000408838, 0.0000415944, 0.000043251, 0.000040325, 0.0000365194, 0.0000370787, 0.0000355106, 0.0000349735, 0.0000344077, 0.0000347136, 0.0000347873, 0.0000311805, 0.0000277167, 0.0000259347, 0.0000257888, 0.0000228994, 0.000025738, 0.0000228653, 0.0000202128, 0.0000189611, 0.0000208599, 0.0000223243, 0.0000237168, 0.0000230668, 0.0000205732, 0.0000197872, 0.0000227481, 0.00001927]
+      }
+    }
+  ],
+  "wallets": [
+    {
+      "id": 1,
+      "name": "MetaMask",
+      "address": "0x3f…9a2c",
+      "status": "synced"
+    },
+    {
+      "id": 2,
+      "name": "Ledger Nano X",
+      "address": "bc1q…7k4d",
+      "status": "synced"
+    }
+  ],
+  "profile": {
+    "firstName": "Valerii",
+    "lastName": "Povzun",
+    "email": "valera@coinfolio.app",
+    "username": "vpovzun",
+    "memberSince": "2025-03-01",
+    "currency": "USD",
+    "language": "en",
+    "timezone": "Europe/Kyiv",
+    "theme": "dark",
+    "priceAlerts": true,
+    "weeklyReport": true,
+    "productNews": false,
+    "twoFactor": true
+  },
+  "market": {
+    "cap": 2310000000000,
+    "capChange": 1.42,
+    "volume": 86200000000,
+    "volumeChange": -3.05,
+    "dominance": 54.9,
+    "dominanceChange": 0.3
+  },
+  "portfolio": {
+    "asOf": "2026-09-16T09:14",
+    "series": {
+      "1d": [48183, 48340.2, 48241.5, 48258, 48237.7, 48398.4, 48480.2, 48497, 48576.1, 48654.4, 48603, 48623.8, 48687.2, 48841.8, 48788.4, 48770.6, 48824.4, 48997.7, 48959.4, 48873.3, 48800.9, 48784.7, 48860.9, 48946.5, 49011.7],
+      "1w": [47308.6, 47376.1, 47644.3, 47494.7, 47265.6, 47662.1, 47447.7, 47848.7, 47766.5, 47520.2, 47346.2, 47413.7, 47703.1, 47442.3, 47805.8, 48185.1, 48159, 48339.1, 48675.7, 48608.9, 48498.1, 48505.6, 48849.8, 48740.9, 48609.5, 48923, 48653.8, 48987.3, 49011.7],
+      "1m": [45600, 45040.8, 44937, 44851, 45093.9, 45014.2, 45035.6, 45779.9, 46598.9, 46861.8, 47177.2, 47119.9, 47720.3, 48164, 47825.5, 47960.9, 47413.7, 47341.8, 46772.8, 47404, 47283.5, 47485, 47163.5, 47448.7, 47886.1, 48690.9, 48236.3, 49005.3, 48900.4, 48424.9, 49011.7],
+      "1y": [25795.6, 26338.2, 26805.1, 26493.2, 26654.5, 26340, 27108.7, 27163.5, 28347.4, 28994.1, 28587.1, 28023.8, 28974.1, 30258.3, 29870.8, 30933.3, 31046.2, 31774.4, 32333.9, 32352.6, 33350.3, 33417.6, 33973.8, 34155.5, 35452, 36721.4, 37780.8, 37309.7, 37311.3, 38485.4, 39782.3, 39306.5, 40052.3, 40726.1, 41284.2, 41996.6, 42230, 42109.3, 42438.7, 43134, 43623.4, 43000.5, 43965.1, 43917, 43884.5, 43468.5, 44293.8, 44257.2, 44030.2, 45235.7, 46631.7, 48016.3, 49011.7],
+      "all": [15810.2, 16398.1, 15880.9, 16382.7, 17798.5, 19002.3, 20307.6, 20015.1, 20657.3, 21636.1, 21679.9, 22161.7, 22140, 23534.8, 25013.4, 24858.9, 25748.5, 26142.8, 26164.7, 26824.7, 28194.4, 29217.1, 30161, 31186.6, 31171.7, 30751.2, 32335.2, 33126.9, 34581.8, 35116.5, 35328.3, 35290.5, 35637.8, 37106.4, 37308.4, 36913.5, 38161.1, 38523.6, 39153.4, 38728.6, 39970.6, 40413.7, 41826.8, 42152, 43045.2, 42701.1, 43948.1, 43427.1, 44789.5, 44978.8, 45412.2, 45482.2, 45948.8, 45509.9, 45992.3, 47521.2, 47825.8, 48081.2, 48199.7, 49320.9, 49011.7]
+    }
+  }
+}
