@@ -190,7 +190,7 @@ COINS.forEach(([symbol, name, price, change24h, marketCap, volume24h, category, 
     costBasis,
     value,
     watched,
-    spark: series["24h"],
+    spark: series["7d"],
   });
   // Long texts live in their own collection, so that the full-text search (?q=) of the list only sees short fields.
   details.push({ id, website, ...(WHITEPAPERS[id] ? { whitepaper: WHITEPAPERS[id] } : {}), about });

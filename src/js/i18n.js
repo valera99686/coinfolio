@@ -1,7 +1,13 @@
-// Lightweight i18n: markup is English; other languages are applied from
-// data-i18n (text) and data-i18n-attr ("attr:key;attr:key") attributes.
+// Lightweight i18n. The markup is written in English; for another language the dictionary replaces the text of
+// [data-i18n] elements and the attributes listed in [data-i18n-attr="attr:key;attr:key"]. Text that JavaScript
+// renders (lists, states, forms) is built with t(key, vars), so it follows the language too.
+import { interpolate } from "./utils/format.js";
+
 const SUPPORTED = ["en", "uk"];
 const STORAGE_KEY = "coinfolio:lang";
+
+let dictionary = {};
+let language = "en";
 
 function readStoredLang() {
   try {
@@ -15,7 +21,7 @@ function storeLang(lang) {
   try {
     localStorage.setItem(STORAGE_KEY, lang);
   } catch {
-    // storage may be unavailable (private mode) — the language still applies to this page
+    // storage may be unavailable (private mode): the language still applies to this page
   }
 }
 
@@ -36,17 +42,27 @@ export function applyTranslations(dict, root = document) {
   });
 }
 
+/** Text of a dictionary key with {placeholders} filled in; an unknown key is shown as it is. */
+export function t(key, vars) {
+  return interpolate(dictionary[key] ?? key, vars);
+}
+
+export const getLanguage = () => language;
+
+/** Loads the dictionary of the chosen language. Must finish before a page renders its first list. */
 export async function initI18n() {
   const requested = new URLSearchParams(window.location.search).get("lang") || readStoredLang() || "en";
-  const lang = SUPPORTED.includes(requested) ? requested : "en";
-  storeLang(lang);
-  if (lang === "en") {
-    return;
+  language = SUPPORTED.includes(requested) ? requested : "en";
+  storeLang(language);
+  try {
+    const response = await fetch(new URL(`./locales/${language}.json`, document.baseURI));
+    dictionary = response.ok ? await response.json() : {};
+  } catch {
+    dictionary = {};
   }
-  const response = await fetch(new URL(`./locales/${lang}.json`, document.baseURI));
-  if (!response.ok) {
-    return;
+  if (language !== "en") {
+    applyTranslations(dictionary);
+    document.documentElement.lang = language;
   }
-  applyTranslations(await response.json());
-  document.documentElement.lang = lang;
+  return dictionary;
 }

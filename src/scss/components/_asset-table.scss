@@ -57,3 +57,31 @@
     }
   }
 }
+
+// Placeholder row of the table while the list is loading (a card below 1280 px, a table row above).
+.asset-skeleton {
+  display: block;
+
+  @include media-up(lg) {
+    display: table-row;
+  }
+
+  &__cell {
+    display: block;
+
+    @include media-up(lg) {
+      border-bottom: 1px solid color(border);
+      display: table-cell;
+      padding: space(3) space(4);
+
+      .skeleton {
+        height: rem(40);
+      }
+    }
+
+    .skeleton {
+      height: rem(68);
+    }
+  }
+}
+

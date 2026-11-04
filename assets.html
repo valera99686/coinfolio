@@ -11,11 +11,11 @@
       <p class="page-header__lead" data-i18n="assets.lead"><%= t('assets.lead') %></p>
     </div>
     <div class="page-header__actions">
-      <button class="button page-header__action button--secondary" type="button">
+      <button class="button page-header__action button--secondary" type="button" id="export-csv">
         <%- include('partials/icon', { name: 'download' }) %>
         <span data-i18n="action.exportCsv"><%= t('action.exportCsv') %></span>
       </button>
-      <a class="button page-header__action button--primary" href="./asset.html#add-transaction">
+      <a class="button page-header__action button--primary" href="./asset.html#/item/btc/trade">
         <%- include('partials/icon', { name: 'plus' }) %>
         <span data-i18n="nav.add"><%= t('nav.add') %></span>
       </a>
@@ -24,11 +24,7 @@
 
   <section class="market" aria-labelledby="market-title">
     <h2 class="market__title visually-hidden" id="market-title" data-i18n="market.title"><%= t('market.title') %></h2>
-    <dl class="market__list" tabindex="0">
-      <%- include('partials/stat', { labelKey: 'market.cap', cls: 'market__item', icon: 'globe', value: market.capText, trend: 'up', change: market.capChange, noteKey: 'market.capNote' }) %>
-      <%- include('partials/stat', { labelKey: 'market.volume', cls: 'market__item', icon: 'chart', value: market.volumeText, trend: 'down', change: Math.abs(market.volumeChange), noteKey: 'kpi.vsYesterday' }) %>
-      <%- include('partials/stat', { labelKey: 'market.dominance', cls: 'market__item', icon: 'assets', value: market.dominance, trend: 'up', change: 0.3, noteKey: 'market.dominanceNote' }) %>
-    </dl>
+    <dl class="market__list" tabindex="0" aria-busy="true"></dl>
   </section>
 
   <section class="asset-list" aria-labelledby="asset-list-title">
@@ -58,46 +54,22 @@
           <option value="name" data-i18n="sort.name"><%= t('sort.name') %></option>
         </select>
       </div>
-      <button class="icon-button filters__submit" type="submit">
-        <%- include('partials/icon', { name: 'filter' }) %>
-        <span class="visually-hidden" data-i18n="filters.apply"><%= t('filters.apply') %></span>
-      </button>
+      <div class="field filters__category">
+        <label class="field__label filters__label visually-hidden" for="asset-category" data-i18n="filters.category"><%= t('filters.category') %></label>
+        <select class="field__select" id="asset-category" name="category"></select>
+      </div>
     </form>
 
     <div class="asset-list__panel card">
-      <table class="asset-table">
+      <table class="asset-table" aria-busy="true">
         <caption class="asset-table__caption" data-i18n="assets.caption"><%= t('assets.caption') %></caption>
-        <%- include('partials/asset-table-head', { sort: 'marketCap' }) %>
-        <tbody class="asset-table__body">
-  <% assets.forEach((a) => { %>
-          <%- include('partials/asset-row', { a, rank: a.rank }) %>
-  <% }) %>
-        </tbody>
+        <%- include('partials/asset-table-head', { sortable: true }) %>
+        <tbody class="asset-table__body"></tbody>
       </table>
 
       <nav class="pagination" aria-label="<%= t('pagination.label') %>" data-i18n-attr="aria-label:pagination.label">
-        <p class="pagination__summary" data-i18n="pagination.summary"><%= t('pagination.summary') %></p>
-        <ul class="pagination__list">
-          <li class="pagination__item">
-            <a class="pagination__link pagination__link--prev" aria-disabled="true">
-              <%- include('partials/icon', { name: 'chevron-left' }) %>
-              <span class="visually-hidden" data-i18n="pagination.prev"><%= t('pagination.prev') %></span>
-            </a>
-          </li>
-  <% [1, 2, 3].forEach((n) => { %>
-          <li class="pagination__item pagination__item--page<%= n === 1 ? ' pagination__item--current' : '' %>">
-            <a class="pagination__link<%= n === 1 ? ' pagination__link--active' : '' %>" href="./assets.html?page=<%= n %>"<%- n === 1 ? ' aria-current="page"' : '' %>><%= n %></a>
-          </li>
-  <% }) %>
-          <li class="pagination__item pagination__item--gap" aria-hidden="true">…</li>
-          <li class="pagination__item pagination__item--page"><a class="pagination__link" href="./assets.html?page=5">5</a></li>
-          <li class="pagination__item">
-            <a class="pagination__link pagination__link--next" href="./assets.html?page=2" rel="next">
-              <%- include('partials/icon', { name: 'chevron-right' }) %>
-              <span class="visually-hidden" data-i18n="pagination.next"><%= t('pagination.next') %></span>
-            </a>
-          </li>
-        </ul>
+        <p class="pagination__summary" role="status"></p>
+        <ul class="pagination__list"></ul>
       </nav>
     </div>
   </section>

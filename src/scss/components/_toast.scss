@@ -1,0 +1,51 @@
+@use '../abstracts' as *;
+
+// Short messages ("Could not save your change"): above the tab bar on phones, in the corner on desktop.
+.toast-host {
+  @include flex(column, flex-end, center, space(2));
+
+  inset-block-end: calc(var(--tabbar-height) + #{space(4)});
+  inset-inline: space(4);
+  pointer-events: none;
+  position: fixed;
+  z-index: z(toast);
+
+  @include media-up(lg) {
+    align-items: flex-end;
+    inset-block-end: space(6);
+    inset-inline: auto space(6);
+  }
+}
+
+.toast {
+  @include flex(row, flex-start, center, space(3));
+  @include reveal;
+
+  background: color(bg-elevated);
+  border: 1px solid color(border);
+  border-radius: radius(md);
+  box-shadow: var(--shadow-popover);
+  max-width: rem(420);
+  padding: space(3) space(4);
+  pointer-events: auto;
+
+  &__icon {
+    color: color(accent-text);
+  }
+
+  &__text {
+    @extend %type-body-m;
+  }
+
+  &--success &__icon {
+    color: color(positive);
+  }
+
+  &--error {
+    border-color: color(negative);
+  }
+
+  &--error &__icon {
+    color: color(negative);
+  }
+}

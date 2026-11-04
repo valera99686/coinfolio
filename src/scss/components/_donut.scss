@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+// Allocation donut: one stroked circle per slice. The slice colour is the colour of its coin.
+.donut {
+  display: block;
+
+  &__slice {
+    @include transition(stroke-dasharray);
+
+    stroke: var(--coin-others);
+
+    @each $name, $value in $coin-colors {
+      &--#{$name} {
+        stroke: var(--coin-#{$name});
+      }
+    }
+  }
+}

@@ -1,8 +1,8 @@
+@use 'sass:map';
 @use '../abstracts' as *;
 
 // Allocation legend: coloured dot, name, amount, share. The dot colour is a custom property
-// set by the modifier, so adding a coin needs one line in the list below and no new rule.
-$legend-items: btc, eth, sol, others;
+// set by the modifier, so every coin of the $coin-colors map gets its modifier without a new rule.
 
 .legend {
   display: grid;
@@ -36,7 +36,7 @@ $legend-items: btc, eth, sol, others;
       width: rem(10);
     }
 
-    @each $name in $legend-items {
+    @each $name in map.keys($coin-colors) {
       &--#{$name} {
         --legend-color: var(--coin-#{$name});
       }

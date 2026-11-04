@@ -94,9 +94,9 @@
   "dash.recent": "Recent transactions",
 
   "assets.title": "Assets",
-  "assets.lead": "Live prices for 48 coins and your position in each of them.",
+  "assets.lead": "Live prices for the top coins and your position in each of them.",
   "assets.listTitle": "All assets",
-  "assets.caption": "Top 10 coins by market capitalisation, prices in USD",
+  "assets.caption": "Coins ranked by market capitalisation, prices in USD",
   "assets.tip": "Tip: open a coin to see its details; star a coin to add it to your watchlist.",
   "market.title": "Market summary",
   "market.cap": "Market cap",
@@ -119,7 +119,7 @@
   "sort.change": "24h change",
   "sort.name": "Name",
   "pagination.label": "Pagination",
-  "pagination.summary": "Showing 1–10 of 48 assets",
+  "pagination.summary": "Showing {from}–{to} of {total} assets",
   "pagination.prev": "Previous page",
   "pagination.next": "Next page",
 
@@ -213,5 +213,22 @@
   "security.2faHint": "Extra protection with an authenticator app",
   "security.password": "Password",
   "security.passwordHint": "Last changed 3 months ago",
-  "security.change": "Change password"
+  "security.change": "Change password",
+
+  "state.errorTitle": "Something went wrong",
+  "state.retry": "Try again",
+  "state.emptyTitle": "No results",
+  "state.emptyText": "Try a different search or filter.",
+  "state.waking": "The server is waking up, this can take up to a minute…",
+  "state.loading": "Loading…",
+  "assets.leadCount": "Live prices for {count} coins and your position in each of them.",
+  "filters.category": "Category",
+  "filters.categoryAll": "All categories",
+  "watch.added": "{name} added to your watchlist.",
+  "watch.removed": "{name} removed from your watchlist.",
+  "watch.failed": "Could not update {name}.",
+  "route.notFoundTitle": "Page not found",
+  "route.notFoundText": "There is nothing at {path}.",
+  "route.backToAssets": "Back to all assets",
+  "chart.alt": "Line chart: the price moved from {from} to {to} over the selected period"
 }

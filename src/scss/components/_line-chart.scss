@@ -1,0 +1,55 @@
+@use '../abstracts' as *;
+
+// Price chart drawn from the numbers of the API. It scales with its card: the viewBox keeps the proportion.
+.line-chart {
+  color: color(positive);
+  display: block;
+  height: auto;
+  width: 100%;
+
+  &--down {
+    color: color(negative);
+  }
+
+  &--flat {
+    color: color(text-muted);
+  }
+
+  &__stop {
+    stop-color: currentcolor;
+
+    &--top {
+      stop-opacity: 0.3;
+    }
+
+    &--bottom {
+      stop-opacity: 0;
+    }
+  }
+
+  &__grid {
+    stroke: color(border);
+    stroke-dasharray: 3 6;
+  }
+
+  &__line {
+    fill: none;
+    stroke: currentcolor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+  }
+
+  &__dot {
+    fill: currentcolor;
+    stroke: color(bg-surface);
+    stroke-width: 2;
+  }
+
+  &__tick,
+  &__label {
+    @extend %type-body-s;
+
+    fill: color(text-muted);
+  }
+}

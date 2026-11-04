@@ -1,0 +1,54 @@
+@use '../abstracts' as *;
+
+// A message that takes the place of data: the request failed (--error) or nothing matches (--empty).
+// It sits in a list item, in a table row or on its own, so the rows only provide the right wrapper.
+.state-row {
+  list-style: none;
+
+  &--table {
+    display: block;
+
+    @include media-up(lg) {
+      display: table-row;
+    }
+  }
+
+  &__cell {
+    display: block;
+    padding: 0;
+
+    @include media-up(lg) {
+      display: table-cell;
+    }
+  }
+}
+
+.state {
+  @include flex(column, center, center, space(2));
+
+  padding: space(8) space(4);
+  text-align: center;
+
+  &__icon {
+    color: color(text-muted);
+  }
+
+  &--error &__icon {
+    color: color(negative);
+  }
+
+  &__title {
+    @extend %type-h3;
+  }
+
+  &__text {
+    @extend %type-body-m;
+
+    color: color(text-muted);
+    max-width: 44ch;
+  }
+
+  &__action {
+    margin-top: space(2);
+  }
+}

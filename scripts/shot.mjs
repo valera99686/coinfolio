@@ -22,6 +22,9 @@ mkdirSync(dirname(out), { recursive: true });
 const browser = await puppeteer.launch({ executablePath: CHROME, headless: "new", args: ["--no-sandbox"] });
 try {
   const tab = await browser.newPage();
+  // Script errors and failed requests are as important as the picture itself.
+  tab.on("pageerror", (error) => console.error("PAGE ERROR:", error.message));
+  tab.on("console", (message) => message.type() === "error" && console.error("CONSOLE ERROR:", message.text()));
   await tab.setViewport({
     width: Number(width),
     height: Number(opt.height || 900),

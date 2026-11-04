@@ -109,4 +109,4 @@ $shadow-card: 0 8px 24px rgb(0 0 0 / 32%);
 $shadow-popover: 0 16px 40px rgb(0 0 0 / 45%);
 $duration: (fast: 120ms, base: 200ms, slow: 320ms);
 $easing: cubic-bezier(0.2, 0, 0, 1);
-$z-layers: (base: 0, raised: 1, sticky: 10, nav: 20, overlay: 30);
+$z-layers: (base: 0, raised: 1, sticky: 10, nav: 20, overlay: 30, toast: 40);

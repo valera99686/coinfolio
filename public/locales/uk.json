@@ -94,9 +94,9 @@
   "dash.recent": "Останні транзакції",
 
   "assets.title": "Активи",
-  "assets.lead": "Актуальні ціни 48 монет і ваша позиція в кожній із них.",
+  "assets.lead": "Актуальні ціни найбільших монет і ваша позиція в кожній із них.",
   "assets.listTitle": "Усі активи",
-  "assets.caption": "10 найбільших монет за ринковою капіталізацією, ціни в USD",
+  "assets.caption": "Монети за ринковою капіталізацією, ціни в USD",
   "assets.tip": "Порада: відкрийте монету, щоб побачити деталі; позначте зірочкою, щоб додати в обране.",
   "market.title": "Огляд ринку",
   "market.cap": "Капіталізація",
@@ -119,7 +119,7 @@
   "sort.change": "Зміною за 24 год",
   "sort.name": "Назвою",
   "pagination.label": "Сторінки",
-  "pagination.summary": "Показано 1–10 із 48 активів",
+  "pagination.summary": "Показано {from}–{to} із {total} активів",
   "pagination.prev": "Попередня сторінка",
   "pagination.next": "Наступна сторінка",
 
@@ -213,5 +213,22 @@
   "security.2faHint": "Додатковий захист через застосунок-автентифікатор",
   "security.password": "Пароль",
   "security.passwordHint": "Змінено 3 місяці тому",
-  "security.change": "Змінити пароль"
+  "security.change": "Змінити пароль",
+
+  "state.errorTitle": "Щось пішло не так",
+  "state.retry": "Спробувати ще раз",
+  "state.emptyTitle": "Нічого не знайдено",
+  "state.emptyText": "Змініть пошуковий запит або фільтр.",
+  "state.waking": "Сервер прокидається, це може тривати до хвилини…",
+  "state.loading": "Завантаження…",
+  "assets.leadCount": "Актуальні ціни {count} монет і ваша позиція в кожній із них.",
+  "filters.category": "Категорія",
+  "filters.categoryAll": "Усі категорії",
+  "watch.added": "{name} додано до обраного.",
+  "watch.removed": "{name} прибрано з обраного.",
+  "watch.failed": "Не вдалося змінити {name}.",
+  "route.notFoundTitle": "Сторінку не знайдено",
+  "route.notFoundText": "За адресою {path} нічого немає.",
+  "route.backToAssets": "Назад до всіх активів",
+  "chart.alt": "Лінійний графік: ціна змінилася з {from} до {to} за обраний період"
 }

@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+// Grey placeholder shown while the API answers. Only the opacity pulses, so the layout never moves.
+.skeleton {
+  animation: pulse calc(#{duration(slow)} * 4) ease-in-out infinite;
+  background: color(bg-elevated);
+  border-radius: radius(sm);
+  display: block;
+  height: rem(20);
+  width: 100%;
+
+  &--text {
+    height: rem(12);
+    width: 40%;
+  }
+
+  &--value {
+    height: rem(28);
+    width: 70%;
+  }
+}

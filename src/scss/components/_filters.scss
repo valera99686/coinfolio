@@ -13,7 +13,7 @@
     position: relative;
 
     @include media-up(lg) {
-      flex: 0 1 rem(384);
+      flex: 0 1 rem(280);
     }
   }
 
@@ -36,7 +36,8 @@
   }
 
   // Label and select side by side.
-  &__sort {
+  &__sort,
+  &__category {
     align-items: center;
     flex: 1 1 auto;
     flex-direction: row;

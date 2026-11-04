@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+// The small trend chart of a row or a card: drawn from the 7-day series of the API in the colour of its direction.
+.sparkline {
+  color: color(positive);
+  overflow: visible;
+
+  &--down {
+    color: color(negative);
+  }
+
+  &--flat {
+    color: color(text-muted);
+  }
+
+  &__area {
+    fill: currentcolor;
+    fill-opacity: 0.14;
+    stroke: none;
+  }
+
+  &__line {
+    fill: none;
+    stroke: currentcolor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.75;
+  }
+}

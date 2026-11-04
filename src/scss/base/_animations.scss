@@ -24,6 +24,17 @@
   }
 }
 
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+}
+
 @keyframes slide-in-start {
   from {
     opacity: 0;

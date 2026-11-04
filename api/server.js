@@ -65,13 +65,13 @@ function checkFields(body, rules) {
 function checkTransaction(body) {
   const errors = {};
   const coin = router.db.get("coins").find({ id: body?.coinId }).value();
-  if (!coin) errors.coinId = "Unknown coin.";
-  if (!TYPES.includes(body?.type)) errors.type = "Type must be buy, sell or transfer.";
-  if (!isNumber(body?.amount) || body.amount <= 0) errors.amount = "Amount must be greater than zero.";
-  if (!isNumber(body?.price) || body.price < 0) errors.price = "Price must not be negative.";
-  if (!isNumber(body?.fee) || body.fee < 0) errors.fee = "Fee must not be negative.";
-  if (typeof body?.date !== "string" || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(body.date)) errors.date = "Use the format YYYY-MM-DDTHH:mm.";
-  if (body?.note !== undefined && (typeof body.note !== "string" || body.note.length > 140)) errors.note = "Note is limited to 140 characters.";
+  if (!coin) {errors.coinId = "Unknown coin.";}
+  if (!TYPES.includes(body?.type)) {errors.type = "Type must be buy, sell or transfer.";}
+  if (!isNumber(body?.amount) || body.amount <= 0) {errors.amount = "Amount must be greater than zero.";}
+  if (!isNumber(body?.price) || body.price < 0) {errors.price = "Price must not be negative.";}
+  if (!isNumber(body?.fee) || body.fee < 0) {errors.fee = "Fee must not be negative.";}
+  if (typeof body?.date !== "string" || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(body.date)) {errors.date = "Use the format YYYY-MM-DDTHH:mm.";}
+  if (body?.note !== undefined && (typeof body.note !== "string" || body.note.length > 140)) {errors.note = "Note is limited to 140 characters.";}
   return errors;
 }
 
