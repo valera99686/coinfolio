@@ -15,7 +15,7 @@ function check(name, ok, detail = "") {
   console.log(`${ok ? "  ok  " : " FAIL "} ${name}${ok ? "" : detail ? "  -> " + detail : ""}`);
 }
 
-async function open(browser, path, { width = 1280, height = 900, offline = false } = {}) {
+async function open(browser, path, { width = 1280, height = 900 } = {}) {
   const page = await browser.newPage();
   await page.setViewport({ width, height });
   page.errors = [];

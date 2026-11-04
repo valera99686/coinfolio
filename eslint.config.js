@@ -13,8 +13,8 @@ export default [
     languageOptions: { ecmaVersion: "latest", sourceType: "module", globals: globals.node },
   },
   {
-    // The screenshot tool runs code inside the browser page (page.evaluate) as well.
-    files: ["scripts/shot.mjs"],
+    // The screenshot and e2e tools run code inside the browser page (page.evaluate) as well.
+    files: ["scripts/shot.mjs", "scripts/e2e.mjs"],
     languageOptions: { globals: { ...globals.node, ...globals.browser } },
   },
   {
