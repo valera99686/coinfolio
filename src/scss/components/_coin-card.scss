@@ -16,6 +16,7 @@
     'change spark';
   grid-template-columns: 1fr auto;
   padding: space(4);
+  position: relative;
 
   @include hover {
     border-color: color(accent-soft);
@@ -38,6 +39,13 @@
     grid-area: logo;
   }
 
+  // The link covers the whole card, so the touch target of the coin is the card, not the 17 px line of its name.
+  &__link::after {
+    content: '';
+    inset: 0;
+    position: absolute;
+  }
+
   &__title {
     @extend %type-body-m-medium;
 
@@ -57,6 +65,8 @@
   &__watch {
     grid-area: watch;
     margin: calc(-1 * #{space(2)});
+    position: relative;
+    z-index: z(raised);
   }
 
   &__price {

@@ -14,7 +14,7 @@ export default [
   },
   {
     // The screenshot and e2e tools run code inside the browser page (page.evaluate) as well.
-    files: ["scripts/shot.mjs", "scripts/e2e.mjs"],
+    files: ["scripts/shot.mjs", "scripts/e2e.mjs", "scripts/audit.mjs"],
     languageOptions: { globals: { ...globals.node, ...globals.browser } },
   },
   {

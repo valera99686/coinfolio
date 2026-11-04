@@ -20,11 +20,13 @@
     "shot": "node scripts/shot.mjs",
     "test:unit": "node --test \"tests/*.test.js\"",
     "e2e": "node scripts/e2e.mjs",
+    "audit": "node scripts/audit.mjs axe && node scripts/audit.mjs overflow",
     "test": "npm run test:unit && npm run build && npm run validate && npm run check && npm run check:css",
     "deploy": "npm test && gh-pages -d dist --dotfiles -m \"Deploy preview\""
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
+    "axe-core": "^4.10.2",
     "concurrently": "^10.0.6",
     "ejs": "^3.1.10",
     "eslint": "^9.39.5",
